@@ -90,6 +90,25 @@
   },
   {
     "id": 20,
+    "date": "2018/12/31",
+    "title": "Docker Swarm",
+    "itemList": [
+      {
+        "text": "<p>A swarm is a group of machines that are running Docker and joined into a cluster. After that has happened, you continue to run the Docker commands you’re used to, but now they are executed on a cluster by a swarm manager. The machines in a swarm can be physical or virtual. After joining a swarm, they are referred to as nodes.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Docker swarm mode allows you to manage a cluster of Docker Engines, natively within the Docker platform. You can use the Docker CLI to create a swarm, deploy application services to a swarm, and manage swarm behavior.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Docker Swarm Concepts</b><p><ul><li><b>Swarmkit</b> – a separate project which implements Docker’s orchestration layer and is used directly within Docker to implement Docker swarm mode.</li><li><b>Swarm</b> – a swarm consists of multiple Docker hosts which run in swarm mode and act as managers and workers.</li><li><b>Task</b> – the swarm manager distributes a specific number of tasks among the nodes, based on the service scale you specify. A task carries a Docker container and the commands to run inside the container. Once a task is assigned to a node, it cannot move to another node. It can only run on the assigned node or fail.</li><li><b>Service</b> – a service is the definition of the tasks to execute on the manager or worker nodes. When you create a service, you specify which container image to use and which commands to execute inside running containers. A key difference between services and standalone containers is that you can modify a service’s configuration, including the networks and volumes it is connected to, without manually restarting the service.</li><li><b>Nodes</b> – a swarm node is an individual Docker Engine participating in the swarm. You can run one or more nodes on a single physical computer or cloud server, but production swarm deployments typically include Docker nodes distributed across multiple machines.</li><li><b>Manager nodes</b> – dispatches units of work called tasks to worker nodes. Manager nodes also perform orchestration and cluster management functions.</li><li><b>Leader node</b> – manager nodes elect a single leader to conduct orchestration tasks, using the Raft consensus algorithm.</li><li><b>Worker nodes</b> – receive and execute tasks dispatched from manager nodes. By default manager nodes also run services as worker nodes. An agent runs on each worker node and reports on the tasks assigned to it to its manager node.</li><li><b>Load balancing</b> – the swarm manager uses ingress load balancing to expose the services running on the Docker swarm, enabling external access. The swarm manager assigns a configurable PublishedPort for the service. External components, such as cloud load balancers, can access the service on the PublishedPort of any node in the cluster, whether or not the node is currently running the task for the service. All nodes in the swarm route ingress connections to a running task instance. The swarm manager uses internal load balancing to distribute requests among services within the cluster based upon the DNS name of the service.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 25,
     "date": "2018/12/26",
     "title": "Kubernetes",
     "itemList": [
@@ -132,7 +151,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 30,
     "date": "2015/11/3",
     "title": "Grid Computing",
     "itemList": [
@@ -147,7 +166,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 35,
     "date": "2015/11/3",
     "title": "Big Data",
     "itemList": [
@@ -162,7 +181,7 @@
     ]
   },
   {
-    "id": 35,
+    "id": 40,
     "date": "2015/11/3",
     "title": "NoSQL",
     "itemList": [
