@@ -115,6 +115,59 @@
   },
   {
     "id": 35,
+    "date": "2018/12/31",
+    "title": "Build Docker Image and Deploy it in Kubernetes",
+    "itemList": [
+      {
+        "text": "<p>There are two tasks in this tutorial: <ol><li>Build Docker Image and Push it into GCP Container Registry.</li><li>Deploy the application in the image in Kubernetes, and expose the service.</li></ol></p>",
+        "iamge": ""
+      },
+      {
+        "text": "<p>Prerequisites: <ul><li>You have an GCP account</li><li>You have an GCP project, for which billing is enabled and Cloud Build API is enabled</li><li>You have a working application (for this tutorial, it is an angular 7 application), e.g, myApplication</li><li>You have a docker (client and server) installed at your local</li><li>You have gcloud SDK installed at your local</li><li>Your root application folder is 'home/workspace/myApplcation'</li><li>The application would be deployed in the docker running nginx web server in Alpine</li></ul></p>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Start a terminal, and go to your project root folder by issuring: <mark>cd ~/workspace/myApplcation</mark></li><li>Create a Dockerfile in the root folder of the project:<br/><div class='jumbotron'>FROM nginx:alpine<br/>COPY nginx.conf /etc/nginx/nginx.conf<br/>WORKDIR /usr/share/nginx/html<br/>COPY dist/browser/ .</div></li><li>Create a nginx.conf in the root folder of the project:<br/><div class='jumbotron'>worker_processes  1;<br/>events {<br/>&nbsp;&nbsp;&nbsp;&nbsp;worker_connections  1024;<br/>}<br/>http {<br/>&nbsp;&nbsp;&nbsp;&nbsp;server {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listen 80;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server_name localhost;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root /usr/share/nginx/html;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index  index.html index.htm;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include /etc/nginx/mime.types;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip on;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip_min_length 1000;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip_proxied expired no-cache no-store private auth;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location / {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try_files $uri $uri/ /index.html;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}<br/></div></li><li>Create a cloudbuild.yaml in the root folder of the project:<br/><div class='jumbotron'>steps:<br/>- name: 'gcr.io/cloud-builders/docker'<br/>&nbsp;&nbsp;args: [ 'build', '-t', 'gcr.io/$PROJECT_ID/<i>myimagename</i>', '.' ]<br/>images:<br/>- 'gcr.io/$PROJECT_ID/<i>myimagename</i>'</div></li><li>Build the application by issuring: <mark>ng build --prod --aot</mark></li><li>Authorize the gcloud command-line tool to access your project by issuring: <mark>gcloud auth login</mark></li><li>Configure your project for the gcloud tool, where [PROJECT_ID] is your GCP project ID by issuring: <mark>gcloud config set project <i>yourGCP_PROJECT_ID</i></mark></li><li>Build the image and push it into GCP container registry by issuring: <mark>gcloud builds submit --config cloudbuild.yaml .</mark></li><li>Verify the image by:<ol><li>Open the Cloud Build page in the Google Cloud Platform Console</li><li>Select your project and click Open</li><li>Click on a particular build</li><li>Click on the image, and to view the details</li></ol></li><li>Run the command below to create a container and map it to the port 2000: <mark>docker run -p 2000:80 --rm angular7-application</mark></li><li>Verify the application by going to: <mark>http://localhost:2000/</mark></li></ol>",
+        "iamge": ""
+      },
+      {
+        "text": "<p><b>Clean up:</b><br/><br/>To avoid incurring charges to your GCP account for the resources used in this quickstart: <ol><li>Open the Container Registry page in the Google Cloud Platform Console</li><li>Select your project and click Open</li><li>Click your image</li><li>Select all the images and click Delete</li></ol></p>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "date": "2018/12/31",
+    "title": "Deploy Docker Image in Kebernetes",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have an GCP account</li><li>You have an GCP project</li><li>You have a Docker image created and stored in a repostory</li></p>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Log into GCP console</li><li>Select the project you want work on</li><li>Activate Google Cloud Shell on GCP console</li><li>Click 'START CLOUD SHELL' button</li><li>Verify that the cloud shell is associated with your project ID</li><li>Use <mark>gcloud auth list</mark> to the active account name</li><li>Use <mark>gcloud config list project</mark> to display the project ID</li><li>Use <mark>gcloud config set compute/zone us-central1-a</mark> to set a default compute zone</li><li>Use <mark>gcloud container clusters create <i>myclusterName-all-lowercase</i></mark> to create a cluster</li><li>Use <mark>gcloud container clusters get-credentials <i>mycluster</i></mark> to authenticate the cluster</li><li>Use <mark>kubectl run <i>myDeploymentName</i> --image=<i>myImageRepostoryURI</i> --port 8080</mark> to create a new Deployment named myDeploymentName</li><li>Use <mark>kubectl expose deployment <i>myDeploymentName</i> --type='LoadBalancer'</mark> to create a Kubernetes Service</li><li>Use <mark>kubectl get service <i>myDeploymentName</i></mark> to inspect the service</li><li>From the previous command's output, copy the Service's external IP address from the EXTERNAL IP column</li><li>Use <mark>http://<i>EXTERNAL-IP</i>:8080</mark> to view the application</li></ol>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "date": "2018/12/31",
+    "title": "Kubernetes Engine Quick Start on GCP",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have an GCP account</li><li>You have an GCP project</li><li>You have a Docker image created and stored in a repostory</li></p>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Log into GCP console</li><li>Select the project you want work on</li><li>Activate Google Cloud Shell on GCP console</li><li>Click 'START CLOUD SHELL' button</li><li>Verify that the cloud shell is associated with your project ID</li><li>Use <mark>gcloud auth list</mark> to the active account name</li><li>Use <mark>gcloud config list project</mark> to display the project ID</li><li>Use <mark>gcloud config set compute/zone us-central1-a</mark> to set a default compute zone</li><li>Use <mark>gcloud container clusters create <i>myclusterName-all-lowercase</i></mark> to create a cluster</li><li>Use <mark>gcloud container clusters get-credentials <i>mycluster</i></mark> to authenticate the cluster</li><li>Use <mark>kubectl run <i>myDeploymentName</i> --image=<i>myImageRepostoryURI</i> --port 8080</mark> to create a new Deployment named myDeploymentName</li><li>Use <mark>kubectl expose deployment <i>myDeploymentName</i> --type='LoadBalancer'</mark> to create a Kubernetes Service</li><li>Use <mark>kubectl get service <i>myDeploymentName</i></mark> to inspect the service</li><li>From the previous command's output, copy the Service's external IP address from the EXTERNAL IP column</li><li>Use <mark>http://<i>EXTERNAL-IP</i>:8080</mark> to view the application</li></ol>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 50,
     "date": "2018/12/24",
     "title": "Git And Github in Ubuntu",
     "itemList": [
@@ -128,7 +181,7 @@
       }
       ,
       {
-        "text": "<b>Steps for existing folders</b>: Please note that it is recommended that every repository has a README, LICENCE, and .gitignore file<ol><li>Start a terminal, and go to the folder for your project to be added to the repostory by issuring: <br/><mark>cd <i>myFolderName</i></mark></li><li>Initiate git at local by <mark>git ini</mark></li><li>Add all files in the current folder and sub-folders to the local git: <mark>git add .</mark></li><li>Commit the change with come coments: <mark>git commit -m 'initial commit'</mark></li><li>Link the local repostory to Github: <mark>git remote add origin <i>yourGithubURL</i>. e.g. https://github.com/Myusername/myRepostory.git</mark></li><li>Push the local repostory to Github: <mark>git push -u origin master</mark>. When prompted, enter the user name and password.</li></ol>",
+        "text": "<b>Steps for existing folders</b>: Please note that it is recommended that every repository has a README, LICENCE, and .gitignore file<ol><li>Start a terminal, and go to the folder for your project to be added to the repostory by issuring: <br/><mark>cd <i>myFolderName</i></mark></li><li>Initiate git at local by <mark>git ini</mark></li><li>Add all files in the current folder and sub-folders to the local git: <mark>git add .</mark></li><li>Commit the change with come coments: <mark>git commit -m 'initial commit'</mark></li><li>Link the local repostory to Github: <mark>git remote add origin <i>yourGithubURL</i>. e.g. https://github.com/Myusername/myRepostory.git</mark></li><li>Push the local repostory to Github: <mark>git push</mark>. When prompted, enter the user name and password.</li></ol>",
         "iamge": ""
       }
     ]
