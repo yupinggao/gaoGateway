@@ -1,0 +1,117 @@
+[
+  {
+    "id": 5,
+    "date": "2015/11/3",
+    "title": "DB Normalization",
+    "itemList": [
+      {
+        "text": "<b>First Normal Form:</b><br/>A database is said to be in First Normal Form when all entities have a unique identifier or key, and when every column in every table contains only a single value and doesn't contain a repeating group or composite field.",
+        "image": ""
+      },
+      {
+        "text": "<b>Second Normal Form:</b><br/>First Normal Form + every non-primary key column in the table must depend on the entire primary key.",
+        "image": ""
+      },
+      {
+        "text": "<b>Third Normal Form:</b>Second Normal Form + each column that isn't part of the primary key desn't depend on another column that isn't part of the primary key.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2015/11/2",
+    "title": "DB performance",
+    "itemList": [
+      {
+        "text": "<ul><li><b>Use proper index:</b> Use numeric indices if possible.</li><li><b>Minimize use of composite keys:</b> Minimize use of composite keys or use fewer columns in you composite keys.</li><li><b>Optimize SQL:</b> Reduce using of sub-query.</li><li><b>De-normalize:</b> De-normalize tables can improve performance by reducing joining tables.</li><li><b>Close Database connections:</b> Close connections, Statements, result sets in finally block.</li><li><b>Choose the right concurrency control:</b> Use optimistic locking as opposed to pessimistic locking where appropriate.</li><li><b>Partition:</b> Partition database based on the most accessed data and least accessed data.</li><li><b>PreparedStatement:</b> Use PreparedStatement.</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "date": "2016/7/6",
+    "title": "Transaction Isolation",
+    "itemList": [
+      {
+        "text": "Of the four ACID properties in a DBMS (Database Management System), the isolation property is the one most often relaxed. When attempting to maintain the highest level of isolation, a DBMS usually acquires locks on data or implements multiversion concurrency control, which may result in a loss of concurrency. This requires adding logic for the application to function correctly.Most DBMSs offer a number of transaction isolation levels, which control the degree of locking that occurs when selecting data. For many database applications, the majority of database transactions can be constructed to avoid requiring high isolation levels (e.g. SERIALIZABLE level), thus reducing the locking overhead for the system. The programmer must carefully analyze database access code to ensure that any relaxation of isolation does not cause software bugs that are difficult to find. Conversely, if higher isolation levels are used, the possibility of deadlock is increased, which also requires careful analysis and programming techniques to avoid.The isolation levels defined by the ANSI/ISO SQL standard are listed as follows.",
+        "image": ""
+      },
+      {
+        "text": "<b>Serializable</b><p>This is the highest isolation level.</p><p>With a lock-based concurrency control DBMS implementation, serializability requires read and write locks (acquired on selected data) to be released at the end of the transaction. Also range-locks must be acquired when a SELECT query uses a ranged WHERE clause, especially to avoid the phantom reads phenomenon.</p><p>When using non-lock based concurrency control, no locks are acquired; however, if the system detects a write collision among several concurrent transactions, only one of them is allowed to commit.",
+        "image": ""
+      },
+      {
+        "text": "<b>Repeatable reads</b><p>In this isolation level, a lock-based concurrency control DBMS implementation keeps read and write locks (acquired on selected data) until the end of the transaction. However, range-locks are not managed, so phantom reads can occur.",
+        "image": ""
+      },
+      {
+        "text": "<b>Read committed</b><p>In this isolation level, a lock-based concurrency control DBMS implementation keeps write locks (acquired on selected data) until the end of the transaction, but read locks are released as soon as the SELECT operation is performed (so the non-repeatable reads phenomenon can occur in this isolation level, as discussed below). As in the previous level, range-locks are not managed.</p><p>Putting it in simpler words, read committed is an isolation level that guarantees that any data read is committed at the moment it is read. It simply restricts the reader from seeing any intermediate, uncommitted, 'dirty' read. It makes no promise whatsoever that if the transaction re-issues the read, it will find the same data; data is free to change after it is read.",
+        "image": ""
+      },
+      {
+        "text": "<b>Read uncommitted</b><p>This is the lowest isolation level. In this level, dirty reads are allowed, so one transaction may see not-yet-committed changes made by other transactions.</p><p>Since each isolation level is stronger than those below, in that no higher isolation level allows an action forbidden by a lower one, the standard permits a DBMS to run a transaction at an isolation level stronger than that requested (e.g., a 'Read committed' transaction may actually be performed at a 'Repeatable read' isolation level).",
+        "image": "../assets/image/it/database/isolationLevel.png"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "date": "2016/10/31",
+    "title": "DB vs Warehouse",
+    "itemList": [
+      {
+        "text": "<b>Database</b><br/><ol><li>Used for Online Transactional Processing (OLTP) but can be used for other purposes such as Data Warehousing. This records the data from the user for history.</li><li>The tables and joins are complex since they are normalized (for RDMS). This is done to reduce redundant data and to save storage space.</li><li>Entity – Relational modeling techniques are used for RDMS database design.</li><li>Optimized for write operation.</li><li>Performance is low for analysis queries.</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<b>Data Warehouse</b><br/><ol><li>Used for Online Analytical Processing (OLAP). This reads the historical data for the Users for business decisions.</li><li>The Tables and joins are simple since they are de-normalized. This is done to reduce the response time for analytical queries.</li><li>Data – Modeling techniques are used for the Data Warehouse design.</li><li>Optimized for read operations.</li><li>High performance for analytical queries.</li><li>Is usually a Database.</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "It's important to note as well that Data Warehouses could be sourced zero to many databases.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2015/11/3",
+    "title": "DB Warehouse",
+    "itemList": [
+      {
+        "text": "In computing, a data warehouse (DW or DWH), also known as an enterprise data warehouse (EDW), is a system used for reporting and data analysis. DWs are central repositories of integrated data from one or more disparate sources. They store current and historical data and are used for creating trending reports for senior management reporting such as annual and quarterly comparisons.</p><p>The data stored in the warehouse is uploaded from the operational systems (such as marketing, sales, etc., shown in the figure to the right). The data may pass through an operational data store for additional operations before it is used in the DW for reporting.",
+        "image": ""
+      },
+      {
+        "text": "<b>Types of systems:</b>",
+        "image": ""
+      },
+      {
+        "text": "<b>Data Mart:</b><br/>A data mart is a simple form of a data warehouse that is focused on a single subject (or functional area), such as sales, finance or marketing. Data marts are often built and controlled by a single department within an organization. Given their single-subject focus, data marts usually draw data from only a few sources. The sources could be internal operational systems, a central data warehouse, or external data.",
+        "image": ""
+      },
+      {
+        "text": "<b>Online analytical processing (OLAP):</b><br/>OLAP is characterized by a relatively low volume of transactions. Queries are often very complex and involve aggregations. For OLAP systems, response time is an effectiveness measure. OLAP applications are widely used by Data Mining techniques. OLAP databases store aggregated, historical data in multi-dimensional schemas (usually star schemas). OLAP systems typically have data latency of a few hours, as opposed to data marts, where latency is expected to be closer to one day.",
+        "image": ""
+      },
+      {
+        "text": "<b>Online Transaction Processing (OLTP):</b><br/>OLTP is characterized by a large number of short on-line transactions (INSERT, UPDATE, DELETE). OLTP systems emphasize very fast query processing and maintaining data integrity in multi-access environments. For OLTP systems, effectiveness is measured by the number of transactions per second. OLTP databases contain detailed and current data. The schema used to store transactional databases is the entity model (usually 3NF).",
+        "image": ""
+      },
+      {
+        "text": "<b>Predictive analysis:</b><br/>Predictive analysis is about finding and quantifying hidden patterns in the data using complex mathematical models that can be used to predict future outcomes. Predictive analysis is different from OLAP in that OLAP focuses on historical data analysis and is reactive in nature, while predictive analysis focuses on the future. These systems are also used for CRM (Customer Relationship Management).",
+        "image": ""
+      },
+      {
+        "text": "<b>Technologies used in Data warehouse:</b><br/><ul><li><b>Star Schema: </b></li><li><b>Snowflake Schema: </b></li><li><b>Materialized View: </b></li><li><b>Aggregate table: </b></li><li><b>In-Memory data: </b></li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>New Technologies:</b><br/><ul><li><b>IBM Cognos Dynamic Cubes: </b>To summarize, Cognos Dynamic Cubes is an extension of IBM Cognos Dynamic Query that leverages substantial in-memory data assets as well as aggregate awareness in order to achieve high performance interactive analysis and reporting over terabytes of warehouse data. IBM Cognos Dynamic Cubes requires a data warehouse structured in a star or snowflake schema in order to maximize the performance characteristics of the solution. Cognos Dynamic Cubes differs from Cognos dimensionally-modeled relational (DMR) data sources for the following reasons:<br/><ul><li>It provides increased scalability and the ability to share data caches between users for better performance.</li><li>It allows you to a create a dynamic cube data source that is pre-loaded with dimensions.</li><li>It allows for a richer set of dimensional modeling options and the explicit management of the member and data caches of a dynamic cube.</li></ul></li></ul>",
+        "image": ""
+      }
+    ]
+  }
+]

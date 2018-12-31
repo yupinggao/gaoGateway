@@ -1,0 +1,136 @@
+[
+  {
+    "id": 5,
+    "date": "2018/12/16",
+    "title": "Deploy angular 7 app into appEngine",
+    "itemList": [
+      {
+        "text": "<b>Prerequisites: </b><ul><li>You have already had a working Angular 7 application named MyApp in myFolder</li><li>You have setup a project in the <abbr title='Google Cloud Platform'>GCP</abbr></li><li>You have Google Cloud SDK Shell installed in your system</li></ul>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Go to root folder of the project, e.g. myFolder/MyApp</li><li>ng build --prod --aot</li><li>Create an app.yaml in the root folder of the project:<br/><div class='jumbotron'># [START runtime]<br/>runtime: nodejs10<br/>handlers:<br/>- url: /<br/>static_files: dist/myApp/index.html<br/>upload: dist/myApp/index.html<br/>- url: /<br/>static_dir: dist/myApp<br/># [END runtime]</div></li><li>Start Google Cloud SDK Shell</li><li>Go to root folder of the project: myApp</li><li>gcloud init</li><li>gcloud app deploy</li><li>gcloud app browse</li></ol>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>For the pre-instalation requirements, please visit the following site:</b><ul><li><a href='https://angular.io/guide/quickstart' target='_blank'>Install Angular 7</a></li><li><a href='https://cloud.google.com/appengine/' target='_blank'>Creat App Engine project</a></li><li><a href='https://cloud.google.com/sdk/install' target='_blank'>Install Google Cloud SDK</a></li></ul>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2018/12/17",
+    "title": "Install Docker in Ubuntu",
+    "itemList": [
+      {
+        "text": "<p>The following instructions are based on experience of installing Docker 18.06.1-ce on Ubuntu 14.04.05 LTS</p>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Start a terminal</li><li>Update the apt index by issuring: <mark>sudo apt-get update</mark></li><li>Install packages to allow apt to use a repostory over https by issuring: <mark>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</mark></li><li>Add Docker's official GPG key by issuring: <mark>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</mark></li><li>Verify that you have the key with the fingerprint: 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88, by issuring: <mark>sudo apt-key fingerprint 0EBFCD88</mark></li><li>Set up the stable repostory by issuring: <mark>sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable'</mark></li><li>Update the apt index again by issuring: <mark>sudo apt-get update</mark></li><li>Install the latest version of Docker CE by issuring: <mark>sudo apt-get install docker-ce</mark></li><li>Verify that Docker CE is installed correctly by running the hello-world image: <mark>sudo docker run hello-world</mark></li><li>You can always check if the Docker is running by issuring: <mark>sudo systemctl status docker</mark></li></ol>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "date": "2018/12/19",
+    "title": "Use Angular Universal for SEO in Angular 7",
+    "itemList": [
+      {
+        "text": "<b>Steps</b><ol><li>Start a terminal, and go to your project root folder</li><li>Add Universal package by issuring: <mark>ng add @ng-toolkit/universal</mark></li><li>Build a angular server version by issuring: <mark>npm run build:prod</mark></li><li>Start the server by issuring: <mark>npm run server</mark></li><li>Verify the server-side rendering by going to: <mark>http://localhost:8080/</mark>, and view the page source</li></ol><p>Note: After these steps, there are two additional ngModules created: app.server.module.ts and app.browser.module.ts. When creating new components, the command should include a <mark>--module</mark> options, e.g. <mark>ng g c newComponent -- module=app.module</mark></p>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2018/12/23",
+    "title": "Install nodejs and npm from PPA for Ubuntu 18.10",
+    "itemList": [
+      {
+        "text": "<mark>cd ~</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "<mark>sudo apt install curl</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "<mark>curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "<mark>sudo apt-get install -y nodejs</mark>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "date": "2018/12/23",
+    "title": "Install Google Cloud SDK for Ubuntu 18.10",
+    "itemList": [
+      {
+        "text": "Create an environment variable for the correct OS: <mark>export CLOUD_SDK_REPO='cloud-sdk-$(lsb_release -c -s)'</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "Add the Cloud SDK distribution URI as a package source: <mark>echo 'deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main' | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "Import the Google Cloud public key: <mark>curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "Update and install the Cloud SDK: <mark>sudo apt-get update && sudo apt-get install google-cloud-sdk</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "Change directory to the root of your project in terminal: <mark>cd 'your project root'</mark>",
+        "iamge": ""
+      },
+      {
+        "text": "Run gcloud init to get started: <mark>gcloud init</mark>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "date": "2018/12/24",
+    "title": "Deploy Angular 7 App to a Local Docker",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have a working angular 7 application, e.g, angular7-application</li><li>You have a docker (client and server) installed at your local</li><li>Your root application folder is 'home/workspace/angular7-application'</li><li>The application would be deployed in the docker running nginx web server in Alpine</li></ul></p>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Start a terminal, and go to your project root folder by issuring: <mark>cd ~/workspace/angular7-application</mark></li><li>Create a Dockerfile in the root folder of the project:<br/><div class='jumbotron'>FROM nginx:alpine<br/>COPY nginx.conf /etc/nginx/nginx.conf<br/>WORKDIR /usr/share/nginx/html<br/>COPY dist/angular7-application/ .</div></li><li>Create a nginx.conf in the root folder of the project:<br/><div class='jumbotron'>worker_processes  1;<br/>events {<br/>&nbsp;&nbsp;&nbsp;&nbsp;worker_connections  1024;<br/>}<br/>http {<br/>&nbsp;&nbsp;&nbsp;&nbsp;server {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listen 80;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server_name localhost;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;root /usr/share/nginx/html;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index  index.html index.htm;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include /etc/nginx/mime.types;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip on;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip_min_length 1000;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip_proxied expired no-cache no-store private auth;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location / {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try_files $uri $uri/ /index.html;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}<br/></div></li><li>Build the application by issuring: <mark>ng build --prod --aot</mark></li><li>Build the image by issuring: <mark>docker build -t angular7-application .</mark></li><li>Verify the image by issuring: <mark>docker image ls</mark></li><li>Run the command below to create a container and map it to the port 2000: <mark>docker run -p 2000:80 --rm angular7-application</mark></li><li>Verify the application by going to: <mark>http://localhost:2000/</mark></li></ol>",
+        "iamge": ""
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "date": "2018/12/24",
+    "title": "Git And Github in Ubuntu",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have installed git in your local. To verify if you have git, go to a terminal, and type <mark>git --version</mark></li><li>You have had a Github account setup.</li><li>You have created a github repostory, e.g. myRepostory, in Github</li></p>",
+        "iamge": ""
+      },
+      {
+        "text": "<b>Steps for New Folder</b><ol><li>Start a terminal, and create a folder for your project to be added to the repostory by issuring: <br/><mark>cd ~/workspace</mark><br/><mark>mkdir myGitFolder</mark><br/><mark>cd myGitFolder</mark></li><li>Create a README.md in the folder by: <mark>echo '# myRepostory' >> README.md</mark></li><li>Initiate git at local by <mark>git ini</mark></li><li>Add README.md the local git: <mark>git add README.md</mark></li><li>Commit the change with come coments: <mark>git commit -m 'initial commit'</mark></li><li>Link the local repostory to Github: <mark>git remote add origin <i>yourGithubURL</i>. e.g. https://github.com/Myusername/myRepostory.git</mark></li><li>Push the local repostory to Github: <mark>git push ~u origin master</mark>. When prompted, enter the user name and password.</li></ol>",
+        "iamge": ""
+      }
+      ,
+      {
+        "text": "<b>Steps for existing folders</b>: Please note that it is recommended that every repository has a README, LICENCE, and .gitignore file<ol><li>Start a terminal, and go to the folder for your project to be added to the repostory by issuring: <br/><mark>cd <i>myFolderName</i></mark></li><li>Initiate git at local by <mark>git ini</mark></li><li>Add all files in the current folder and sub-folders to the local git: <mark>git add .</mark></li><li>Commit the change with come coments: <mark>git commit -m 'initial commit'</mark></li><li>Link the local repostory to Github: <mark>git remote add origin <i>yourGithubURL</i>. e.g. https://github.com/Myusername/myRepostory.git</mark></li><li>Push the local repostory to Github: <mark>git push ~u origin master</mark>. When prompted, enter the user name and password.</li></ol>",
+        "iamge": ""
+      }
+    ]
+  }
+]

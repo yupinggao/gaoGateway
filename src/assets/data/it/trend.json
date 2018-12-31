@@ -1,0 +1,36 @@
+[
+  {
+    "id": 5,
+    "date": "2018/12/20",
+    "title": "DevOps",
+    "itemList": [
+      {
+        "text": "<p>DevOps is a software development methodology that combines software development (Dev) with information technology operations (Ops). The goal of DevOps is to shorten the systems development life cycle.</p><p>The concept of DevOps is founded on building a culture of collaboration between teams that historically functioned in relatively isolated silos. The promised benefits include increased trust, faster software releases, and ability to solve critical issues quickly, and better manage unplanned work.</p><p>The goal of DevOps is to shorten the systems development life cycle. It unites agile, continuous delivery, automation, and much more, to help development and operations teams be more efficient, innovate faster, and deliver higher value to businesses and customers.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>DevOps Tools</b><p><ul><li><b>Jenkins: </b></li><li><b>Docker: </b></li><li><b>Git (GitHub): </b></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2018/12/20",
+    "title": "Microservices",
+    "itemList": [
+      {
+        "text": "<p>Microservices are a software development technique—a variant of the service-oriented architecture (SOA) architectural style that structures an application as a collection of loosely coupled services.</p><p>In a microservices architecture, services are: <ul><li>Fine-grained</li><li>lightweight</li><li>Highly maintainable</li><li>Highly testable</li><li>Loosely coupled</li><li>Independently deployable</li><li>Organized around business capabilities</li></ul><p>      ",
+        "image": ""
+      },
+      {
+        "text": "<b>Differences between Microservices and SOA</b><br/><br/><div class='container'><table class='table-bordered'><thead><tr><th>Microservices</th><th>SOA</th></tr></thead><tbody><tr><td>Built on the idea of “share-as-little-as-possible” architecture approach</td><td>Built on the idea of “share-as-much-as-possible” architecture approach</td></tr><tr><td>Relaxed governance, with more focus on people collaboration and freedom of choice</td><td>Common governance and standards</td></tr><tr><td>Uses less elaborate and simple messaging system</td><td>Uses enterprise service bus (ESB) for communication</td></tr><tr><td>Uses lightweight protocols such as HTTP/REST & AMQP</td><td>Supports multiple message protocols</td></tr><tr><td>Application Servers not really used. Platforms such as Node.JS could be used</td><td>Common platform for all services deployed to application servers</td></tr><tr><td>Single-threaded usually with use of Event Loop features for non-locking I/O handling</td><td>Multi-threaded with more overheads to handle I/O</td></tr><tr><td>Uses modern, non-relational databases</td><td>Uses traditional relational databases more often</td></tr><tr><td>A systematic change is to create a new service</td><td>A systematic change requires modifying the monolith</td></tr><tr><td>Strong focus on DevOps / Continuous Delivery</td><td>DevOps / Continuous Delivery is becoming popular, but not yet mainstream</td></tr></tbody></table></div>",
+        "image": ""
+      },
+      {
+        "text": "<b>Disadvantages of Microservices</b><p><ul><li>Developing distributed systems can be complex.<li>Multiple databases and transaction management can be painful.</li></ul><p>",
+        "image": ""
+      }
+    ]
+  }
+]

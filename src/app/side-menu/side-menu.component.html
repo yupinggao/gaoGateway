@@ -1,0 +1,10 @@
+
+  <nav class="navbar bg-light navbar-light justify-content-left">
+    <ul class="navbar-nav">
+      <div *ngFor="let content of contentList">
+        <li>
+          <a routerLink="{{routerName}}/{{content.id}}" routerLinkActive="active" class="nav-link py-0" (click)="showContent([content.id])">{{content.title}}</a>
+        </li>
+      </div>
+    </ul>
+  </nav>

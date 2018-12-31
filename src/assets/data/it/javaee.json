@@ -1,0 +1,93 @@
+[
+  {
+    "id": 5,
+    "date": "2015/10/31",
+    "title": "JSF Lifecycle",
+    "itemList": [
+      {
+        "text": "<p>The lifecycle can be divided into two main phases, execute and render. The execute phase is further divided into sub-phases to support the sophisticated component tree. This structure requires that component data be converted and validated, component events be handled, and component data be propagated to beans in an orderly fashion.</p><p>A JavaServer Faces page is represented by a tree of components, called a view. During the lifecycle, the JavaServer Faces implementation must build the view while considering the state saved from a previous submission of the page. When the client requests a page, the JavaServer Faces implementation performs several tasks, such as validating the data input of components in the view and converting input data to types specified on the server side.</p><p>The JavaServer Faces implementation performs all these tasks as a series of steps in the JavaServer Faces request-response lifecycle.",
+        "image": ""
+      },
+      {
+        "text": "The following diagram shows the lifecycle of JSFs (Diagram Source: The Java EE Tutorial):",
+        "image": "../assets/image/it/javaee/jsflifecycle.gif",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2015/10/31",
+    "title": "JPA Lifecycle",
+    "itemList": [
+      {
+        "text": "JPA Entity instances are in one of four states: new, managed, detached, or removed.",
+        "image": ""
+      },
+      {
+        "text": "<ul><li><b>New:</b> New entity instances have no persistent identity and are not yet associated with a persistence context.</li><li><b>Managed:</b> Managed entity instances have a persistent identity and are associated with a persistence context.</li><li><b>Detached:</b> Detached entity instances have a persistent identity and are not currently associated with a persistence context.</li><li><b>Removed:</b> Removed entity instances have a persistent identity, are associated with a persistent context, and are scheduled for removal from the data store.</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "date": "2015/11/2",
+    "title": "JMS performan",
+    "itemList": [
+      {
+        "text": "<b>Measures to improve JMS performance:</b><br/><ul><li><b>Choose proper acknowledgement mode:</b>AUTO_ACKNOWLEDGE or DUPS_OK_ACKNOWLEDGE give better performance than CLIENT_ACKNOWLEDGE.</li><li><b>Choose non-durable where appropriate:</b> Non-durable or Non-persistent messages are fast.</li><li><b>Use session pool to process messages concurrently:</b> Each session in the pool can execute separate messages concurrently. So increasing the number of sessions can increase the output of the system.</li><li><b>Close connections after use:</b> Open a connection only when required and close it immediately after finishing using it.</li><li><b>Use different queues for transactional messages and non-transactional messages:</b> Transactional messages are accumulated at MOM server until the transaction is committed or rolled back. This impose significant overhead on JMS server.</li><li><b>Set configuration parameters appropriately:</b> These parameter are: 'Redelivery Delay', 'Destination Size', 'Maximum number of messages', 'TimeToLive' and 'DeliveryMode'. Also choose the right receive mode in the code.<ul><li>receive(); // blocks the call until it receives the next message</li><li>receive(long timeout); // blocks the call until a timeout accurs</li><li>receiveNoWait(); // never blocks</li></ul></li><li><b>Choose right message type:</b> Less size gives a better performance. A ByteMessage takes less memory than a TextMessage. Compress messages if appropriate.</li><li><b>Avoid storing large amount of data in user-defined properties or JMS headers:</b> User-defined properties or JMS headers cannot be compressed.</li><li><b>Favor using JMS message header fields as opposed using user-defined message properties:</b> Use-defined messages properties incur an extra cost in serialization.</li><li><b>Use message selectors appropriately:</b> By default, a message consumer will process every message that is sent to its destination. You can modify this behavior to allow message consumers to process only the messages they are interested in using message selection and filtering.</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "date": "2015/11/2",
+    "title": "WAS Topology",
+    "itemList": [
+      {
+        "text": "The following is a typical WebSphere Application Server Topology:",
+        "image": "../assets/image/it/javaee/websphereTopology.jpg"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "date": "2015/11/2",
+    "title": "Weblogic Topology",
+    "itemList": [
+      {
+        "text": "The following is a typical Weblogic Topology:",
+        "image": "../assets/image/it/javaee/wls_topology.png"
+      },
+      {
+        "text": "<br/><table class='content-table'><tr><th>Element</th><th>Description</th></tr><tr><td>APPHOST</td><td>Standard term used in Oracle documentation referring to the machine that is hosting the application tier.</td></tr><tr><td>WebLogic Domain</td><td>A logically related group of Java components (in this case, the Administration Server, Managed Servers, and other related software components).</td></tr><tr><td>Administration Server</td><td>The central control entity of a domain which maintains the domain's configuration objects and distributes configuration changes to Managed Servers.</td></tr><tr><td>Cluster</td><td>A collection of multiple WebLogic Server instances running simultaneously and working together.</td></tr><tr><td>Machine</td><td>Logical representation of the computer that hosts one or more WebLogic Server instances (servers). Machines are also the logical glue between WebLogic Managed Servers and the Node Manager; in order to start or stop a Managed Server with Node Manager, the Managed Server must be associated with a machine.</td></tr><tr><td>Managed Server</td><td>Host for your applications, application components, Web services, and their associated resources.</td></tr><tr><td>Node Manager</td><td>Java utility that runs as a separate process from Oracle WebLogic Server and enables you to perform common operations for a Managed Server, regardless of its location with respect to its Administration Server. While use of Node Manager is optional, it provides valuable benefits if your Oracle WebLogic Server environment hosts applications with high-availability requirements. </td></tr></table>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "date": "2015/11/3",
+    "title": "New in JavaEE 7",
+    "itemList": [
+      {
+        "text": "There are many new features in JavaEE 7. Some of them are listed below:",
+        "image": ""
+      },
+      {
+        "text": "<p><b>WebSocket:</b><br/>In the traditional request-response model used in HTTP, the client requests resources, and the server provides responses. The exchange is always initiated by the client; the server cannot send any data without the client requesting it first. This model worked well for the World Wide Web when clients made occasional requests for documents that changed infrequently, but the limitations of this approach are increasingly relevant as content changes quickly and users expect a more interactive experience on the Web. The WebSocket protocol addresses these limitations by providing a full-duplex communication channel between the client and the server. Combined with other client technologies, such as JavaScript and HTML5, WebSocket enables web applications to deliver a richer user experience.</p><p>In a WebSocket application, the server publishes a WebSocket endpoint, and the client uses the endpoint's URI to connect to the server. The WebSocket protocol is symmetrical after the connection has been established; the client and the server can send messages to each other at any time while the connection is open, and they can close the connection at any time. Clients usually connect only to one server, and servers accept connections from multiple clients.</p><p>The WebSocket protocol has two parts: handshake and data transfer. The client initiates the handshake by sending a request to a WebSocket endpoint using its URI. The handshake is compatible with existing HTTP-based infrastructure: web servers interpret it as an HTTP connection upgrade request.",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Concurrency Utilities for Java EE:</b><br/>The Java Platform has always offered support for concurrent programming, which was the basis for implementing many of the services offered by Java EE containers. At Java SE 5, additional high-level API support for concurrency was provided by the java.util.concurrent package.</p><p>However, prior to Java EE 7, there were no specific APIs that allowed enterprise developers to use concurrency utilities in a safely standard manner. The Java EE web and EJB containers instantiate objects using container-managed thread pools. Therefore, using Java SE concurrent APIs to instantiate Thread objects was strongly discouraged. If a developer creates a new (non-managed) Thread object, the container could not guarantee that other Java EE platform services (for example, transactions and security) would be part of this Thread.</p><p>Concurrent resources are managed objects that provide concurrency capabilities to Java EE applications.</p><p>The primary components of the concurrency utilities are as follows:</p><p><ul><li><b>ManagedExecutorService:</b> A managed executor service is used by applications to execute submitted tasks asynchronously. Tasks are executed on threads that are started and managed by the container. The context of the container is propagated to the thread executing the task.</p><p>For example, by using an ManagedExecutorService.submit() call, a task, such as the GenerateReportTask, could be submitted to execute at a later time and then, by using the Future object callback, retrieve the result when it becomes available.</li><li><b>ManagedScheduledExecutorService:</b> A managed scheduled executor service is used by applications to execute submitted tasks asynchronously at specific times. Tasks are executed on threads that are started and managed by the container. The context of the container is propagated to the thread executing the task. The API provides the scheduling functionality that allows users to set a specific date/time for the Task execution programmatically in the application.</li><li><b>ContextService:</b> A context service is used to create dynamic proxy objects that capture the context of a container and enable applications to run within that context at a later time or be submitted to a Managed Executor Service. The context of the container is propagated to the thread executing the task.</li><li><b>ManagedThreadFactory:</b> A managed thread factory is used by applications to create managed threads. The threads are started and managed by the container. The context of the container is propagated to the thread executing the task. This object can also be used to provide custom factories for specific use cases (with custom Threads) and, for example, set specific/proprietary properties to these objects.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "",
+        "image": ""
+      }
+    ]
+  }
+]

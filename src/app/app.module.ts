@@ -1,0 +1,80 @@
+import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; 
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { ItComponent } from './component/it/it.component';
+import { InterviewComponent } from './component/it/interview/interview.component';
+import { SideMenuComponent } from './side-menu/side-menu.component';
+import { JavacoreComponent } from './component/it/javacore/javacore.component';
+import { FooterComponent } from './footer/footer.component';
+import { AdsComponent } from './ads/ads.component';
+import { ContentComponent } from './content/content.component';
+import { PhotoComponent } from './component/photo/photo.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CloudComponent } from './component/it/cloud/cloud.component';
+import { TutorialComponent } from './component/it/tutorial/tutorial.component';
+import { SecurityComponent } from './component/it/security/security.component';
+import { FamilyComponent } from './component/photo/family/family.component';
+import { NatureComponent } from './component/photo/nature/nature.component';
+import { PhotoContentComponent } from './component/photo/photo-content/photo-content.component';
+import { TrendComponent } from './component/it/trend/trend.component';
+import { ChineseComponent } from './component/chinese/chinese.component';
+import { JokeComponent } from './component/chinese/joke/joke.component';
+import { PieceComponent } from './component/chinese/piece/piece.component';
+import { FrameworkComponent } from './component/it/framework/framework.component';
+import { DatabaseComponent } from './component/it/database/database.component';
+import { ArchitectureComponent } from './component/it/architecture/architecture.component';
+import { JavaeeComponent } from './component/it/javaee/javaee.component';
+import { TravelComponent } from './component/chinese/travel/travel.component';
+import { StoryComponent } from './component/story/story.component';
+import { EnglishComponent } from './component/story/english/english.component';
+import { LinkComponent } from './component/link/link.component';
+import { ToolComponent } from './component/it/tool/tool.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ItComponent,
+    InterviewComponent,
+    SideMenuComponent,
+    JavacoreComponent,
+    FooterComponent,
+    AdsComponent,
+    ContentComponent,
+    PhotoComponent,
+    WelcomeComponent,
+    CloudComponent,
+    TutorialComponent,
+    SecurityComponent,
+    FamilyComponent,
+    NatureComponent,
+    PhotoContentComponent,
+    TrendComponent,
+    ChineseComponent,
+    JokeComponent,
+    PieceComponent,
+    FrameworkComponent,
+    DatabaseComponent,
+    ArchitectureComponent,
+    JavaeeComponent,
+    TravelComponent,
+    StoryComponent,
+    EnglishComponent,
+    LinkComponent,
+    ToolComponent
+  ],
+  imports:[
+ CommonModule,
+NgtUniversalModule,
+ 
+    
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+})
+export class AppModule { }

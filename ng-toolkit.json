@@ -1,0 +1,7 @@
+{
+  "universal": {
+    "project": "ng7Bootstrap",
+    "skipInstall": false,
+    "directory": "."
+  }
+}

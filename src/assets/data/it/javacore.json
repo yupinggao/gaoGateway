@@ -1,0 +1,177 @@
+[
+  {
+    "id": 5,
+    "date": "2015/10/31",
+    "title": "Create Thread",
+    "itemList": [
+      {
+        "text": "An application that creates an instance of Thread must provide the code that will run in that thread. There are three ways to do this:",
+        "image": ""
+      },
+      {
+        "text": "<ol><li><b>Provide a Runnable object:</b> The Runnable interface defines a single method, run, meant to contain the code executed in the thread. The Runnable object is passed to the Thread constructor.</li><li><b>Subclass Thread:</b> The Thread class itself implements Runnable, though its run method does nothing. An application can subclass Thread, providing its own implementation of run.</li><li><b>Use Executors class:</b> In post Java 5 days, Java has introduced new classes. One of the concurrency classes added in Java 5 is the Executors class. This class provided a number of utility methods. One of the method is defaultThreadFactory which creates a ThreadFactory class instance which can be used spawn new threads, as shown below:</ol>",
+        "image": "../assets/image/it/javacore/1.png"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2015/10/31",
+    "title": "Thread States",
+    "itemList": [
+      {
+        "text": "The following state chart diagram depicts the thread states (diagram source: http://booxs.biz/EN/java/Threads%20in%20Java.html):",
+        "image": "../assets/image/it/javacore/2.png"
+      },
+      {
+        "text": "When a thread invokes yield(), it changes from running state to runnable state, while when a task invokes sleep(), it changes from running state to waiting/sleeping state.\n\nThe method wait(1000) in Thread class causes the current thread to sleep for up to one second. The thread could sleep less if it receives the notify() or notifyAll() call.\n\nThe method sleep(1000) causes the current thread to sleep for exactly 1 second.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "date": "2015/11/2",
+    "title": "Processes and Threads",
+    "itemList": [
+      {
+        "text": "The two main concurrency concepts are processes and threads.\n\nProcesses are primarily associated with applications running on the operating system (OS). A process has specific runtime resources to interact with the underlying OS and allocate other resources, such as its own memory, just as the JVM process does. A JVM is in fact a process.\n\nThe Java programming language and platform are primarily concerned with threads.\n\nThreads share some features with processes, since both consume resources from the OS or the execution environment. But threads are easier to create and consume many fewer resources than a process.\n\nBecause threads are so lightweight, any modern CPU that has a couple of cores and a few gigabytes of RAM can handle thousands of threads in a single JVM process. The precise number of threads will depend on the combined output of the CPU, OS, and RAM available, as well as on correct configuration (tuning) of the JVM.\n\nAlthough concurrent programming solves many problems and can improve performance for most applications, there are a number of situations where multiple execution lines (threads or processes) can cause major problems. These situations include the following:",
+        "image": ""
+      },
+      {
+        "text": "<ul><li>Deadlocks</li><li>Thread starvation</li>  <li>Concurrent accessing of shared resources</li><li>Situations when the program generates incorrect data</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2015/10/31",
+    "title": "Prevent Memory Leak",
+    "itemList": [
+      {
+        "text": "<b>Measures to prevent Memory Leak:</b>\n\n<ul><li><b>Correctly use Singleton Design Pattern for Caching:</b> Set the short lived object explicitly to null, especially entire collections if not referenced any more.</li><li><b>Use weak references:</b> For instance, use WeakHashMap if you know that you are the only one to reference it.</li><li><b>Free native resources:</b> Free AWT frame, files, JNI etc when finished with them.</li><li><b>Close Database connections:</b> Close connections, Statements, result sets in finally block.</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "date": "2015/11/2",
+    "title": "Performance",
+    "itemList": [
+      {
+        "text": "<b>Measures to improve performance:</b>",
+        "image": ""
+      },
+      {
+        "text": "<ul><li><b>Pool valuable system resources:</b> This applies to thread, database connections, socket connections.</li><li><b>Minimize network overheads:</b> This applies to using Value Object to retrieve info from the remote resources; using Facade Design pattern; using lazy loading.</li><li><b>Minimize serialization cost:</b> .</li><li><b>Use Multi-threading:</b> .</li><li><b>Use cache:</b> Cache values not changed often.</li><li><b>Optimize I/O operations:</b> Use Buffering; use new I/O; use logging framework like Log4J</li><li><b>Manage objects efficiently:</b> For complex objects that are used frequently, create a pool of recyclable rather than always creating new ones; use flyweight design pattern; avoid to create new objects inside for loop;</li><li><b>Use ArrayList, HashMap as opposed to Vector, Hashtable.</b></li><li><b>Set the initial capacity of a collection.</b></li><li><b>Try to avoid nested loops if possible.</b></li><li><b>Do not compute constants inside a large loop.</b></li><li><b>Minimize the use of casting or instanceof in frequently executed methods or in loops; instead using Visitor pattern.</b></li><li><b>Minimize JNI calls.</b></li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "date": "2015/11/2",
+    "title": "What to Avoid",
+    "itemList": [
+      {
+        "text": "<b>For Web Tier:</b>\n<ul><li><b>Avoid storing values in a ServletContext.</b> A Servlet is not serializable and also the different instances may exist in different JVMs.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>For Middle Tier:</b>\n<ul><li><b>Avoid starting a new thread or using thread synchronization.</b></li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "date": "2018/12/21",
+    "title": "Collection",
+    "itemList": [
+      {
+        "text": "<p>The following is a high level class diagram for Java collections (diagram source: http://wiki3.cosc.canterbury.ac.nz/index.php/File:JavaCollections.png):</p><br/>",
+        "image": "../assets/image/it/javacore/3.png"
+      },
+      {
+        "text": "<br/><p>The following table lists some characteristics of the Collection classes: </p>  <table class='table table-bordered'> <thead> <tr> <th>Interface</th> <th>Feature</th> <th>Classes</th> <th>Thread Safe?</th> </tr> </thead> <tbody> <tr> <td>List</td> <td>Ordered</td> <td><table class='table table-borderless'><tr><td>ArrayList</td></tr><tr><td>LinkedList</td></tr><tr><td>Vector</td></tr><tr><td>Arrays</td></tr><tr><td>Stack</td></tr></table></td> <td><table class='table table-borderless'><tr><td>No</td></tr><tr><td>&nbsp;</td></tr><tr><td>Yes</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr></table></td> </tr> <tr> <td>Set</td> <td>Unique</td> <td><table class='table table-borderless'><tr><td>HashSet</td></tr><tr><td>TreeSet</td></tr><tr><td>LinkedHashSet</td></tr></table></td> <td><table class='table table-borderless'><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr></table></td> </tr> <tr> <td>Map</td> <td>Key-Value</td> <td><table class='table table-borderless'><tr><td>HashMap</td></tr><tr><td>HashTable</td></tr><tr><td>TreeMap</td></tr><tr><td>LinkedHashMap</td></tr></table></td> <td><table class='table table-borderless'><tr><td>No</td></tr><tr><td>Yes</td></tr><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr></table></td> </tr> </tbody> </table>    ",
+        "image": ""
+      },
+      {
+        "text": "<b>Best practices relating to Java collection:</b><p><ul><li><b>Use Non-synchronized classes where appropriate: </b>This is to avoid synchronization overhead. Use just Arrays where possible.</li><li><b>Set the initial capacity of a collection appropriately: </b>ArrayList, HashMap etc can grow periodically to accommodate new elements. If you have a very large array, and you know the size in advance then you can speed things up by setting the initial zise appropriately.</li><li><b>Program in terms of interface not implementation: </b>List theList = new ArrayList(50); not ArrayList theList = new ArrayList(50).</li><li><b>Return zero length collection as opposed to returning null: </b>Returning null is error prone since the callar might not prepared to handle null.</li><li><b>Use Immutable objects as keys for the Maps: </b>Keys should not be changed in the middle of a program processing since the result is not predictable. So do not create a set method for a key.</li><li><b>Encapsulate collections: </b>Do not expose the collection fields to the caller unintentionally.</li><li><b>Use java.util.concurrent package: </b>This package collections, such as ConcurrentHashMap, is threadsafe and at the same time safely permits any number of concurrent reads as well as tunable number of concurrent writes.</li><li><b>Avoid storing unrelated or different types of objects into same collection.</b></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "date": "2018/12/19",
+    "title": "What's new in Java 7",
+    "itemList": [
+      {
+        "text": "<p>Java 7 includes the following main new features:</p><ul><li>Use of Strings in Switch Statement</li><li>Catch Multi Similar Exceptions by One Catch</li><li>Automatic resource management</li><li>New file system API (NIO 2.0)</li><li>Numeric literals with underscores</li><li>Diamond Operator</li><li>Supporting Dynamism</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Use of Strings in Switch Statement</b><p>In pre version-7 of java, switch statements work either with primitive types or enumerated types. Java 7 introduced another type that we can use in Switch statements: the String type.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Improved Exceptions Handling</b><p>There are a couple of improvements in the exception handling area. Java 7 introduced multi-catch functionality to catch multiple exception types using a single catch block.<p>The multiple exceptions are caught in one catch block by using a ‘|’ operator. This way, you do not have to write dozens of exception catches. However, if you have bunch of exceptions that belong to different types, then you could still use multi catch-blocks.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Automatic resource management</b><p>Resources such as Connections, Files, Input/OutStreams, etc. can be managed automatically. All we have to do is to declare the resources in a try block (without finally block), and the resources that should be auto closed must implement java.lang.AutoCloseable interface.</p><p>Any resource that implements AutoCloseble interface can be a candidate for automatic resource management. The AutoCloseable is the parent of java.io.Closeable interface and has just one method close() that would be called by the JVM when the control comes out of the try block.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>New file system API (NIO 2.0)</b><p>Java SE 7 introduced java.nio.file package and its related package, java.nio.file.attribute, provide comprehensive support for file I/O and for accessing the default file system. It also introduced the Path class which allow you to represent any path in operating system. New File system API complements older one and provides several useful method checking, deleting, copying, and moving files. for example, now you can check if a file is hidden in Java. You can also create symbolic and hard links from Java code.  JDK 7 new file API is also capable of searching for files using wild cards. You also get support to watch a directory for changes. I would recommend to check Java doc of new file package to learn more about this interesting useful feature.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Underscore in Numeric literals</b><p>In JDK 7, you could insert underscore(s) '_' in between the digits in an numeric literals (integral and floating-point literals) to improve readability. This is especially valuable for people who uses large numbers in source files, may be useful in finance and computing domains. For example, <br/><mark>long creditCardNumber =  1234_4567_8901_2345L;</mark></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Diamond operator <> for type inference</b><p>Every since Java 5 introduced Generics in Java, programmers are complaining that its very verbose and generate duplicate code, which is true because while creating object of parameterized class in java you need to provide type parameters in both left and right hand side. Diamond operator <> is a new Java 7 feature which provides type inference while creating object of Generic classes. Though you can achieve type inference without using Java 7 as well by creating Factory method in Java, Diamond operator is easy way to achieve type inference in Java 7.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "date": "2018/12/19",
+    "title": "What's new in Java 8",
+    "itemList": [
+      {
+        "text": "<p>Java 8 includes the following main new featurs:</p><ul><li>Functional Interface</li><li>Lambda expressions</li><li>Method references</li><li>Default Methods (Defender methods)</li><li>A new Stream API.</li><li>Optional</li><li>A new Date/Time API.</li><li>Nashorn, the new JavaScript engine</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Functional Interface or SAM (Single Abstract Method)</b><p>A Functional Interface is an interface, which contains one and only one abstract method. Functional Interface is also know as SAM Interface because it contains only one abstract method.</p><p>it is possible to define our own Functional Interfaces. We use Java SE 8&#8217;s @FunctionalInterface annotation to mark an interface as Functional Interface.</p><p>We need to follow these rules to define a Functional Interface:</p><ul><li>Define an interface with one and only one abstract method.</li><li>We cannot define more than one abstract method.</li><li>Use @FunctionalInterface annotation in interface definition.</li><li>We can define any number of other methods like Default methods, Static methods.</li><li>If we override java.lang.Object class&#8217;s method as an abstract method, which does not count as an abstract method.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Lambda expressions</b><p>One new feature of Java 8 is language level support for <em>lambda expressions</em> (Project Lambda). A lambda expression is like syntactic sugar for an anonymous class with one method whose type is inferred. However, it will have enormous implications for simplifying development.</p> <p>The main syntax of a lambda expression is 'parameters -&gt; body'. The compiler can usually use the context of the lambda expression to determine the functional interface being used and the types of the parameters. There are four important rules to the syntax:</p><ul><li>Declaring the types of the parameters is optional.</li><li>Using parentheses around the parameter is optional if you have only one parameter. </li><li>Using curly braces is optional (unless you need multiple statements).</li><li>The “return” keyword is optional if you have a single expression that returns a value.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Method References</b><p>Method reference can be used as a shorter and more readable alternative for a lambda expression which only calls an existing method. There are four variants of method references.</p><ul><li><b>Reference to a Static Method</b><li><b>Reference to an Instance Method</b></li><li><b>Reference to an Instance Method of an Object of a Particular Type</b></li><li><b>Reference to a Constructor</b></li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Stream API</b><p>The Stream interface is located in the java.util.stream package. It represents a sequence of objects somewhat like the Iterator interface. However, unlike the Iterator, it supports parallel execution.</p><p>The Stream interface supports the map/filter/reduce pattern and executes lazily, forming the basis (along with lambdas) for functional-style programming in Java 8.</p><p>There are also corresponding primitive streams (IntStream, DoubleStream, and LongStream) for performance reasons.</p><p>Some important methods are listed below:<ul><li>list</li><li>forEach</li><li>map</li><li>reduce</li><li>filter</li><li>peek</li><li>limit</li><li>sort</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Optional<T></b><p>Before Java 8 developers had to carefully validate values they referred to, because of a possibility of throwing the NullPointerException (NPE). All these checks demanded a pretty annoying and error-prone boilerplate code.</p><p>Java 8 Optional<T> class can help to handle situations where there is a possibility of getting the NPE. It works as a container for the object of type T. It can return a value of this object if this value is not a null. When the value inside this container is null it allows doing some predefined actions instead of throwing NPE.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>New Date/Time API</b><p>Java 8 introduced new APIs for Date and Time to address the shortcomings of the older java.util.Date and java.util.Calendar.</p><b>New Features in Java 8</b><p><ul><li>LocalDate, LocalTime and LocalDateTime API</li><li>ZonedDateTime API</li><li>Period and Duration API</li></ul></p>",
+        "image": ""
+      }
+    ]
+  }
+]

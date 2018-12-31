@@ -1,0 +1,20 @@
+<div>
+    <br />
+    <div *ngIf="content">
+        <p innerHTML="{{content.title}}" style="text-align: center; font-weight: bold"></p>
+
+        <div *ngFor="let item of content.itemList">
+            <p innerHTML="{{item.text}}"></p>
+            <div class="images" *ngIf="item.image && item.image!==''">
+                <div *ngIf="item.imageHeight && item.imageHeight!==''">
+                    <img src={{item.image}} class="{{item.imageClass}}" height="{{item.imageHeight}}" width="{{item.imageWidth}}">
+                </div>
+                <div *ngIf="item.imageHeight == null || item.imageHeight==''">
+                    <img src={{item.image}} class="{{item.imageClass}}">
+                </div>
+                <br /><br />
+            </div>
+
+        </div>
+    </div>
+</div>

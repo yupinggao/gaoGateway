@@ -1,0 +1,86 @@
+[
+  {
+    "id": 5,
+    "date": "2015/10/31",
+    "title": "Hibernate",
+    "itemList": [
+      {
+        "text": "<b>Hibernate Advantages:</b><br/><ol><li>Hibernate is Database Independent so selected database can be used.</li><li>Easy installation.</li><li>Hibernate has got layered architecture.</li><li>Development with Hibernate is easier than JDBC.</li><li>Connection pool APIs(c3p0, dbcp) can be integrated with Hibernate easily.</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<b>Hibernate Disadvantages:</b><br/><ol><li>Hibernate is slower than the JDBC.</li><li>Writing SQL which contains multi-join is harder than JDBC.</li><li>Tracking the problem is sometimes harder than JDBC.</li><li>Batch processing performance is not better than JDBC.</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Configuration Object:</b><br/>Hibernate Configuration Object is created firstly when an application used Hibernate initializes. It contains configuration informations(database connection informations, connection pool informations, etc…). It provides two keys components:</p><p>1) Database Connection : This is handled via hibernate.properties or hibernate.cfg.xml.<br/>2) Class Mapping Setup : creates the connection between the Java classes and database tables.",
+        "image": ""
+      },
+      {
+        "text": "<b>SessionFactory Object</b><br/>SessionFactory object provides session objects which the application needs. It is thread safe object and used by all the threads of an application. A SessionFactory object points only one Database. If multiple DBs are used, multiple SessionFactory objects have to be created.",
+        "image": ""
+      },
+      {
+        "text": "<b>Session Object</b><br/>A Session is used to get a physical connection with a database. it usually equals one connection (Connection) with a database. It usualy is not thread safe so after the session is opened, it has to be closed.",
+        "image": ""
+      },
+      {
+        "text": "<b>Transaction Object</b><br/>It provides transaction functionality via Hibernate. Also, Transactions in Hibernate are handled by integrating JTA.",
+        "image": ""
+      },
+      {
+        "text": "<b>Query Object</b><br/>Query object used to retrieve (and recreate) persistent objects by using SQL or Hibernate Query Language (HQL) string.",
+        "image": ""
+      },
+      {
+        "text": "<b>Criteria Object</b><br/>Criteria object used to retrieve (and recreate) persistent objects by using object oriented criteria queries.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2017/10/10",
+    "title": "Spring",
+    "itemList": [
+      {
+        "text": "<p>The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make J2EE development easier to use and promotes good programming practices by enabling a POJO-based programming model.</p><p>The Spring Framework provides about 20 modules which can be used based on an application requirement.",
+        "image": "../assets/image/it/framework/1.png"
+      },
+      {
+        "text": "<p><b>Benefits of Using the Spring Framework:</b></p><p><ol><li>Spring enables developers to develop enterprise-class applications using POJOs. The benefit of using only POJOs is that you do not need an EJB container product such as an application server but you have the option of using only a robust servlet container such as Tomcat or some commercial product.</li><li>Spring is organized in a modular fashion. Even though the number of packages and classes are substantial, you have to worry only about the ones you need and ignore the rest.</li><li>Spring does not reinvent the wheel, instead it truly makes use of some of the existing technologies like several ORM frameworks, logging frameworks, JEE, Quartz and JDK timers, and other view technologies.</li><li>Testing an application written with Spring is simple because environment-dependent code is moved into this framework. Furthermore, by using JavaBeanstyle POJOs, it becomes easier to use dependency injection for injecting test data.</li><li>Spring's web framework is a well-designed web MVC framework, which provides a great alternative to web frameworks such as Struts or other over-engineered or less popular web frameworks.</li><li>Spring provides a convenient API to translate technology-specific exceptions (thrown by JDBC, Hibernate, or JDO, for example) into consistent, unchecked exceptions.</li><li>Lightweight IoC containers tend to be lightweight, especially when compared to EJB containers, for example. This is beneficial for developing and deploying applications on computers with limited memory and CPU resources.</li><li>Spring provides a consistent transaction management interface that can scale down to a local transaction (using a single database, for example) and scale up to global transactions (using JTA, for example).</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Spring Bean Scopes:</b></p><p><ol><li>Singleton(default*): Scopes a single bean definition to a single object instance per Spring IoC container.</li><li>Prototype: Scopes a single bean definition to any number of object instances.</li><li>Request: Scopes a single bean definition to the lifecycle of a single HTTP request; that is each and every HTTP request will have its own instance of a bean created off the back of a single bean definition. Only valid in the context of a web-aware Spring ApplicationContext.</li><li>Session: Scopes a single bean definition to the lifecycle of a HTTP Session. Only valid in the context of a web-aware Spring ApplicationContext.</li><li>Global session: Scopes a single bean definition to the lifecycle of a global HTTP Session. Typically only valid when used in a portlet context. Only valid in the context of a web-aware Spring ApplicationContext.</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2017/10/11",
+    "title": "Bootstrap",
+    "itemList": [
+      {
+        "text": "Bootstrap is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first web sites. <br><br>Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins. Bootstrap also gives you the ability to easily create responsive designs.<br><br>Bootstrap uses jQuery for JavaScript plugins (like modals, tooltips, etc). However, if you just use the CSS part of Bootstrap, you don't need jQuery.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "date": "2017/10/11",
+    "title": "AngularJS",
+    "itemList": [
+      {
+        "text": "AngularJS is a JavaScript framework. It can be added to an HTML page with a <script> tag. <br><br>AngularJS extends HTML attributes with  Directives, and binds data to HTML with Expressions.",
+        "image": ""
+      },
+      {
+        "text": "The ng-app directive defines an AngularJS application.<br><br>The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.<br><br>The ng-bind directive binds application data to the HTML view.",
+        "image": ""
+      }
+    ]
+  }
+]
