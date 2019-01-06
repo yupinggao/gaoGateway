@@ -9,8 +9,8 @@ import { ContentService } from '../../services/it/content.service';
   styleUrls: ['./it.component.scss']
 })
 export class ItComponent implements OnInit {
-  constructor(route: ActivatedRoute, private contentService: ContentService) { 
-    //route.params.subscribe(params = > console.log("id", params['id']));
+  constructor(router: ActivatedRoute, private contentService: ContentService) { 
+    //router.params.subscribe(params = > console.log("id", params['id']));
   }
 
   ngOnInit() {

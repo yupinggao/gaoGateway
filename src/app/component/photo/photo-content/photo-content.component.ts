@@ -21,7 +21,7 @@ export class PhotoContentComponent implements OnInit {
 
   sendData(data) {
     this.contentList = data;
-    console.log('contentList in photo-content.comp: ', this.contentList);
+    //console.log('contentList in photo-content.comp: ', this.contentList);
   }
 
 }

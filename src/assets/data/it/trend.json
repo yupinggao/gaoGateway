@@ -9,7 +9,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>DevOps Tools</b><p><ul><li><b>Jenkins: </b></li><li><b>Docker: </b></li><li><b>Git (GitHub): </b></li></ul></p>",
+        "text": "<p><b>DevOps Tools</b><p><ul><li><a href='it/tool/10'>Jenkins</a></li><li><a href='/it/cloud/10'>Docker</a></li><li><a href='it/tool/5'>Git (GitHub)</a></li></ul></p>",
         "image": ""
       }
     ]

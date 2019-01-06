@@ -204,7 +204,26 @@ const routes: Routes = [
     path: 'story', component: StoryComponent,
   },
   {
-    path: 'story/english', component: EnglishComponent
+    path: 'story/english', component: EnglishComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: EnglishComponent
+      }
+    ]
+  },
+  {
+    path: 'story/chinese', component: EnglishComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: EnglishComponent
+      }
+    ]    
   },
   {
     path: 'link', component: LinkComponent

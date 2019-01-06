@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../../../services/it/content.service';
+import { IContent } from '../../../model/content';
 
 @Component({
   selector: 'app-security',
@@ -8,7 +9,7 @@ import { ContentService } from '../../../services/it/content.service';
 })
 export class SecurityComponent implements OnInit {
   public routerName = "/it/security";
-  public contentList = [];
+  public contentList: IContent[];
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {

@@ -38,13 +38,13 @@
     "cors": "~2.8.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.0",
+    "@angular-devkit/build-angular": "^0.11.4",
     "@angular/cli": "~7.0.6",
     "@angular/compiler-cli": "~7.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/jasmine": "^2.8.14",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "^8.10.38",
+    "@types/node": "^8.10.39",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",

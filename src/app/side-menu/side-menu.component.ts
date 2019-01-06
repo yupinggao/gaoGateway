@@ -23,7 +23,9 @@ export class SideMenuComponent implements OnInit {
       return content.id == source;
     }))[0];
     this.contentService.setContent(this.content);
-    //console.log(this.content);
+    //this.contentService.setContentList(this.contentList);
+    //console.log("Side Menu contentList:" + this.contentList);
+    //console.log("Side Menu content" + this.content);
     //this.routerName = this.router.url;
     //console.log("router.url: " + this.router.url);
    

@@ -21,7 +21,7 @@ export class PhotoService {
   }
 
   getPhotoList(fileName: string) {
-    console.log(fileName);
+    //console.log(fileName);
     this.http.get<IPhoto []>(fileName).subscribe(data => this.photoList =data);
     this.listners.next(this.photoList);
   }
