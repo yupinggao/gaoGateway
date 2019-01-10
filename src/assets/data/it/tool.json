@@ -33,5 +33,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 15,
+    "date": "2019/01/06",
+    "title": "Gira",
+    "itemList": [
+      {
+        "text": "<p>Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>For remote procedure calls (RPC), Jira supports REST, SOAP, and XML-RPC. Jira integrates with source control programs such as Clearcase, Concurrent Versions System (CVS), Git, Mercurial, Perforce, Subversion, and Team Foundation Server.</p>",
+        "image": ""
+      }
+    ]
   }
 ]

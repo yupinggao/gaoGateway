@@ -25,13 +25,11 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log("router.url: " + this.router.url);
     var splittedURL = this.router.url.split("/");
     if (splittedURL.length === 4) {
-      console.log("router.url: " + this.router.url);
       var id = this.router.url.substring(this.router.url.lastIndexOf("/") + 1);
       var contentListJson = require('../../assets/data' + this.router.url.substring(0, this.router.url.lastIndexOf("/")) + '.json');
-
       this.contentListLocal = <any>contentListJson;
       this.content = (this.contentListLocal.filter(function (content) {
         return content.id == id;
