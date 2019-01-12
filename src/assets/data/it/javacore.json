@@ -134,7 +134,11 @@
         "image": ""
       },
       {
-        "text": "<b>Diamond operator <> for type inference</b><p>Every since Java 5 introduced Generics in Java, programmers are complaining that its very verbose and generate duplicate code, which is true because while creating object of parameterized class in java you need to provide type parameters in both left and right hand side. Diamond operator <> is a new Java 7 feature which provides type inference while creating object of Generic classes. Though you can achieve type inference without using Java 7 as well by creating Factory method in Java, Diamond operator is easy way to achieve type inference in Java 7.</p>",
+        "text": "<b>Diamond operator for type inference</b><p>Every since Java 5 introduced Generics in Java, programmers are complaining that its very verbose and generate duplicate code, which is true because while creating object of parameterized class in java you need to provide type parameters in both left and right hand side. Diamond operator <> is a new Java 7 feature which provides type inference while creating object of Generic classes. Though you can achieve type inference without using Java 7 as well by creating Factory method in Java, Diamond operator is easy way to achieve type inference in Java 7.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Supporting dynamism</b><p>In Java 7, a new feature called invokedynamic was introduced. This makes VM changes to incorporate non-Java language requirements. A new package, java.lang.invoke, consisting of classes such as MethodHandle, CallSite and others, has been created to extend the support of dynamic languages, such as Ruby, Python.</p>",
         "image": ""
       }
     ]

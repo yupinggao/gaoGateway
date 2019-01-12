@@ -79,10 +79,32 @@
   {
     "id": 40,
     "date": "2019/01/09",
-    "title": "Valid JSON Types",
+    "title": "JSON",
     "itemList": [
       {
-        "text": "<ol><li><b>string: </b></li><li><b>number: </b></li><li><b>enbedded JSON object: </b></li><li><b>array: </b></li><li><b>boolean: </b></li><li><b>null: </b></li</ol>",
+        "text": "<ol><li><b>What are Valid JSON Types? </b><ul><li>string</li></li><li>number</li><li>enbedded JSON object</li><li>array</li><li>boolean</li><li>null</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "date": "2019/01/10",
+    "title": "Hibernate",
+    "itemList": [
+      {
+        "text": "<ol><li><b>What is Join Fetch for: </b>A 'fetch' join allows associations or collections of values to be initialized along with their parent objects using a single select. This is particularly useful in the case of a collection. It effectively overrides the outer join and lazy declarations of the mapping file for associations and collections. this 'JOIN FETCH' will have it's effect if you have (fetch = FetchType.LAZY) property for a collection inside entity(example bellow).</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "date": "2019/01/11",
+    "title": "Typescript",
+    "itemList": [
+      {
+        "text": "<ol><li><b>What is Typescript?: </b>Typescript is a free and open-source programming language which is designed and developed by Microsoft. Typescript is a superset of JavaScript which primarily provides optional static typing, classes and interfaces. Typescript is compiled to provide clean and simple JavaScript code which runs on any browser. It allows JavaScript developers for using highly productive development tools and practices like static checking and code refactoring.</li><li><b>What are Differences between Typescript and JavaScript?: </b><ul><li>JavaScript don’t support Es6 while Typescript supports.</li><li>JavaScript build up reusable components by using functions and prototype-based inheritance while Typescript supports Classes that allow programmer to think in more object oriented way.</li><li>JavaScript don’t have any interfaces while Typescript has interfaces.</li><li>There is no static typing in JavaScript whereas there is static typing in Typescript.</li><li>JavaScript has no optional parameter  feature while Typescript has optional parameter feature.</li></ul><li><b>What are benefits of using Typescript?</b><ul><li>It provides the benefits of optional static typing. Here Typescript provides types that can be added to variables, functions, properties etc.</li><li>Typescript has the ability to compile down to a version of JavaScript that runs on all browsers.</li><li>Typescript is purely object oriented programming which means it is a programming paradigm based on the concepts of objects.</li><li>Most important advantage is it offers a “compiler” that can convert to JavaScript equivalent code. And it has a concept of namespace defined by a “module”.</li></ul></li><li><b>How Typescript classes are compiled to Javascript? </b>They are compiled into javascript functions and prototypes.</li><li><b>What are the built-in types in Typescript? </b><ul><li><b>Number type:</b> it is used to represent number type values and represents double precision floating point values.</li><li><b>String type:</b> it represents a sequence of characters stored as Unicode UTF-16 code. It is the same as JavaScript primitive type.</li><li><b>Boolean type:</b> in Typescript, it is used to represent a logical value. When we use the Boolean type, we get output only in true or false. It is also the same as JavaScript primitive type.</li><li><b>Null type:</b> it represents a null literal and it is not possible to directly reference the null type value itself.</li><li><b>Undefined type:</b> it is the type of undefined literal. This type of built-in type is the sub-type of all the types.</li></ul></li><li><b>Waht are some features of Typescript classes? </b>Typescript is a type of object-oriented JavaScript and supports object-oriented programming features like- classes, interfaces, etc. Here, a class in terms of object-oriented programming is a blueprint for creating objects. A class is used to encapsulate data for the object. A built-in support is provided by Typescript for this feature.<br/>Some features of a class are: <ul><li><b>Inheritance: </b>TypeScript supports the concept of Inheritance. Inheritance is the ability of a program to create new classes from an existing class. The class that is extended to create newer classes is called the parent class/super class. The newly created classes are called the child/sub classes. However, TypeScript doesn’t support multiple inheritance.</li><li><b>Encapsulation: </b>Creation of self-contained modules that bind processing functions to the data, takes place.</li><li><b>polymorphism: </b>TypeScript enables polymorphism via method overrides via the extend class or implemented interface.</li><li><b>Abstraction: </b>There is no formal mechanism for creating an abstract class in TypeScript, although a request to implement abstraction in TypeScript has been issued. For now we can use interfaces as a way to abstract class members.</li></ul></li></ol>",
         "image": ""
       }
     ]

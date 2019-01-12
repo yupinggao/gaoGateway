@@ -58,7 +58,37 @@
     ]
   },
   {
+    "id": 15,
+    "date": "2019/01/10",
+    "title": "Spring Jdbctemplate",
+    "itemList": [
+      {
+        "text": "<p>Spring JdbcTemplate is a powerful mechanism to connect to the database and execute SQL queries. It uses JDBC api internally at the abstraction layer, and therefore eliminates a lot of troubles for application code to call JDBC API directly, and repeat a lot of boilerplate code. The following tasks are complished by the framework:</p><ul><li>Coding before and after executing the query, such as creating connection, statement, closing resultset, connection etc.</li><li>Exception handling on the database logic.</li><li>Transaction handling.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Main components</b><p><ol><li><b>Configuration File: </b></li><li><b>JdbcTemplate class: </b></li><li><b>Entity classes: </b></li><li><b>DAO classes: </b></li><li><b>Entity classes: </b></li><li><b>RowMapper classes: </b></li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 20,
+    "date": "2019/01/10",
+    "title": "Spring Data",
+    "itemList": [
+      {
+        "text": "<p>Spring Data’s mission is to provide a familiar and consistent, Spring-based programming model for data access while still retaining the special traits of the underlying data store.</p><p>It makes it easy to use data access technologies, relational and non-relational databases, map-reduce frameworks, and cloud-based data services. This is an umbrella project which contains many subprojects that are specific to a given database. The projects are developed by working together with many of the companies and developers that are behind these exciting technologies.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Main modules</b><p><ol><li><b>Spring Data Commons: </b>Core Spring concepts underpinning every Spring Data module.</li><li><b>Spring Data JDBC: </b>Spring Data repository support for JDBC.</li><li><b>Spring Data JDBC Ext: </b>Support for database specific extensions to standard JDBC including support for Oracle RAC fast connection failover, AQ JMS support and support for using advanced data types.</li><li><b>Spring Data JPA: </b>Spring Data repository support for JPA.</li><li><b>Spring Data KeyValue: </b>Map based repositories and SPIs to easily build a Spring Data module for key-value stores.</li><li><b>Spring Data LDAP: </b>Spring Data repository support for Spring LDAP.</li><li><b>Spring Data MongoDB: </b>Spring based, object-document support and repositories for MongoDB.</li><li><b>Spring Data Redis: </b>Easy configuration and access to Redis from Spring applications.</li><li><b>Spring Data REST: </b>Exports Spring Data repositories as hypermedia-driven RESTful resources.</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 25,
     "date": "2017/10/11",
     "title": "Bootstrap",
     "itemList": [
