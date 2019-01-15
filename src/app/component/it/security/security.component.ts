@@ -8,7 +8,7 @@ import { IContent } from '../../../model/content';
   styleUrls: ['./security.component.scss']
 })
 export class SecurityComponent implements OnInit {
-  public routerName = "/it/security";
+    public routerName = "/it/security";
   public contentList: IContent[];
   constructor(private contentService: ContentService) { }
 

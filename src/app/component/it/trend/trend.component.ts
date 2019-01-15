@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./trend.component.scss']
 })
 export class TrendComponent implements OnInit {
-  public routerName = "/it/trend";
+    public routerName = "/it/trend";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

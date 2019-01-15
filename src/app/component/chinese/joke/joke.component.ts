@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./joke.component.scss']
 })
 export class JokeComponent implements OnInit {
-  public routerName = "/chinese/joke";
+    public routerName = "/chinese/joke";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

@@ -193,5 +193,31 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 60,
+    "date": "2019/01/13",
+    "title": "MongoDB Shell",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have installed MongoDB in your local. To verify the mongoDB version, go to the bin folder of your local installation folder, and type <mark>mongo --version</mark></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Useful Commands</b><br/><ol><li>Start a terminal, and go to the bin folder of the mongoDB installation</li><li><mark>mongo: </mark>to connect to the mongodb</li><li><mark>db: </mark>to display the currently connected database</li><li><mark>use <i>aDatabaseName</i>: </mark>to switch current db to <i>aDatabaseName</i></li><li><mark>db.stats(): </mark>to show the statistic of the database</li><li><mark>show dbs: </mark>show the databases</li><li><mark>show collections: </mark>to show the collections in the current db</li><li><mark>db.<i>documentName</i>.find(): </mark>show the document content</li><li><mark>exit: </mark>to exit the shell</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "date": "2019/01/13",
+    "title": "Install Jenkins",
+    "itemList": [
+      {
+        "text": "<ol><li><a href='http://mirrors.jenkins.io/war-stable/latest/jenkins.war'>Download Jenkins</a>.</li><li>copy the war file to a folder where you want to start Jenkins.</li><li>Open up a terminal in the download directory.</li><li>Run <code>java -jar jenkins.war --httpPort=8080</code>.<li>Browse to <code>http://localhost:8080</code>.<li>Follow the instructions to complete the installation.</li><li>If you want install Jenkins as a window's service, go to Manage Jenkins Menue, then Click 'Install as Windows Service'</li></ol>",
+        "image": ""
+      }
+    ]
   }
 ]

@@ -11,6 +11,7 @@ import { DatabaseComponent } from './component/it/database/database.component'
 import { SecurityComponent } from './component/it/security/security.component';
 import { InterviewComponent } from './component/it/interview/interview.component';
 import { TutorialComponent } from './component/it/tutorial/tutorial.component';
+import { DesignComponent } from './component/it/design/design.component'; 
 import { TrendComponent } from './component/it/trend/trend.component';
 import { ToolComponent } from './component/it/tool/tool.component';
 
@@ -130,6 +131,17 @@ const routes: Routes = [
       },
       {
         path: '', component: TutorialComponent
+      }
+    ]
+  },
+  {
+    path: 'it/design', component: DesignComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: DesignComponent
       }
     ]
   },

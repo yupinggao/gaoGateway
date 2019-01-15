@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./javacore.component.scss']
 })
 export class JavacoreComponent implements OnInit {
-  public routerName = "/it/javacore";  
+    public routerName = "/it/javacore";  
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

@@ -34,6 +34,7 @@ import { StoryComponent } from './component/story/story.component';
 import { EnglishComponent } from './component/story/english/english.component';
 import { LinkComponent } from './component/link/link.component';
 import { ToolComponent } from './component/it/tool/tool.component';
+import { DesignComponent } from './component/it/design/design.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ToolComponent } from './component/it/tool/tool.component';
     StoryComponent,
     EnglishComponent,
     LinkComponent,
-    ToolComponent
+    ToolComponent,
+    DesignComponent
   ],
   imports:[
  CommonModule,

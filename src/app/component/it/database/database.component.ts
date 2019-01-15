@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./database.component.scss']
 })
 export class DatabaseComponent implements OnInit {
-  public routerName = "/it/database";
+    public routerName = "/it/database";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

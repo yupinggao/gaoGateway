@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { IContent } from '../model/content';
 import { ContentService } from '../services/it/content.service';
 import { Router } from '@angular/router';
+import * as url from 'url';
 //import * as contentListJson from '../../assets/data/it/cloud.json';
 //import { Observable} from 'rxjs';
 //import { Subject } from 'rxjs';
@@ -26,6 +27,9 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     console.log("router.url: " + this.router.url);
+    console.log("window.location.href: " + window.location.href);
+    console.log("parsed url: " + url.parse(this.router.url));
+
     var splittedURL = this.router.url.split("/");
     if (splittedURL.length === 4) {
       var id = this.router.url.substring(this.router.url.lastIndexOf("/") + 1);

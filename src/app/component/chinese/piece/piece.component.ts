@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./piece.component.scss']
 })
 export class PieceComponent implements OnInit {
-  public routerName = "/chinese/piece";
+    public routerName = "/chinese/piece";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

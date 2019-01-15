@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./cloud.component.scss']
 })
 export class CloudComponent implements OnInit {
-  public routerName = "/it/cloud";
+    public routerName = "/it/cloud";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

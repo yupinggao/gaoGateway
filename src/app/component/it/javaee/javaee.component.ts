@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./javaee.component.scss']
 })
 export class JavaeeComponent implements OnInit {
-  public routerName = "/it/javaee";
+    public routerName = "/it/javaee";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 
