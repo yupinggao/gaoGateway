@@ -14,6 +14,7 @@ import { TutorialComponent } from './component/it/tutorial/tutorial.component';
 import { DesignComponent } from './component/it/design/design.component'; 
 import { TrendComponent } from './component/it/trend/trend.component';
 import { ToolComponent } from './component/it/tool/tool.component';
+import { OtherComponent } from './component/it/other/other.component';
 
 import { PhotoComponent } from './component/photo/photo.component';
 import { NatureComponent } from './component/photo/nature/nature.component';
@@ -164,6 +165,17 @@ const routes: Routes = [
       },
       {
         path: '', component: ToolComponent
+      }
+    ]
+  },
+  {
+    path: 'it/other', component: OtherComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: OtherComponent
       }
     ]
   },

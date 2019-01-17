@@ -2,22 +2,62 @@
   {
     "id": 5,
     "date": "2019/01/15",
-    "title": "Apply REST principles in Design Process",
+    "title": "Apply REST principles in Design",
     "itemList": [
       {
-        "text": "<b>Identify Object Model</b><br/>",
+        "text": "<b>Identify Object Model</b><br/><p>The very first step in designing a REST API based application is – identifying the objects which will be presented as resources.</p>",
         "image": ""
       },
       {
-        "text": "<b>Create Model URIs</b><br/>",
+        "text": "<p>Suppose we are going to build a registration based application, object models would consist of Customer, Contact, Address, etc. For simplicity sake, we will consider only two resources i.e.<ul><li>Customer</li><li>Contact</li></ul></p>",
         "image": ""
       },
       {
-        "text": "<b>Determine Representations</b><br/>",
+        "text": "<b>Create Model URIs</b><br/><p>Now when object model is ready, it’s time to decide the resource URIs. At this step, we need to focus on the relationship between resources and its sub-resources. These resource URIs are endpoints for RESTful services.</p><p>In our application, a customer is a top-level resource. And contact is sub-resource under customer. Let’s write down the URIs.</p>",
         "image": ""
       },
       {
-        "text": "<b>Assign HTTP Methods</b><br/>",
+        "text": "<p><mark>/customer<br/>/customer/{id}<br/>/contact<br/>/contact/{id}<br/>/customer/{id}/contact<br/>/customer/{id}/contact/{id}</mark></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Determine Representations</b><br/><p>Now when resource URIs have been decided, let’s work on their representations. Mostly representations are defined in either XML or JSON format.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Assign HTTP Methods</b><br/><p>Let’s decide the possible operations in application and map these operations on resource URIs. A user of Registration application can perform browse, create, update or delete operations. So let’s map them.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Browse all customers and contacts:</b><br/><mark>HTTP GET /customer<br/>HTTP GET /contact</mark>",
+        "image": ""
+      },
+      {
+        "text": "<b>Browse single customer and contact:</b><br/><mark>HTTP GET /customer{id}<br/>HTTP GET /contact{id}</mark>",
+        "image": ""
+      },
+      {
+        "text": "<b>Browse all contacts for a customer:</b><br/><mark>HTTP GET /customer/{id}/contact</mark>",
+        "image": ""
+      },
+      {
+        "text": "<b>Browse single contact for a customer:</b><br/><mark>HTTP GET /customer/{id}/contact/{id}</mark>",
+        "image": ""
+      },
+      {
+        "text": "<b>Create a single contact or a customer:</b><br/><mark>HTTP POST /customer<br/>HTTP POST /contact</mark>",
+        "image": ""
+      },
+      {
+        "text": "<b>Update a single contact or a customer (Update operation is an idempotent operation and HTTP PUT is also is idempotent method. So we can use PUT method for update operations):</b><br/><mark>HTTP PUT /customer/{id}<br/>HTTP PUT /contact/{id}</mark>",
+        "image": ""
+      },
+      {
+        "text": "<b>Remove a single contact or a customer:</b><br/><mark>HTTP DELETE /customer/{id}<br/>HTTP DELETE /contact/{id}</mark><br/>A successful response SHOULD be 202 (Accepted) if resource has been queues for deletion (async operation), or 200 (OK) / 204 (No Content) if resource has been deleted permanently (sync operation).<p>In case of async operation, application shall return a task id which can be tracked for success/failure status.</p><p>Please note that you should put enough analysis in deciding the behavior when a subresource is deleted from system. Normally, you may want to SOFT DELETE a resource in these requests – in other words, set their status INACTIVE. By following this approach, you will not need to find and remove its references from other places as well.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Update or delete a contact of a customer ():</b><br/><mark>HTTP PUT /customer/{id}/contact<br/>HTTP DELETE /customer/{id}/contact/{id}</mark>",
         "image": ""
       }
     ]

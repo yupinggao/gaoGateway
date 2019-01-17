@@ -35,6 +35,7 @@ import { EnglishComponent } from './component/story/english/english.component';
 import { LinkComponent } from './component/link/link.component';
 import { ToolComponent } from './component/it/tool/tool.component';
 import { DesignComponent } from './component/it/design/design.component';
+import { OtherComponent } from './component/it/other/other.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { DesignComponent } from './component/it/design/design.component';
     EnglishComponent,
     LinkComponent,
     ToolComponent,
-    DesignComponent
+    DesignComponent,
+    OtherComponent
   ],
   imports:[
  CommonModule,

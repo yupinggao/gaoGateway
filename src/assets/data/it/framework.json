@@ -58,7 +58,36 @@
     ]
   },
   {
-    "id": 15,
+    "id": 20,
+    "date": "2019/01/15",
+    "title": "Spring MVC",
+    "itemList": [
+      {
+        "text": "<p>The Spring Web model-view-controller (MVC) framework is designed around a DispatcherServlet that dispatches requests to handlers, with configurable handler mappings, view resolution, locale and theme resolution as well as support for uploading files. The default handler is based on the @Controller and @RequestMapping annotations, offering a wide range of flexible handling methods. With the introduction of Spring 3.0, the @Controller mechanism also allows you to create RESTful Web sites and applications, through the @PathVariable annotation and other features.",
+        "image": ""
+      },
+      {
+        "text": "<p>A key design principle in Spring Web MVC and in Spring in general is the “Open for extension, closed for modification” principle.</p><p>Some methods in the core classes of Spring Web MVC are marked final. As a developer you cannot override these methods to supply your own behavior. This has not been done arbitrarily, but specifically with this principle in mind.</p>        ",
+        "image": ""
+      },
+      {
+        "text": "<p>Spring's view resolution is extremely flexible. A Controller is typically responsible for preparing a model Map with data and selecting a view name but it can also write directly to the response stream and complete the request. View name resolution is highly configurable through file extension or Accept header content type negotiation, through bean names, a properties file, or even a custom ViewResolver implementation. The model is a Map interface, which allows for the complete abstraction of the view technology. You can integrate directly with template based rendering technologies such as JSP, Velocity and Freemarker, or directly generate XML, JSON, Atom, and many other types of content. The model Map is simply transformed into an appropriate format, such as JSP request attributes, a Velocity template model.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>The <code class='classname'>DispatcherServlet</code></b><br/><br/><p>Spring's web MVC framework is, like many other web MVC frameworks, request-driven, designed around a central Servlet that dispatches requests to controllers and offers other functionality that facilitates the development of web applications. Spring's <code class='classname'>DispatcherServlet</code> however, does more than just that. It is completely integrated with the Spring IoC container and as such allows you to use every other feature that Spring has.</p> <p>The request processing workflow of the Spring Web MVC <code class='classname'>DispatcherServlet</code> is illustrated in the following diagram. The pattern-savvy reader will recognize that the <code class='classname'>DispatcherServlet</code> is an expression of the <span class='quote'>&#8220;<span class='quote'>Front Controller</span>&#8221;</span> design pattern (this is a pattern that Spring Web MVC shares with many other leading web frameworks).</p>",
+        "image": "../assets/image/it/framework/mvc1.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>In the Web MVC framework, each DispatcherServlet has its own WebApplicationContext, which inherits all the beans already defined in the root WebApplicationContext. These inherited beans can be overridden in the servlet-specific scope, and you can define new scope-specific beans local to a given Servlet instance.</p>",
+        "image": "../assets/image/it/framework/mvc-contexts.gif",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 50,
     "date": "2019/01/10",
     "title": "Spring Jdbctemplate",
     "itemList": [
@@ -73,7 +102,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 60,
     "date": "2019/01/10",
     "title": "Spring Data",
     "itemList": [
@@ -88,7 +117,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 70,
     "date": "2017/10/11",
     "title": "Bootstrap",
     "itemList": [
@@ -99,7 +128,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 80,
     "date": "2017/10/11",
     "title": "AngularJS",
     "itemList": [

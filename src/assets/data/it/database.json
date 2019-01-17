@@ -30,7 +30,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 20,
     "date": "2016/7/6",
     "title": "Transaction Isolation",
     "itemList": [
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 30,
     "date": "2016/10/31",
     "title": "DB vs Warehouse",
     "itemList": [
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 40,
     "date": "2015/11/3",
     "title": "DB Warehouse",
     "itemList": [
@@ -110,6 +110,25 @@
       },
       {
         "text": "<b>New Technologies:</b><br/><ul><li><b>IBM Cognos Dynamic Cubes: </b>To summarize, Cognos Dynamic Cubes is an extension of IBM Cognos Dynamic Query that leverages substantial in-memory data assets as well as aggregate awareness in order to achieve high performance interactive analysis and reporting over terabytes of warehouse data. IBM Cognos Dynamic Cubes requires a data warehouse structured in a star or snowflake schema in order to maximize the performance characteristics of the solution. Cognos Dynamic Cubes differs from Cognos dimensionally-modeled relational (DMR) data sources for the following reasons:<br/><ul><li>It provides increased scalability and the ability to share data caches between users for better performance.</li><li>It allows you to a create a dynamic cube data source that is pre-loaded with dimensions.</li><li>It allows for a richer set of dimensional modeling options and the explicit management of the member and data caches of a dynamic cube.</li></ul></li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "date": "2019/01/16",
+    "title": "Mongo DB",
+    "itemList": [
+      {
+        "text": "<p>MongoDB is free, open-source, JSON-like document style database. MongoDB is a distributed database at its core, and stores data in flexible, JSON-like documents.</p>",
+        "image": ""
+      },
+      {
+        "text": "Instead of using table as in relational database, mongodb uses collection.",
+        "image": ""
+      },
+      {
+        "text": "<b>Somethings to remember:</b><br/><p><ul><li>mongodb uses $lookup to left outer join colections</li><li></ul></p>",
         "image": ""
       }
     ]

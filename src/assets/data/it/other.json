@@ -1,0 +1,36 @@
+[
+  {
+    "id": 5,
+    "date": "2019/01/15",
+    "title": "NodeJS",
+    "itemList": [
+      {
+        "text": "<p>Node.js is an open source javascript server environment. Node.js runs single-threaded, non-blocking, asynchronously programming, which is very memory efficient.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Node.js can do the following: <ul><li>Generate dynamic page content</li><li>Create, open, read, write, delete, and close files on the server</li><li>Collect form data</li><li>Add, delete, modify data in your database</li><li>Create REST APIs</li><li>Consume REST APIs</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>URL Module:</b><br/><p><code>var url = require('url');</code><br/><code>var adr = 'http://localhost:8080/default.htm?year=2017&month=february';</code><br/><code>var q = url.parse(adr, true);</code><br/><code>console.log(q.host); //returns 'localhost:8080'</code><br/><code>console.log(q.pathname); //returns '/default.htm'</code><br/><code>console.log(q.search); //returns '?year=2017&month=february'</code><br/><code>var qdata = q.query; //returns an object: { year: 2017, month: 'february' }</code><br/><code>console.log(qdata.month); //returns 'february'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Somethings to remember:</b><br/><p><ul><li>node.js uses unlink to delete a file <code>fs.unlink(filename, function (err) {... ...})</code></li><li>node.js uses formidable mudule for uploading files: <code>var formidable = require('formidable');</code></li><li>node.js uses nodemailer to handle emails: <code>var nodemailer = require('nodemailer');</code></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2019/01/16",
+    "title": "JavaScript 6/ECMAScript 6",
+    "itemList": [
+      {
+        "text": "<p>JavaScript 6 or ECMAScript 6 (ECMA stands for European Computer Manufacturers Association) has some new features:<ul><li><code>let</code> statement allows you to declare a variable with block scope.</li><li><code>const</code> statement allows you to declare a constant.</li><li><code>exponentiation</code> operator (**) raises the first operand to the power of the second operand.</li><li>ES6 allows function parameters to have default values.</li><li><code>find()</code> method returns the value of the first array element that passes a test function.<br/><code>var numbers = [4, 9, 16, 25, 29];</code><br/><code>var first = numbers.find(myFunction);</code><br/><code>function myFunction(value, index, array) {</code><br/><code>&nbsp;&nbsp;&nbsp;return value > 18;</code><br/><code>}</code><br/></li><li><code>findIndex()</code> method returns the index of the first array element that passes a test function.</li><li>Arrow Functions (Lambda expression like function)</li></lu></p>",
+        "image": ""
+      }
+    ]
+  }
+]
