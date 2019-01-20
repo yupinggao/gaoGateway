@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 10,
     "date": "2015/10/31",
     "title": "JSF Lifecycle",
     "itemList": [
@@ -16,7 +16,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 20,
     "date": "2015/10/31",
     "title": "JPA Lifecycle",
     "itemList": [
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 30,
     "date": "2015/11/2",
     "title": "JMS performan",
     "itemList": [
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "id": 95,
+    "id": 40,
     "date": "2015/11/2",
     "title": "WAS Topology",
     "itemList": [
@@ -53,7 +53,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 50,
     "date": "2015/11/2",
     "title": "Weblogic Topology",
     "itemList": [
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "id": 105,
+    "id": 60,
     "date": "2015/11/3",
     "title": "New in JavaEE 7",
     "itemList": [
@@ -86,6 +86,21 @@
       },
       {
         "text": "",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "date": "2019/01/18",
+    "title": "EJB Transaction Attributes",
+    "itemList": [
+      {
+        "text": "<p>In an enterprise bean with container-managed transaction demarcation, the EJB container sets the boundaries of the transactions. You can use container-managed transactions with any type of enterprise bean: session or message-driven. Container-managed transactions simplify development because the enterprise bean code does not explicitly mark the transaction’s boundaries. The code does not include statements that begin and end the transaction. By default, if no transaction demarcation is specified, enterprise beans use container-managed transaction demarcation.</p><p>Typically, the container begins a transaction immediately before an enterprise bean method starts and commits the transaction just before the method exits. Each method can be associated with a single transaction. Nested or multiple transactions are not allowed within a method.</p><p>Container-managed transactions do not require all methods to be associated with transactions. When developing a bean, you can set the transaction attributes to specify which of the bean’s methods are associated with transactions.</p><p>Enterprise beans that use container-managed transaction demarcation must not use any transaction-management methods that interfere with the container’s transaction demarcation boundaries. Examples of such methods are the commit, setAutoCommit, and rollback methods of java.sql.Connection or the commit and rollback methods of javax.jms.Session. If you require control over the transaction demarcation, you must use application-managed transaction demarcation.</p>",
+        "image": ""
+      },
+      {
+        "text": "<br/><p>The following table lists TransactionAttributeType Values for @TransactionAttribute: </p>  <table class='RuleFormalWideMax' title='TransactionAttributeType Values for @TransactionAttribute' summary='EJB Transaction Support by Transaction Attribute' dir='ltr' border='1' width='100%' frame='border' rules='all' cellpadding='3' cellspacing='0'><col width='19%' /><col width='38%' /><col width='*' /><thead><tr align='left' valign='top'><th align='left' valign='bottom' id='r1c1-t3'>Transaction Attribute</th><th align='left' valign='bottom' id='r1c2-t3'>Client Controlled Transaction Exists</th><th align='left' valign='bottom' id='r1c3-t3'>Client Controlled Transaction Does Not Exist</th></tr></thead><tbody><tr align='left' valign='top'><td align='left' id='r2c1-t3' headers='r1c1-t3'><p><code>NOT_SUPPORTED</code></p></td><td align='left' headers='r2c1-t3 r1c2-t3'><p>Container suspends client transaction</p></td><td align='left' headers='r2c1-t3 r1c3-t3'><p>Use no transaction</p></td></tr><tr align='left' valign='top'><td align='left' id='r3c1-t3' headers='r1c1-t3'><p><code>SUPPORTS</code></p></td><td align='left' headers='r3c1-t3 r1c2-t3'><p>Use client-controlled transaction</p></td><td align='left' headers='r3c1-t3 r1c3-t3'><p>Use no transaction</p></td></tr><tr align='left' valign='top'><td align='left' id='r4c1-t3' headers='r1c1-t3'><p><code>REQUIRED</code></p></td><td align='left' headers='r4c1-t3 r1c2-t3'><p>Use client-controlled transaction</p></td><td align='left' headers='r4c1-t3 r1c3-t3'><p>Container starts a new transaction</p></td></tr><tr align='left' valign='top'><td align='left' id='r5c1-t3' headers='r1c1-t3'><p><code>REQUIRES_NEW</code></p></td><td align='left' headers='r5c1-t3 r1c2-t3'><p>Use client-controlled transaction</p></td><td align='left' headers='r5c1-t3 r1c3-t3'><p>Container starts a new transaction</p></td></tr><tr align='left' valign='top'><td align='left' id='r6c1-t3' headers='r1c1-t3'><p><code>MANDATORY</code></p></td><td align='left' headers='r6c1-t3 r1c2-t3'><p>Use client-controlled transaction</p></td><td align='left' headers='r6c1-t3 r1c3-t3'><p>Exception raised</p></td></tr><tr align='left' valign='top'><td align='left' id='r7c1-t3' headers='r1c1-t3'><p><code>NEVER</code></p></td><td align='left' headers='r7c1-t3 r1c2-t3'><p>Exception raised</p></td><td align='left' headers='r7c1-t3 r1c3-t3'><p>Use no transaction</p></td></tr></tbody></table>",
         "image": ""
       }
     ]
