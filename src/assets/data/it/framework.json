@@ -135,7 +135,7 @@
         "image": ""
       },
       {
-        "text": "<b>How does it work? </b><p>Spring Boot automatically configures your application based on the dependencies you have added to the project by using <code>@EnableAutoConfiguration</code> annotation. For example, if MySQL database is on your classpath, but you have not configured any database connection, then Spring Boot auto-configures an in-memory database.</p><p>The entry point of the spring boot application is the class contains <code>@SpringBootApplication</code> annotation and the main method.</p><p>Spring Boot automatically scans all the components included in the project by using <code>@ComponentScan</code> annotation.</p>",
+        "text": "<b>How does it work? </b><p>Spring Boot automatically configures your application based on the dependencies you have added to the project by using <code>@EnableAutoConfiguration</code> annotation. For example, if MySQL database is on your classpath, but you have not configured any database connection, then Spring Boot auto-configures an in-memory database.</p><p>The entry point of the spring boot application is the class contains <code>@SpringBootApplication</code> annotation and the main method.</p><p>Spring Boot automatically scans all the components included in the project by using <code>@ComponentScan</code> annotation.</p><p>Spring Boot doesn’t generate code or make edits to your files. Instead, when you start up your application, Spring Boot dynamically wires up beans and settings and applies them to your application context.</p>",
         "image": ""
       },
       {
