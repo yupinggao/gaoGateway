@@ -15,6 +15,7 @@ import { DesignComponent } from './component/it/design/design.component';
 import { TrendComponent } from './component/it/trend/trend.component';
 import { ToolComponent } from './component/it/tool/tool.component';
 import { OtherComponent } from './component/it/other/other.component';
+import { MethodologyComponent } from './component/it/methodology/methodology.component';
 
 import { PhotoComponent } from './component/photo/photo.component';
 import { NatureComponent } from './component/photo/nature/nature.component';
@@ -176,6 +177,17 @@ const routes: Routes = [
       },
       {
         path: '', component: OtherComponent
+      }
+    ]
+  },
+  {
+    path: 'it/methodology', component: MethodologyComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: MethodologyComponent
       }
     ]
   },

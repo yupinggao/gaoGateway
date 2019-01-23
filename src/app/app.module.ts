@@ -36,6 +36,7 @@ import { LinkComponent } from './component/link/link.component';
 import { ToolComponent } from './component/it/tool/tool.component';
 import { DesignComponent } from './component/it/design/design.component';
 import { OtherComponent } from './component/it/other/other.component';
+import { MethodologyComponent } from './component/it/methodology/methodology.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { OtherComponent } from './component/it/other/other.component';
     LinkComponent,
     ToolComponent,
     DesignComponent,
-    OtherComponent
+    OtherComponent,
+    MethodologyComponent
   ],
   imports:[
  CommonModule,

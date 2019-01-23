@@ -1,0 +1,13 @@
+[
+  {
+    "id": 10,
+    "date": "2019/01/22",
+    "title": "Agile",
+    "itemList": [
+      {
+        "text": "<p>10 Key Principles of Agile Software Development</p><ol><li>Active user involvement is imperative</li><li>The team must be empowered to make decisions</li><li>Requirements evolve but the timescale is fixed</li><li>Capture requirements at a high level; lightweight & visual</li><li>Develop small, incremental releases and iterate</li><li>Focus on frequent delivery of products</li><li>Complete each feature before moving on to the next</li><li>Apply the 80/20 rule</li><li>Testing is integrated throughout the project lifecycle – test early and often</li><li>A collaborative & cooperative approach between all stakeholders is essential</li></ol>",
+        "image": ""
+      }
+    ]
+  }
+]

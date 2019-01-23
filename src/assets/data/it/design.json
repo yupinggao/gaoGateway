@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 10,
     "date": "2019/01/15",
     "title": "Apply REST principles in Design",
     "itemList": [
@@ -58,6 +58,17 @@
       },
       {
         "text": "<b>Update or delete a contact of a customer ():</b><br/><mark>HTTP PUT /customer/{id}/contact<br/>HTTP DELETE /customer/{id}/contact/{id}</mark>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2019/01/15",
+    "title": "Factory Method Pattern VS Builder Pattern",
+    "itemList": [
+      {
+        "text": "<p>The subtle difference between the build pattern and the factory pattern is that in builder pattern, the user is given the choice to create the type of the object, but the construction process is the same; while with the factory method pattern the factory decides how to create one of the several possible classes based on the data provided to it.</p>",
         "image": ""
       }
     ]

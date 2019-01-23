@@ -160,7 +160,7 @@
     ]
   },
   {
-    "id": 45,
+    "id": 50,
     "date": "2018/12/31",
     "title": "Kubernetes Engine Quick Start on GCP",
     "itemList": [
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 60,
     "date": "2018/12/24",
     "title": "Git And Github in Ubuntu",
     "itemList": [
@@ -195,7 +195,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 70,
     "date": "2019/01/13",
     "title": "MongoDB Shell",
     "itemList": [
@@ -210,7 +210,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 80,
     "date": "2019/01/13",
     "title": "Install Jenkins",
     "itemList": [
@@ -221,7 +221,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 90,
     "date": "2019/01/16",
     "title": "Build a Node Rest API",
     "itemList": [
@@ -231,6 +231,32 @@
       },
       {
         "text": "<ol><li>Create a folder, e.g. nodeRestApi</li><li>run <mark>npm init</mark> to create the package.json</li><li>run <mark>npm install</mark> to install/setup dependencies.</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "date": "2019/01/22",
+    "title": "Install Spring CLI on Windows",
+    "itemList": [
+      {
+        "text": "<ol><li><a href='https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.1.2.RELEASE/spring-boot-cli-2.1.2.RELEASE-bin.zip'>Download spring-boot-cli-2.1.2.RELEASE-bin.zip</a></li><li>unzip it into a folder, e.g. C:\\spring-boot-cli-2.1.2.RELEASE-bin</li><li>add an environment variable: C:\\spring-boot-cli-2.1.2.RELEASE-bin\\spring-2.1.2.RELEASE\\bin</li><li>verify the installation: <code>spring --version</code></li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "date": "2019/01/22",
+    "title": "Run Hello World with Groovy",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: You have installed Spring CLI in your local. To verify if the Spring CLI is installed, run <code>spring --version</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<ol><li>Create a folder, e.g. springCLIGroovy</li><li>create a file named app.groovy in the folder with the following content:<br/><div class='jumbotron'>@Controller<br/>class Example {<br/>&nbsp;&nbsp;&nbsp;&nbsp;@RequestMapping('/')<br/>&nbsp;&nbsp;&nbsp;&nbsp;@ResponseBody<br/>&nbsp;&nbsp;&nbsp;&nbsp;public String hello() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'hello from spring boot cli'<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</div></li><li>run <code>spring run app.groovy</code> to run the app in the embedded Tomcat.</li><li>go to localhost:8080 to verify the application.</li></ol>",
         "image": ""
       }
     ]
