@@ -153,6 +153,14 @@
       {
         "text": "<b>Component Scan</b><p>Spring Boot application scans all the beans and package declarations when the application initializes. You need to add the @ComponentScan annotation for your class file to scan your components added in your project.</p>",
         "image": ""
+      },
+      {
+        "text": "<b>Exception Handling</b><p>The <code>@ControllerAdvice</code> is an annotation, to handle the exceptions globally.</p><p>The @ExceptionHandler is an annotation used to handle the specific exceptions and sending the custom responses to the client.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Interceptor</b><p>The Interceptor can be used in Spring Boot to perform operations under the following situations:<ul><li>Before sending the request to the controller</li><li>Before sending the response to the client</li></ul></p><p>For example, you can use an interceptor to add the request header before sending the request to the controller and add the response header before sending the response to the client.</p><p>To work with interceptor, you need to create <code>@Component</code> class that supports it and it should implement the <code>HandlerInterceptor</code> interface.</p><p>The following are the three methods you should know about while working on Interceptors:<ul><li><b>preHandle()</b>: method − This is used to perform operations before sending the request to the controller. This method should return true to return the response to the client.</li><li><b>postHandle()</b>: method − This is used to perform operations before sending the response to the client.</li><li><b>afterCompletion()</b>: method − This is used to perform operations after completing the request and response.</li></ul></p>",
+        "image": ""
       }
     ]
   },

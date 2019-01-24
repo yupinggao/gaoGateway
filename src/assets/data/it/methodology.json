@@ -5,7 +5,19 @@
     "title": "Agile",
     "itemList": [
       {
-        "text": "<p>10 Key Principles of Agile Software Development</p><ol><li>Active user involvement is imperative</li><li>The team must be empowered to make decisions</li><li>Requirements evolve but the timescale is fixed</li><li>Capture requirements at a high level; lightweight & visual</li><li>Develop small, incremental releases and iterate</li><li>Focus on frequent delivery of products</li><li>Complete each feature before moving on to the next</li><li>Apply the 80/20 rule</li><li>Testing is integrated throughout the project lifecycle – test early and often</li><li>A collaborative & cooperative approach between all stakeholders is essential</li></ol>",
+        "text": "<p>The Agile Method is a particular approach to project management that is utilized in software development. This method assists teams in responding to the unpredictability of constructing software. It uses incremental, iterative work sequences that are commonly known as sprints.</p><p>There are a variety of Agile software development (or system development) methodologies, including, but not limited to: <ul><li>Disciplined Agile Delivery (DAD)</li><li>Agile Modeling</li><li>Kanban</li><li>Scrum</li><li>Extreme Programming (XP)</li></ul></p><p>The overall goal of each Agile method is to adapt to change and deliver working software as quickly as possible. However, each methodology has slight variations in the way it defines the phases of software development. Furthermore, even though the goal is the same, each team’s process flow may vary depending on the specific project or situation.</p><p><b>10 Key Principles of Agile Software Development</b></p><ol><li>Active user involvement is imperative</li><li>The team must be empowered to make decisions</li><li>Requirements evolve but the timescale is fixed</li><li>Capture requirements at a high level; lightweight & visual</li><li>Develop small, incremental releases and iterate</li><li>Focus on frequent delivery of products</li><li>Complete each feature before moving on to the next</li><li>Apply the 80/20 rule</li><li>Testing is integrated throughout the project lifecycle – test early and often</li><li>A collaborative & cooperative approach between all stakeholders is essential</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Agile Software Development Lifecycle</b><ul><li><b>Concept: </b></li><li><b>Inception: </b></li><li><b>Construction: </b></li><li><b>Release: </b></li><li><b>Production: </b></li></li><li><b>Retirement: </b></li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Sprint Planning</b></p><p>Within the agile SDLC, work is divided into sprints, with the goal of producing a working product at the end of each sprint. A sprint typically lasts two weeks, or 10 business days. The workflow of a sprint should follow this basic outline:</p><p><ul><li><b>Plan: </b>The sprint begins with a sprint planning meeting, where team members come together to lay out components for the upcoming round of work. The product manager prioritizes work from a backlog of tasks to assign the team.</li><li><b>Develop: </b>Design and develop the product in accordance with the approved guidelines.</li><li><b>Test/QA: </b>Complete thorough testing and documentation of results before delivery.</li><li><b>Deliver: </b>Present the working product or software to stakeholders and customers.</li><li><b>Assess: </b>Solicit feedback from the customer and stakeholders and gather information to incorporate into the next sprint.</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Glossary: What is Meant by Agile Methodologies</b><ul><li><b>Spike: </b>A story that cannot be estimated until a development team runs a time-boxed investigation.</li><li><b>Timebox: </b>A defined period of time during which a task must be accomplished.</li><li><b>Wiki: </b>A wiki is a server program that allows users to collaborate in forming the content of a Web site.</li></ol>",
         "image": ""
       }
     ]

@@ -177,5 +177,16 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 120,
+    "date": "2019/01/23",
+    "title": "Checked vs Unchecked Exceptions",
+    "itemList": [
+      {
+        "text": "<p>Checked exceptions are the ones that are checked at compile time. If some code within a method throws a checked exception, then the method must either handle the exception or it must specify the exception using throws keyword.</p><p>Unchecked exceptions are the ones that are not checked at compiled time. In C++, all exceptions are unchecked, so it is not forced by the compiler to either handle or specify the exception. It is up to the programmers to be civilized, and specify or catch the exceptions.</p><p>In Java exceptions under Error and RuntimeException classes are unchecked exceptions, everything else under throwable is checked.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
