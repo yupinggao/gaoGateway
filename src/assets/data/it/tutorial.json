@@ -21,7 +21,7 @@
   {
     "id": 10,
     "date": "2018/12/17",
-    "title": "Install Docker in Ubuntu",
+    "title": "Install Docker on Ubuntu",
     "itemList": [
       {
         "text": "<p>The following instructions are based on experience of installing Docker 18.06.1-ce on Ubuntu 14.04.05 LTS</p>",
@@ -257,6 +257,17 @@
       },
       {
         "text": "<ol><li>Create a folder, e.g. springCLIGroovy</li><li>create a file named app.groovy in the folder with the following content:<br/><div class='jumbotron'>@Controller<br/>class Example {<br/>&nbsp;&nbsp;&nbsp;&nbsp;@RequestMapping('/')<br/>&nbsp;&nbsp;&nbsp;&nbsp;@ResponseBody<br/>&nbsp;&nbsp;&nbsp;&nbsp;public String hello() {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'hello from spring boot cli'<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</div></li><li>run <code>spring run app.groovy</code> to run the app in the embedded Tomcat.</li><li>go to localhost:8080 to verify the application.</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "date": "2019/01/25",
+    "title": "Install Maven on Ubuntu",
+    "itemList": [
+      {
+        "text": "<ol><li><code>sudo apt update</code></li><li><code>sodu apt install maven</code></li><li><code>mvn --version</code></li></ol>",
         "image": ""
       }
     ]

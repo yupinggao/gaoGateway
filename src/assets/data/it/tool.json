@@ -68,5 +68,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 30,
+    "date": "2019/01/26",
+    "title": "Webseal",
+    "itemList": [
+      {
+        "text": "<p>WebSEAL is a high performance, multi-threaded Web server that applies fine-grained security policy to resources in the Security Access Manager protected Web object space. WebSEAL can provide single signon solutions and incorporate back-end Web application server resources into its security policy.</p><p>WebSEAL normally acts as a reverse Web proxy by receiving HTTP/HTTPS requests from a Web browser and delivering content from its own Web server or from junctioned back-end Web application servers. Requests passing through WebSEAL are evaluated by the Security Access Manager authorization service to determine whether the user is authorized to access the requested resource.</p>",
+        "image": ""
+      },
+      {
+        "text": "",
+        "image": ""
+      }
+    ]
   }
 ]

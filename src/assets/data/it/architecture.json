@@ -22,7 +22,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 20,
     "date": "2015/10/30",
     "title": "IBM ESB Products",
     "itemList": [
@@ -49,7 +49,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 30,
     "date": "2015/11/1",
     "title": "SOA",
     "itemList": [
@@ -84,7 +84,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 40,
     "date": "2015/11/7",
     "title": "Restful WS",
     "itemList": [
@@ -99,7 +99,26 @@
     ]
   },
   {
-    "id": 30,
+    "id": 50,
+    "date": "2019/01/26",
+    "title": "JMS",
+    "itemList": [
+      {
+        "text": "<p>The Java Message Service (JMS) API is a Java message-oriented middleware API for sending messages between two or more clients.</p><p>JMS is a part of the Java Platform, Enterprise Edition (Java EE). It is a messaging standard that allows application components based on Java EE to create, send, receive, and read messages. It allows the communication between different components of a distributed application to be loosely coupled, reliable, and asynchronous.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>There are five types of message body: <ul><li>Text</li><li>Map</li><li>Stream</li><li>Object</li><li>Byte</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Some properties defined in message header: <ul><li>JMSMessageID</li><li>JMSCorrelationID</li><li>JMSDeliveryMode</li><li>JMSExpiration</li><li>JMSPriority</li></ul></p>",
+        "image": "../assets/image/it/architecture/jms.png"
+      }
+    ]
+  },
+  {
+    "id": 60,
     "date": "2015/11/1",
     "title": "Network Diagram",
     "itemList": [

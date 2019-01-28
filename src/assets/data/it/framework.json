@@ -161,6 +161,14 @@
       {
         "text": "<b>Interceptor</b><p>The Interceptor can be used in Spring Boot to perform operations under the following situations:<ul><li>Before sending the request to the controller</li><li>Before sending the response to the client</li></ul></p><p>For example, you can use an interceptor to add the request header before sending the request to the controller and add the response header before sending the response to the client.</p><p>To work with interceptor, you need to create <code>@Component</code> class that supports it and it should implement the <code>HandlerInterceptor</code> interface.</p><p>The following are the three methods you should know about while working on Interceptors:<ul><li><b>preHandle()</b>: method − This is used to perform operations before sending the request to the controller. This method should return true to return the response to the client.</li><li><b>postHandle()</b>: method − This is used to perform operations before sending the response to the client.</li><li><b>afterCompletion()</b>: method − This is used to perform operations after completing the request and response.</li></ul></p>",
         "image": ""
+      },
+      {
+        "text": "<b>Rest Template</b><p>Rest Template is used to create applications that consume RESTful Web Services. You can use the restTemplate.exchange() method to consume the web services for all HTTP methods. The code given below shows how to create Bean for Rest Template to auto wiring the Rest Template object.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>File Upload/Download</b><p>For uploading a file, you can use MultipartFile as a Request Parameter and this API should consume Multi-Part form data value.</p><p>For file download, you should use InputStreamResource for downloading a File. We need to set the HttpHeader Content-Disposition in Response and need to specify the response Media Type of the application.</p>",
+        "image": ""
       }
     ]
   },
