@@ -176,6 +176,21 @@
   },
   {
     "id": 60,
+    "date": "2019/02/04",
+    "title": "Deploy a Spring App on GCP Kubernetes",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have an GCP account</li><li>You have an GCP project</li><li>you need to <a href='https://console.cloud.google.com/billing'>enable billing</a> in the Cloud Console in order to use Google Cloud resources.</li><li>APIs enabled: Google Container Registry API</li></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Log into GCP console</li><li>Select the project you want work on</li><li>Activate Google Cloud Shell on GCP console</li><li>Click 'START CLOUD SHELL' button</li><li>Verify that the cloud shell is associated with your project ID</li><li>Use <mark>git clone https://github.com/spring-guides/gs-spring-boot.git</mark> to get source code in your GCP home directory</li><li>Use <mark>cd gs-spring-boot/complete</mark> to change to the project root folder</li><li>Use <mark>./mvnw -DskipTests spring-boot:run</mark> to start the Spring Boot application normally with the Spring Boot plugin in GCP local</li><li>Once the application started, click on the Web Preview icon in the Cloud Shell toolbar and choose preview on port 8080</li><li>Use <mark>./mvnw -DskipTests package</mark> to create the JAR deployable for the application</li><li>Use <mark>./mvnw -DskipTests com.google.cloud.tools:jib-maven-plugin:build -Dimage=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v1</mark> to create a new Deployment named hello-java</li> If all goes well and after a little while you should be able to see the container image listed in the console: Tools > Container Registry. At this point you now have a project-wide Docker image available which Kubernetes can access and orchestrate.<li>Use <mark>docker run -ti --rm -p 8080:8080 gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v1</mark> to test the image locally with the following command which will run a Docker container as a daemon on port 8080 from your newly-created container image</li><li>Use <mark>gcloud container clusters create hello-java-cluster --num-nodes 2 --machine-type n1-standard-1 --zone us-central1-c</mark> to create a cluster with two n1-standard-1 nodes</li><li>Use <mark>kubectl run hello-java --image=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v1 --port=8080</mark> to deploy one instance of your application into Kubernetes</li><li>Use <mark>kubectl get deployments</mark> to view the deployment you just created</li><li>Use <mark>kubectl get pods</mark> to view the application instances created by the deployment</li><li>Use <mark>kubectl expose deployment hello-java --type=LoadBalancer</mark> to expose the pod as a kubernetes service</li><li>Use <mark>kubectl get services</mark> to list all the cluster services</li><li>Use <mark>kubectl scale deployment hello-java --replicas=3</mark> to to scale the service</li><li>Use <mark>kubectl get deployment</mark> to verify it</li><li>Open the code editor from Cloud Shell, and change some code</li><li>Use <mark>./mvnw -DskipTests package</mark> to rebuild the app</li><li>Use <mark>./mvnw -DskipTests com.google.cloud.tools:jib-maven-plugin:build -Dimage=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v2</mark> to build and push a v2 of the container image</li><li>Use <mark>kubectl set image deployment/hello-java hello-java=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v2</mark> deploy the new version of your application across the entire cluster one instance at a time with rolling update</li><li>Go to GCP/Kubernetes Engine/Services, then click endpoint of the 'hello-java' to verify the updates</li><li>Use <mark>kubectl rollout undo deployment/hello-java</mark> to rollback the application if updates are not successful.</ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 70,
     "date": "2018/12/24",
     "title": "Git And Github in Ubuntu",
     "itemList": [
@@ -195,7 +210,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 80,
     "date": "2019/01/13",
     "title": "MongoDB Shell",
     "itemList": [
@@ -210,7 +225,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 90,
     "date": "2019/01/13",
     "title": "Install Jenkins",
     "itemList": [
@@ -221,7 +236,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 100,
     "date": "2019/01/16",
     "title": "Build a Node Rest API",
     "itemList": [
@@ -236,7 +251,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 110,
     "date": "2019/01/22",
     "title": "Install Spring CLI on Windows",
     "itemList": [
@@ -247,7 +262,7 @@
     ]
   },
   {
-    "id": 110,
+    "id": 120,
     "date": "2019/01/22",
     "title": "Run Hello World with Groovy",
     "itemList": [
@@ -262,12 +277,27 @@
     ]
   },
   {
-    "id": 120,
+    "id": 130,
     "date": "2019/01/25",
     "title": "Install Maven on Ubuntu",
     "itemList": [
       {
         "text": "<ol><li><code>sudo apt update</code></li><li><code>sodu apt install maven</code></li><li><code>mvn --version</code></li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "date": "2019/02/01",
+    "title": "Install Minikube on Ubuntu",
+    "itemList": [
+      {
+        "text": "<ol><li>Check if VT-x or AMD-v virtualization must be enabled in your computer’s BIOS (output should be non-empty): <code>egrep --color 'vmx|svm' /proc/cpuinfo</code></li><li>Check Kernel-based Virtual Machine (KVM) is installed: <code>kvm-ok</code> If not use <code>sudo apt install cpu-checker</code> to install the kvm.</li><li>Check if virtualbox is installed: <code>virtualbox</code>. If not, run: <code>sudo apt install virtualbox-qt</code></li><li>Check if kubectl is installed: <code>kubectl version</code>. If not, run <code>sudo snap install kubectl --classic</code></li><li>Check if minikube is installed: <code>minikube version</code>. If not, run <code>curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube</code></li><li>Add the Minikube executable to the path <code>sudo cp minikube /usr/local/bin && rm minikube</code></li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<b>Useful Commands</b><br/><ol><li>Start minikube: <code>minikube start</code>. If failed to download kubernetes images, then use <code>sudo kubeadm config images pull</code> to download the images, and then run start again.</li><li>Check cluster status: <code>kubectl cluster-info</code></li><li>Stop a running local kubernetes cluster: <code>minikube stop</code></li><li>Delete a local kubernetes cluster: <code>minikube delete</code></li></ol>",
         "image": ""
       }
     ]

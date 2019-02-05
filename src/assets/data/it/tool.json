@@ -60,7 +60,7 @@
     "title": "Unix Commands",
     "itemList": [
       {
-        "text": "<ul><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>ps: </b>Report process status</li><li><b>pwd: </b>tells you where you currently are</li><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>whoami: </b>returns your username</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>passwd: </b>change password</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li></ul>",
+        "text": "<ul><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>ps: </b>Report process status</li><li><b>pwd: </b>tells you where you currently are</li><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>whoami: </b>returns your username</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>passwd: </b>change password</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li></ul>",
         "image": ""
       },
       {

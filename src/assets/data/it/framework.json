@@ -108,6 +108,21 @@
   },
   {
     "id": 60,
+    "date": "2019/02/04",
+    "title": "Spring Security",
+    "itemList": [
+      {
+        "text": "<p>Spring Security is a powerful and highly customizable authentication and access-control framework. It is the de-facto standard for securing Spring-based applications.</p><p>Spring Security is a framework that focuses on providing both authentication and authorization to Java applications. Like all Spring projects, the real power of Spring Security is found in how easily it can be extended to meet custom requirements.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Features</b><p><ul><li>Comprehensive and extensible support for both Authentication and Authorization</li><li>Protection against attacks like session fixation, clickjacking, cross site request forgery, etc</li><li>Servlet API integration</li><li>Optional integration with Spring Web MVC</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 70,
     "date": "2019/01/10",
     "title": "Spring Data",
     "itemList": [
@@ -122,7 +137,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 80,
     "date": "2019/01/10",
     "title": "Spring Boot",
     "itemList": [
@@ -173,7 +188,27 @@
     ]
   },
   {
-    "id": 80,
+    "id": 90,
+    "date": "2019/01/30",
+    "title": "Spring Batch",
+    "itemList": [
+      {
+        "text": "<p>Spring Batch is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems. Spring Batch builds upon the productivity, POJO-based development approach, and general ease of use capabilities people have come to know from the Spring Framework, while making it easy for developers to access and leverage more advance enterprise services when necessary.</p><p>Spring Batch provides reusable functions that are essential in processing large volumes of records, including logging/tracing, transaction management, job processing statistics, job restart, skip, and resource management. It also provides more advance technical services and features that will enable extremely high-volume and high performance batch jobs though optimization and partitioning techniques. Simple as well as complex, high-volume batch jobs can leverage the framework in a highly scalable manner to process significant volumes of information.</p>",
+        "image": ""
+      },
+      {
+        "text": "<P>Spring Batch is designed with extensibility and a diverse group of end users in mind. The figure below shows a sketch of the layered architecture that supports the extensibility and ease of use for end-user developers.</p>",
+        "image": "../assets/image/it/framework/spring-batch-layers.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>This layered architecture highlights three major high level components: Application, Core, and Infrastructure. The application contains all batch jobs and custom code written by developers using Spring Batch. The Batch Core contains the core runtime classes necessary to launch and control a batch job. It includes things such as a JobLauncher, Job, and Step implementations. Both Application and Core are built on top of a common infrastructure. This infrastructure contains common readers and writers, and services such as the RetryTemplate, which are used both by application developers(ItemReader and ItemWriter) and the core framework itself. (retry)</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 100,
     "date": "2017/10/11",
     "title": "Bootstrap",
     "itemList": [
@@ -184,7 +219,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 110,
     "date": "2017/10/11",
     "title": "AngularJS",
     "itemList": [

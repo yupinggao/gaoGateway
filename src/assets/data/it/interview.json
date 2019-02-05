@@ -49,7 +49,7 @@
     "title": "What's new in HTML5",
     "itemList": [
       {
-        "text": "<p>HTML5 offers new elements for better document structure:</p>",
+        "text": "<ol><li><b>Server-Sent Events: </b>A server-sent event is when a web page automatically gets updates from a server.</li><li><b>Web Worker: </b>A web worker is a JavaScript that runs in the background, independently of other scripts, without affecting the performance of the page. You can continue to do whatever you want: clicking, selecting things, etc., while the web worker runs in the background.</li><li>HTML5 offers new elements for better document structure:</li></ol>",
         "image": "../assets/image/it/interview/html5New.png"
       }
     ]
@@ -159,7 +159,7 @@
     "title": "Javascript",
     "itemList": [
       {
-        "text": "<ol><li><b>What is !!<i>var</i> for? </b>It casts to boolean. The right ! negates it once, converting values as below:<ul><li>undefined to true</li><li>bnull to true</li><li>+0 to true</li><li>-0 to true</li><li>'' to true</li><li>NaN to true</li><li>false to true</li><li>All other expressions to false</li></ul><br/>The left ! negates the result again (double negation)</li><li><b>Is null a Object? </b>Yes, null is also considered an object.</li></ol>",
+        "text": "<ol><li><b>What is !!<i>var</i> for? </b>It casts to boolean. The right ! negates it once, converting values as below:<ul><li>undefined to true</li><li>bnull to true</li><li>+0 to true</li><li>-0 to true</li><li>'' to true</li><li>NaN to true</li><li>false to true</li><li>All other expressions to false</li></ul><br/>The left ! negates the result again (double negation)</li><li><b>Is Javascript single-threaded? </b>Yes, JavaScript is a single-threaded environment, meaning multiple scripts cannot run at the same time. As an example, imagine a site that needs to handle UI events, query and process large amounts of API data, and manipulate the DOM. Pretty common, right? Unfortunately all of that can't be simultaneous due to limitations in browsers' JavaScript runtime. Script execution happens within a single thread.<br/><p>Developers mimic 'concurrency' by using techniques like setTimeout(), setInterval(), XMLHttpRequest, and event handlers. Yes, all of these features run asynchronously, but non-blocking doesn't necessarily mean concurrency. Asynchronous events are processed after the current executing script has yielded.</p></li><li><b>Is null a Object? </b>Yes, null is also considered an object.</li></ol>",
         "image": ""
       }
     ]

@@ -116,5 +116,36 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 80,
+    "date": "2019/01/30",
+    "title": "Progress Web Apps (PWA)",
+    "itemList": [
+      {
+        "text": "<b>Service Workers</b><p>A service worker is a script that your browser runs in the background, separate from a web page, opening the door to features that don't need a web page or user interaction. Today, they already include features like push notifications and background sync. In the future, service workers might support other things like periodic sync or geofencing. The core feature discussed in this tutorial is the ability to intercept and handle network requests, including programmatically managing a cache of responses.</p><p>The reason this is such an exciting API is that it allows you to support offline experiences, giving developers complete control over the experience.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Things to note about a service worker:</b><p><ul><li>It's a JavaScript Worker, so it can't access the DOM directly. Instead, a service worker can communicate with the pages it controls by responding to messages sent via the postMessage interface, and those pages can manipulate the DOM if needed.</li><li>Service worker is a programmable network proxy, allowing you to control how network requests from your page are handled.</li><li>It's terminated when not in use, and restarted when it's next needed, so you cannot rely on global state within a service worker's onfetch and onmessage handlers. If there is information that you need to persist and reuse across restarts, service workers do have access to the IndexedDB API.</li><li>Service workers make extensive use of promises, so if you're new to promises, then you should stop reading this and check out Promises, an introduction.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>The service worker life cycle</b><p>A service worker has a lifecycle that is completely separate from your web page.</p><p>To install a service worker for your site, you need to register it, which you do in your page's JavaScript. Registering a service worker will cause the browser to start the service worker install step in the background.<p>When installed, the activation step will follow and this is a great opportunity for handling any management of old caches, which we'll cover during the service worker update section.</p><p>After the activation step, the service worker will control all pages that fall under its scope, though the page that registered the service worker for the first time won't be controlled until it's loaded again. Once a service worker is in control, it will be in one of two states: either the service worker will be terminated to save memory, or it will handle fetch and message events that occur when a network request or message is made from your page.</p><p>Below is an overly simplified version of the service worker lifecycle on its first installation:</p>",
+        "image": "../assets/image/it/other/sw-lifecycle.png"
+      },
+      {
+        "text": "<b>Push Notification</b><p>Web push notifications allow users to opt-in to timely updates from sites they love and allow you to effectively re-engage them with customized, relevant content.</p><p>The Push API and Notification API open a whole new set of possibilities for you to re-engage with your users.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Push is based on service workers because service workers operate in the background. This means the only time code is run for a push notification (in other words, the only time the battery is used) is when the user interacts with a notification by clicking it or closing it. If you're not familiar with them, check out the service worker introduction. We will use service worker code in later sections when we show you how to implement pushes and notifications.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Two technologies</b><p>Push and notification use different, but complementary, APIs: push is invoked when a server supplies information to a service worker; a notification is the action of a service worker or web page script showing information to a user.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
