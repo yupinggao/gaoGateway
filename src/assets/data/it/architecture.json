@@ -84,6 +84,17 @@
     ]
   },
   {
+    "id": 50,
+    "date": "2019/02/13",
+    "title": "SOAP WS",
+    "itemList": [
+      {
+        "text": "<b>WSDL</b> <br/>An WSDL document describes a web service. It specifies the location of the service, and the methods of the service, using these major elements:<p><ul><li><mark>types: </mark>Defines the (XML Schema) data types used by the web service</li><li><mark>message: </mark>Defines the data elements for each operation</li><li><mark>portType: </mark>Describes the operations that can be performed and the messages involved</li><li><mark>binding: </mark>Defines the protocol and data format for each port type</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 40,
     "date": "2015/11/7",
     "title": "Restful WS",

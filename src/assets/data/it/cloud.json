@@ -210,5 +210,41 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 100,
+    "date": "2019/02/16",
+    "title": "MuleSoft",
+    "itemList": [
+      {
+        "text": "<p>MuleSoft, Inc. is a software company that provides integration software for connecting applications, data and devices. Started in 2006, the company's Anypoint Platform of integration products is designed to integrate software as a service (SaaS), on-premises software, legacy systems, and more.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The company originally provided middleware and messaging, and later expanded to provide an integration platform as a service (iPaaS) approach for companies through its main product, Anypoint Platform. MuleSoft's Anypoint Platform includes various components such as Anypoint Design Center, which allows API developers to design and build APIs; Anypoint Exchange, a library for API providers to share APIs, templates, and assets; and Anypoint Management Center, a centralized web interface to analyze, manage, and monitor APIs and integrations. MuleSoft also offers the Mule runtime engine, a runtime solution for connecting enterprise applications on-premises and to the cloud, designed to eliminate the need for custom point-to-point integration code.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Design and Development Tools</b><br><p><ul><li>Anypoint Studio: An Eclipse-based graphical development environment for designing, testing and running Mule flows. It consists of two types of editors for development: Visual editor and XML editor.</li><li>Anypoint Enterprise Security: A suite of security-related features for secure access and transactions to Mule applications.</li><li>Mule Healthcare Toolkit: Provided to process HL7 standard messages used in healthcare organizations.</li><li>Mule IDE (now deprecated), A set of Eclipse plug-ins for developing, deploying and managing Mule projects.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Management Tools</b><br><p><ul><li>Mule Management Console: A user interface which provides run time management facility of deployment to the Mule Repository and clusters. Mule has an integration engine, but the community edition lacks the support for Advanced Management interfaces. MuleSoft offers an Enterprise Edition of Mule that provides a management console, a Service registry and higher availability.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Cloudhub</b><br><p><ul><li>Cloudhub is Mulesoft's Cloud-based integration platform for integration to connect apps, data and devices with integration connectors (like one to Twitter, etc.) platform as a service (iPaaS).</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Mule ESB</b><br><p>Mule, the runtime engine of Anypoint Platform, is a lightweight Java-based enterprise service bus (ESB) and integration platform that allows developers to connect applications together quickly and easily, enabling them to exchange data. It enables easy integration of existing systems, regardless of the different technologies that the applications use, including JMS, Web Services, JDBC, HTTP, and more. The ESB can be deployed anywhere, can integrate and orchestrate events in real time or in batch, and has universal connectivity.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The key advantage of an ESB is that it allows different applications to communicate with each other by acting as a transit system for carrying data between applications within your enterprise or across the Internet. Mule has powerful capabilities that include:<ul><li>Service creation and hosting — expose and host reusable services, using the ESB as a lightweight service container</li><li>Service mediation — shield services from message formats and protocols, separate business logic from messaging, and enable location-independent service calls</li><li>Message routing — route, filter, aggregate, and re-sequence messages based on content and rules</li><li>Data transformation — exchange data across varying formats and transport protocols</li></ul></p>",
+        "image": "../assets/image/it/cloud/what-mule-esb.png",
+        "imageClass": "mx-auto d-block"        
+      }
+    ]
   }
 ]

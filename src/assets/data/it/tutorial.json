@@ -289,6 +289,32 @@
   },
   {
     "id": 140,
+    "date": "2019/03/02",
+    "title": "Install Gradle",
+    "itemList": [
+      {
+        "text": "<b>On Windows:</b><br/><ol><li>Download the latest Gradle distribution</li><li>Create a new directory C:\\Gradle with File Explorer</li><li>unzip the content folder gradle-x.x.x into the Gradle folder</li><li>This PC (or Computer) -> Properties -> Advanced System Settings -> Environmental Variables -> System Variables -> Path -> Edit -> Add an entry: <code>C:\\Gradle\\gradle-x.x.x\\bin</code></li><li>Verify the installation: <code>gradle -v</code></li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<b>On Ubuntu:</b><br/><ol><li></li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "date": "2019/03/02",
+    "title": "Create a Gradle Project",
+    "itemList": [
+      {
+        "text": "<ol><li>Create a folder</li><li>Go to the folder</li><li><code>gradle init</code></li><li>then follow the screen prompts</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 160,
     "date": "2019/02/01",
     "title": "Install Minikube on Ubuntu",
     "itemList": [
@@ -297,7 +323,18 @@
         "image": ""
       },
       {
-        "text": "<b>Useful Commands</b><br/><ol><li>Start minikube: <code>minikube start</code>. If failed to download kubernetes images, then use <code>sudo kubeadm config images pull</code> to download the images, and then run start again.</li><li>Check cluster status: <code>kubectl cluster-info</code></li><li>Stop a running local kubernetes cluster: <code>minikube stop</code></li><li>Delete a local kubernetes cluster: <code>minikube delete</code></li></ol>",
+        "text": "<b>Useful Commands</b><br/><ol><li>Start minikube: <code>minikube start</code> or <code>minikube start --kubernetes-version v1.13.2</code>. If failed to download kubernetes images, then use <code>sudo kubeadm config images pull</code> to download the images, and then run start again.</li><li>Check cluster status: <code>kubectl cluster-info</code></li><li>Stop a running local kubernetes cluster: <code>minikube stop</code></li><li>Delete a local kubernetes cluster: <code>minikube delete</code></li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "date": "2019/03/03",
+    "title": "Install GIT on Windows",
+    "itemList": [
+      {
+        "text": "<p><ol><li>Download the latest Git for Windows installer.</li><li>When you've successfully started the installer, you should see the Git Setup wizard screen. Follow the Next and Finish prompts to complete the installation. The default options are pretty sensible for most users.</li><li>Open a Command Prompt (or Git Bash if during installation you elected not to use Git from the Windows Command Prompt), and verify the GIT is installed by using <code>git --version</code></li><li>Run the following commands to configure your Git username and email using the following commands, replacing Emma's name with your own. These details will be associated with any commits that you create: <code>git config --global user.name 'Emma Paris'</code> and <code>git config --global user.email 'eparis@atlassian.com'</code></li></ol></p>",
         "image": ""
       }
     ]

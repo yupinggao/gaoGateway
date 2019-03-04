@@ -14,7 +14,7 @@
       }
       ,
       {
-        "text": "<b>Some GIT Commands</b> <p><mark>git add: </mark>Add one or more files to staging (index).<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add one file: git add <i>filename</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage all changes: git add -A<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage modifications and deletions, without new files: git add -u<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add all new and modified files (without deletion, not including files/folders listed in .gitignore): git add .</p> <p><mark>git commit: </mark>Commit changes.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit changes to head (but not yet to the remote repository): git commit -m 'Commit message'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit any files you've added with git add, and also commit any files you've changed since then: git commit -a</p> <p><mark>git config: </mark>Configure the author name and email address to be used with your commits. Note that Git strips some characters (for example trailing periods) from user.name.</p> <p><mark>git clone: </mark>Check out a repository.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ceate a working copy of a local repository: git clone /path/to/repository<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For a remote server, use: git clone username@host:/path/to/repository</p> <p><mark>git init: </mark>Create a new local repository.</p> <p><mark>git push origin master: </mark>Send changes to the master branch of your remote repository.</p> <p><mark>git status: </mark>List the files you've changed and those you still need to add or commit.</p> <p><mark>git remote add origin <server>: </mark>If you haven't connected your local repository to a remote server, add the server to be able to push to it.<p> <p>For more GIT commands, please visit the following link: <a href='https://git-scm.com/docs' target='_blank'>List Of GIT Commands</a></p>",
+        "text": "<b>Some GIT Commands</b> <p><mark>git config --global user.email 'email@example.com': </mark>Set the email address in GIT</p><p><mark>git config --list: </mark>show the global config in GIT</p><p><mark>git add: </mark>Add one or more files to staging (index).<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add one file: git add <i>filename</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage all changes: git add -A<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage modifications and deletions, without new files: git add -u<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add all new and modified files (without deletion, not including files/folders listed in .gitignore): git add .</p> <p><mark>git commit: </mark>Commit changes.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit changes to head (but not yet to the remote repository): git commit -m 'Commit message'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit any files you've added with git add, and also commit any files you've changed since then: git commit -a</p> <p><mark>git config: </mark>Configure the author name and email address to be used with your commits. Note that Git strips some characters (for example trailing periods) from user.name.</p> <p><mark>git clone: </mark>Check out a repository.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ceate a working copy of a local repository: git clone /path/to/repository<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For a remote server, use: git clone username@host:/path/to/repository</p> <p><mark>git init: </mark>Create a new local repository.</p> <p><mark>git push origin master: </mark>Send changes to the master branch of your remote repository.</p> <p><mark>git status: </mark>List the files you've changed and those you still need to add or commit.</p> <p><mark>git remote add origin <server>: </mark>If you haven't connected your local repository to a remote server, add the server to be able to push to it.<p> <p>For more GIT commands, please visit the following link: <a href='https://git-scm.com/docs' target='_blank'>List Of GIT Commands</a></p>",
         "image": ""
       }
     ]
@@ -40,7 +40,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 20,
     "date": "2019/01/06",
     "title": "Gira",
     "itemList": [
@@ -55,7 +55,37 @@
     ]
   },
   {
-    "id": 20,
+    "id": 30,
+    "date": "2019/03/02",
+    "title": "Gradle",
+    "itemList": [
+      {
+        "text": "<b>Some Gradle Commands</b> <p><ul><li><mark>gradlew init: </mark>command to generate a simple project</li><li><mark>gradlew tasks: </mark>lists Gradle tasks that you can invoke, including those added by the base plugin, and custom tasks as well</li><li><mark>gradlew properties: </mark>tells you about a project’s attributes</li><li><mark>gradle wrapper: </mark>generates the necessary Wrapper files in the project directory. The recommended way to execute any Gradle build is with the help of the Gradle Wrapper (in short just “Wrapper”). The Wrapper is a script that invokes a declared version of Gradle, downloading it beforehand if necessary. As a result, developers can get up and running with a Gradle project quickly without having to follow manual installation processes saving your company time and money.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Some Gradle Task Examples</b> <p><ul><li>task copy(type: Copy, group: 'Custom', description: 'Copies sources to the dest directory') {<br/>&emsp;&emsp;from 'src'<br/>&emsp;&emsp;into 'dest'<br/>}</li><li>task zip(type: Zip, group: 'Archive', description: 'Archives sources in a zip file') {<br/>&emsp;&emsp;from 'src'<br/>&emsp;&emsp;setArchiveName 'basic-demo-1.0.zip'<br/>}</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "date": "2019/03/03",
+    "title": "Gretty",
+    "itemList": [
+      {
+        "text": "<b>Gretty: </b> Gretty is a feature-rich gradle plugin for running web-apps on embedded servlet containers. It supports Jetty versions 7, 8 and 9, Tomcat versions 7 and 8, multiple web-apps and many more. It wraps servlet container functions as convenient Gradle tasks and configuration DSL. Gretty supports web-apps of various types: gradle projects, WAR-files in the file system and even WAR-files from maven dependencies. The central concept of Multiple web-apps feature is farm - a collection of web-apps, that should run together. There are two ways to define and use farms: <ul><li>Default farm is automatically created for you by Gretty. You may add artbitrary web-apps to it and then invoke farm-specific tasks: farmRun, farmRunDebug, etc. Note that farm-specific tasks are not using gretty tasks (appRun, appRunDebug, etc.).</li><li>Named farms, which you create yourself in gradle script. You can add as many named farms as you want, and you can add web-apps to farms in arbitrary constellations. Each named farm provides a specific set of farm tasks. For example, if you define farm with name 'XYZ', there will be new tasks farmRunXYZ, farmRunDebugXYZ, etc. available.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>Some Gretty Task Examples</b> <p><ul><li><mark>appRun task: </mark>appRun task starts web-app inplace, in interactive mode.<br/>Effects:<ol><li>The web-app gets compiled (if it’s not up-to-date).</li><li>Embedded servlet-container starts in separate java process against compiled classes and their dependencies and listens for HTTP-requests on port (default 8080).</li><li>Gretty waits for the user keypress.</li><li>When user presses any key (in the same terminal), servlet-container process shuts down.</li><li>Gretty waits for servlet-container process to complete.</li><li>Gradle script continues normal execution of tasks.</li></ol></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 50,
     "date": "2019/01/10",
     "title": "Unix Commands",
     "itemList": [
@@ -70,7 +100,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 50,
     "date": "2019/01/26",
     "title": "Webseal",
     "itemList": [

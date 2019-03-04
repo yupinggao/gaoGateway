@@ -121,7 +121,7 @@
   {
     "id": 60,
     "date": "2015/11/3",
-    "title": "OAuth and OpenID",
+    "title": "OAuth, OpenID and OATH",
     "itemList": [
       {
         "text": "<b>OAuth</b><p>OAuth is an open standard for authorization. OAuth provides client applications a 'secure delegated access' to server resources on behalf of a resource owner. It specifies a process for resource owners to authorize third-party access to their server resources without sharing their credentials. Designed specifically to work with HTTP, OAuth essentially allows access tokens to be issued to third-party clients by an authorization server, with the approval of the resource owner, or end-user. The client then uses the access token to access the protected resources hosted by the resource server. OAuth is commonly used as a way for web surfers to log into third party web sites using their Microsoft, Google, Facebook or Twitter accounts, without worrying about their access credentials being compromised.<p>OAuth is a service that is complementary to, and therefore distinct from, OpenID. OAuth is also distinct from OATH, which is a reference architecture for authentication, not a standard for authorization.<br/><br/>The following picture shows a typical Oauth success response token:",
@@ -129,6 +129,26 @@
       },
       {
         "text": "<b>OpenID</b><p>OpenID (OID) is an open standard and decentralized protocol by the non-profit OpenID Foundation that allows users to be authenticated by certain co-operating sites (known as Relying Parties or RP) using a third party service. This eliminates the need for webmasters to provide their own ad hoc systems and allowing users to consolidate their digital identities. In other words, users can log into multiple unrelated websites without having to register with their information over and over again; Several large organizations either issue or accept OpenIDs on their websites according to the OpenID Foundation: AOL, Blogger, Flickr, France Telecom, Google, Hyves, LiveJournal, Microsoft (provider name Microsoft account), Mixi, Myspace, Novell, Orange, Sears, Sun, Telecom Italia, Universal Music Group, VeriSign, WordPress, and Yahoo!. Other providers are BBC, IBM, PayPal, Steam, along with GitHub, Identi.ca, Last.fm, Linkedin, and Twitter. However, some of those organizations also develop their own authentication management such as Novell Modular Authentication Service (NMAS), and Facebook stopped using OpenID and instead uses Facebook Connect.",
+        "image": ""
+      },
+      {
+        "text": "<b>OpenID Connect</b><p>OpenID Connect is a “profile” of OAuth 2.0 specifically designed for attribute release and authentication.</p><p>From a technical perspective, the big difference between OpenID Connect and OAuth 2.0 is the id_token–there is no id_token defined in OAuth 2.0 because it is specific to federated authentication.</p><p>The id_token provides an additional layer of security to user sign in transactions by adding:<ul><li>A nonce, which is sent by the client and enables the integrity of the response to be validated</li><li>A hash of the access token</li><li>A hash of the code (optional)</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>OpenID Connect vs SAML</b><p>At the risk of over-simplification, OpenID Connect is a rewrite of SAML using OAuth 2.0. Let’s look at a few similarities and differences…</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>IDP / SP vs. OP / RP</b><p>In SAML, the user is redirected from the Service Provider (SP) to the Identity Provider (IDP) for sign in.</p><p>In OpenID Connect, the user is redirected from the Relying Party (RP) to the OpenID Provider (OP) for sign in.</p><p>The SAML SP is always a website. The OpenID Connect RP is either a web or mobile application, and is frequently called the “client” because it extends an OAuth 2.0 client.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Assertion vs. id_token</b><p>In SAML, there is an “assertion”–a signed XML document with the subject information (who authenticated), attributes (info about the person), the issuer (who issued the assertion), and other information about the authentication event.</p><p>The equivalent in OpenID Connect is the id_token. This is a signed JSON document that contains the subject, issuer, and authentication information.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>OATH</b><p>Initiative for Open Authentication (OATH) is an industry-wide collaboration to develop an open reference architecture using open standards to promote the adoption of strong authentication. It has close to thirty coordinating and contributing members and is proposing standards for a variety of authentication technologies, with the aim of lowering costs and simplifying their use.</p><p>An OATH token is a secure one time password that can be used for two factor authentication.  The first factor is something you know (a password, mother's maiden name, the whereabouts of Jimmy Hoffa) while the second factor is something you have (a smartphone, email address, etc.).  The OATH token is sent to something you have as a one time password to increase security in authentication.</p><p>OATH is not related to OAuth, an open standard for authorization.</p>",
         "image": ""
       }
     ]
@@ -139,21 +159,51 @@
     "title": "SSL/TLS Algorithms",
     "itemList": [
       {
-        "text": "<b>Symmetric Algorithms:</b><p><ul><li><mark>DES:</mark></li><li><mark>3DES:</mark></li><li><mark>ARCFOUR:</mark></li><li><mark>AES:</mark></li><li><mark>Camellia:</mark></li><li><mark>RC2:</mark></li><li><mark>IDEA:</mark></li><li><mark>SEED:</mark></li></ul>",
+        "text": "<b>Symmetric Algorithms:</b><p><ul><li><mark>DES:</mark> The Data Encryption Standard was adopted as a U.S. government standard in 1977 and as an ANSI standard in 1981. The DES is a block cipher that uses a 56-bit key and has several different operating modes depending on the purpose for which it is employed. The DES is a strong algorithm, but today the short key length limits its use. Indeed, in 1998 a special-purpose machine for 'cracking DES' was created by the Electronic Frontier Foundation (EFF) for under $250,000. In one demonstration, it found the key to an encrypted message in less than a day in conjunction with a coalition of computer users around the world.</li><li><mark>3DES:</mark> Triple-DES is a way to make the DES dramatically more secure by using the DES encryption algorithm three times with three different keys, for a total key length of 168 bits. Also called '3DES' this algorithm has been widely used by financial institutions and by the Secure Shell program (ssh). Simply using the DES twice with two different keys does not improve its security to the extent that one might at first suspect because of a theoretical plaintext attack called meet-in-the-middle, in which an attacker simultaneously attempts encrypting the plaintext with a single DES operation and decrypting the ciphertext with another single DES operation until a match is made in the middle. Triple-DES avoids this vulnerability.</li><li><mark>Blowfish</mark> Blowfish is a fast, compact, and simple block encryption algorithm invented by Bruce Schneier. The algorithm allows a variable-length key, up to 448 bits, and is optimized for execution on 32- or 64-bit processors. The algorithm is unpatented and has been placed in the public domain. Blowfish is used in the Secure Shell and other programs.</li><li><mark>ARCFOUR:</mark></li><li><mark>AES:</mark> This block cipher was developed by Joan Daemen and Vincent Rijmen, and was chosen in October 2000 by the National Institute of Standards and Technology to be the U.S.'s new Advanced Encryption Standard. Rijndael is an extraordinarily fast and compact cipher that can use keys that are 128, 192, or 256 bits long.</li><li><mark>Camellia:</mark></li><li><mark>RC2:</mark></li><li><mark>IDEA:</mark></li><li><mark>SEED:</mark></li></ul>",
         "image": ""
       },
       {
-        "text": "<b>Asymmetric Algorithms:</b><p><ul><li><mark>Diffie-Hellman:</mark></li><li><mark>RSA:</mark></li><li><mark>ECC:</mark></li><li><mark>ElGamal:</mark></li><li><mark>DSA:</mark></li></ul>",
+        "text": "<b>Asymmetric Algorithms:</b><p><ul><li><mark>Diffie-Hellman:</mark> Diffie-Hellman key agreement algorithm was developed by Dr. Whitfield Diffie and Dr. Martin Hellman in 1976. Diffie-Hellman algorithm is not for encryption or decryption but it enable two parties who are involved in communication to generate a shared secret key for exchanging information confidentially.</li><li><mark>RSA:</mark> Rivest Shamir Adleman (RSA): Ron Rivest, Adi Shamir, and Len Adleman released the Rivest-Shamir-Adleman (RSA) public key algorithm in 1978. This algorithm can be used for encrypting and signing data. The encryption and signing processes are performed through a series of modular multiplications.</li><li><mark>ECC: </mark>Elliptic-curve cryptography (ECC) is an approach to public-key cryptography based on the algebraic structure of elliptic curves over finite fields. ECC requires smaller keys compared to non-EC cryptography (based on plain Galois fields) to provide equivalent security.</li><li><mark>ElGamal:</mark></li><li><mark>DSA:</mark> The Digital Signature Algorithm (DSA) was developed by the United States government for digital signatures. Digital Signature Algorithm can be used only for signing data and it cannot be used for encryption. The DSA signing process is performed through a series of calculations based on a selected prime number. Although intended to have a maximum key size of 1,024 bits, longer key sizes are now supported.</li></ul>",
         "image": ""
       },
       {
-        "text": "<b>Common Hash Functions for Message Digest:</b><p><ul><li><mark>MD5:</mark></li><li><mark>SHA:</mark></li></ul>",
+        "text": "<b>Common Hash Functions for Message Digest:</b><p>A hash function is any function that can be used to map data of arbitrary size to data of a fixed size. The values returned by a hash function are called hash values, hash codes, digests, or simply hashes.<ul><li><mark>MD5:</mark> The MD5 message-digest algorithm is a widely used hash function producing a 128-bit hash value. Although MD5 was initially designed to be used as a cryptographic hash function, it has been found to suffer from extensive vulnerabilities. It can still be used as a checksum to verify data integrity, but only against unintentional corruption. It remains suitable for other non-cryptographic purposes, for example for determining the partition for a particular key in a partitioned database.<br/><br/> One basic requirement of any cryptographic hash function is that it should be computationally infeasible to find two distinct messages which hash to the same value. MD5 fails this requirement catastrophically; such collisions can be found in seconds on an ordinary home computer.</li><li><mark>SHA:</mark> SHA-2 (Secure Hash Algorithm 2) is a set of cryptographic hash functions designed by the United States National Security Agency (NSA).[3] They are built using the Merkle–Damgård structure, from a one-way compression function itself built using the Davies–Meyer structure from a (classified) specialized block cipher. <br/><br/>SHA-2 includes significant changes from its predecessor, SHA-1. The SHA-2 family consists of six hash functions with digests (hash values) that are 224, 256, 384 or 512 bits: SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224, SHA-512/256.</li></ul>",
         "image": ""
       }
     ]
   },
   {
     "id": 80,
+    "date": "2019/02/06",
+    "title": "Cipher Suite",
+    "itemList": [
+      {
+        "text": "<p>A cipher suite is a set of algorithms that help secure a network connection that uses Transport Layer Security (TLS) or its now-deprecated predecessor Secure Socket Layer (SSL). The set of algorithms that cipher suites usually contain include: a key exchange algorithm, a bulk encryption algorithm, and a message authentication code (MAC) algorithm.</p><p>The key exchange algorithm is used to exchange a key between two devices. This key is used to encrypt and decrypt the messages being sent between two machines. The bulk encryption algorithm is used to encrypt the data being sent. The MAC algorithm provides data integrity checks to ensure that the data sent does not change in transit. In addition, cipher suites can include signatures and an authentication algorithm to help authenticate the server and or client.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Stream vs Block Ciphers</b><p>There are two major types of ciphers: block and stream. Block ciphers process entire blocks at a time, usually many bytes in length. If there is not enough data to make a complete input block, the data must be padded: that is, before encryption, dummy bytes must be added to make a multiple of the cipher's block size. These bytes are then stripped off during the decryption phase. The padding can either be done by the application, or by initializing a cipher to use a padding type such as 'PKCS5PADDING'. In contrast, stream ciphers process incoming data one small unit (typically a byte or even a bit) at a time. This allows for ciphers to process an arbitrary amount of data without padding.",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "date": "2019/02/07",
+    "title": "keytool",
+    "itemList": [
+      {
+        "text": "<p>keytool is a Key and Certificate Management Tool. It Manages a keystore (database) of cryptographic keys, X.509 certificate chains, and trusted certificates.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>COMMAND AND OPTION NOTES</b><p><ul><li>keytool -help</li><li>keytool -printcert {-file cert_file} {-v}, Note: The -v option can appear for all commands except -help. If it appears, it signifies 'verbose' mode; more information will be output.</li><li>keytool -genkeypair</li><li>keytool -exportcert -alias mykey -file MJ.cer</li><li>keytool -importcert -alias abc -file ABCCA.cer</li><li>keytool -certreq -file MarkJ.csr</li><li>keytool -importkeystore</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 90,
     "date": "2019/01/29",
     "title": "OWASP Top 10 Application Security Risks",
     "itemList": [
