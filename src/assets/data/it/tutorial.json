@@ -338,5 +338,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 180,
+    "date": "2019/03/04",
+    "title": "Install/Uninstall GIT on Ubuntu",
+    "itemList": [
+      {
+        "text": "<p><b>Install</b>:<br/><ol><li>sudo apt update</li><li>sudo apt install git</li><li>git --version</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Uninstall</b>:<br/><ol><li>sudo apt-get remove git</li></ol></p>",
+        "image": ""
+      }
+    ]
   }
 ]
