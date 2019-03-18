@@ -113,5 +113,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 60,
+    "date": "2019/03/17",
+    "title": "Dataweave",
+    "itemList": [
+      {
+        "text": "<p><b>DataWeave Types</b><br/>DataWeave functions operate on data of many types, including <ul><li>Arrays</li><li>Booleans</li><li>CData</li><li>Date and Time</li><li>Enum</li><li>Iterator</li><li>Number</li><li>Object</li><li>Regex</li><li>String</li><li>TryResult</li></ul>The types that DataWeave provide are bundled into modules that also contain the related functions.</p>",
+        "image": ""
+      },
+      {
+        "text": "",
+        "image": ""
+      }
+    ]
   }
 ]

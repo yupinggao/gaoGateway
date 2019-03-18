@@ -246,5 +246,44 @@
         "imageClass": "mx-auto d-block"        
       }
     ]
+  },
+  {
+    "id": 120,
+    "date": "2019/03/09",
+    "title": "Azure Resource Manager",
+    "itemList": [
+      {
+        "text": "<p>Azure Resource Manager enables you to repeatedly deploy your app and have confidence your resources are deployed in a consistent state. You define the infrastructure and dependencies for your app in a single declarative template. This template is flexible enough to use for all of your environments such as test, staging or production. If you create a solution from the Azure Marketplace, the solution will automatically include a template that you can use for your app.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The Resource Manager and classic deployment models represent two different ways of deploying and managing your Azure solutions. You work with them through two different API sets, and the deployed resources can contain important differences. The two models are not compatible with each other. This article describes those differences.</p><p>To simplify the deployment and management of resources, Microsoft recommends that you use Resource Manager for all new resources. If possible, Microsoft recommends that you redeploy existing resources through Resource Manager.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Terminology</b><br/><p><ul><li>Resource - A manageable item that is available through Azure. Virtual machines, storage accounts, web apps, databases, and virtual networks are examples of resources.</li><li>resource group - A container that holds related resources for an Azure solution. The resource group includes those resources that you want to manage as a group. You decide how to allocate resources to resource groups based on what makes the most sense for your organization. See Resource groups.</li><li>resource provider - A service that supplies Azure resources. For example, a common resource provider is Microsoft.Compute, which supplies the virtual machine resource. Microsoft.Storage is another common resource provider. See Resource providers.</li><li>Resource Manager template - A JavaScript Object Notation (JSON) file that defines one or more resources to deploy to a resource group or subscription. The template can be used to deploy the resources consistently and repeatedly. See Template deployment.</li><li>declarative syntax - Syntax that lets you state 'Here is what I intend to create' without having to write the sequence of programming commands to create it. The Resource Manager template is an example of declarative syntax. In the file, you define the properties for the infrastructure to deploy to Azure.</li></ul></p><p>Azure provides four levels of management scope: management groups, subscriptions, resource groups, and resources. Management groups are in a preview release. The following image shows an example of these layers.</p>",
+        "image": "../assets/image/it/cloud/scope-levels.png",
+        "imageClass": "mx-auto d-block"        
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "date": "2019/03/10",
+    "title": "Azure DevOps Pipeline",
+    "itemList": [
+      {
+        "text": "<b>Add gradle</b><br><p><ul><li>Pipeline->build->Edit->Tasks</li><li>On 'Phase x', 'Add a task to Phase x'</li><li>Search 'gradle'</li><li>Install or Add</li><li>Click the added task</li><li>Fill the required info</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Add Tomcat Extension</b><br><p><ul><li>Pipeline->build->Edit->Tasks</li><li>On 'Phase x', 'Add a task to Phase x'</li><li>Search 'Apache Tomcat Deployment'</li><li>Install or Add</li><li>Click the added task</li><li>Fill the required info</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Add JBoss and WildFly Extension</b><br><p><ul><li>Pipeline->build->Edit->Tasks</li><li>On 'Phase x', 'Add a task to Phase x'</li><li>Search 'JBoss'</li><li>Install or Add</li><li>Click the added task</li><li>Fill the required info</li></ul></p>",
+        "image": ""
+      }
+    ]
   }
 ]

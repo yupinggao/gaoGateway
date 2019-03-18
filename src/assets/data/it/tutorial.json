@@ -353,5 +353,28 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 190,
+    "date": "2019/03/07",
+    "title": "Create Windows 2016 VM on Azure",
+    "itemList": [
+      {
+        "text": "<p><b>Creat VM</b>:<br/><ol><li>Choose Create a resource in the upper left-hand corner of the Azure portal.</li><li>In the search box above the list of Azure Marketplace resources, search for and select Windows Server 2016 Datacenter (Region: Canada East), then choose Create</li><li>In the Basics tab, under Project details, make sure the correct subscription is selected and then choose things: for INBOUND PORT RULES, choose 'Allow selected ports' - RDP, HTTP</li><li>Leave the remaining tabs defaults and then select the Review + create button at the bottom of the page</li><li>Before Create, select 'Generate template' to generate template zip file</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Connect to VM</b>:<br/><ol><li>Click the Connect button on the virtual machine properties page</li><li>In the Connect to virtual machine page, keep the default options to connect by DNS name over port 3389 and click Download RDP file</li><li>Open the downloaded RDP file and click Connect when prompted</li><li>In the Windows Security window, select More choices and then Use a different account. Type the username as localhost\\username, enter password you created for the virtual machine, and then click OK</li><li>You may receive a certificate warning during the sign-in process. Click Yes or Continue to create the connection</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Install JDK 8 on VM</b>:<br/><ol><li>Download JDK</li><li>Install JDK</li><li>Set JAVA_HOME and path</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Install Tomcat 9 on VM</b>:<br/><ol><li>Download the Tomcat zip</li><li>unzip to C:\\apache-tomcat-9.0.16</li><li>cd C:\\apache-tomcat-9.0.16\\bin</li><li>startup</li><li>localhost:80</li></ol></p>",
+        "image": ""
+      }
+    ]
   }
 ]
