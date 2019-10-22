@@ -34,5 +34,12 @@
     "fileName": "../assets/image/photo/nature/5.jpg",
     "title": "Beautiful Sunset, Port of Orillia, Ontario",
     "dateTaken": "2018-08"
+  },
+  {
+    "id": 30,
+    "date": "2019/07/20",
+    "fileName": "../assets/image/photo/nature/6.jpg",
+    "title": "Fishing, Beautiful Sunset, Kirkfield, Ontario",
+    "dateTaken": "2019-06-18"
   }
 ]

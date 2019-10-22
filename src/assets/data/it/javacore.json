@@ -188,5 +188,24 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 130,
+    "date": "2019/10/21",
+    "title": "DOM vs SAX vs StAX",
+    "itemList": [
+      {
+        "text": "<b>Document Object Model (DOM)</b><br><p><ul><li>DOM is a cross-platform and language-independent convention for representing and interacting with objects in HTML, XHTML, and XML documents.</li><li>The entire XML document is read into memory and the nodes of the document are organized in a tree structure, called the DOM tree.</li><li>DOM allows for random access to the document.</li><li>DOM is bi-directional.</li><li>DOM can write XML documents.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Simple API for XML (SAX)</b><br><p><ul><li>SAX is an event-driven online algorithm for parsing XML documents.</li><li>SAX parsers operate on each piece of the XML document sequentially; the application registers to receive events as entities are encountered within the source document.</li><li>SAX has a small memory footprint and is typically much faster.</li><li>SAX is not bi-directional.</li><li>SAX cannot write XML documents.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Streaming API for XML (StAX)</b><br><p><ul><li>StAX is an application programming interface (API) to read and write XML documents, originating from the Java programming language community.</li><li>StAX was designed as a median between DOM and SAX.<ul><li>In the StAX metaphor, the programmatic entry point is a cursor that represents a point within the document.</li><li>The application moves the cursor forward - 'pulling' the information from the parser as it needs.</li><li>This is different from an event based API - such as SAX - which 'pushes' data to the application - requiring the application to maintain state between events as necessary to keep track of location within the document.</li></ul></li><li>StAX allows clients to start, pause and resume the parsing process.</li><li>Stax is bi-directional.</li><li>StAX can write XML documents.</li></ul></p>",
+        "image": ""
+      }
+    ]
   }
 ]

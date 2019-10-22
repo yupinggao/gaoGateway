@@ -117,6 +117,10 @@
       {
         "text": "<b>An entity class must follow these requirements:</b><p><ul><li>The class must be annotated with the javax.persistence.Entity annotation.</li><li>The class must have a public or protected, no-argument constructor. The class may have other constructors.</li><li>The class must not be declared final. No methods or persistent instance variables must be declared final.</li><li>If an entity instance is passed by value as a detached object, such as through a session bean’s remote business interface, the class must implement the Serializable interface.</li><li>Entities may extend both entity and non-entity classes, and non-entity classes may extend entity classes.</li><li>Persistent instance variables must be declared private, protected, or package-private and can be accessed directly only by the entity class’s methods. Clients must access the entity’s state through accessor or business methods.</li></ul>",
         "image": ""
+      },
+      {
+        "text": "<b>Primary Keys in Entities</b><p>Simple primary keys use the javax.persistence.Id annotation to denote the primary key property or field.</p><p>Composite primary keys are used when a primary key consists of more than one attribute, which corresponds to a set of single persistent properties or fields. Composite primary keys must be defined in a primary key class. Composite primary keys are denoted using the javax.persistence.EmbeddedId and javax.persistence.IdClass annotations.</p><p>The primary key, or the property or field of a composite primary key, must be one of the following Java language types:<br><ul><li>Java primitive types</li><li>Java primitive wrapper types</li><li>java.lang.String</li><li>java.util.Date</li><li>java.sql.Date</li><li>java.math.BigDecimal</li><li>java.math.BigInteger</li></ul>",
+        "image": ""
       }
     ]
   }

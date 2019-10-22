@@ -376,5 +376,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 200,
+    "date": "2019/03/23",
+    "title": "Install/Uninstall Tomcat As Windows Service",
+    "itemList": [
+      {
+        "text": "<p><b>Install</b><li>Go to the bin folder in the installation folder of Tomcat</li><li>Install Tomcat as service named tomcat8 by calling service.bat install <servicename>; for instance C:\\tomcat\\apache-tomcat-8.5.11\\bin>service.bat install tomcat8</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Uninstall</b><li>Go to the bin folder in the installation folder of Tomcat</li><li>Unnnstall Tomcat as service named tomcat8 by calling service.bat uninstall <servicename>; for instance C:\\tomcat\\apache-tomcat-8.5.11\\bin>service.bat install tomcat8</li></ol></p>",
+        "image": ""
+      }
+    ]
   }
 ]

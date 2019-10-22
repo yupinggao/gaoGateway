@@ -60,11 +60,15 @@
     "title": "Gradle",
     "itemList": [
       {
-        "text": "<b>Some Gradle Commands</b> <p><ul><li><mark>gradlew init: </mark>command to generate a simple project</li><li><mark>gradlew tasks: </mark>lists Gradle tasks that you can invoke, including those added by the base plugin, and custom tasks as well</li><li><mark>gradlew properties: </mark>tells you about a project’s attributes</li><li><mark>gradle wrapper: </mark>generates the necessary Wrapper files in the project directory. The recommended way to execute any Gradle build is with the help of the Gradle Wrapper (in short just “Wrapper”). The Wrapper is a script that invokes a declared version of Gradle, downloading it beforehand if necessary. As a result, developers can get up and running with a Gradle project quickly without having to follow manual installation processes saving your company time and money.</li></ul></p>",
+        "text": "<b>Some Gradle Commands</b> <p><ul><li><mark>gradlew init: </mark>command to generate a simple project</li><li><mark>gradlew tasks: </mark>lists Gradle tasks that you can invoke, including those added by the base plugin, and custom tasks as well</li><li><mark>gradlew properties: </mark>tells you about a project’s attributes</li><li><mark>gradle wrapper: </mark>generates the necessary Wrapper files in the project directory. The recommended way to execute any Gradle build is with the help of the Gradle Wrapper (in short just “Wrapper”). The Wrapper is a script that invokes a declared version of Gradle, downloading it beforehand if necessary. As a result, developers can get up and running with a Gradle project quickly without having to follow manual installation processes saving your company time and money.</li><li><mark>gradle -q xxx:</mark> the flag -q suppresses Gradle's log messages.</li></ul></p>",
         "image": ""
       },
       {
         "text": "<b>Some Gradle Task Examples</b> <p><ul><li>task copy(type: Copy, group: 'Custom', description: 'Copies sources to the dest directory') {<br/>&emsp;&emsp;from 'src'<br/>&emsp;&emsp;into 'dest'<br/>}</li><li>task zip(type: Zip, group: 'Archive', description: 'Archives sources in a zip file') {<br/>&emsp;&emsp;from 'src'<br/>&emsp;&emsp;setArchiveName 'basic-demo-1.0.zip'<br/>}</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Dependency management</b> <p><ul><li><b>compile(Deprecated): </b>Compile time dependencies. Superseded by implementation</li><li><b>implementation extends compile: </b>Implementation only dependencies</li><li><b>compileOnly: </b>Compile time only dependencies, not used at runtime</li><li><b>compileClasspath extends compile, compileOnly, implementation: </b>Compile classpath, used when compiling source. Used by task compileJava</li><li><b>annotationProcessor: </b>Annotation processors used during compilation</li><li><b>runtime(Deprecated) extends compile: </b>Runtime dependencies. Superseded by runtimeOnly</li><li><b>runtimeOnly: </b>Runtime only dependencies</li><li><b>runtimeClasspath extends runtimeOnly, runtime, implementation: </b>Runtime classpath contains elements of the implementation, as well as runtime only elements</li><li><b>testCompile(Deprecated) extends compile: </b>Additional dependencies for compiling tests. Superseded by testImplementation</li><li><b>testImplementation extends testCompile, implementation: </b>Implementation only dependencies for tests</li><li><b>testCompileOnly: </b>Additional dependencies only for compiling tests, not used at runtime</li><li><b>testCompileClasspath extends testCompile, testCompileOnly, testImplementation: </b>Test compile classpath, used when compiling test sources. Used by task compileTestJava</li><li><b>testRuntime(Deprecated) extends runtime, testCompile: </b>Additional dependencies for running tests only. Superseded by testRuntimeOnly</li><li><b>testRuntimeOnly extends runtimeOnly: </b>Runtime only dependencies for running tests</li><li><b>testRuntimeClasspath extends testRuntimeOnly, testRuntime, testImplementation: </b>Runtime classpath for running tests. Used by task test</li><li><b>archives: </b>Artifacts (e.g. jars) produced by this project. Used by task uploadArchives</li><li><b>default extends runtime: </b>The default configuration used by a project dependency on this project. Contains the artifacts and dependencies required by this project at runtime</li></ul></p>",
         "image": ""
       }
     ]
@@ -121,6 +125,21 @@
     "itemList": [
       {
         "text": "<p><b>DataWeave Types</b><br/>DataWeave functions operate on data of many types, including <ul><li>Arrays</li><li>Booleans</li><li>CData</li><li>Date and Time</li><li>Enum</li><li>Iterator</li><li>Number</li><li>Object</li><li>Regex</li><li>String</li><li>TryResult</li></ul>The types that DataWeave provide are bundled into modules that also contain the related functions.</p>",
+        "image": ""
+      },
+      {
+        "text": "",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "date": "2019/03/23",
+    "title": "Tomcat",
+    "itemList": [
+      {
+        "text": "<p><b>Configure DataSource in JNDI context</b><br/>Apache Tomcat provide three ways to configure DataSource in JNDI context.<ol><li><b>Application context.xml</b> – This is the easiest way to configure DataSource, all we need is a context.xml file in META-INF directory. We have to define Resource element in the context file and container will take care of loading and configuring it. The approach is simple but it has some drawbacks.<ul><li>Since the context file is bundled with the WAR file, we need to build and deploy new WAR for every small configuration change. Same issue comes if your application works in distributed environment or your application needs to be deployed in different testing environments such as QA, IT, PROD etc.</li><li>The datasource is created by container for the application usage only, so it can’t be used globally. We can’t share the datasource across multiple applications.</li><li>If there is a global datasource (server.xml) defined with same name, the application datasource is ignored.</li></ul></li><li><b>Server context.xml</b> – If there are multiple applications in the server and you want to share DataSource across them, we can define that in the server context.xml file. This file is located in apache-tomcat/conf directory. The scope of server context.xml file is application, so if you define a DataSource connection pool of 100 connections and there are 20 applications then the datasource will be created for each of the application. This will result in 2000 connections that will obviously consume all the database server resources and hurt application performance.</li><li><b>server.xml and context.xml</b> – We can define DataSource at global level by defining them in the server.xml GlobalNamingResources element. If we use this approach, then we need to define a ResourceLink from context.xml file of server or application specific. This is the preferred way when you are looking to share a common resource pool across multiple applications running on the server. Regarding resource link, whether to define it at server level context xml file or application level depends on your requirement.</li></ol></p>",
         "image": ""
       },
       {

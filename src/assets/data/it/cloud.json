@@ -285,5 +285,32 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 140,
+    "date": "2019/10/20",
+    "title": "GCP - Google Cloud Platform",
+    "itemList": [
+      {
+        "text": "<b>GCP resources</b><br><p>GCP consists of a set of physical assets, such as computers and hard disk drives, and virtual resources, such as virtual machines (VMs), that are contained in Google's data centers around the globe. Each data center location is in a global region. Regions include Central US, Western Europe, and East Asia. Each region is a collection of zones, which are isolated from each other within the region. Each zone is identified by a name that combines a letter identifier with the name of the region. For example, zone a in the East Asia region is named asia-east1-a.</p><p>This distribution of resources provides several benefits, including redundancy in case of failure and reduced latency by locating resources closer to clients. This distribution also introduces some rules about how resources can be used together.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Accessing resources through services</b><br><p>In cloud computing, what you might be used to thinking of as software and hardware products, become services. These services provide access to the underlying resources. The list of available GCP services is long, and it keeps growing. When you develop your website or application on GCP, you mix and match these services into combinations that provide the infrastructure you need, and then add your code to enable the scenarios you want to build.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Global, regional, and zonal resources</b><br><p>Some resources can be accessed by any other resource, across regions and zones. These global resources include preconfigured disk images, disk snapshots, and networks. Some resources can be accessed only by resources that are located in the same region. These regional resources include static external IP addresses. Other resources can be accessed only by resources that are located in the same zone. These zonal resources include VM instances, their types, and disks.</p><p>The scope of an operation varies depending on what kind of resources you're working with. For example, creating a network is a global operation because a network is a global resource, while reserving an IP address is a regional operation because the address is a regional resource.</p><p>As you start to optimize your GCP applications, it's important to understand how these regions and zones interact. For example, even if you could, you wouldn't want to attach a disk in one region to a computer in a different region because the latency you'd introduce would make for very poor performance. Thankfully, GCP won't let you do that; disks can only be attached to computers in the same zone.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Projects</b><br><p>Any GCP resources that you allocate and use must belong to a project. You can think of a project as the organizing entity for what you're building. A project is made up of the settings, permissions, and other metadata that describe your applications. Resources within a single project can work together easily, for example by communicating through an internal network, subject to the regions-and-zones rules. The resources that each project contains remain separate across project boundaries; you can only interconnect them through an external network connection.</p><p>Each GCP project has:<br><ul><li>A project name, which you provide.</li><li>A project ID, which you can provide or GCP can provide for you.</li><li>A project number, which GCP provides.</li></ul></p><p>A project serves as a namespace. This means every resource within each project must have a unique name, but you can usually reuse resource names if they are in separate projects. Some resource names must be globally unique. Refer to the documentation for the resource for details.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Ways to interact with the services</b><br><p>GCP gives you three basic ways to interact with the services and resources.</p><p><ul><li>Google Cloud Platform Console</li><li>Command-line interface</li><li>Client libraries</li></ul></p>",
+        "image": ""
+      }
+    ]
   }
 ]
