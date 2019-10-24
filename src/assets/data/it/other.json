@@ -46,6 +46,45 @@
   },
   {
     "id": 50,
+    "date": "2019/10/23",
+    "title": "SASS",
+    "itemList": [
+      {
+        "text": "<p>SASS (Syntactically Awesome Stylesheets) is a CSS pre-processor that lets you use variables, mathematical operations, mixins, loops, functions, imports, and other interesting functionalities that make writing CSS much more powerful. In some ways, you may think of SASS as a style sheet extension language because it extends the standard CSS characteristics by introducing the benefits of a basic programming language. So SASS will compile your code and generate the CSS output a browser can understand.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>It's CSS syntax friendly</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>It offers variables for whatever you want</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>It uses nested syntax</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>It includes mixins</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>You can divide and conquer</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>It has a large community and is well documented</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>If you know SASS, you can customize Bootstrap 4</b></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 60,
     "date": "2019/01/26",
     "title": "Angular",
     "itemList": [
@@ -64,7 +103,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 70,
     "date": "2019/01/26",
     "title": "New Features in Angular 6",
     "itemList": [
@@ -99,7 +138,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 80,
     "date": "2019/01/26",
     "title": "JQuery",
     "itemList": [
@@ -118,7 +157,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 90,
     "date": "2019/01/30",
     "title": "Progress Web Apps (PWA)",
     "itemList": [
