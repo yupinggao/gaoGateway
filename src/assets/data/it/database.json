@@ -124,8 +124,16 @@
         "image": ""
       },
       {
-        "text": "Instead of using table as in relational database, mongodb uses collection.",
+        "text": "<b>Database</b><br/><p>Database is a physical container for collections. Each database gets its own set of files on the file system. A single MongoDB server typically has multiple databases.</p>",
         "image": ""
+      },
+      {
+        "text": "<b>Collection</b><br/><p>Instead of using table as in relational database, mongodb uses collection. Collection is a group of MongoDB documents. It is the equivalent of an RDBMS table. A collection exists within a single database. Collections do not enforce a schema. Documents within a collection can have different fields. Typically, all documents in a collection are of similar or related purpose.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Document</b><br/><p>A document is a set of key-value pairs. Documents have dynamic schema. Dynamic schema means that documents in the same collection do not need to have the same set of fields or structure, and common fields in a collection's documents may hold different types of data.</p>",
+        "image": "../assets/image/it/database/mongo.png"
       },
       {
         "text": "<b>Somethings to remember:</b><br/><p><ul><li>mongodb uses $lookup to left outer join colections</li><li></ul></p>",

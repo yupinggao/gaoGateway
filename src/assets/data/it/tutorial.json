@@ -391,5 +391,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 210,
+    "date": "2019/10/26",
+    "title": "Install Xrdp Server (Remote Desktop) on Ubuntu 18.04",
+    "itemList": [
+      {
+        "text": "<p>Generally, Linux servers don’t have a desktop environment installed. Our first step is to install X11 and a lightweight desktop environment that will act as a backend for Xrdp.</p><p>There are several desktop environments (DE) available in Ubuntu repositories. We’ll be installing Xfce. It is a fast, stable and lightweight desktop environment, which makes it ideal for usage on a remote server.</p>",
+        "image": ""
+      },
+      {
+        "text": "<div class='jumbotron'><p>sudo apt update<br>sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils<br>sudo apt install xrdp<br>sudo systemctl status xrdp<br>sudo nano /etc/xrdp/xrdp.ini<br>Add the following line at the end of the file:<br>exec startxfce4<br>sudo systemctl restart xrdp<br>sudo ufw allow 3389<br></p></div>",
+        "image": ""
+      }
+    ]
   }
 ]

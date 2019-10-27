@@ -147,6 +147,10 @@
       {
         "text": "<b>Kubernetes Commands</b><p><mark>kubectl apply: </mark>Apply a configuration to a resource by filename or stdin. The resource name must be specified. This resource will be created if it doesn't exist yet. To use 'apply', always create the resource initially with either 'apply' or 'create --save-config'.</p><p><mark>kubectl config: </mark>Modify kubeconfig files using subcommands, such as 'delete-cluster', 'rename-context', 'set' etc. Some examples: <br/>&nbsp;&nbsp;&nbsp;&nbsp;<mark>kubectl config current-context</mark>: display the current-context my-context'.<br/>&nbsp;&nbsp;&nbsp;&nbsp;<mark>kubectl config delete-cluster minikube</mark>: Delete the minikube cluster</p><p><mark>kubectl create: </mark>Create a resource from a file or from stdin. JSON and YAML formats are accepted.</p><p><mark>kubectl delete: </mark>Delete resources by filenames, stdin, resources and names, or by resources and label selector. JSON and YAML formats are accepted.</p><p><mark>kubectl exec: </mark>Execute a command in a container.</p><p><mark>kubectl expose: </mark>Expose a resource as a new Kubernetes service.</p><p><mark>kubectl get: </mark>Display one or many resources.</p><p><mark>kubectl run: </mark>Create and run a particular image, possibly replicated.</p><p><mark>kubectl cluster-info: </mark>Display addresses of the master and services with label kubernetes.io/cluster-service=true To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.<br/><p>For more Kubernetes commands, please visit the following link: <a href='https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands' target='_blank'>List Of Kubernetes Commands</a></p>",
         "image": ""
+      },
+      {
+        "text": "<b>Kubernetes Components</b>",
+        "image": "../assets/image/it/cloud/nodeOverview.png"
       }
     ]
   },

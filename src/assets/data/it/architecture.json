@@ -84,7 +84,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 40,
     "date": "2019/02/13",
     "title": "SOAP WS",
     "itemList": [
@@ -95,7 +95,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 50,
     "date": "2015/11/7",
     "title": "Restful WS",
     "itemList": [
@@ -106,11 +106,15 @@
       {
         "text": "The following principles encourage RESTful applications to be simple, lightweight, and fast:<ul><li><b>Resource identification through URI: </b>A RESTful web service exposes a set of resources that identify the targets of the interaction with its clients. Resources are identified by URIs, which provide a global addressing space for resource and service discovery. See The @Path Annotation and URI Path Templates for more information.</li><li><b>Uniform interface: </b>Resources are manipulated using a fixed set of four create, read, update, delete operations: PUT, GET, POST, and DELETE. POST creates a new resource, which can be then deleted by using DELETE. GET retrieves the current state of a resource in some representation. PUT transfers a new state onto a resource. See Responding to HTTP Methods and Requests for more information.<br>PUT and POST are both unsafe methods. However, PUT is idempotent, while POST is not.</li><li><b>Self-descriptive messages: </b>Resources are decoupled from their representation so that their content can be accessed in a variety of formats, such as HTML, XML, plain text, PDF, JPEG, JSON, and others. Metadata about the resource is available and used, for example, to control caching, detect transmission errors, negotiate the appropriate representation format, and perform authentication or access control. See Responding to HTTP Methods and Requests and Using Entity Providers to Map HTTP Response and Request Entity Bodies for more information.</li><li><b>Stateful interactions through hyperlinks: </b>Every interaction with a resource is stateless; that is, request messages are self-contained. Stateful interactions are based on the concept of explicit state transfer. Several techniques exist to exchange state, such as URI rewriting, cookies, and hidden form fields. State can be embedded in response messages to point to valid future states of the interaction. See Using Entity Providers to Map HTTP Response and Request Entity Bodies and Building URI in the JAX-RS Overview document for more information.</li></ul>",
         "image": ""
+      },
+      {
+        "text": "Restful API Operations: <ul><li><b>GET: </b>Retrieves data from the server.</li><li><b>PUT: </b>Updates data that is stored in the server.</li><li><b>POST: </b>Sends data to the server for processing.</li><li><b>DELETE: </b>Removes data from the server.</li><li><b>PATCH: </b>Applies partial modifications to an operation. Unlike the PUT method, the PATCH method applies an incremental change rather than replacing the entire operation.</li><li><b>HEAD: </b>Requests the same response as for a GET method call, but without the response body. This method is useful for retrieving information that is written in response headers, without having to transport the entire content.</li><li><b>OPTIONS: </b>Retrieves the HTTP methods and other options that are supported by a web server or an operation, without implying a resource action or initiating an operation retrieval.</li></ul>",
+        "image": ""
       }
     ]
   },
   {
-    "id": 50,
+    "id": 60,
     "date": "2019/01/26",
     "title": "JMS",
     "itemList": [
@@ -129,7 +133,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 70,
     "date": "2015/11/1",
     "title": "Network Diagram",
     "itemList": [
