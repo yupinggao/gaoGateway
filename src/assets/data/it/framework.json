@@ -5,6 +5,10 @@
     "title": "Hibernate",
     "itemList": [
       {
+        "text": "<p>Hibernate is a full-featured, open source Object-to-Relational mapping framework. Hibernate classes are POJOs, and can work inside or outside of a J2EE container.</p>",
+        "image": ""
+      },
+      {
         "text": "<b>Hibernate Advantages:</b><br/><ol><li>Hibernate is Database Independent so selected database can be used.</li><li>Easy installation.</li><li>Hibernate has got layered architecture.</li><li>Development with Hibernate is easier than JDBC.</li><li>Connection pool APIs(c3p0, dbcp) can be integrated with Hibernate easily.</li></ol>",
         "image": ""
       },
@@ -48,6 +52,10 @@
     "date": "2017/10/10",
     "title": "Spring",
     "itemList": [
+      {
+        "text": "<p>The Spring Framework is an open-source, application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform. Although the framework does not impose any specific programming model, it has become popular in the Java community as an addition to, or even replacement for the Enterprise JavaBeans (EJB) model.",
+        "image": ""
+      },
       {
         "text": "<p>The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make J2EE development easier to use and promotes good programming practices by enabling a POJO-based programming model.</p><p>The Spring Framework provides about 20 modules which can be used based on an application requirement.",
         "image": "../assets/image/it/framework/1.png"

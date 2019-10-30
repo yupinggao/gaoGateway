@@ -139,6 +139,25 @@
   },
   {
     "id": 80,
+    "date": "2019/10/28",
+    "title": "Python",
+    "itemList": [
+      {
+        "text": "<b>Python Features</b><p><ul><li>Simple and easy to learn</li><li>Free and open source</li><li>Support object-oriented as well as procedure-oriented programming</li><li>Extensible: Python code can invoke C and C++ libraries, and can be called from C++, and can integrate with java</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Operators</b><p><ul><li>Arithmetic operators</li><li>Assignment Operators</li><li>Comparison operators</li><li>Logical Operators</li><li>Bitwise operators</li><li>Identity operators: check if two items are same or not</li><li>Membership Operators: if a element is in a list</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Modules</b><p>Consider a module to be the same as a code library. A file containing a set of functions you want to include in your application. To create a module just save the code you want in a file with the file extension .py<ul><li>OS Module</li><li>Sys Module</li><li>Math Module</li><li>smtplib Module</li><li>io Module</li><li>Statistics Module</li><li>Collections Module</li><li>Random Module</li><li>Mailbox Module</li><li>Filecmp Module</li><li>ftplib Module</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 90,
     "date": "2019/01/26",
     "title": "JQuery",
     "itemList": [
@@ -157,7 +176,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 100,
     "date": "2019/01/30",
     "title": "Progress Web Apps (PWA)",
     "itemList": [
