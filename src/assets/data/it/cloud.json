@@ -341,6 +341,10 @@
       {
         "text": "<b>Diego</b><br><p>Diego is the container orchestration system for Cloud Foundry deployments, having replaced the previous DEA (Droplet Execution Agent). Diego handles the creation and management of the containers that stage and run applications. PCF operators can use the Ops Manager to choose which runtime backend they want to use—the Guardian backend for Linux or Garden Windows for Windows (or both).</p><p>An application’s lifecycle, described above, on Diego is largely the same in either case. These backends are managed through the Garden API. When a developer deploys their application with cf push, Diego uses Garden to create a generic, abstracted, containerized environment for any kind of instance, whether it be a buildpack-based droplet, a Docker image, or a Windows Server container.</p><p>Diego includes a health monitor and is self-healing: it will attempt to restart instances that have crashed in order to ensure that the number of running instances matches what the deployment configuration requires.</p><p>To accomplish its orchestration tasks, Diego relies on three main components:<ul><li>the Diego Brain</li><li>the database VM</li><li>one or more Diego cells</li></ul></p>",
         "image": ""
+      },
+      {
+        "text": "<b>PCF CLI</b><br><p><ul><li>cf apps</li><li>cf help</li><li>cf login</li><li>cf push</li><li>cf ssh</li><li>cf stacks</li></ul></p>",
+        "image": ""
       }
     ]
   }

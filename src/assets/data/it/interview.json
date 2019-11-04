@@ -189,5 +189,16 @@
         "image": "../assets/image/it/interview/arraylist-linked-list.png"
       }
     ]
+  },
+  {
+    "id": 130,
+    "date": "2019/11/03",
+    "title": "PCF",
+    "itemList": [
+      {
+        "text": "<ul><li><b>Bosh</b><p>BOSH is an open-source tool that lets you run software systems in the cloud. BOSH and its IaaS-specific Cloud Provider Interfaces (CPIs) are what let PCF run on multiple IaaSes.<ul><li>Not only do CD for apps, but for Servers (Infrastracture - OS)</li><li></li></ul></p></li></ul>",
+        "image": ""
+      }
+    ]
   }
 ]
