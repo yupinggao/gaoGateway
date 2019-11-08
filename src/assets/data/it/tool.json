@@ -173,7 +173,7 @@
     "title": "Acronyms",
     "itemList": [
       {
-        "text": "<p><ol><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li></li></ol></p>",
+        "text": "<p><ol><li><b>BBS</b> - Bulletin Board System</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>cURL</b> - Client URL Request Library</li><li><b>LRP</b> - Long-Running Process</li><li><b>UAA</b> - User Account and Authentication</li><li><b></b> - </li></ol></p>",
         "image": ""
       },
       {

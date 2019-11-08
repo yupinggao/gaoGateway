@@ -60,7 +60,7 @@
         "image": ""
       },
       {
-        "text": "<b>Docker Commands</b><br/><mark>docker build:</mark> Build an image from a Dockerfile<br/><mark>docker builder:</mark> Manage builds<br/><mark>docker create:</mark> Create a new container<br/><mark>docker container:</mark> Manage containers<br/><mark>docker ps:</mark> List containers<br/><mark>docker image:</mark> Manage images<br/><mark>docker images:</mark> List images<br/><mark>docker rmi:</mark> remove one or more images<br/><mark>docker rm:</mark> remove one or more containers<br/><mark>docker container ls:</mark> List containers<p>For more docker commands, please visit the following link: <a href='https://docs.docker.com/edge/engine/reference/commandline/docker/' target='_blank'>List Of Docker Commands</a></p>",
+        "text": "<b>Docker Commands</b><br/><mark>docker build:</mark> Build an image from a Dockerfile<br/><mark>docker builder:</mark> Manage builds<br/><mark>docker create:</mark> Create a new container<br/><mark>docker container:</mark> Manage containers<br/><mark>docker ps:</mark> List containers<br/><mark>docker ps -a:</mark> List containers, including exited ones<br/><mark>docker image:</mark> Manage images<br/><mark>docker images:</mark> List images<br/><mark>docker rmi:</mark> remove one or more images (the dependent containers should be deleted first)<br/><mark>docker rm:</mark> remove one or more containers<br/><mark>docker container ls:</mark> List containers<br/><mark>docker run [name]:[tag/version]:</mark> run docker image<br/><mark>docker run -it [name]:[tag/version]:</mark> run in a interactive mode - input and prompt<br/><mark>docker run -p 80:5000:</mark> map host port 80 to docker port 5000<br/><mark>docker run -d:</mark> run container in backgroud<br/><mark>docker attach [id]:</mark> make backgrouded container run in front<br/><mark>docker stop [id]/[name]:</mark> stop a container<br/><mark>docker inspect [id]/[name]:</mark> Inspect the container<br/><mark>docker logs [id]/[name]:</mark> Display the logs<br/><mark>docker network ls:</mark> Display networks<p>For more docker commands, please visit the following link: <a href='https://docs.docker.com/edge/engine/reference/commandline/docker/' target='_blank'>List Of Docker Commands</a></p>",
         "image": ""
       }
     ]
@@ -331,6 +331,10 @@
         "image": ""
       },
       {
+        "text": "<b>Key Services of Pivotal Cloud Foundry</b><br><p><ul><li>Pivotal Application Services - PAS</li><li>Pivotal Container Services - PKS</li><li>Pivotal Function Services - PFS</li><li>Pivotal Web Services - PWS</li><li>Pivotal Platform Services - PPS</li></li></ul></p>",
+        "image": ""
+      },
+      {
         "text": "<b>Key components of Pivotal Cloud Foundry architecture</b><br><p>PCF is a distributed system comprising many components that run, manage, and monitor the health of the deployment and its application runtime environment, which might be hosting dozens or hundreds of applications. The primary components we will cover in this guide, along with their subsystems, are:<ul><li>BOSH/the Ops Manager (deployment automation)</li><li>The User Account and Authentication server (identity management)</li><li>The Gorouter (application and system routing)</li><li>The Cloud Controller (application staging and running)</li><li>Diego (application execution and runtime)</li><li>Loggregator (logs and metric aggregation)</li></ul></p>",
         "image": ""
       },
@@ -339,11 +343,23 @@
         "image": ""
       },
       {
+        "text": "<b>Cloud Controller</b><br><p>Pivotal Cloud Foundry’s Cloud Controller (CC) provides API endpoints for operators and developers to interact with PCF and the applications running on a specific domain. Commands include staging applications, starting or stopping applications, collecting health information, and querying that all desired applications are running. The CC is also responsible for communicating with the User Account and Authentication server to authenticate the user and ensure that they have the proper permissions to perform the requested task.</p><p>Developers can stage applications that are buildpack based or that are Docker images. Buildpack-based applications require one or more buildpacks to provide dependencies. For example, the Python buildpack is needed to stage a Django application. Docker images don’t require buildpacks because the image contains everything required to run the application. The staging process differs somewhat between these two types of applications. We will cover both options below.</p><p>When a developer pushes an application for staging, the CC sends needed files and instructions to PCF’s container orchestration and management component, called Diego. For staging and running applications, the CC requires a MySQL database and a blobstore.</p><p>The CC creates a record and stores application metadata in the database including the application name; applicable orgs, spaces, services, and user roles; the number of instances to spin up; memory and disk quotas; etc. It also will create and bind a route to the new application.</p><p>The CC sends instructions to Diego to distribute and execute the staging tasks, which take everything the application needs and package it into a droplet that can be run on a Cloud Foundry container. When complete, Diego sends the staged application droplet for storage in the CC’s blobstore and notifies the CC that the application is ready. Finally, after staging, the Cloud Controller signals Diego to start the application and continues to communicate with Diego for updates on the application’s status.</p><p>Once an application is running, the CC makes it possible to bind services to the application. Services provision reserved resources for an application on demand. They can provide a wide range of types of resources. A few examples might be a web application account, a set of environment variables, or a dedicated Redis cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Docker image applications</b><br><p>The main difference with how the CC stages Docker image–based applications is that buildpacks are not applied because the image itself provides the dependences. The CC sends the image to Diego for staging, receives and stores required metadata about the image from Diego, and then instructs Diego to schedule processes to run the application.</p>",
+        "image": ""
+      },
+      {
         "text": "<b>Diego</b><br><p>Diego is the container orchestration system for Cloud Foundry deployments, having replaced the previous DEA (Droplet Execution Agent). Diego handles the creation and management of the containers that stage and run applications. PCF operators can use the Ops Manager to choose which runtime backend they want to use—the Guardian backend for Linux or Garden Windows for Windows (or both).</p><p>An application’s lifecycle, described above, on Diego is largely the same in either case. These backends are managed through the Garden API. When a developer deploys their application with cf push, Diego uses Garden to create a generic, abstracted, containerized environment for any kind of instance, whether it be a buildpack-based droplet, a Docker image, or a Windows Server container.</p><p>Diego includes a health monitor and is self-healing: it will attempt to restart instances that have crashed in order to ensure that the number of running instances matches what the deployment configuration requires.</p><p>To accomplish its orchestration tasks, Diego relies on three main components:<ul><li>the Diego Brain</li><li>the database VM</li><li>one or more Diego cells</li></ul></p>",
         "image": ""
       },
       {
-        "text": "<b>PCF CLI</b><br><p><ul><li>cf apps</li><li>cf help</li><li>cf login</li><li>cf push</li><li>cf ssh</li><li>cf stacks</li></ul></p>",
+        "text": "<p>Cloud Foundry includes the following with your app’s source code: <ul><li><b>Stack:</b> the operating system the app runs on.</li><li><b>Buildpack:</b> contains all languages, libraries, and services that the app uses.</li></ul></p><p>Before sending an app to a VM, the Cloud Controller stages it for delivery by combining the stack, buildpack, and source code into a droplet that the VM can unpack, compile, and run. For simple, standalone apps with no dynamic pointers, the droplet can contain a pre-compiled executable instead of source code, language, and libraries.</p><p>A droplet is a runnable artifact, which includes app files and runtime dependencies.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>PCF CLI</b><br><p><ul><li>cf apps</li><li>cf help</li><li>cf login</li><li>cf logs/li><li>cf push</li><li>cf ssh</li><li>cf stacks</li></ul></p>",
         "image": ""
       }
     ]

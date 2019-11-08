@@ -19,6 +19,10 @@
       {
         "text": "<p><b>Glossary: What is Meant by Agile Methodologies</b><ul><li><b>Spike: </b>A story that cannot be estimated until a development team runs a time-boxed investigation.</li><li><b>Timebox: </b>A defined period of time during which a task must be accomplished.</li><li><b>Wiki: </b>A wiki is a server program that allows users to collaborate in forming the content of a Web site.</li></ol>",
         "image": ""
+      },
+      {
+        "text": "<p><b>Agile Tools</b><ul><li>Jenkins</li><li>Jira</li><li>Confluence</li><li>Trello</li></ol>",
+        "image": ""
       }
     ]
   }
