@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 20,
     "date": "2018/12/16",
     "title": "Deploy angular 7 app into appEngine",
     "itemList": [
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 40,
     "date": "2018/12/17",
     "title": "Install Docker on Ubuntu",
     "itemList": [
@@ -34,7 +34,18 @@
     ]
   },
   {
-    "id": 15,
+    "id": 60,
+    "date": "2018/12/17",
+    "title": "Install Docker CLI on Windows",
+    "itemList": [
+      {
+        "text": "<b>Steps</b><ol><li>get docker.exe, and copy it to a folder</li><li>put the folder in the system path</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 80,
     "date": "2018/12/19",
     "title": "Use Angular Universal for SEO in Angular 7",
     "itemList": [
@@ -45,7 +56,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 100,
     "date": "2018/12/23",
     "title": "Install nodejs and npm from PPA for Ubuntu 18.10",
     "itemList": [
@@ -68,7 +79,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 120,
     "date": "2018/12/23",
     "title": "Install Google Cloud SDK for Ubuntu 18.10",
     "itemList": [
@@ -99,7 +110,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 140,
     "date": "2018/12/24",
     "title": "Deploy Angular 7 App to a Local Docker",
     "itemList": [
@@ -114,7 +125,7 @@
     ]
   },
   {
-    "id": 35,
+    "id": 160,
     "date": "2018/12/31",
     "title": "Build Docker Image and Deploy it in Kubernetes",
     "itemList": [
@@ -145,7 +156,38 @@
     ]
   },
   {
-    "id": 40,
+    "id": 170,
+    "date": "2019/11/10",
+    "title": "Deploy Voting App Using Docker and Docker Compose",
+    "itemList": [
+      {
+        "text": "<p>There are two tasks in this tutorial: <ol><li>Deploy the application using Docker.</li><li>Deploy the application using docker compose</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Prerequisites: the following images have been created:<ol><li>redis</li><li>postgres:9.4</li><li>eesprit/voting-app-vote</li><li>eesprit/voting-app-result</li><li>eesprit/voting-app-worker</li><ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Steps for using Docker:</b><ol><li>Start a terminal, and go to your project root folder by issuring: <mark>cd ~/workspace/myApplcation</mark></li><li><code>sudo docker run -d --name=redis redis</code></li><li><code>sudo docker run -d --name=db postgres:9.4</code></li><li><code>sudo docker run -d --name=vote -p 5000:80 --link redis:redis eesprit/voting-app-vote</code></li><li><code>sudo docker run -d --name=result -p 5001:80 --link db:db eesprit/voting-app-result</code></li><li><code>sudo docker run -d --name=worker --link db:db --link redis:redis eesprit/voting-app-worker</code></li><li>verify the applications using 'localhost:5000' and 'localhost:5001'</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<b>Steps for using Docker Compose:</b>Firtsly, create a docker-compose.yml with the following:",
+        "image": "../assets/image/it/cloud/docker-compose.png"
+      },
+      {
+        "text": "then run <code>sudo docker-compose up</code> (use control-c to stop)",
+        "image": ""
+      },
+      {
+        "text": "Run in background: <code>sudo docker-compose up -d</code> then run <code>sudo docker-compose stop</code> to stop",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 180,
     "date": "2018/12/31",
     "title": "Deploy Docker Image in Kebernetes",
     "itemList": [
@@ -160,7 +202,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 200,
     "date": "2018/12/31",
     "title": "Kubernetes Engine Quick Start on GCP",
     "itemList": [
@@ -175,7 +217,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 210,
     "date": "2019/02/04",
     "title": "Deploy a Spring App on GCP Kubernetes",
     "itemList": [
@@ -190,7 +232,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 220,
     "date": "2018/12/24",
     "title": "Git And Github in Ubuntu",
     "itemList": [
@@ -210,7 +252,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 240,
     "date": "2019/01/13",
     "title": "MongoDB Shell",
     "itemList": [
@@ -225,7 +267,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 260,
     "date": "2019/01/13",
     "title": "Install Jenkins",
     "itemList": [
@@ -236,7 +278,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 280,
     "date": "2019/01/16",
     "title": "Build a Node Rest API",
     "itemList": [
@@ -251,7 +293,7 @@
     ]
   },
   {
-    "id": 110,
+    "id": 300,
     "date": "2019/01/22",
     "title": "Install Spring CLI on Windows",
     "itemList": [
@@ -262,7 +304,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": 320,
     "date": "2019/01/22",
     "title": "Run Hello World with Groovy",
     "itemList": [
@@ -277,7 +319,7 @@
     ]
   },
   {
-    "id": 130,
+    "id": 340,
     "date": "2019/01/25",
     "title": "Install Maven on Ubuntu",
     "itemList": [
@@ -288,7 +330,7 @@
     ]
   },
   {
-    "id": 140,
+    "id": 360,
     "date": "2019/03/02",
     "title": "Install Gradle",
     "itemList": [
@@ -303,7 +345,7 @@
     ]
   },
   {
-    "id": 150,
+    "id": 380,
     "date": "2019/03/02",
     "title": "Create a Gradle Project",
     "itemList": [
@@ -314,7 +356,7 @@
     ]
   },
   {
-    "id": 160,
+    "id": 400,
     "date": "2019/02/01",
     "title": "Install Minikube on Ubuntu",
     "itemList": [
@@ -329,7 +371,7 @@
     ]
   },
   {
-    "id": 170,
+    "id": 420,
     "date": "2019/03/03",
     "title": "Install GIT on Windows",
     "itemList": [
@@ -340,7 +382,7 @@
     ]
   },
   {
-    "id": 180,
+    "id": 440,
     "date": "2019/03/04",
     "title": "Install/Uninstall GIT on Ubuntu",
     "itemList": [
@@ -355,7 +397,7 @@
     ]
   },
   {
-    "id": 190,
+    "id": 460,
     "date": "2019/03/07",
     "title": "Create Windows 2016 VM on Azure",
     "itemList": [
@@ -378,7 +420,7 @@
     ]
   },
   {
-    "id": 200,
+    "id": 480,
     "date": "2019/03/23",
     "title": "Install/Uninstall Tomcat As Windows Service",
     "itemList": [
@@ -393,7 +435,7 @@
     ]
   },
   {
-    "id": 210,
+    "id": 500,
     "date": "2019/10/26",
     "title": "Install Xrdp Server (Remote Desktop) on Ubuntu 18.04",
     "itemList": [
@@ -403,6 +445,32 @@
       },
       {
         "text": "<div class='jumbotron'><p>sudo apt update<br>sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils<br>sudo apt install xrdp<br>sudo systemctl status xrdp<br>sudo nano /etc/xrdp/xrdp.ini<br>Add the following line at the end of the file:<br>exec startxfce4<br>sudo systemctl restart xrdp<br>sudo ufw allow 3389<br></p></div>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 520,
+    "date": "2019/11/14",
+    "title": "Install Helm on GCP",
+    "itemList": [
+      {
+        "text": "<p>The following steps show how to install Helm on GCP kubernetes cluster using scripts.</p>",
+        "image": ""
+      },
+      {
+        "text": "<div class='jumbotron'><p>curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh<br>chmod 700 get_helm.sh<br>./get_helm.sh</p></div>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 540,
+    "date": "2019/11/13",
+    "title": "Install ETCD on Ubuntu 18.10",
+    "itemList": [
+      {
+        "text": "<div class='jumbotron'><p>sudo apt install etcd-server<br>etcd --version</p></div>",
         "image": ""
       }
     ]
