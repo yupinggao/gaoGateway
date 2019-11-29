@@ -1,0 +1,17 @@
+[
+  {
+    "id": 5,
+    "date": "2019/11/29",
+    "title": "Branch Strategy",
+    "itemList": [
+      {
+        "text": "<p>Keep your branch strategy simple. Build your strategy from these three concepts:</p><p><ol><li>Use feature branches for all new features and bug fixes.</li><li>Merge feature branches into the master branch using pull requests.</li><li>Keep a high quality, up-to-date master branch.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>DevOps Tools</b><p><ul><li><a href='it/tool/10'>Jenkins</a></li><li><a href='/it/cloud/10'>Docker</a></li><li><a href='it/tool/5'>Git (GitHub)</a></li></ul></p>",
+        "image": ""
+      }
+    ]
+  }
+]

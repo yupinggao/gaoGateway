@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component'
 import { ItComponent } from './component/it/it.component'
 import { ArchitectureComponent } from './component/it/architecture/architecture.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
+import { DevopsComponent } from './component/it/devops/devops.component';
 import { JavacoreComponent } from './component/it/javacore/javacore.component'
 import { JavaeeComponent } from './component/it/javaee/javaee.component'
 import { FrameworkComponent } from './component/it/framework/framework.component'
@@ -56,6 +57,17 @@ const routes: Routes = [
       },
       {
         path: '', component: CloudComponent
+      }
+    ]
+  },
+  {
+    path: 'it/devops', component: DevopsComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: DevopsComponent
       }
     ]
   },

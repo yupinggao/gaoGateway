@@ -16,6 +16,7 @@ import { ContentComponent } from './content/content.component';
 import { PhotoComponent } from './component/photo/photo.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
+import { DevopsComponent } from './component/it/devops/devops.component';
 import { TutorialComponent } from './component/it/tutorial/tutorial.component';
 import { SecurityComponent } from './component/it/security/security.component';
 import { FamilyComponent } from './component/photo/family/family.component';
@@ -51,6 +52,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     PhotoComponent,
     WelcomeComponent,
     CloudComponent,
+    DevopsComponent,
     TutorialComponent,
     SecurityComponent,
     FamilyComponent,

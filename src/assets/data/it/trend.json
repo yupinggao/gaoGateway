@@ -30,6 +30,10 @@
       {
         "text": "<b>Disadvantages of Microservices</b><p><ul><li>Developing distributed systems can be complex.<li>Multiple databases and transaction management can be painful.</li></ul><p>",
         "image": ""
+      },
+      {
+        "text": "<b>Azure Microservices Architecture</b>",
+        "image": "../assets/image/it/trend/azureMicroServices.png"
       }
     ]
   }

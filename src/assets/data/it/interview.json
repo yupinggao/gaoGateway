@@ -198,6 +198,14 @@
       {
         "text": "<ul><li><b>Bosh</b><p>BOSH is an open-source tool that lets you run software systems in the cloud. BOSH and its IaaS-specific Cloud Provider Interfaces (CPIs) are what let PCF run on multiple IaaSes.<ul><li>Not only do CD for apps, but for Servers (Infrastracture - OS)</li><li></li></ul></p></li></ul>",
         "image": ""
+      },
+      {
+        "text": "<ul><li><b>cf restart vs restage</b><p><code>restart</code> stops your application and restarts it with the already compiled droplet.</p><p><code>restage</code> stops your application, then compile a new droplet, and restarts it with the newly compiled droplet.</p>",
+        "image": ""
+      },
+      {
+        "text": "<ul><li><b>PCF cli</b><ul><li><code>cf create-service</code>: </li><li><code>cf bind-service</code> </li><li><code>cf bind-service</code> </li></ul></li></ul>",
+        "image": ""
       }
     ]
   }

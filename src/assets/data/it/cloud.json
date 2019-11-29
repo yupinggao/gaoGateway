@@ -163,6 +163,10 @@
       {
         "text": "",
         "image": "../assets/image/it/cloud/nodeOverview.png"
+      },
+      {
+        "text": "Differences between kubectl apply and create",
+        "image": "../assets/image/it/cloud/applyVScreate.png"
       }
     ]
   },
