@@ -1,15 +1,22 @@
 [
   {
-    "id": 5,
+    "id": 10,
     "date": "2019/11/29",
     "title": "Branch Strategy",
     "itemList": [
       {
         "text": "<p>Keep your branch strategy simple. Build your strategy from these three concepts:</p><p><ol><li>Use feature branches for all new features and bug fixes.</li><li>Merge feature branches into the master branch using pull requests.</li><li>Keep a high quality, up-to-date master branch.</li></ol></p>",
         "image": ""
-      },
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "date": "2019/11/30",
+    "title": "Steps to Choose Right Tools",
+    "itemList": [
       {
-        "text": "<p><b>DevOps Tools</b><p><ul><li><a href='it/tool/10'>Jenkins</a></li><li><a href='/it/cloud/10'>Docker</a></li><li><a href='it/tool/5'>Git (GitHub)</a></li></ul></p>",
+        "text": "<p>If you’re considering DevOps, you have many moving parts to consider. Core to this structure are automated provisioning, automated testing, and automated build and deployment. At the same time, you need to maintain continuous feedback, with information continuously moving back and forth, as well as making sure that you log pretty much everything.<p><ul><li>Understand the collaboration and shared tools strategy for the Dev, QA, and infrastructure automation teams</li><li>Use tools to capture every request</li><li>Use agile Kanban project management for automation and DevOps requests that can be dealt with in the tooling</li><li>Use tools to log metrics on both manual and automated processes</li><li>Implement test automation and test data provisioning tooling</li><li>Perform acceptance tests for each deployment tooling</li><li>Ensure continuous feedback between the teams to spot gaps, issues, and inefficiencies</li></ul></p>",
         "image": ""
       }
     ]
