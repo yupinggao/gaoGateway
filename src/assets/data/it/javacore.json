@@ -161,6 +161,14 @@
         "image": ""
       },
       {
+        "text": "<b>Default Methods</b><p>Default methods gives the ability to add default implementation for methods in an interface. This is a rocking feature of Java 8. When we implement an interface, if we did not provide implementation for a method, then the default method will be used in that place. This will help in maintaining backward compatibility in applications, we can add a method to an interface without breaking its implementations. The reason we have default methods in interfaces is to allow the developers to add new methods to the interfaces without affecting the classes that implements these interfaces.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Static methods</b><p>Static methods in interfaces are similar to the default methods except that we cannot override these methods in the classes that implements these interfaces.</p>",
+        "image": ""
+      },
+      {
         "text": "<b>Method References</b><p>Method reference can be used as a shorter and more readable alternative for a lambda expression which only calls an existing method. There are four variants of method references.</p><ul><li><b>Reference to a Static Method: </b>For a lambda expression like <br/><mark>(args) -> Class.staticMethod(args)</mark>, the method reference would be: <br/><mark>Class::staticMethod</mark><li><b>Reference to an Instance Method: </b>For a lambda expression like <br/><mark>(args) -> obj.instanceMethod(args)</mark>, the method reference would be: <br/><mark>obj::instanceMethod</mark></li><li><b>Reference to an Instance Method of an Object of a Particular Type: </b>For a lambda expression like <br/><mark>(obj, args) -> obj.instanceMethod(args)</mark>, the method reference would be: <br/><mark>ObjectType::instanceMethod</mark></li><li><b>Reference to a Constructor: </b>For a lambda expression like <br/><mark>(args) -> new ClassName(args)</mark>, the method reference would be: <br/><mark>ClassName::new</mark></li></ul>",
         "image": ""
       },
