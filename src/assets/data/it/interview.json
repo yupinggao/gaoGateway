@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 10,
     "date": "2018/12/20",
     "title": "Docker",
     "itemList": [
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 20,
     "date": "2018/12/20",
     "title": "Kubernetes",
     "itemList": [
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 30,
     "date": "2018/12/28",
     "title": "Angular",
     "itemList": [
@@ -33,7 +33,38 @@
     ]
   },
   {
-    "id": 20,
+    "id": 40,
+    "date": "2019/12/2",
+    "title": "React",
+    "itemList": [
+      {
+        "text": "<b>What is React?</b><p><ol><li>React is a front-end JavaScript library developed by Facebook in 2011.</li><li>It follows the component based approach which helps in building reusable UI components.</li><li>It is used for developing complex and interactive web and mobile UI.</li><li>Even though it was open-sourced only in 2015, it has one of the largest communities supporting it.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Differentiate between Real DOM and Virtual DOM</b>",
+        "image": "../assets/image/it/interview/realVSvirtualDOM.png"
+      },
+      {
+        "text": "<b>What are the features of React?</b><p>Major features of React are listed below:<ol><li>It uses the virtual DOM instead of the real DOM.</li><li>It uses server-side rendering.</li><li>It follows uni-directional data flow or data binding.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Some of the major advantages of React</b><p>Major features of React are listed below:<ol><li>It increases the application’s performance</li><li>It can be conveniently used on the client as well as server side</li><li>Because of JSX, code’s readability increases</li><li>React is easy to integrate with other frameworks like Meteor, Angular, etc</li><li>Using React, writing UI test cases become extremely easy</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Limitations of React</b><p><ol><li>React is just a library, not a full-blown framework</li><li>Its library is very large and takes time to understand</li><li>It can be little difficult for the novice programmers to understand</li><li>Coding gets complex as it uses inline templating and JSX</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>How is React different from Angular?</b>",
+        "image": "../assets/image/it/interview/reactVSAngular.png"
+      }
+    ]
+  },
+  {
+    "id": 50,
     "date": "2019/01/09",
     "title": "Python",
     "itemList": [
@@ -44,7 +75,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 60,
     "date": "2019/01/09",
     "title": "What's new in HTML5",
     "itemList": [
@@ -55,7 +86,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 70,
     "date": "2019/01/09",
     "title": "What's new in CSS3",
     "itemList": [
@@ -66,7 +97,7 @@
     ]
   },
   {
-    "id": 35,
+    "id": 80,
     "date": "2019/01/09",
     "title": "BootStrap",
     "itemList": [
@@ -77,7 +108,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 90,
     "date": "2019/01/09",
     "title": "JSON",
     "itemList": [
@@ -88,7 +119,7 @@
     ]
   },
   {
-    "id": 45,
+    "id": 100,
     "date": "2019/01/10",
     "title": "Hibernate",
     "itemList": [
@@ -99,7 +130,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 110,
     "date": "2019/01/11",
     "title": "Typescript",
     "itemList": [
@@ -110,7 +141,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 120,
     "date": "2019/01/13",
     "title": "Jenkins",
     "itemList": [
@@ -121,7 +152,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 130,
     "date": "2019/01/15",
     "title": "Database",
     "itemList": [
@@ -132,7 +163,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 140,
     "date": "2019/01/16",
     "title": "Nodejs",
     "itemList": [
@@ -143,7 +174,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 150,
     "date": "2019/01/17",
     "title": "Spring",
     "itemList": [
@@ -154,7 +185,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 160,
     "date": "2019/01/21",
     "title": "Javascript",
     "itemList": [
@@ -165,7 +196,7 @@
     ]
   },
   {
-    "id": 110,
+    "id": 170,
     "date": "2019/01/22",
     "title": "Rest API",
     "itemList": [
@@ -176,7 +207,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": 180,
     "date": "2019/10/29",
     "title": "Java",
     "itemList": [
@@ -191,7 +222,7 @@
     ]
   },
   {
-    "id": 130,
+    "id": 190,
     "date": "2019/11/03",
     "title": "PCF",
     "itemList": [

@@ -173,7 +173,7 @@
     "title": "Acronyms",
     "itemList": [
       {
-        "text": "<p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ACR</b> - Azure Container Registry</li><li><b>BBS</b> - Bulletin Board System</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CNI</b> – Container Network Interface</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CNM</b> – Container Network Model</li><li><b>cURL</b> - Client URL Request Library</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>LRP</b> - Long-Running Process</li><li><b>NTP</b> - Network Time Protocol</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>S2S</b> - Site to Site</li><li><b>UAA</b> - User Account and Authentication</li><li><b></b> - </li></ol></p>",
+        "text": "<p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ACR</b> - Azure Container Registry</li><li><b>BBS</b> - Bulletin Board System</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CNI</b> – Container Network Interface</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CNM</b> – Container Network Model</li><li><b>cURL</b> - Client URL Request Library</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>LRP</b> - Long-Running Process</li><li><b>NTP</b> - Network Time Protocol</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>S2S</b> - Site to Site</li><li><b>UAA</b> - User Account and Authentication</li><li><b>WAF</b> - web application firewall</li></ol></p>",
         "image": ""
       },
       {

@@ -205,5 +205,26 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 120,
+    "date": "2019/11/30",
+    "title": "Api Gateway",
+    "itemList": [
+      {
+        "text": "<p>An API Gateway is a server that is the single entry point into the system. It is similar to the Facade pattern from object-oriented design. The API Gateway encapsulates the internal system architecture and provides an API that is tailored to each client. It might have other responsibilities such as authentication, monitoring, load balancing, caching, request shaping and management, and static response handling.</p><p>The following diagram shows how an API Gateway typically fits into the architecture:</p>",
+        "image": "../assets/image/it/other/gateway.png",
+        "imageHeight": "450",
+        "imageWidth": "800"
+      },
+      {
+        "text": "<p>A gateway helps to address these issues by decoupling clients from services. Gateways can perform a number of different functions, and you may not need all of them. The functions can be grouped into the following design patterns:</p><p>Gateway Routing. Use the gateway as a reverse proxy to route requests to one or more backend services, using layer 7 routing. The gateway provides a single endpoint for clients, and helps to decouple clients from services.</p><p>Gateway Aggregation. Use the gateway to aggregate multiple individual requests into a single request. This pattern applies when a single operation requires calls to multiple backend services. The client sends one request to the gateway. The gateway dispatches requests to the various backend services, and then aggregates the results and sends them back to the client. This helps to reduce chattiness between the client and the backend.</p><p>Gateway Offloading. Use the gateway to offload functionality from individual services to the gateway, particularly cross-cutting concerns. It can be useful to consolidate these functions into one place, rather than making every service responsible for implementing them. This is particularly true for features that requires specialized skills to implement correctly, such as authentication and authorization.</p><p>Here are some examples of functionality that could be offloaded to a gateway:<ul><li>SSL termination</li><li>Authentication</li><li>IP whitelisting</li><li>Client rate limiting (throttling)</li><li>Logging and monitoring</li><li>Response caching</li><li>Web application firewall</li><li>GZIP compression</li><li>Servicing static content</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Choosing a gateway technology</b><p>Here are some options for implementing an API gateway in your application.<ul><li><b>Reverse proxy server</b>. Nginx and HAProxy are popular reverse proxy servers that support features such as load balancing, SSL, and layer 7 routing. They are both free, open-source products, with paid editions that provide additional features and support options. Nginx and HAProxy are both mature products with rich feature sets and high performance. You can extend them with third-party modules or by writing custom scripts in Lua. Nginx also supports a JavaScript-based scripting module called NginScript.</li><li><b>Service mesh ingress controller</b>. If you are using a service mesh such as linkerd or Istio, consider the features that are provided by the ingress controller for that service mesh. For example, the Istio ingress controller supports layer 7 routing, HTTP redirects, retries, and other features.</li><li><b>Azure Application Gateway</b>. Application Gateway is a managed load balancing service that can perform layer-7 routing and SSL termination. It also provides a web application firewall (WAF).</li><li><b>Azure API Management</b>. API Management is a turnkey solution for publishing APIs to external and internal customers. It provides features that are useful for managing a public-facing API, including rate limiting, IP white listing, and authentication using Azure Active Directory or other identity providers. API Management doesn't perform any load balancing, so it should be used in conjunction with a load balancer such as Application Gateway or a reverse proxy. For information about using API Management with Application Gateway, see Integrate API Management in an internal VNet with Application Gateway.</li></ul></p>",
+        "image": ""
+      }
+    ]
   }
 ]
