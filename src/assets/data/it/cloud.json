@@ -391,5 +391,95 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 160,
+    "date": "2019/12/3",
+    "title": "Spring Cloud",
+    "itemList": [
+      {
+        "text": "<p>Spring Cloud provides tools for developers to quickly build some of the common patterns in distributed systems (e.g. configuration management, service discovery, circuit breakers, intelligent routing, micro-proxy, control bus, one-time tokens, global locks, leadership election, distributed sessions, cluster state). Coordination of distributed systems leads to boiler plate patterns, and using Spring Cloud developers can quickly stand up services and applications that implement those patterns. They will work well in any distributed environment, including the developer’s own laptop, bare metal data centres, and managed platforms such as Cloud Foundry.</p>",
+        "image": ""
+      },      
+      {
+        "text": "<b>Features</b><br><p>Spring Cloud focuses on providing good out of box experience for typical use cases and extensibility mechanism to cover others.<ul><li>Distributed/versioned configuration</li><li>Service registration and discovery</li><li>Routing</li><li>Service-to-service calls</li><li>Load balancing</li><li>Circuit Breakers</li><li>Global locks</li><li>Leadership election and cluster state</li><li>Distributed messaging</li></ul></p>",
+        "image": ""
+      },      
+      {
+        "text": "<p>Spring Cloud takes a very declarative approach, and often you get a lot of features with just a classpath change and/or an annotation. Example application that is a discovery client:</p>",
+        "image": "../assets/image/it/cloud/springCloud.png"
+      }
+    ]
+  },
+  {
+    "id": 170,
+    "date": "2019/12/4",
+    "title": "Prometheus and Grafana on GCP",
+    "itemList": [
+      {
+        "text": "<b>Overview</b><br><p>Prometheus is a monitoring toolkit. In this configuration, Prometheus collects the metrics from the Kubernetes cluster to which the application is deployed, and presents them in pre-configured Grafana dashboard. Additionally, you can configure the alerts using Prometheus Alert Manager.</p>",
+        "image": ""
+      },      
+      {
+        "text": "<b>Architecture</b>",
+        "image": "../assets/image/it/cloud/prometheusGrafana.png"
+      },      
+      {
+        "text": "<p>The application is designed to automatically collect metrics from Kubernetes cluster, collect them in the Prometheus server and present in Grafana. The application consists of the following components:</p>",
+        "image": ""
+      },      
+      {
+        "text": "<p><ul><li><b>Prometheus StatefulSet</b> - collects all the configured metrics by querying all the configured sources periodically. Each Prometheus Pod stores its data in a PersistentVolumeClaim.</li><li><b>Prometheus Node Exporter DaemonSet</b> - runs a Pod on each Kubernetes cluster node and collects metrics for the node's hardware and operating system by monitoring the host filesystem at /proc and /sys. The metrics are exposed on port 9100 of the Node Exporter's Pods.</li><li><b>Kube State Metrics Deployment</b> - listens to the Kubernetes API server and produces metrics related to resources (Deployments, Nodes, Pods, etc.). It exposes the metrics at /metrics on port 8080. Prometheus server consumes the metrics.</li><li><b>Prometheus Alert Manager</b> - receives the alerts raised by the Prometheus server and handles them accordingly to its configuration, specified in a ConfigMap.</li><li><b>Grafana StatefulSet</b> - provides a user interface for querying Prometheus about the metrics and visualizes the metrics in pre-configured dashboards.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "date": "2019/12/4",
+    "title": "Grafana",
+    "itemList": [
+      {
+        "text": "<p>Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored. Create, explore, and share dashboards with your team and foster a data driven culture:</p>",
+        "image": ""
+      },
+      {
+        "text": "<ul><li><b>Visualize:</b> Fast and flexible client side graphs with a multitude of options. Panel plugins for many different way to visualize metrics and logs.</li><li><b>Dynamic Dashboards:</b> Create dynamic & reusable dashboards with template variables that appear as dropdowns at the top of the dashboard.</li><li><b>Explore Metrics:</b> Explore your data through ad-hoc queries and dynamic drilldown. Split view and compare different time ranges, queries and data sources side by side.</li><li><b>Explore Logs:</b> Experience the magic of switching from metrics to logs with preserved label filters. Quickly search through all your logs or streaming them live.</li><li><b>Alerting:</b> Visually define alert rules for your most important metrics. Grafana will continuously evaluate and send notifications to systems like Slack, PagerDuty, VictorOps, OpsGenie.</li><li><b>Mixed Data Sources:</b> Mix different data sources in the same graph! You can specify a data source on a per-query basis. This works for even custom datasources.</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 190,
+    "date": "2019/12/4",
+    "title": "Elasticsearch",
+    "itemList": [
+      {
+        "text": "<p>Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java. Following an open-core business model, parts of the software are licensed under various open-source licenses (mostly the Apache License), while other parts fall under the proprietary (source-available) Elastic License. Official clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine followed by Apache Solr, also based on Lucene.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2019/12/4",
+    "title": "Kibana",
+    "itemList": [
+      {
+        "text": "<p>Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack so you can do anything from tracking query load to understanding the way requests flow through your apps.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 210,
+    "date": "2019/12/4",
+    "title": "Logstash",
+    "itemList": [
+      {
+        "text": "<p>Logstash is an open source, server-side data processing pipeline that ingests data from a multitude of sources simultaneously, transforms it, and then sends it to your favorite 'stash'.</p>",
+        "image": ""
+      }
+    ]
   }
 ]

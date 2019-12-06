@@ -34,6 +34,10 @@
       {
         "text": "<b>Azure Microservices Architecture</b>",
         "image": "../assets/image/it/trend/azureMicroServices.png"
+      },
+      {
+        "text": "<b>Microservices Design Patterns</b>",
+        "image": "../assets/image/it/trend/microservicePatterns.png"
       }
     ]
   }
