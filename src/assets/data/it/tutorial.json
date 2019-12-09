@@ -446,6 +446,10 @@
       {
         "text": "<div class='jumbotron'><p>sudo apt update<br>sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils<br>sudo apt install xrdp<br>sudo systemctl status xrdp<br>sudo nano /etc/xrdp/xrdp.ini<br>Add the following line at the end of the file:<br>exec startxfce4<br>sudo systemctl restart xrdp<br>sudo ufw allow 3389<br></p></div>",
         "image": ""
+      },
+      {
+        "text": "<p>You can use RDC to connect to the Ubuntu server.</p>",
+        "image": ""
       }
     ]
   },

@@ -91,14 +91,14 @@
   {
     "id": 50,
     "date": "2019/01/10",
-    "title": "Unix Commands",
+    "title": "Unix/Linux Commands",
     "itemList": [
       {
         "text": "<ul><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>ps: </b>Report process status</li><li><b>pwd: </b>tells you where you currently are</li><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>whoami: </b>returns your username</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>passwd: </b>change password</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li></ul>",
         "image": ""
       },
       {
-        "text": "",
+        "text": "<p>Find OS: <code>cat /etc/os-release</code></p><p>find kernel version: <code>uname -r</code></p>",
         "image": ""
       }
     ]
@@ -173,7 +173,7 @@
     "title": "Acronyms",
     "itemList": [
       {
-        "text": "<p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ACR</b> - Azure Container Registry</li><li><b>BBS</b> - Bulletin Board System</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CNI</b> – Container Network Interface</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CNM</b> – Container Network Model</li><li><b>cURL</b> - Client URL Request Library</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>LRP</b> - Long-Running Process</li><li><b>NTP</b> - Network Time Protocol</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>S2S</b> - Site to Site</li><li><b>UAA</b> - User Account and Authentication</li><li><b>WAF</b> - web application firewall</li></ol></p>",
+        "text": "<p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ACR</b> - Azure Container Registry</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CNI</b> – Container Network Interface</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CNM</b> – Container Network Model</li><li><b>cURL</b> - Client URL Request Library</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>LRP</b> - Long-Running Process</li><li><b>NTP</b> - Network Time Protocol</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>S2S</b> - Site to Site</li><li><b>UAA</b> - User Account and Authentication</li><li><b>WAF</b> - web application firewall</li></ol></p>",
         "image": ""
       },
       {

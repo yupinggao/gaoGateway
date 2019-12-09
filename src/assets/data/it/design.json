@@ -72,5 +72,44 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 50,
+    "date": "2019/12/6",
+    "title": "API Best Practice",
+    "itemList": [
+      {
+        "text": "<p><b>Organize the API around resources</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Define operations in terms of HTTP methods</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Conform to HTTP semantics</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Asynchronous operations</b></p><p>Sometimes a POST, PUT, PATCH, or DELETE operation might require processing that takes a while to complete. If you wait for completion before sending a response to the client, it may cause unacceptable latency. If so, consider making the operation asynchronous. Return HTTP status code 202 (Accepted) to indicate the request was accepted for processing but is not completed.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Filter and paginate data</b></p><p></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Support partial responses for large binary resources</b></p><p></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Use HATEOAS (Hypertext as the Engine of Application State) to enable navigation to related resources</b></p><p></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Versioning a RESTful web API</b></p><p></p>",
+        "image": ""
+      }
+    ]
   }
 ]

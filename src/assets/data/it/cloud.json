@@ -481,5 +481,31 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 220,
+    "date": "2019/12/7",
+    "title": "X-Pack",
+    "itemList": [
+      {
+        "text": "<p>X-Pack is an Elastic Stack extension that provides security, alerting, monitoring, reporting, machine learning, and many other capabilities. By default, when you install Elasticsearch, X-Pack is installed.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 230,
+    "date": "2019/12/8",
+    "title": "Application Migration Strategies",
+    "itemList": [
+      {
+        "text": "The 6 most common application migration strategies we see are (The 6 R’s):",
+        "image": "../assets/image/it/cloud/appMigration.png"
+      },
+      {
+        "text": "<p><ol><li>Rehosting — Otherwise known as 'lift-and-shift'</li><li>Replatforming — I sometimes call this 'lift-tinker-and-shift'</li><li>Repurchasing — Moving to a different product</li><li>Refactoring / Re-architecting — Re-imagining how the application is architected and developed, typically using cloud-native features</li><li>Retire — Get rid of</li><li>Retain — Usually this means “revisit” or do nothing (for now)</li></ol></p>",
+        "image": ""
+      }
+    ]
   }
 ]
