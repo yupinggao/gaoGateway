@@ -181,5 +181,24 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 210,
+    "date": "2019/12/10",
+    "title": "Azure CLI",
+    "itemList": [
+      {
+        "text": "<p><code>az group create --name myResourceGroup --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code></p>",
+        "image": ""
+      }
+    ]
   }
 ]

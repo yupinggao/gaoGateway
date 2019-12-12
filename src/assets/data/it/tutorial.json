@@ -455,6 +455,37 @@
   },
   {
     "id": 520,
+    "date": "2019/12/12",
+    "title": "Install Xrdp Server (Remote Desktop) on azure Ubuntu 18.04 VM",
+    "itemList": [
+      {
+        "text": "<p>First, SSH to your VM:<br><code>ssh user@myvm</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then install xfce using apt as follows:<br><code>sudo apt-get update</code><br><code>sudo apt-get install xfce4</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then Install xrdp on your Ubuntu VM as follows:<br><code>sudo apt-get -y install xrdp</code><br><code>sudo systemctl enable xrdp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then Configure xrdp to use xfce as your desktop environment as follows:<br><code>echo xfce4-session >~/.xsession</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then Restart the xrdp service for the changes to take effect as follows:<br><code>sudo service xrdp restart</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To allow Remote Desktop traffic to reach your Linux VM, a network security group rule needs to be created that allows TCP on port 3389 to reach your VM. The following example creates a network security group rule with az vm open-port on port 3389. From the Azure CLI, not the SSH session to your VM, open the following network security group rule:<br><code>az vm open-port --resource-group myResourceGroup --name myVM --port 3389</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 540,
     "date": "2019/11/14",
     "title": "Install Helm on GCP",
     "itemList": [
@@ -469,12 +500,79 @@
     ]
   },
   {
-    "id": 540,
+    "id": 560,
     "date": "2019/11/13",
     "title": "Install ETCD on Ubuntu 18.10",
     "itemList": [
       {
         "text": "<div class='jumbotron'><p>sudo apt install etcd-server<br>etcd --version</p></div>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 580,
+    "date": "2019/12/12",
+    "title": "Install the Elastic Stack on an Azure VM",
+    "itemList": [
+      {
+        "text": "<p>First, create a RG:<br><code>az group create --name myResourceGroup --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then create a VM:<br><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then find public IP address of your VM:<br><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then import the Elasticsearch signing key and update your APT sources list to include the Elastic package repository:<br><code>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>echo 'deb https://artifacts.elastic.co/packages/5.x/apt stable main' | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then install Java VM:<br><code>sudo apt update && sudo apt install openjdk-8-jre-headless</code><br><code>export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>update Ubuntu package sources and install Elasticsearch, Kibana, and Logstash:<br><code>sudo apt update && sudo apt install elasticsearch kibana logstash</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Start Elasticsearch on your VM:<br><code>sudo systemctl start elasticsearch.service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Verify that Elasticsearch is running on the VM:<br><code>sudo curl -XGET 'localhost:9200/'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Start Logstash and add data to Elasticsearch:<br><code>sudo systemctl start logstash.service</code><br><code>sudo /usr/share/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Set up Logstash to forward the kernel messages from this VM to Elasticsearch. Create a new file in an empty directory called vm-syslog-logstash.conf and paste in the following Logstash configuration:</code></p>",
+        "image": "../assets/image/it/tutorial/logstash.png"
+      },
+      {
+        "text": "<p>Test this configuration and send the syslog data to Elasticsearch:<br><code>sudo /usr/share/logstash/bin/logstash -f vm-syslog-logstash.conf</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Edit /etc/kibana/kibana.yml and change the IP address Kibana listens on so you can access it from your web browser:<br><code>server.host:'0.0.0.0'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Start Kibana:<br><code>sudo systemctl start kibana.service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Open port 5601 from the Azure CLI to allow remote access to the Kibana console:<br><code>az vm open-port --port 5601 --resource-group myResourceGroup --name myVM</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Open up the Kibana console (internet access):<br><code>http://vm_ip:5601/app/kibana#/discover?_g=()</code></p>",
         "image": ""
       }
     ]
