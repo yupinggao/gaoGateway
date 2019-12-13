@@ -181,36 +181,5 @@
         "image": ""
       }
     ]
-  },
-  {
-    "id": 210,
-    "date": "2019/12/10",
-    "title": "Azure CLI",
-    "itemList": [
-      {
-        "text": "<p><code>az group create --name myResourceGroup --location eastus</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Find public IP address:<br><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p><code>ssh azureuser@40.87.62.106</p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Open port 5601 from the Azure CLI to allow remote access:<br><code>az vm open-port --port 5601 --resource-group myResourceGroup --name myVM</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Obtain your Azure subscription ID:<br><code>echo sub=$(az account show --query 'id' -o tsv)</code></p>",
-        "image": ""
-      }
-    ]
   }
 ]

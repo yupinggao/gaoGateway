@@ -1,0 +1,143 @@
+[
+  {
+    "id": 20,
+    "date": "2019/12/12",
+    "title": "Create a Custom VM Image",
+    "itemList": [
+      {
+        "text": "<p>To create an image of a virtual machine, you need to prepare the VM by deprovisioning, deallocating, and then marking the source VM as generalized. Once the VM has been prepared, you can create an image.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>First ssh to the VM:<br><code>ssh user@ip</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then deprovision VM:<br><code>sudo waagent -deprovision+user -force</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then close the SSH session:<br><code>exit</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then deallocate the VM using az vm deallocate:<br><code>az vm deallocate --resource-group myResourceGroup --name myVM</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>set the state of the VM as generalized with az vm generalize so the Azure platform knows the VM has been generalized. You can only create an image from a generalized VM:<br><code>az vm generalize --resource-group myResourceGroup --name myVM</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then you can create an image of the VM by using az image create. The following example creates an image named myImage from a VM named myVM:<br><code>az image create --resource-group myResourceGroup --name myImage --source myVM</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then you can create one or more new VMs from the image using az vm create. The following example creates a VM named myVMfromImage from the image named myImage:<br><code>az vm create --resource-group myResourceGroup --name myVMfromImage --image myImage --admin-username azureuser --generate-ssh-keys</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "date": "2019/12/12",
+    "title": "Install the Elastic Stack on an Azure VM",
+    "itemList": [
+      {
+        "text": "<p>First, create a RG:<br><code>az group create --name myResourceGroup --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then create a VM:<br><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then find public IP address of your VM:<br><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then create an SSH session with the virtual machine:<br><code>ssh azureuser@ip</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then import the Elasticsearch signing key and update your APT sources list to include the Elastic package repository:<br><code>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>echo 'deb https://artifacts.elastic.co/packages/5.x/apt stable main' | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then install Java VM:<br><code>sudo apt update && sudo apt install openjdk-8-jre-headless</code><br><code>export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>update Ubuntu package sources and install Elasticsearch, Kibana, and Logstash:<br><code>sudo apt update && sudo apt install elasticsearch kibana logstash</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Start Elasticsearch on your VM:<br><code>sudo systemctl start elasticsearch.service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Verify that Elasticsearch is running on the VM:<br><code>sudo curl -XGET 'localhost:9200/'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Start Logstash and add data to Elasticsearch:<br><code>sudo systemctl start logstash.service</code><br><code>sudo /usr/share/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Set up Logstash to forward the kernel messages from this VM to Elasticsearch. Create a new file in an empty directory called vm-syslog-logstash.conf and paste in the following Logstash configuration:</code></p>",
+        "image": "../assets/image/itCloud/azure/logstash.png"
+      },
+      {
+        "text": "<p>Test this configuration and send the syslog data to Elasticsearch:<br><code>sudo /usr/share/logstash/bin/logstash -f vm-syslog-logstash.conf</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Edit /etc/kibana/kibana.yml and change the IP address Kibana listens on so you can access it from your web browser:<br><code>server.host:'0.0.0.0'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Start Kibana:<br><code>sudo systemctl start kibana.service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Open port 5601 from the Azure CLI to allow remote access to the Kibana console:<br><code>az vm open-port --port 5601 --resource-group myResourceGroup --name myVM</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Open up the Kibana console (internet access):<br><code>http://vm_ip:5601/app/kibana#/discover?_g=()</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "date": "2019/12/10",
+    "title": "Azure CLI",
+    "itemList": [
+      {
+        "text": "<p><code>az group create --name myResourceGroup --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Find public IP address:<br><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>ssh azureuser@40.87.62.106</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Open port 5601 from the Azure CLI to allow remote access:<br><code>az vm open-port --port 5601 --resource-group myResourceGroup --name myVM</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Obtain your Azure subscription ID:<br><code>echo sub=$(az account show --query 'id' -o tsv)</code></p>",
+        "image": ""
+      }
+    ]
+  }
+]

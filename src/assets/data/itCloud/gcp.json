@@ -1,0 +1,47 @@
+[
+  {
+    "id": 20,
+    "date": "2018/12/31",
+    "title": "Kubernetes Engine Quick Start on GCP",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have an GCP account</li><li>You have an GCP project</li><li>You have a Docker image created and stored in a repostory</li></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Log into GCP console</li><li>Select the project you want work on</li><li>Activate Google Cloud Shell on GCP console</li><li>Click 'START CLOUD SHELL' button</li><li>Verify that the cloud shell is associated with your project ID</li><li>Use <mark>gcloud auth list</mark> to the active account name</li><li>Use <mark>gcloud config list project</mark> to display the project ID</li><li>Use <mark>gcloud config set compute/zone us-central1-a</mark> to set a default compute zone</li><li>Use <mark>gcloud container clusters create <i>myclusterName-all-lowercase</i></mark> to create a cluster</li><li>Use <mark>gcloud container clusters get-credentials <i>mycluster</i></mark> to authenticate the cluster</li><li>Use <mark>kubectl run <i>myDeploymentName</i> --image=<i>myImageRepostoryURI</i> --port 8080</mark> to create a new Deployment named myDeploymentName</li><li>Use <mark>kubectl expose deployment <i>myDeploymentName</i> --type='LoadBalancer'</mark> to create a Kubernetes Service</li><li>Use <mark>kubectl get service <i>myDeploymentName</i></mark> to inspect the service</li><li>From the previous command's output, copy the Service's external IP address from the EXTERNAL IP column</li><li>Use <mark>http://<i>EXTERNAL-IP</i>:8080</mark> to view the application</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "date": "2019/02/04",
+    "title": "Deploy a Spring App on GCP Kubernetes",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites: <ul><li>You have an GCP account</li><li>You have an GCP project</li><li>you need to <a href='https://console.cloud.google.com/billing'>enable billing</a> in the Cloud Console in order to use Google Cloud resources.</li><li>APIs enabled: Google Container Registry API</li></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Steps</b><ol><li>Log into GCP console</li><li>Select the project you want work on</li><li>Activate Google Cloud Shell on GCP console</li><li>Click 'START CLOUD SHELL' button</li><li>Verify that the cloud shell is associated with your project ID</li><li>Use <mark>git clone https://github.com/spring-guides/gs-spring-boot.git</mark> to get source code in your GCP home directory</li><li>Use <mark>cd gs-spring-boot/complete</mark> to change to the project root folder</li><li>Use <mark>./mvnw -DskipTests spring-boot:run</mark> to start the Spring Boot application normally with the Spring Boot plugin in GCP local</li><li>Once the application started, click on the Web Preview icon in the Cloud Shell toolbar and choose preview on port 8080</li><li>Use <mark>./mvnw -DskipTests package</mark> to create the JAR deployable for the application</li><li>Use <mark>./mvnw -DskipTests com.google.cloud.tools:jib-maven-plugin:build -Dimage=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v1</mark> to create a new Deployment named hello-java</li> If all goes well and after a little while you should be able to see the container image listed in the console: Tools > Container Registry. At this point you now have a project-wide Docker image available which Kubernetes can access and orchestrate.<li>Use <mark>docker run -ti --rm -p 8080:8080 gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v1</mark> to test the image locally with the following command which will run a Docker container as a daemon on port 8080 from your newly-created container image</li><li>Use <mark>gcloud container clusters create hello-java-cluster --num-nodes 2 --machine-type n1-standard-1 --zone us-central1-c</mark> to create a cluster with two n1-standard-1 nodes</li><li>Use <mark>kubectl run hello-java --image=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v1 --port=8080</mark> to deploy one instance of your application into Kubernetes</li><li>Use <mark>kubectl get deployments</mark> to view the deployment you just created</li><li>Use <mark>kubectl get pods</mark> to view the application instances created by the deployment</li><li>Use <mark>kubectl expose deployment hello-java --type=LoadBalancer</mark> to expose the pod as a kubernetes service</li><li>Use <mark>kubectl get services</mark> to list all the cluster services</li><li>Use <mark>kubectl scale deployment hello-java --replicas=3</mark> to to scale the service</li><li>Use <mark>kubectl get deployment</mark> to verify it</li><li>Open the code editor from Cloud Shell, and change some code</li><li>Use <mark>./mvnw -DskipTests package</mark> to rebuild the app</li><li>Use <mark>./mvnw -DskipTests com.google.cloud.tools:jib-maven-plugin:build -Dimage=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v2</mark> to build and push a v2 of the container image</li><li>Use <mark>kubectl set image deployment/hello-java hello-java=gcr.io/$GOOGLE_CLOUD_PROJECT/hello-java:v2</mark> deploy the new version of your application across the entire cluster one instance at a time with rolling update</li><li>Go to GCP/Kubernetes Engine/Services, then click endpoint of the 'hello-java' to verify the updates</li><li>Use <mark>kubectl rollout undo deployment/hello-java</mark> to rollback the application if updates are not successful.</ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "date": "2019/11/14",
+    "title": "Install Helm on GCP",
+    "itemList": [
+      {
+        "text": "<p>The following steps show how to install Helm on GCP kubernetes cluster using scripts.</p>",
+        "image": ""
+      },
+      {
+        "text": "<div class='jumbotron'><p>curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh<br>chmod 700 get_helm.sh<br>./get_helm.sh</p></div>",
+        "image": ""
+      }
+    ]
+  }
+]

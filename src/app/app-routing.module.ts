@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component'
 import { ItComponent } from './component/it/it.component'
+import { ItCloudComponent } from './component/itCloud/itCloud.component'
+import { AzureComponent } from './component/itCloud/azure/azure.component';
+import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { ArchitectureComponent } from './component/it/architecture/architecture.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
-import { DevopsComponent } from './component/it/devops/devops.component';
+import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { JavacoreComponent } from './component/it/javacore/javacore.component'
 import { JavaeeComponent } from './component/it/javaee/javaee.component'
 import { FrameworkComponent } from './component/it/framework/framework.component'
@@ -57,17 +60,6 @@ const routes: Routes = [
       },
       {
         path: '', component: CloudComponent
-      }
-    ]
-  },
-  {
-    path: 'it/devops', component: DevopsComponent,
-    children: [
-      {
-        path: ':id', component: ContentComponent       
-      },
-      {
-        path: '', component: DevopsComponent
       }
     ]
   },
@@ -200,6 +192,42 @@ const routes: Routes = [
       },
       {
         path: '', component: MethodologyComponent
+      }
+    ]
+  },
+  {
+    path: 'itCloud', component: ItCloudComponent,
+  },
+  {
+    path: 'itCloud/azure', component: AzureComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: AzureComponent
+      }
+    ]
+  },
+  {
+    path: 'itCloud/gcp', component: GcpComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: GcpComponent
+      }
+    ]    
+  },
+  {
+    path: 'itCloud/devops', component: DevopsComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: DevopsComponent
       }
     ]
   },

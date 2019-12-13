@@ -16,9 +16,12 @@ import { ContentComponent } from './content/content.component';
 import { PhotoComponent } from './component/photo/photo.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
-import { DevopsComponent } from './component/it/devops/devops.component';
+import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { TutorialComponent } from './component/it/tutorial/tutorial.component';
 import { SecurityComponent } from './component/it/security/security.component';
+import { ItCloudComponent } from './component/itCloud/itCloud.component';
+import { AzureComponent } from './component/itCloud/azure/azure.component';
+import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { FamilyComponent } from './component/photo/family/family.component';
 import { NatureComponent } from './component/photo/nature/nature.component';
 import { PhotoContentComponent } from './component/photo/photo-content/photo-content.component';
@@ -43,6 +46,9 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
   declarations: [
     AppComponent,
     ItComponent,
+    ItCloudComponent,
+    AzureComponent,
+    GcpComponent,
     InterviewComponent,
     SideMenuComponent,
     JavacoreComponent,
