@@ -528,6 +528,10 @@
         "image": ""
       },
       {
+        "text": "<p>Then create an SSH session with the virtual machine:<br><code>ssh azureuser@ip</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p>Then import the Elasticsearch signing key and update your APT sources list to include the Elastic package repository:<br><code>wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -<br>echo 'deb https://artifacts.elastic.co/packages/5.x/apt stable main' | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list</code></p>",
         "image": ""
       },
