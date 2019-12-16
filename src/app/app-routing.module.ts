@@ -7,6 +7,7 @@ import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { ArchitectureComponent } from './component/it/architecture/architecture.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
+import { KubernetesComponent } from './component/itCloud/kubernetes/kubernetes.component';
 import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { JavacoreComponent } from './component/it/javacore/javacore.component'
 import { JavaeeComponent } from './component/it/javaee/javaee.component'
@@ -219,6 +220,17 @@ const routes: Routes = [
         path: '', component: GcpComponent
       }
     ]    
+  },
+  {
+    path: 'itCloud/kubernetes', component: KubernetesComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: KubernetesComponent
+      }
+    ]
   },
   {
     path: 'itCloud/devops', component: DevopsComponent,

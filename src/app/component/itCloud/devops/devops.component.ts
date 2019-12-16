@@ -12,7 +12,7 @@ export class DevopsComponent implements OnInit {
   constructor(private contentService: ContentService) { }
 
   ngOnInit() {
-    this.contentService.getContentList('../assets/data/it/devops.json').subscribe(data => this.contentList =data);
+    this.contentService.getContentList('../assets/data/itCloud/devops.json').subscribe(data => this.contentList =data);
   }
 
 }

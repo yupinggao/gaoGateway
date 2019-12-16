@@ -111,6 +111,72 @@
   },
   {
     "id": 60,
+    "date": "2019/12/14",
+    "title": "Secure Nginx on a Linux VM in Azure with SSL cert",
+    "itemList": [
+      {
+        "text": "<p>First, create a RG:<br><code>az group create --name myResourceGroupSecureWeb --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then create a Key Vault with az keyvault create and enable it for use when you deploy a VM:<br><code>keyvault_name=mykeyvaultname99</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then create a Key Vault with az keyvault create and enable it for use when you deploy a VM:<br><code>az keyvault create --resource-group myResourceGroupSecureWeb --name $keyvault_name --enabled-for-deployment</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>For production use, you should import a valid certificate signed by trusted provider with az keyvault certificate import. For this tutorial, the following example shows how you can generate a self-signed certificate with az keyvault certificate create that uses the default certificate policy:<br><code>az keyvault certificate create --vault-name $keyvault_name --name mycert --policy '$(az keyvault certificate get-default-policy)'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To use the certificate during the VM create process, obtain the ID of your certificate with az keyvault secret list-versions:<br><code>secret=$(az keyvault secret list-versions --vault-name $keyvault_name --name mycert --query '[?attributes.enabled].id' --output tsv)</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Convert the certificate with az vm secret format:<br><code>vm_secret=$(az vm secret format --secrets '$secret' -g myResourceGroupSecureWeb --keyvault $keyvault_name)</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><p>Cloud-init is a widely used approach to customize a Linux VM as it boots for the first time. You can use cloud-init to install packages and write files, or to configure users and security. As cloud-init runs during the initial boot process, there are no additional steps or required agents to apply your configuration.</p><p>When you create a VM, certificates and keys are stored in the protected /var/lib/waagent/ directory. To automate adding the certificate to the VM and configuring the web server, use cloud-init. In this example, you install and configure the NGINX web server. You can use the same process to install and configure Apache.</p><p>Create a file named cloud-init-web-server.txt and paste the following configuration:</p></p>",
+        "image": "../assets/image/itCloud/azure/azureCloudInit.png"
+      },
+      {
+        "text": "<p>Now create a VM with az vm create. The certificate data is injected from Key Vault with the --secrets parameter. You pass in the cloud-init config with the --custom-data parameter:<br><code>az vm create --resource-group myResourceGroupSecureWeb --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys --custom-data cloud-init-web-server.txt --secrets '$vm_secret'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To allow secure web traffic to reach your VM, open port 443 from the Internet with az vm open-port:<br><code>az vm open-port --resource-group myResourceGroupSecureWeb --name myVM --port 443</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To access the site:<br><code>https://ip</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "date": "2019/12/15",
+    "title": "Find and delete unattached NICs",
+    "itemList": [
+      {
+        "text": "<p>The virtualMachine property for a NIC stores the ID and resource group of the VM the NIC is attached to. The following script loops through all the NICs in a subscription and checks if the virtualMachine property is null. If this property is null, the NIC is not attached to a VM.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To view all the unattached NICs, it's highly recommend to first run the script with the deleteUnattachedNics variable to 0. To delete all the unattached NICs after you review the list output, run the script with deleteUnattachedNics to 1.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then run the following az cli commands in Azure Cloud Shell:</p>",
+        "image": "../assets/image/itCloud/azure/autoDeleteNics.png"
+      }
+    ]
+  },
+  {
+    "id": 1000,
     "date": "2019/12/10",
     "title": "Azure CLI",
     "itemList": [
@@ -136,6 +202,26 @@
       },
       {
         "text": "<p>Obtain your Azure subscription ID:<br><code>echo sub=$(az account show --query 'id' -o tsv)</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Create a Service Principal:<br><code>az ad sp create-for-rbac --role='Monitoring Reader' --scopes='/subscriptions/cad64ad8-6bce-44ea-bd9f-b45beb03458a/resourceGroups/PromitorRG'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Create a servicebus namespace:<br><code>az servicebus namespace create --resource-group PromitorRG --name service-bus-ns99 --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Create a servicebus queue:<br><code>az servicebus queue create --resource-group PromitorRG --namespace-name service-bus-ns99 --name demo_queue</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the connection string for this Service Bus namespace:<br><code>az servicebus namespace authorization-rule keys list --resource-group PromitorRG --namespace-name service-bus-ns99 --name RootManageSharedAccessKey --query primaryConnectionString --output tsv</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get your cluster’s credentials:<br><code>az aks get-credentials --name PromitorCluster --resource-group PromitorRG</code></p>This will save these credentials to your kubeconfig file and set your new cluster as your current context for all kubectl commands.</p>",
         "image": ""
       }
     ]

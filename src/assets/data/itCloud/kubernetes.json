@@ -1,0 +1,25 @@
+[
+  {
+    "id": 10,
+    "date": "2019/12/13",
+    "title": "kubectl",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl get nodes</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get services</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl port-forward svc/promitor-agent-scraper 8080:80</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get secret --namespace default grafana -o jsonpath='{.data.admin-password}' | base64 --decode ; echo</p>",
+        "image": ""
+      }
+    ]
+  }
+]
