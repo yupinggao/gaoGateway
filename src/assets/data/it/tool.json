@@ -29,6 +29,14 @@
         "image": ""
       },
       {
+        "text": "<p>Jenkins initial admin password is stored in <code>/var/lib/jenkins/secrets/initialAdminPassword</code> on Linux.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To check Jenkins status on Linux: <code>service jenkins status</code></p>",
+        "image": ""
+      },
+      {
         "text": "Builds can be triggered by various means, for example by commit in a version control system, by scheduling via a cron-like mechanism and by requesting a specific build URL. It can also be triggered after the other builds in the queue have completed. Jenkins functionality can be extended with plugins.",
         "image": ""
       },
@@ -99,6 +107,10 @@
       },
       {
         "text": "<p>Find OS: <code>cat /etc/os-release</code></p><p>find kernel version: <code>uname -r</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Delete all including the folder: <code>rm -R</code> <i>folder name</i></p></p>",
         "image": ""
       }
     ]

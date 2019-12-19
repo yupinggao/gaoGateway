@@ -181,47 +181,119 @@
     "title": "Azure CLI",
     "itemList": [
       {
-        "text": "<p><code>az group create --name myResourceGroup --location eastus</code></p>",
+        "text": "<p><code>az account show</code> - show your account info</p>",
         "image": ""
       },
       {
-        "text": "<p><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code></p>",
+        "text": "<p><code>az acr build -t 'captureorder:{{.Run.ID}}' -r <unique-acr-name></code></p>",
         "image": ""
       },
       {
-        "text": "<p>Find public IP address:<br><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code></p>",
+        "text": "<p><code>az acr create --resource-group <resource-group> --name <unique-acr-name> --sku Standard --location eastus</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az aks update -n <aks-cluster-name> -g <resource-group> --attach-acr <your-acr-name></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az ad sp create-for-rbac --role='Monitoring Reader' --scopes='/subscriptions/cad64ad8-6bce-44ea-bd9f-b45beb03458a/resourceGroups/PromitorRG'</code> - Create a Service Principal</p>",
+        "image": ""
+      },           
+      {
+        "text": "<p><code>az aks get-credentials --name PromitorCluster --resource-group PromitorRG</code> - Get your cluster’s credentials. This will save these credentials to your kubeconfig file and set your new cluster as your current context for all kubectl commands.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az aks enable-addons --resource-group k8s --name k8sCluster --addons monitoring --workspace-resource-id /subscriptions/cad64ad8-6bce-44ea-bd9f-b45beb03458a/resourcegroups/k8s/providers/microsoft.operationalinsights/workspaces/k8sworkspace99</code> - enable the monitoring add-on</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az aks scale --resource-group <resource-group> --name <unique-aks-cluster-name> --node-count 4</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az container create -g <resource-group> -n loadtest --image azch/loadtest --restart-policy Never -e SERVICE_ENDPOINT=https://<hostname order capture service></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az container logs -g <resource-group> -n loadtest</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az container delete -g <resource-group> -n loadtest</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az group create --name myResourceGroup --location eastus</code> - create a group</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az group list</code> - list groups</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az login</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az network public-ip list --resource-group myResourceGroup --query [].ipAddress</code> - find public IP address</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az resource create --resource-type Microsoft.OperationalInsights/workspaces --name k8sWorkspace99 --resource-group k8s --location eastus --properties '{}' -o table</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az resource show --resource-type Microsoft.OperationalInsights/workspaces --resource-group k8s --name k8sWorkspace99 --query 'id' -o tsv</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az servicebus namespace create --resource-group PromitorRG --name service-bus-ns99 --location eastus</code> - Create a servicebus namespace</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az servicebus namespace authorization-rule keys list --resource-group PromitorRG --namespace-name service-bus-ns99 --name RootManageSharedAccessKey --query primaryConnectionString --output tsv</code> - Get the connection string for this Service Bus namespace</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az servicebus queue create --resource-group PromitorRG --namespace-name service-bus-ns99 --name demo_queue</code> - Create a servicebus queue</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az vm create --resource-group myResourceGroup --name myVM --image UbuntuLTS --admin-username azureuser --generate-ssh-keys</code> - create a VM</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az vm open-port --port 5601 --resource-group myResourceGroup --name myVM</code> - Open port 5601 from the Azure CLI to allow remote access</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>echo version=$(az aks get-versions -l eastus --query 'orchestrators[-1].orchestratorVersion' -o tsv)</code> - Obtain AKS version</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>echo sub=$(az account show --query 'id' -o tsv)</code> - Obtain your Azure subscription ID</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>helm install orders-mongo stable/mongodb --set mongodbUsername=orders-user,mongodbPassword=orders-password,mongodbDatabase=akschallenge</code> - deploy MongoDB</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>helm repo add stable https://kubernetes-charts.storage.googleapis.com/</code> - Add the stable Helm charts repository</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>helm repo update</code> - Upate the repositories</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>sensible-editor cloud-init-jenkins.txt</code> - enter sensible-editor fileName to create the file and see a list of available editors:<br></p>",
         "image": ""
       },
       {
         "text": "<p><code>ssh azureuser@40.87.62.106</p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Open port 5601 from the Azure CLI to allow remote access:<br><code>az vm open-port --port 5601 --resource-group myResourceGroup --name myVM</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Obtain your Azure subscription ID:<br><code>echo sub=$(az account show --query 'id' -o tsv)</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Create a Service Principal:<br><code>az ad sp create-for-rbac --role='Monitoring Reader' --scopes='/subscriptions/cad64ad8-6bce-44ea-bd9f-b45beb03458a/resourceGroups/PromitorRG'</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Create a servicebus namespace:<br><code>az servicebus namespace create --resource-group PromitorRG --name service-bus-ns99 --location eastus</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Create a servicebus queue:<br><code>az servicebus queue create --resource-group PromitorRG --namespace-name service-bus-ns99 --name demo_queue</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Get the connection string for this Service Bus namespace:<br><code>az servicebus namespace authorization-rule keys list --resource-group PromitorRG --namespace-name service-bus-ns99 --name RootManageSharedAccessKey --query primaryConnectionString --output tsv</code></p>",
-        "image": ""
-      },
-      {
-        "text": "<p>Get your cluster’s credentials:<br><code>az aks get-credentials --name PromitorCluster --resource-group PromitorRG</code></p>This will save these credentials to your kubeconfig file and set your new cluster as your current context for all kubectl commands.</p>",
         "image": ""
       }
     ]

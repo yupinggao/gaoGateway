@@ -12,6 +12,17 @@
   },
   {
     "id": 40,
+    "date": "2019/12/18",
+    "title": "Release Strategy",
+    "itemList": [
+      {
+        "text": "<p><ul><li>Canary release is a technique that is used to reduce the risk of introducing a new software version in production by gradually rolling out the change to a small subgroup of users, before rolling it out to the entire platform/infrastructure and making it available to everybody.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 60,
     "date": "2019/11/30",
     "title": "Steps to Choose Right Tools",
     "itemList": [

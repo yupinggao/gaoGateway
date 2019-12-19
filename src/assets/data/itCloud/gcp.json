@@ -43,5 +43,20 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 1000,
+    "date": "2019/12/19",
+    "title": "gcloud CLI",
+    "itemList": [
+      {
+        "text": "<p><code>az account show</code> - show your account info</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>az acr build -t 'captureorder:{{.Run.ID}}' -r <unique-acr-name></code></p>",
+        "image": ""
+      }
+    ]
   }
 ]

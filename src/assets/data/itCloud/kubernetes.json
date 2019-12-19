@@ -1,24 +1,108 @@
 [
   {
-    "id": 10,
+    "id": 20,
     "date": "2019/12/13",
     "title": "kubectl",
     "itemList": [
       {
-        "text": "<p><code>kubectl get nodes</p>",
+        "text": "<p><code>kubectl apply -f captureorder-deployment.yaml</code> - apply the instructions in the file</p>",
         "image": ""
       },
       {
-        "text": "<p><code>kubectl get services</p>",
+        "text": "<p><code>kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml</code> - apply the instructions in the file</p>",
         "image": ""
       },
       {
-        "text": "<p><code>kubectl port-forward svc/promitor-agent-scraper 8080:80</p>",
+        "text": "<p><code>kubectl create namespace ingress</code> - create a namespace for the ingress</p>",
         "image": ""
       },
       {
-        "text": "<p><code>kubectl get secret --namespace default grafana -o jsonpath='{.data.admin-password}' | base64 --decode ; echo</p>",
+        "text": "<p><code>kubectl create secret generic mongodb --from-literal=mongoHost='orders-mongo-mongodb.default.svc.cluster.local' --from-literal=mongoUser='orders-user' --from-literal=mongoPassword='orders-password'</code></p>",
         "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe certificate frontend</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe pod <pod name></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get nodes</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods -l app=captureorder -w</code> - watch the pod named 'captureorder'</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pvc</code> - find Persistent Volume Claims</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get secret --namespace default grafana -o jsonpath='{.data.admin-password}' | base64 --decode ; echo</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get service captureorder -o jsonpath='{.status.loadBalancer.ingress[*].ip}' -w</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get services</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get svc  -n ingress    ingress-nginx-ingress-controller -o jsonpath='{.status.loadBalancer.ingress[*].ip}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl logs <pod name></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl port-forward svc/promitor-agent-scraper 8080:80</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "date": "2019/12/18",
+    "title": "Minikube",
+    "itemList": [
+      {
+        "text": "<p><b>Update Minikube</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><ol><li><code>sudo minikube delete</code></li><li><code>sudo curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.3.1/minikube-linux-amd64 && sudo chmod +x minikube && sudo cp minikube /usr/local/bin/ && sudo rm minikube</code></li><li><code>minikube version</code></li><li><code>sudo minikube start --vm-driver=none</code></li></ol></p>",
+        "image": "../assets/image/itCloud/kubernetes/minikube.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><ol><li><code>minikube stop</code></li><li><code>minikube delete -p minikube</code></li><li><code>minikube start</code></li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>minikube dashboard</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>minikube ip</code> - get the LB service IP</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "date": "2019/12/19",
+    "title": "Notes",
+    "itemList": [
+      {
+        "text": "<p><b>Kubernetes Architecture Diagram</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/k8sDiagram.png",
+        "imageClass": "mx-auto d-block"
       }
     ]
   }
