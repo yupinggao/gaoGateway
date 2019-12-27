@@ -7,7 +7,7 @@ import { ContentService } from '../../../services/it/content.service';
   styleUrls: ['./kubernetes.component.scss']
 })
 export class KubernetesComponent implements OnInit {
-    public routerName = "/it/devops";
+    public routerName = "/itCloud/kubernetes";
   public contentList = [];
   constructor(private contentService: ContentService) { }
 

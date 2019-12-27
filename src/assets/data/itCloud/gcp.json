@@ -50,11 +50,23 @@
     "title": "gcloud CLI",
     "itemList": [
       {
-        "text": "<p><code>az account show</code> - show your account info</p>",
+        "text": "<p><code>gcloud config set project $PROJECT_ID</code></p>",
         "image": ""
       },
       {
-        "text": "<p><code>az acr build -t 'captureorder:{{.Run.ID}}' -r <unique-acr-name></code></p>",
+        "text": "<p><code>gcloud config set compute/zone us-east1-b</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters create hello-cluster --num-nodes=2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters delete hello-cluster</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters get-credentials hello-cluster</code> - If you are using an existing Google Kubernetes Engine cluster or if you have created a cluster through Google Cloud Console, you need to run this command to retrieve cluster credentials and configure kubectl command-line tool with them</p>",
         "image": ""
       }
     ]

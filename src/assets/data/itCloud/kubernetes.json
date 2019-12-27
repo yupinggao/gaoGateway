@@ -1,6 +1,91 @@
 [
   {
     "id": 20,
+    "date": "2019/12/22",
+    "title": "K8S Concepts",
+    "itemList": [
+      {
+        "text": "<p>To work with Kubernetes, you use Kubernetes API objects to describe your cluster’s desired state: what applications or other workloads you want to run, what container images they use, the number of replicas, what network and disk resources you want to make available, and more. You set your desired state by creating objects using the Kubernetes API, typically via the command-line interface, kubectl. You can also use the Kubernetes API directly to interact with the cluster and set or modify your desired state.<p>Once you’ve set your desired state, the Kubernetes Control Plane makes the cluster’s current state match the desired state via the Pod Lifecycle Event Generator (PLEG). To do so, Kubernetes performs a variety of tasks automatically–such as starting or restarting containers, scaling the number of replicas of a given application, and more. The Kubernetes Control Plane consists of a collection of processes running on your cluster:</p></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Kubernetes Master runs three processes: </b><ul><li>kube-apiserver</li><li>kube-controller-manager</li><li>kube-scheduler</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>non-master node in your cluster runs two processes: </b><ul><li>kubelet</li><li>kube proxy</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Kubernetes Objects: </b><ul><li>Pod</li><li>Service</li><li>Volume</li><li>Namespace</li><li>Deployment</li><li>DaemonSet</li><li>StatefulSet</li><li>ReplicaSet</li><li>Job</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "date": "2019/12/27",
+    "title": "Namespaces",
+    "itemList": [
+      {
+        "text": "<p>Namespaces are intended for use in environments with many users spread across multiple teams, or projects. For clusters with a few to tens of users, you should not need to create or think about namespaces at all. Start using namespaces when you need the features they provide.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Kubernetes starts with three initial namespaces:</b><ul><li><b>default</b> The default namespace for objects with no other namespace</li><li><b>kube-system</b> The namespace for objects created by the Kubernetes system</li><li><b>kube-public</b> This namespace is created automatically and is readable by all users (including those not authenticated). This namespace is mostly reserved for cluster usage, in case that some resources should be visible and readable publicly throughout the whole cluster. The public aspect of this namespace is only a convention, not a requirement</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>You can permanently save the namespace for all subsequent kubectl commands in that context:<br><code>kubectl config set-context --current --namespace=<i>insert-namespace-name-here</i><code><br><code>kubectl config view --minify | grep namespace:</code> - validate it</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Not All Objects are in a Namespace. To see which Kubernetes resources are and aren’t in a namespace: <br><code>kubectl api-resources --namespaced=true</code><br><code>kubectl api-resources --namespaced=false</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "date": "2019/12/26",
+    "title": "Object Management",
+    "itemList": [
+      {
+        "text": "<p><b>Management techniques</b> - Warning: A Kubernetes object should be managed using only one technique. Mixing and matching techniques for the same object results in undefined behavior.</p>",
+        "image": "../assets/image/itCloud/kubernetes/objectMan.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Imperative commands</b><ul><li><code>kubectl run nginx --image nginx</code> - run an instance of the nginx container by creating a Deployment object</li><li><code>kubectl create deployment nginx --image nginx</code> - do the same thing using a different syntax</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Imperative object configuration</b><ul><li><code>kubectl create -f nginx.yaml</code> - create the objects defined in a configuration file</li><li><code>kubectl delete -f nginx.yaml -f redis.yaml</code> - delete the objects defined in two configuration files</li><li><code>kubectl replace -f nginx.yaml</code> - update the objects defined in a configuration file by overwriting the live configuration</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Declarative object configuration</b><ul><li><code>kubectl diff -f configs/</code><br><code>kubectl apply -f configs/</code> - process all object configuration files in the configs directory, and create or patch the live objects. You can first diff to see what changes are going to be made, and then apply</li><li><code>kubectl diff -R -f configs/</code><br><code>kubectl apply -R -f configs/</code> - recursively process directorie</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
+    "date": "2019/12/23",
+    "title": "Deployment",
+    "itemList": [
+      {
+        "text": "<p><b>Proportional Scaling</b></p><p>RollingUpdate Deployments support running multiple versions of an application at the same time. When you or an autoscaler scales a RollingUpdate Deployment that is in the middle of a rollout (either in progress or paused), the Deployment controller balances the additional replicas in the existing active ReplicaSets (ReplicaSets with Pods) in order to mitigate risk. This is called proportional scaling.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Deployment status</b></p><p><ul><li>Progressing Deployment</li><li>Complete Deployment</li><li>Failed Deployment</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1020,
     "date": "2019/12/13",
     "title": "kubectl",
     "itemList": [
@@ -9,7 +94,27 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml</code> - deploy the dashboard</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml</code> - apply the instructions in the file</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl config view</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl create deployment hello-web --image=gcr.io/${PROJECT_ID}/hello-app:v1</code> - deploy your application image</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl expose deployment hello-node --type=LoadBalancer --port=8080</code></p>",
         "image": ""
       },
       {
@@ -21,6 +126,14 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl delete service hello-web</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe deployments</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl describe certificate frontend</code></p>",
         "image": ""
       },
@@ -29,7 +142,19 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl expose deployment hello-web --type=LoadBalancer --port 80 --target-port 8080</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl get nodes</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get events</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --show-labels</code> -see the labels automatically generated for each Pod</p>",
         "image": ""
       },
       {
@@ -38,6 +163,10 @@
       },
       {
         "text": "<p><code>kubectl get pvc</code> - find Persistent Volume Claims</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get rs</code> - see the ReplicaSet (rs)</p>",
         "image": ""
       },
       {
@@ -51,6 +180,10 @@
       {
         "text": "<p><code>kubectl get services</code></p>",
         "image": ""
+      }, 
+      {
+        "text": "<p><code>kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}'</code></p>",
+        "image": ""
       },
       {
         "text": "<p><code>kubectl get svc  -n ingress    ingress-nginx-ingress-controller -o jsonpath='{.status.loadBalancer.ingress[*].ip}'</code></p>",
@@ -61,13 +194,49 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl patch deployment.v1.apps/nginx-deployment -p '{'spec':{'progressDeadlineSeconds':600}}'</code> - set the spec with progressDeadlineSeconds to make the controller report lack of progress for a Deployment after 10 minutes</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl port-forward svc/promitor-agent-scraper 8080:80</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout status deployment.apps/nginx-deployment</code> - view the rollout status for deployment.apps/nginx-deployment</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout history deployment.v1.apps/nginx-deployment</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout history deployment.v1.apps/nginx-deployment --revision=2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout pause deployment.v1.apps/nginx-deployment</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout resume deployment.v1.apps/nginx-deployment</code> - You cannot rollback a paused Deployment until you resume it</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout undo deployment.v1.apps/nginx-deployment</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout undo deployment.v1.apps/nginx-deployment --to-revision=2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl scale deployment hello-web --replicas=3</code></p>",
         "image": ""
       }
     ]
   },
   {
-    "id": 40,
+    "id": 1040,
     "date": "2019/12/18",
     "title": "Minikube",
     "itemList": [
@@ -81,7 +250,7 @@
         "imageClass": "mx-auto d-block"
       },
       {
-        "text": "<p><ol><li><code>minikube stop</code></li><li><code>minikube delete -p minikube</code></li><li><code>minikube start</code></li></ol></p>",
+        "text": "<p><ol><li><code>minikube stop</code></li><li><code>minikube config set memory 3072</code></li><li><code>minikube delete -p minikube</code></li><li><code>minikube start</code></li></ol></p>",
         "image": ""
       },
       {
@@ -91,11 +260,15 @@
       {
         "text": "<p><code>minikube ip</code> - get the LB service IP</p>",
         "image": ""
+      },
+      {
+        "text": "<p><b>addons</b><br><ul><li><code>minikube addons list</code></li><li>minikube addons enable ingress</li></ul></p>",
+        "image": ""
       }
     ]
   },
   {
-    "id": 60,
+    "id": 1060,
     "date": "2019/12/19",
     "title": "Notes",
     "itemList": [

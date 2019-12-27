@@ -5,10 +5,12 @@ import { ItComponent } from './component/it/it.component'
 import { ItCloudComponent } from './component/itCloud/itCloud.component'
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { GcpComponent } from './component/itCloud/gcp/gcp.component';
+import { DockerComponent } from './component/itCloud/docker/docker.component';
 import { ArchitectureComponent } from './component/it/architecture/architecture.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
 import { KubernetesComponent } from './component/itCloud/kubernetes/kubernetes.component';
 import { DevopsComponent } from './component/itCloud/devops/devops.component';
+import { TrainingComponent } from './component/itCloud/training/training.component';
 import { JavacoreComponent } from './component/it/javacore/javacore.component'
 import { JavaeeComponent } from './component/it/javaee/javaee.component'
 import { FrameworkComponent } from './component/it/framework/framework.component'
@@ -222,6 +224,17 @@ const routes: Routes = [
     ]    
   },
   {
+    path: 'itCloud/docker', component: DockerComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: DockerComponent
+      }
+    ]    
+  },
+  {
     path: 'itCloud/kubernetes', component: KubernetesComponent,
     children: [
       {
@@ -240,6 +253,17 @@ const routes: Routes = [
       },
       {
         path: '', component: DevopsComponent
+      }
+    ]
+  },
+  {
+    path: 'itCloud/training', component: TrainingComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: TrainingComponent
       }
     ]
   },

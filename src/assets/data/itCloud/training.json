@@ -1,0 +1,15 @@
+[
+  {
+    "id": 20,
+    "date": "2019/12/22",
+    "title": "CKAD",
+    "itemList": [
+      {
+        "text": "<p>The CKAD tests your ability to deploy and configure applications running on the Kubernetes cluster and your understanding of some core concepts. You’ll have two hours to complete the CKAD exam. Scoring a 66% or higher means you’ve passed.</p><p>For the CKAD exam, you will be tested in the following areas:</p>",
+        "image": "../assets/image/itCloud/training/ckad.png",
+        "imageClass": "mx-auto d-block"
+      }
+
+    ]
+  }
+]
