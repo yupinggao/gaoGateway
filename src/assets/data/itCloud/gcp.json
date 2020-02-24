@@ -1,6 +1,21 @@
 [
   {
-    "id": 20,
+    "id": 100,
+    "date": "2020/01/09",
+    "title": "Deployment Manager",
+    "itemList": [
+      {
+        "text": "<p>A configuration describes all the resources you want for a single deployment. A configuration is a file written in YAML syntax that lists each of the resources you want to create and its respective resource properties. A configuration must contain a <b>resources:</b> section followed by the list of resources to create.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Each resource must contain three components:</p><ol><li><b>name</b> - A user-defined string to identify this resource such as my-vm, project-data-disk, the-test-network.</li><li><b>type</b> - The type of the resource being deployed such as compute.v1.instance, compute.v1.disk. The base resource types are described and listed on the Supported Resource Types documentation.</li><li><b>properties</b> - The parameters for this resource type. They must match the properties for the type such as zone: asia-east1-a, boot: true.</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
     "date": "2018/12/31",
     "title": "Kubernetes Engine Quick Start on GCP",
     "itemList": [
@@ -15,7 +30,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 300,
     "date": "2019/02/04",
     "title": "Deploy a Spring App on GCP Kubernetes",
     "itemList": [
@@ -30,7 +45,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 400,
     "date": "2019/11/14",
     "title": "Install Helm on GCP",
     "itemList": [
@@ -50,7 +65,27 @@
     "title": "gcloud CLI",
     "itemList": [
       {
-        "text": "<p><code>gcloud config set project $PROJECT_ID</code></p>",
+        "text": "<p><code>gcloud builds submit --config cloudbuild.yaml .</code> - use a build config file to build the same Docker image as below.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud builds submit --tag gcr.io/[PROJECT_ID]/quickstart-image .</code> - The '.' specifies that the source code is in the current working directory at build time. This builds a Docker image named quickstart-image using a Dockerfile and pushed the image to Container Registry.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud compute instances reset the-first-vm</code> - to restart VM named 'the-first-vm'</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud compute instances describe the-first-vm | grep 'natIP'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud config set project $PROJECT_ID</code> - to set your project</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud config unset project</code> - To unset your project</p>",
         "image": ""
       },
       {
@@ -62,11 +97,58 @@
         "image": ""
       },
       {
+        "text": "<p><code>gcloud container clusters create hello-cluster --enable-autoprovisioning : --autoprovisioning-config-file=AUTOPROVISIONING_CONFIG_FILE</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters create hello-cluster --enable-autoscaling --max-nodes=MAX_NODES --min-nodes=MIN_NODES</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>gcloud container clusters delete hello-cluster</code></p>",
         "image": ""
       },
       {
         "text": "<p><code>gcloud container clusters get-credentials hello-cluster</code> - If you are using an existing Google Kubernetes Engine cluster or if you have created a cluster through Google Cloud Console, you need to run this command to retrieve cluster credentials and configure kubectl command-line tool with them</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters get-credentials your-first-cluster-1 --zone us-central1-a</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters get-credentials <i>cluster_name</i> --zone <i>zone_name</i> --project <i>project_id</i></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters resize standard-cluster-1 --zone us-central1-a --num-nodes 2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud deployment-manager deployments create quickstart-deployment --config <i>config file</i></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud deployment-manager deployments describe quickstart-deployment</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud deployment-manager deployments update deployment-to-update --config config-with-many-templates.yaml --preview</code> - to preview the updated deployment, run the update command with a --preview flag</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud deployment-manager deployments update deployment-to-update --config config-with-many-templates.yaml</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 5000,
+    "date": "2020/02/02",
+    "title": "Interview",
+    "itemList": [
+      {
+        "text": "<ol><li><b>What are Authentication strategies for Accessing GCP API?</b><p><ul><li>API key</li><li>OAuth 2.0 </li><li>Service account</li></ul></li></ol>",
         "image": ""
       }
     ]

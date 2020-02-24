@@ -10,7 +10,8 @@
       },
       {
         "text": "<b>Service models</b><br/><ul><li>Infrastructure as a service (IaaS)</li><li>Platform as a service (PaaS)</li><li>Software as a service (SaaS)</li><li>Mobile 'backend' as a service (MBaaS)</li><li>Function as a service (FaaS)</li></ul>",
-        "image": ""
+        "image": "../assets/image/it/cloud/cloudServiceModel.png",
+        "imageClass": "mx-auto d-block"        
       },
       {
         "text": "<b>Deployment models</b><br/><ul><li>Private cloud</li><li>Public cloud</li><li>Hybrid cloud</li></ul>",

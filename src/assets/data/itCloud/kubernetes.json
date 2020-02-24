@@ -1,6 +1,6 @@
 [
   {
-    "id": 20,
+    "id": 100,
     "date": "2019/12/22",
     "title": "K8S Concepts",
     "itemList": [
@@ -9,7 +9,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>Kubernetes Master runs three processes: </b><ul><li>kube-apiserver</li><li>kube-controller-manager</li><li>kube-scheduler</li></ul></p>",
+        "text": "<p><b>Kubernetes Master runs three processes: </b><ul><li>kube-apiserver</li><li><b>kube-controller-manager</b>: Examples of controllers that ship with Kubernetes today are the replication controller, endpoints controller, namespace controller, and serviceaccounts controller.</li><li><b>kube-scheduler</b> - The Kubernetes scheduler is a policy-rich, topology-aware, workload-specific function that significantly impacts availability, performance, and capacity. The scheduler needs to take into account individual and collective resource requirements, quality of service requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, deadlines, and so on. Workload-specific requirements will be exposed through the API as necessary.</li></ul></p>",
         "image": ""
       },
       {
@@ -17,13 +17,23 @@
         "image": ""
       },
       {
-        "text": "<p><b>Kubernetes Objects: </b><ul><li>Pod</li><li>Service</li><li>Volume</li><li>Namespace</li><li>Deployment</li><li>DaemonSet</li><li>StatefulSet</li><li>ReplicaSet</li><li>Job</li></ul></p>",
+        "text": "<p><b>Kubernetes Objects: </b><ul><li>Pod</li><li>Service</li><li>Volume</li><li>Namespace</li><li>Deployment</li><li><b>DaemonSet:</b> A DaemonSet ensures that all (or some) Nodes run a copy of a Pod. As nodes are added to the cluster, Pods are added to them. As nodes are removed from the cluster, those Pods are garbage collected. Deleting a DaemonSet will clean up the Pods it created.</li><li>StatefulSet</li><li>ReplicaSet</li><li>Job</li><li>NetworkPolicy</li><li><b>Addons:</b> CoreDNS, Dashboard etc.</li></ul></p>",
         "image": ""
+      },
+      {
+        "text": "<p><b>Architecture of a Kubernetes cluster without the cloud controller manager:</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/archDiagram1.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Architecture of a Kubernetes cluster with the cloud controller manager:</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/archDiagram2.png",
+        "imageClass": "mx-auto d-block"
       }
     ]
   },
   {
-    "id": 80,
+    "id": 200,
     "date": "2019/12/27",
     "title": "Namespaces",
     "itemList": [
@@ -46,7 +56,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 300,
     "date": "2019/12/26",
     "title": "Object Management",
     "itemList": [
@@ -70,7 +80,57 @@
     ]
   },
   {
-    "id": 800,
+    "id": 400,
+    "date": "2020/01/11",
+    "title": "Configuration Best Practices",
+    "itemList": [
+      {
+        "text": "<p><b>General Configuration Tips</b><ul><li>When defining configurations, specify the latest stable API version.</li><li>Configuration files should be stored in version control before being pushed to the cluster. This allows you to quickly roll back a configuration change if necessary. It also aids cluster re-creation and restoration.</li><li>Write your configuration files using YAML rather than JSON. Though these formats can be used interchangeably in almost all scenarios, YAML tends to be more user-friendly.</li><li>Group related objects into a single file whenever it makes sense. One file is often easier to manage than several. See the guestbook-all-in-one.yaml file as an example of this syntax.</li><li>Note also that many kubectl commands can be called on a directory. For example, you can call kubectl apply on a directory of config files.</li><li>Don’t specify default values unnecessarily: simple, minimal configuration will make errors less likely.</li><li>Put object descriptions in annotations, to allow better introspection.</li><ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>'Naked' Pods vs ReplicaSets, Deployments, and Jobs</b></p><p>Don’t use naked Pods (that is, Pods not bound to a ReplicaSet or Deployment) if you can avoid it. Naked Pods will not be rescheduled in the event of a node failure.<br>A Deployment, which both creates a ReplicaSet to ensure that the desired number of Pods is always available, and specifies a strategy to replace Pods (such as RollingUpdate), is almost always preferable to creating Pods directly, except for some explicit restartPolicy: Never scenarios. A Job may also be appropriate.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Services</b></p><p><ul><li>Create a Service before its corresponding backend workloads (Deployments or ReplicaSets), and before any workloads that need to access it. When Kubernetes starts a container, it provides environment variables pointing to all the Services which were running when the container was started. For example, if a Service named foo exists, all containers will get the following variables in their initial environment:<br>&nbsp;&nbsp;&nbsp;&nbsp;FOO_SERVICE_HOST=<i>the host the Service is running on</i><br>&nbsp;&nbsp;&nbsp;&nbsp;FOO_SERVICE_PORT=<i>the port the Service is running on</></li><li>An optional (though strongly recommended) cluster add-on is a DNS server. The DNS server watches the Kubernetes API for new Services and creates a set of DNS records for each. If DNS has been enabled throughout the cluster then all Pods should be able to do name resolution of Services automatically.</li><li>Don’t specify a hostPort for a Pod unless it is absolutely necessary. When you bind a Pod to a hostPort, it limits the number of places the Pod can be scheduled, because each <hostIP, hostPort, protocol> combination must be unique. If you don’t specify the hostIP and protocol explicitly, Kubernetes will use 0.0.0.0 as the default hostIP and TCP as the default protocol.</li><li>Avoid using hostNetwork, for the same reasons as hostPort.</li><li>Use headless Services (which have a ClusterIP of None) for easy service discovery when you don’t need kube-proxy load balancing.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Using Labels</b></p><p><ul><li>Define and use labels that identify semantic attributes of your application or Deployment, such as { app: myapp, tier: frontend, phase: test, deployment: v3 }. You can use these labels to select the appropriate Pods for other resources; for example, a Service that selects all tier: frontend Pods, or all phase: test components of app: myapp.</li><li>You can manipulate labels for debugging. Because Kubernetes controllers (such as ReplicaSet) and Services match to Pods using selector labels, removing the relevant labels from a Pod will stop it from being considered by a controller or from being served traffic by a Service. If you remove the labels of an existing Pod, its controller will create a new Pod to take its place. This is a useful way to debug a previously “live” Pod in a “quarantine” environment. To interactively remove or add labels, use kubectl label.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Node isolation/restriction</b></p><p>Adding labels to Node objects allows targeting pods to specific nodes or groups of nodes. This can be used to ensure specific pods only run on nodes with certain isolation, security, or regulatory properties. When using labels for this purpose, choosing label keys that cannot be modified by the kubelet process on the node is strongly recommended. This prevents a compromised node from using its kubelet credential to set those labels on its own Node object, and influencing the scheduler to schedule workloads to the compromised node.</p><p>The NodeRestriction admission plugin prevents kubelets from setting or modifying labels with a node-restriction.kubernetes.io/ prefix. To make use of that label prefix for node isolation:</p><p><ol><li>Ensure you are using the Node authorizer and have enabled the NodeRestriction admission plugin.</li><li>Add labels under the node-restriction.kubernetes.io/ prefix to your Node objects, and use those labels in your node selectors. For example, example.com.node-restriction.kubernetes.io/fips=true or example.com.node-restriction.kubernetes.io/pci-dss=true.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Container Images</b></p><p><ul><li>You should avoid using the :latest tag when deploying containers in production as it is harder to track which version of the image is running and more difficult to roll back properly.</li><li>To make sure the container always uses the same version of the image, you can specify its digest, for example sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2. The digest uniquely identifies a specific version of the image, so it is never updated by Kubernetes unless you change the digest value.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Using kubectl</b></p><p><ul><li>Use kubectl apply -f <directory>. This looks for Kubernetes configuration in all .yaml, .yml, and .json files in <i>directory</i> and passes it to apply.</li><li>Use label selectors for get and delete operations instead of specific object names. See the sections on label selectors and using labels effectively.</li><li>Use kubectl run and kubectl expose to quickly create single-container Deployments and Services. See Use a Service to Access an Application in a Cluster for an example.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 500,
+    "date": "2020/01/14",
+    "title": "Node affinity, Taints and Tolerations",
+    "itemList": [
+      {
+        "text": "<p>Node affinity, described here, is a property of pods that attracts them to a set of nodes (either as a preference or a hard requirement). Taints are the opposite – they allow a node to repel a set of pods.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Taints and tolerations work together to ensure that pods are not scheduled onto inappropriate nodes. One or more taints are applied to a node; this marks that the node should not accept any pods that do not tolerate the taints. Tolerations are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 600,
     "date": "2019/12/23",
     "title": "Deployment",
     "itemList": [
@@ -85,10 +145,87 @@
     ]
   },
   {
+    "id": 700,
+    "date": "2019/12/28",
+    "title": "Pod",
+    "itemList": [
+      {
+        "text": "<p><b>Pod phase</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/podPhase.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Container probes</b></p><p>A Probe is a diagnostic performed periodically by the kubelet on a Container. To perform a diagnostic, the kubelet calls a Handler implemented by the Container. There are three types of handlers:<ol><li><b>ExecAction:</b> Executes a specified command inside the Container. The diagnostic is considered successful if the command exits with a status code of 0.</li><li><b>TCPSocketAction:</b> Performs a TCP check against the Container’s IP address on a specified port. The diagnostic is considered successful if the port is open.</li><li><b>HTTPGetAction:</b> Performs an HTTP Get request against the Container’s IP address on a specified port and path. The diagnostic is considered successful if the response has a status code greater than or equal to 200 and less than 400.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>The kubelet can optionally perform and react to three kinds of probes on running Containers:</b></p><p><ol><li><b>livenessProbe: </b>Indicates whether the Container is running. If the liveness probe fails, the kubelet kills the Container, and the Container is subjected to its restart policy. If a Container does not provide a liveness probe, the default state is Success.</li><li><b>readinessProbe:</b> Indicates whether the Container is ready to service requests. If the readiness probe fails, the endpoints controller removes the Pod’s IP address from the endpoints of all Services that match the Pod. The default state of readiness before the initial delay is Failure. If a Container does not provide a readiness probe, the default state is Success.</li><li><b>startupProbe:</b> Indicates whether the application within the Container is started. All other probes are disabled if a startup probe is provided, until it succeeds. If the startup probe fails, the kubelet kills the Container, and the Container is subjected to its restart policy. If a Container does not provide a startup probe, the default state is Success.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Container States:</b></p><p><ul><li>Waiting</li><li>Running</li><li>Terminated</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
+    "date": "2019/12/28",
+    "title": "Container",
+    "itemList": [
+      {
+        "text": "<p><b>Container Lifecycle Hooks</b></p><p>There are two hooks that are exposed to Containers:</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>PostStart</b></p><p>This hook executes immediately after a container is created. However, there is no guarantee that the hook will execute before the container ENTRYPOINT. No parameters are passed to the handler.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>PreStop</b></p><p>This hook is called immediately before a container is terminated due to an API request or management event such as liveness probe failure, preemption, resource contention and others. A call to the preStop hook fails if the container is already in terminated or completed state. It is blocking, meaning it is synchronous, so it must complete before the call to delete the container can be sent. No parameters are passed to the handler.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1000,
+    "date": "2020/01/12",
+    "title": "Volume Basics",
+    "itemList": [
+      {
+        "text": "<p><b>emptyDir</b></p><p>emptyDir are volumes that get created empty when a Pod is created.</p><p>While a Pod is running its emptyDir exists. If a container in a Pod crashes the emptyDir content is unaffected. Deleting a Pod deletes all its emptyDirs.</p><p>There are several ways a Pod can be deleted. Accidental and deliberate. All result in immediate emptyDir deletion. emptyDir are meant for temporary working disk space.</p><p></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>PersistentVolume</b></p><p>If you need persistent volumes you use: PersistentVolume and PersistentVolumeClaim</p><p>When the PersistentVolumeClaim is deleted, the PersistentVolume still exists and the volume is considered 'released'. But it is not yet available for another claim because the previous claimant's data remains on the volume.</p><p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1010,
+    "date": "2020/01/03",
+    "title": "Ingress in K8S",
+    "itemList": [
+      {
+        "text": "<p>An API object that manages external access to the services in a cluster, typically HTTP. It can provide load balancing, SSL termination and name-based virtual hosting.</p><p>Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource. An Ingress controller is responsible for fulfilling the Ingress, usually with a load balancer, though it may also configure your edge router or additional frontends to help handle the traffic.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Unlike other types of controllers which run as part of the kube-controller-manager binary, Ingress controllers are not started automatically with a cluster. You may need to deploy an Ingress controller such as ingress-nginx. Ideally, all Ingress controllers should fit the reference specification. In reality, the various Ingress controllers operate slightly differently.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 1020,
     "date": "2019/12/13",
     "title": "kubectl",
     "itemList": [
+      {
+        "text": "<p><code>kubectl annotate pods my-nginx-v4-9gw19 description='my frontend running nginx'</code></p>",
+        "image": ""
+      },      
       {
         "text": "<p><code>kubectl apply -f captureorder-deployment.yaml</code> - apply the instructions in the file</p>",
         "image": ""
@@ -114,15 +251,19 @@
         "image": ""
       },
       {
-        "text": "<p><code>kubectl expose deployment hello-node --type=LoadBalancer --port=8080</code></p>",
-        "image": ""
-      },
-      {
         "text": "<p><code>kubectl create namespace ingress</code> - create a namespace for the ingress</p>",
         "image": ""
       },
       {
+        "text": "<p><code>kubectl expose deployment hello-node --type=LoadBalancer --port=8080</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl create secret generic mongodb --from-literal=mongoHost='orders-mongo-mongodb.default.svc.cluster.local' --from-literal=mongoUser='orders-user' --from-literal=mongoPassword='orders-password'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete cronjob <i>job-name</i></code></p>",
         "image": ""
       },
       {
@@ -142,11 +283,19 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl drain <i>NODENAME</i></code> - to gracefully terminate all pods on the node while marking the node as unschedulable/p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl exec my-nginx-3800858182-jr4a2 -- printenv | grep SERVICE</code> - inspect the environment of your running nginx Pods</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl expose deployment hello-web --type=LoadBalancer --port 80 --target-port 8080</code></p>",
         "image": ""
       },
       {
-        "text": "<p><code>kubectl get nodes</code></p>",
+        "text": "<p><code>kubectl get ep <i>endpoint_name</i></code></p>",
         "image": ""
       },
       {
@@ -154,11 +303,23 @@
         "image": ""
       },
       {
-        "text": "<p><code>kubectl get pods --show-labels</code> -see the labels automatically generated for each Pod</p>",
+        "text": "<p><code>kubectl get nodes</code></p>",
         "image": ""
       },
       {
         "text": "<p><code>kubectl get pods -l app=captureorder -w</code> - watch the pod named 'captureorder'</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods -l run=my-nginx -o yaml | grep podIP</code> - check your pods’ IPs</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --selector=job-name=pi --output=jsonpath='{.items[*].metadata.name}'</code> - list all the Pods that belong to a Job in a machine readable form</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --show-labels</code> - see the labels automatically generated for each Pod</p>",
         "image": ""
       },
       {
@@ -174,11 +335,23 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl get secrets --all-namespaces -o json</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl get service captureorder -o jsonpath='{.status.loadBalancer.ingress[*].ip}' -w</code></p>",
         "image": ""
       },
       {
         "text": "<p><code>kubectl get services</code></p>",
+        "image": ""
+      }, 
+      {
+        "text": "<p><code>kubectl get services kube-dns --namespace=kube-system</code> - check if DNS cluster addon Service is enabled</p>",
+        "image": ""
+      }, 
+      {
+        "text": "<p><code>kubectl get services  --all-namespaces --field-selector metadata.namespace!=default</code> - selects all Kubernetes Services that aren’t in the default namespace</p>",
         "image": ""
       }, 
       {
@@ -190,7 +363,11 @@
         "image": ""
       },
       {
-        "text": "<p><code>kubectl logs <pod name></code></p>",
+        "text": "<p><code>kubectl label pods -l app=nginx tier=fe</code> - label all your nginx pods as frontend tier</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl logs <i>pod name</i></code></p>",
         "image": ""
       },
       {
@@ -199,6 +376,10 @@
       },
       {
         "text": "<p><code>kubectl port-forward svc/promitor-agent-scraper 8080:80</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl replace -f <i>YAML file</i></code> - delete and recreate a resource</p>",
         "image": ""
       },
       {
@@ -231,6 +412,10 @@
       },
       {
         "text": "<p><code>kubectl scale deployment hello-web --replicas=3</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl uncordon <i>NODENAME</i></code> - to make the node schedulable again</p>",
         "image": ""
       }
     ]
@@ -268,14 +453,45 @@
     ]
   },
   {
+    "id": 2000,
+    "date": "2020/01/12",
+    "title": "Terminology",
+    "itemList": [
+      {
+        "text": "<p><b>Millicores</b> - Kubernetes has a new metric called Millicores that is used to measure CPU usage. It is a CPU core split into 1000 units (milli = 1000). If you have 4 cores, then the CPU capacity of the node is 4000m.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 1060,
     "date": "2019/12/19",
     "title": "Notes",
     "itemList": [
       {
+        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><ul></p>",
+        "image": ""
+      },
+      {
         "text": "<p><b>Kubernetes Architecture Diagram</b></p>",
         "image": "../assets/image/itCloud/kubernetes/k8sDiagram.png",
         "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Kubernetes Concept Diagram</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/k8sConcept.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 1080,
+    "date": "2020/01/31",
+    "title": "Interview",
+    "itemList": [
+      {
+        "text": "<ol><li><b>What are Authentication modules for accessing Kubernetes API?</b><p>Authentication modules include Client Certificates, Password, and Plain Tokens, Bootstrap Tokens, and JWT Tokens (used for service accounts). Multiple authentication modules can be specified, in which case each one is tried in sequence, until one of them succeeds.</li><li><b>Kubernetes Principles: </b><ul><li>Declarative over Imperative</li><li>No hidden internal APIs</li><li>Meet the user where they are</li><li>Workload portability</li></ul></li></ol>",
+        "image": ""
       }
     ]
   }

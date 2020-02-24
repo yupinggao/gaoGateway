@@ -1,6 +1,6 @@
 [
   {
-    "id": 20,
+    "id": 100,
     "date": "2019/12/12",
     "title": "Create a Custom VM Image",
     "itemList": [
@@ -39,7 +39,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 200,
     "date": "2019/12/12",
     "title": "Install the Elastic Stack on an Azure VM",
     "itemList": [
@@ -110,7 +110,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 300,
     "date": "2019/12/14",
     "title": "Secure Nginx on a Linux VM in Azure with SSL cert",
     "itemList": [
@@ -157,7 +157,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 400,
     "date": "2019/12/15",
     "title": "Find and delete unattached NICs",
     "itemList": [
@@ -172,6 +172,59 @@
       {
         "text": "<p>Then run the following az cli commands in Azure Cloud Shell:</p>",
         "image": "../assets/image/itCloud/azure/autoDeleteNics.png"
+      }
+    ]
+  },
+  {
+    "id": 500,
+    "date": "2020/01/18",
+    "title": "Azure AD vs. On-Premises AD",
+    "itemList": [
+      {
+        "text": "<p>The Active Directory capabilities that are part of Windows Server actually include several different roles, such as Active Directory Certificate Services (AD CS), Active Directory Lightweight Directory Services (AD LDS), Active Directory Federation Services (AD FS), and Active Directory Rights Management Services (AD RMS). However, most people think of Active Directory as the Active Directory Domain Services role, and this 'Active Directory' is what most people mean when comparing AD with Azure Active Directory.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The reality is that Active Directory Domain Services (henceforth just Active Directory) in Windows Server is completely different from Azure Active Directory (Azure AD), and they actually have different focus areas. When you think about Active Directory you're talking about a true directory service that has a hierarchical structure (based on X.500) that uses DNS as its locator mechanism and can be interacted with via LDAP. In addition, Active Directory primarily uses Kerberos for authentication. Active Directory enables organizational units (OUs) and Group Policy Objects (GPOs) in addition to actually joining machines to the domain, and trusts are created between domains.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Azure AD, while having some aspects of a directory service, is really an identity solution and allows users and groups to be created but in a flat structure without OUs or GPOs. You can't join a machine to Azure AD. There's no Kerberos authentication, and you can't query it via LDAP. This is OK because the things Azure AD doesn't have make sense on-premises, where all types of communication are possible. However, Azure AD is focused around identity throughout the Internet, where the types of communication are typically limited to HTTP (port 80) and HTTPS (port 443) and are used by all types of devices—not just corporate assets. Authentication is performed through a number of protocols such as SAML, WS-Federation, and OAuth. It's possible to query Azure AD but instead of using LDAP you use a REST API called AD Graph API. These all work over HTTP and HTTPS.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>When you think about using Azure AD, you'll use it for authentication for Internet-based services such as Office 365 and Azure, as well as much more, including Facebook and thousands of other services that are already federated with Azure AD (which mean they trust Azure AD without you having to do anything other than enable that application or service to be used by your users).</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>For the best seamless experience, you think about combining your on-premises Active Directory with Azure AD by setting up directory synchronization (including password sync) and federation. This allows users on their corporate assets to log on with their AD account and when they access Internet services, such as Office 365, authentication with Azure AD just happens seamlessly via the federation, allowing access to all the different services that Azure AD is federated with. This is actually a great benefit of federating your on-premises AD with Azure AD. It's possible for your organization to federate with all the different companies out on the Internet, but this is a lot of work to set up and maintain. However, if you just federate with Azure AD then you're now federated by proxy with all the organizations that Azure AD is federated with—which is pretty much all of the major services on the Internet today. Think of Azure AD as acting like a federation hub.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 600,
+    "date": "2020/01/20",
+    "title": "Microsoft ID platform Endpoints",
+    "itemList": [
+      {
+        "text": "<p><b>Fetch the OpenID Connect metadata document</b> - https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration</p>",
+        "image": "../assets/image/itCloud/azure/openIDConnectEndPoint.png"
+      },
+      {
+        "text": "<p>Typically, you would use this metadata document to configure an OpenID Connect library or SDK; the library would use the metadata to do its work. However, if you're not using a pre-built OpenID Connect library, you can follow the steps in the remainder of this article to do sign-in in a web app by using the Microsoft identity platform endpoint.</p>",
+        "image": "../assets/image/itCloud/azure/openIDConnectEndPoint.png"
+      }
+    ]
+  },
+  {
+    "id": 700,
+    "date": "2020/01/30",
+    "title": "Best Practices for network security",
+    "itemList": [
+      {
+        "text": "<p><ul><li><b>Use strong network controls</b><br>As you plan your network and the security of your network, we recommend that you centralize:<ul><li>Management of core network functions like ExpressRoute, virtual network and subnet provisioning, and IP addressing.</li><li>Governance of network security elements, such as network virtual appliance functions like ExpressRoute, virtual network and subnet provisioning, and IP addressing.</li></ul><li>Logically segment subnets</li><li>Adopt a Zero Trust approach</li><li>Control routing behavior</li><li>Use virtual network appliances</li><li>Deploy perimeter networks (DMZ) for security zones</li><li>Avoid exposure to the internet with dedicated WAN links</li><li>Disable RDP/SSH Access to virtual machines</li><li>Secure your critical Azure service resources to only your virtual networks</li><ul></p>",
+        "image": ""
       }
     ]
   },

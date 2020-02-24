@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 100,
     "date": "2018/12/30",
     "title": "GIT",
     "itemList": [
@@ -11,8 +11,7 @@
       {
         "text": "To check if the git is installed, type <mark>git --version</mark> in a terminal",
         "image": ""
-      }
-      ,
+      },
       {
         "text": "<b>Some GIT Commands</b> <p><mark>git config --global user.email 'email@example.com': </mark>Set the email address in GIT</p><p><mark>git config --list: </mark>show the global config in GIT</p><p><mark>git add: </mark>Add one or more files to staging (index).<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add one file: git add <i>filename</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage all changes: git add -A<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage modifications and deletions, without new files: git add -u<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add all new and modified files (without deletion, not including files/folders listed in .gitignore): git add .</p> <p><mark>git commit: </mark>Commit changes.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit changes to head (but not yet to the remote repository): git commit -m 'Commit message'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit any files you've added with git add, and also commit any files you've changed since then: git commit -a</p> <p><mark>git config: </mark>Configure the author name and email address to be used with your commits. Note that Git strips some characters (for example trailing periods) from user.name.</p> <p><mark>git clone: </mark>Check out a repository.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ceate a working copy of a local repository: git clone /path/to/repository<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For a remote server, use: git clone username@host:/path/to/repository</p> <p><mark>git init: </mark>Create a new local repository.</p> <p><mark>git push origin master: </mark>Send changes to the master branch of your remote repository.</p> <p><mark>git status: </mark>List the files you've changed and those you still need to add or commit.</p> <p><mark>git remote add origin <server>: </mark>If you haven't connected your local repository to a remote server, add the server to be able to push to it.<p> <p>For more GIT commands, please visit the following link: <a href='https://git-scm.com/docs' target='_blank'>List Of GIT Commands</a></p>",
         "image": ""
@@ -20,7 +19,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 200,
     "date": "2019/01/03",
     "title": "Jenkins",
     "itemList": [
@@ -48,7 +47,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 300,
     "date": "2019/01/06",
     "title": "Gira",
     "itemList": [
@@ -63,7 +62,18 @@
     ]
   },
   {
-    "id": 30,
+    "id": 400,
+    "date": "2020/01/05",
+    "title": "Maven",
+    "itemList": [
+      {
+        "text": "<b>Maven Build Lifecycle</b> <p><ul><li>Validate</li><li>Compile</li><li>Test</li><li>Package</li><li>Verify</li><li>Install</li><li>Deploy</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 500,
     "date": "2019/03/02",
     "title": "Gradle",
     "itemList": [
@@ -82,7 +92,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 600,
     "date": "2019/03/03",
     "title": "Gretty",
     "itemList": [
@@ -97,12 +107,24 @@
     ]
   },
   {
-    "id": 50,
+    "id": 700,
     "date": "2019/01/10",
-    "title": "Unix/Linux Commands",
+    "title": "Unix/Linux and Commands",
     "itemList": [
       {
-        "text": "<ul><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>ps: </b>Report process status</li><li><b>pwd: </b>tells you where you currently are</li><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>whoami: </b>returns your username</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>passwd: </b>change password</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li></ul>",
+        "text": "<p>An OS is made of many components, but its two prime components are</p><ul><li>Kernel</li><li>shell</li></ul>",
+        "image": "../assets/image/it/tool/os.png"
+      },
+      {
+        "text": "<p>Two main shells in Linux</p><ul><li>Bourne Shell<ul><li>POSIX shell also is known as sh</li><li>Korn Shell also knew as ksh</li><li>Bourne Again SHell also knew as bash (most popular)</li></ul></li><li>C Shell<ul><li>C shell also is known as csh</li><li>Tops C shell also is known as tcsh</li></ul></li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Commands: </b><br><b>A - N</b></p><ul><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>$ grep -r '192.168.1.5' /etc/: </b>search recursively i.e. read all files under each directory for a string '192.168.1.5'</li><li><b>nslookup <i>dns server name or ip</i>: </b>look for DNS server information</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>O - Z</b></p><ul><li><b>passwd: </b>change password</li><li><b>ps: </b>Report process status</li><li><b>ps -ef | grep {userName}: </b>display user ID associated with a process</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>pwd: </b>tells you where you currently are</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>whoami: </b>returns your username</li></ul>",
         "image": ""
       },
       {
@@ -116,7 +138,33 @@
     ]
   },
   {
-    "id": 50,
+    "id": 720,
+    "date": "2020/01/06",
+    "title": "Bourne Again Shell - bash",
+    "itemList": [
+      {
+        "text": "<p>Begine with: <code>#! /bin/sh</code><br>To execute, type: <code>bash <i>filename.sh</i></code><br>Comment: <code>#anyComments</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Shell Variables: </b><ul><li><code>variable ='Hello'</code></li><li><code>echo $variable</code></li><li><code>echo 'what is your name?'</code></li><li><code>read name</code></li><li><code>echo 'How do you do, $name?'</code></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 740,
+    "date": "2020/01/21",
+    "title": "Powershell",
+    "itemList": [
+      {
+        "text": "<p>Power shell is an extendable command shell and a scripting language for Windows. PowerShell is object-based and not text based. Commands in PowerShell are customizable. It is a command line interpreter and scripting environment</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
     "date": "2019/01/26",
     "title": "Webseal",
     "itemList": [
@@ -131,7 +179,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 900,
     "date": "2019/03/17",
     "title": "Dataweave",
     "itemList": [
@@ -146,7 +194,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 1000,
     "date": "2019/03/23",
     "title": "Tomcat",
     "itemList": [
@@ -161,7 +209,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 1100,
     "date": "2019/10/29",
     "title": "JBoss AS/WildFly/JBossEAP",
     "itemList": [
@@ -180,16 +228,24 @@
     ]
   },
   {
-    "id": 200,
+    "id": 2000,
     "date": "2019/10/29",
     "title": "Acronyms",
     "itemList": [
       {
-        "text": "<p><b>A - N</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ACR</b> - Azure Container Registry</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CNM</b> – Container Network Model</li><li><b>cURL</b> - Client URL Request Library</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>IPVS</b> - IP Virtual Server</li><li><b>LRP</b> - Long-Running Process</li><li><b>MQTT</b> - Message Queuing Telemetry Transport</li><li><b>NTP</b> - Network Time Protocol</li></ol></p>",
+        "text": "<p><b>A - G</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ADAL</b> -  Active Directory Authentication Library</li><li><b>ACR</b> - Azure Container Registry</li><li><b>ACS</b> - Access Control Server</li><li><b>ADAL</b> - Active Directory Authentication Library</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>CCM</b> – cloud controller manager</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CFS</b> – Completely Fair Scheduler</li><li><b>CIDR</b> – Classless inter-domain routing</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CNM</b> – Container Network Model</li><li><b>CQRS</b> – Command Query Responsibility Segregation</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CRI</b> – Container Runtime Interface</li><li><b>cURL</b> - Client URL Request Library</li><li><b>GIL</b> - Global Interpreter Lock</li></ol></p>",
         "image": ""
       },
       {
-        "text": "<p><b>O - Z</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>S2S</b> - Site to Site</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>UAA</b> - User Account and Authentication</li><li><b>WAF</b> - web application firewall</li></ol></p>",
+        "text": "<p><b>H - N</b></p><p><ol><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>IDC</b> - International Data Corporation.</li><li><b>IPVS</b> - IP Virtual Server</li><li><b>IWA</b> - Integrated Windows Authentication</li><li><b>JOSE</b> - JSON Object Signing and Encription</li><li><b>KCD</b> - Kerberos Constrained Delegation.</li><li><b>LAMP</b> - Linux, Apache, MySQL, and PHP/Python/Perl</li><li><b>LRP</b> - Long-Running Process</li><li><b>MDM</b> - Mobile Device Management</li><li><b>MEAN</b> - MongoDB, ExpressJS, AngularJS and Node.js</li><li><b>MQTT</b> - Message Queuing Telemetry Transport</li><li><b>MSAL</b> - Microsoft Authentication Library</li><li><b>NTP</b> - Network Time Protocol</li><li><b>NUMA</b> - Non-uniform memory access</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li><li><b>TTL</b> - Time To Live</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>U - Z</b></p><p><ol><li><b>UAA</b> - User Account and Authentication</li><li><b>UPN</b> - User Principal Name</li><li><b>WAF</b> - Web Application Firewall</li><li><b>WAP</b> - Web Application Proxy</li><li><b>WID</b> - Windows Internal Database</li></ol></p>",
         "image": ""
       }
     ]

@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 100,
     "date": "2019/01/15",
     "title": "NodeJS",
     "itemList": [
@@ -23,7 +23,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 200,
     "date": "2019/01/16",
     "title": "JavaScript 6/ECMAScript 6",
     "itemList": [
@@ -34,7 +34,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 300,
     "date": "2019/01/24",
     "title": "CSS",
     "itemList": [
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 400,
     "date": "2019/10/23",
     "title": "SASS",
     "itemList": [
@@ -84,7 +84,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 500,
     "date": "2019/01/26",
     "title": "Angular",
     "itemList": [
@@ -103,7 +103,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 600,
     "date": "2019/01/26",
     "title": "New Features in Angular 6",
     "itemList": [
@@ -138,7 +138,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 700,
     "date": "2019/10/28",
     "title": "Python",
     "itemList": [
@@ -153,11 +153,35 @@
       {
         "text": "<b>Modules</b><p>Consider a module to be the same as a code library. A file containing a set of functions you want to include in your application. To create a module just save the code you want in a file with the file extension .py<ul><li>OS Module</li><li>Sys Module</li><li>Math Module</li><li>smtplib Module</li><li>io Module</li><li>Statistics Module</li><li>Collections Module</li><li>Random Module</li><li>Mailbox Module</li><li>Filecmp Module</li><li>ftplib Module</li></ul></p>",
         "image": ""
+      },
+      {
+        "text": "<b>Data Types</b>",
+        "image": "../assets/image/it/other/python_data_types.png",
+        "imageClass": "mx-auto d-block"
       }
     ]
   },
   {
-    "id": 90,
+    "id": 800,
+    "date": "2019/10/28",
+    "title": "Groovy",
+    "itemList": [
+      {
+        "text": "<P>Groovy is a powerful, optionally typed and dynamic language, with static-typing and static compilation capabilities, for the Java platform aimed at improving developer productivity thanks to a concise, familiar and easy to learn syntax. It integrates smoothly with any Java program, and immediately delivers to your application powerful features, including scripting capabilities, Domain-Specific Language authoring, runtime and compile-time meta-programming and functional programming.</p>",
+        "image": ""
+      },
+      {
+        "text": "<P>Difference between Java and Groovy </p><p><ul><li>Groovy and Java both are object-oriented programming languages whereas Groovy support scripting language as well.</li><li>In Java, you need the main method to make a class executable, in Groovy you don't need that.</li><li>In Java by default access modifier is package i.e. if you don't specify access modifier for fields, methods or class it becomes package-private, on Groovy things are by default public.</li><li>In Java, you need to provide getters and setters method for fields, especially if you are following Java Beans naming convention and use tools and libraries, which uses Reflection to dynamically access and mutate bean properties. In Groovy, getters and setters are automatically generated for class members.</li><li>Groovy is a superset of Java, which means a Java program will run fine in Groovy environment, but vice-versa may or may not run.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<P><ul><li>Groovy uses <code>def</code> to declare a function outside a class</li><li>Grape is a JAR dependency manger</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 900,
     "date": "2019/01/26",
     "title": "JQuery",
     "itemList": [
@@ -176,7 +200,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 1000,
     "date": "2019/01/30",
     "title": "Progress Web Apps (PWA)",
     "itemList": [
@@ -207,7 +231,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": 1100,
     "date": "2019/11/30",
     "title": "Api Gateway",
     "itemList": [
@@ -222,7 +246,38 @@
         "image": ""
       },
       {
-        "text": "<b>Choosing a gateway technology</b><p>Here are some options for implementing an API gateway in your application.<ul><li><b>Reverse proxy server</b>. Nginx and HAProxy are popular reverse proxy servers that support features such as load balancing, SSL, and layer 7 routing. They are both free, open-source products, with paid editions that provide additional features and support options. Nginx and HAProxy are both mature products with rich feature sets and high performance. You can extend them with third-party modules or by writing custom scripts in Lua. Nginx also supports a JavaScript-based scripting module called NginScript.</li><li><b>Service mesh ingress controller</b>. If you are using a service mesh such as linkerd or Istio, consider the features that are provided by the ingress controller for that service mesh. For example, the Istio ingress controller supports layer 7 routing, HTTP redirects, retries, and other features.</li><li><b>Azure Application Gateway</b>. Application Gateway is a managed load balancing service that can perform layer-7 routing and SSL termination. It also provides a web application firewall (WAF).</li><li><b>Azure API Management</b>. API Management is a turnkey solution for publishing APIs to external and internal customers. It provides features that are useful for managing a public-facing API, including rate limiting, IP white listing, and authentication using Azure Active Directory or other identity providers. API Management doesn't perform any load balancing, so it should be used in conjunction with a load balancer such as Application Gateway or a reverse proxy. For information about using API Management with Application Gateway, see Integrate API Management in an internal VNet with Application Gateway.</li></ul></p>",
+        "text": "<b>Choosing a gateway technology</b><p>Here are some options for implementing an API gateway in your application.<ul><li><b>Reverse proxy server</b>. Nginx and HAProxy are popular reverse proxy servers that support features such as load balancing, SSL, and layer 7 routing. They are both free, open-source products, with paid editions that provide additional features and support options. Nginx and HAProxy are both mature products with rich feature sets and high performance. You can extend them with third-party modules or by writing custom scripts in Lua. Nginx also supports a JavaScript-based scripting module called NginScript.</li><li><b>Service mesh ingress controller</b>. If you are using a service mesh such as linkerd or Istio, consider the features that are provided by the ingress controller for that service mesh. For example, the Istio ingress controller supports layer 7 routing, HTTP redirects, retries, and other features.</li><li><b>Azure Application Gateway</b>. Application Gateway is a managed load balancing service that can perform layer-7 routing and SSL termination. It also provides a web application firewall (WAF). pplication Gateway and Web Application Firewall (WAF) are also available under a Standard_v2 and WAF_v2 SKU. The v2 SKU offers performance enhancements and adds support for critical new features like autoscaling, zone redundancy, and support for static VIPs. Existing features under the Standard and WAF SKU continue to be supported in the new v2 SKU. The new v2 SKU includes the following enhancements:<ul><li>Autoscaling</li><li>Zone redundancy</li><li>Static VIP</li><li>Header Rewrite</li><li>Key Vault Integration</li><li>Azure Kubernetes Service Ingress Controller</li><li>Performance enhancements</li><li>Faster deployment and update time</li></ul></li><li><b>Azure API Management</b>. API Management is a turnkey solution for publishing APIs to external and internal customers. It provides features that are useful for managing a public-facing API, including rate limiting, IP white listing, and authentication using Azure Active Directory or other identity providers. API Management doesn't perform any load balancing, so it should be used in conjunction with a load balancer such as Application Gateway or a reverse proxy. For information about using API Management with Application Gateway, see Integrate API Management in an internal VNet with Application Gateway.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1200,
+    "date": "2020/01/02",
+    "title": "YAML",
+    "itemList": [
+      {
+        "text": "<p>YAML stands for 'YAML Ain't Markup Language'. At its core, a YAML file is used to describe data. One of the benefits of using YAML is that the information in a single YAML file can be easily translated to multiple language types.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>YAML Basic Rules</b></p><p><ul><li>YAML is case sensitive.</li><li>YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>YAML Basic Data Types</b></p><p>YAML excels at working with mappings (hashes / dictionaries), sequences (arrays / lists), and scalars (strings / numbers). While it can be used with most programming languages, it works best with languages that are built around these data structure types. This includes: PHP, Python, Perl, JavaScript, and Ruby.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Scalars</b></p><p>Scalars are a pretty basic concept. They are the strings and numbers that make up the data on the page. A scalar could be a boolean property, like Yes, integer (number) such as 5, or a string of text, like a sentence or the title of your website.</p>",
+        "image": ""
+      },      
+      {
+        "text": "<p><b>Sequences (List)</b></p><p>- cat<br>- dog</p>",
+        "image": ""
+      },      
+      {
+        "text": "<p><b>Mapping (Key/Value)</b></p><p>animal: pets</p>",
         "image": ""
       }
     ]

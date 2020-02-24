@@ -17,6 +17,7 @@ import { PhotoComponent } from './component/photo/photo.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
 import { KubernetesComponent } from './component/itCloud/kubernetes/kubernetes.component';
+import { K8staskComponent } from './component/itCloud/k8stask/k8stask.component';
 import { TrainingComponent } from './component/itCloud/training/training.component';
 import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { TutorialComponent } from './component/it/tutorial/tutorial.component';
@@ -63,6 +64,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     WelcomeComponent,
     CloudComponent,
     KubernetesComponent,
+    K8staskComponent,
     DevopsComponent,
     TrainingComponent,
     TutorialComponent,

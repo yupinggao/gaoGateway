@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 100,
     "date": "2017/10/15",
     "title": "Overview",
     "itemList": [
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 200,
     "date": "2017/10/15",
     "title": "Java Cryptography Architecture (JCA)",
     "itemList": [
@@ -50,7 +50,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 300,
     "date": "2017/10/15",
     "title": "Secure Communication",
     "itemList": [
@@ -73,7 +73,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 400,
     "date": "2015/10/31",
     "title": "SSO and SAML",
     "itemList": [
@@ -92,11 +92,67 @@
       {
         "text": "<b>How SAML works</b><br/>The SAML specification defines three roles: the principal (typically a user), the identity provider (IdP), and the service provider (SP). In the use case addressed by SAML, the principal requests a service from the service provider. The service provider requests and obtains an identity assertion from the identity provider. On the basis of this assertion, the service provider can make an access control decision – in other words it can decide whether to perform some service for the connected principal.<br/>Before delivering the identity assertion to the SP, the IdP may request some information from the principal – such as a user name and password – in order to authenticate the principal. SAML specifies the assertions between the three parties: in particular, the messages that assert identity that are passed from the IdP to the SP. In SAML, one identity provider may provide SAML assertions to many service providers. Similarly, one SP may rely on and trust assertions from many independent IdPs.<br/>SAML does not specify the method of authentication at the identity provider; it may use a username and password, or other form of authentication, including multi-factor authentication. A directory service such as LDAP, RADIUS, or Active Directory that allows users to log in with a user name and password is a typical source of authentication tokens at an identity provider. The popular Internet social networking services also provide identity services that in theory could be used to support SAML exchanges.",
         "image": ""
+      },
+      {
+        "text": "<p>Consider the following scenario: A user is logged into a system that acts as an identity provider. The user wants to log in to a remote application, such as a support or accounting application (the service provider). The following happens:</p><p><ol><li>The user accesses the remote application using a link on an intranet, a bookmark, or similar and the application loads.</li><li>The application identifies the user’s origin (by application subdomain, user IP address, or similar) and redirects the user back to the identity provider, asking for authentication. This is the authentication request.</li><li>The user either has an existing active browser session with the identity provider or establishes one by logging into the identity provider.</li><li>The identity provider builds the authentication response in the form of an XML-document containing the user’s username or email address, signs it using an X.509 certificate, and posts this information to the service provider.</li><li>The service provider, which already knows the identity provider and has a certificate fingerprint, retrieves the authentication response and validates it using the certificate fingerprint.</li><li>The identity of the user is established and the user is provided with app access.</li></ol></p>",
+        "image": ""
       }
     ]
   },
   {
-    "id": 55,
+    "id": 500,
+    "date": "2020/01/17",
+    "title": "SSO Using Active Directory",
+    "itemList": [
+      {
+        "text": "Single sign-on (SSO) adds security and convenience when users sign-on to applications. With single sign-on, users sign in once with one account to access domain-joined devices, company resources, software as a service (SaaS) applications, and web applications. After signing in, the user can launch applications from the Office 365 portal or the Azure AD MyApps access panel. Administrators can centralize user account management, and automatically add or remove user access to applications based on group membership.",
+        "image": ""
+      },
+      {
+        "text": "<b>Single sign-on methods</b><br/><ul><li>Cloud applications can use OpenID Connect, OAuth, SAML, password-based, linked, or disabled methods for single sign-on.</li><li>On-premises applications can use password-based, Integrated Windows Authentication, header-based, linked, or disabled methods for single sign-on. The on-premises choices work when applications are configured for Application Proxy.</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<b>The below flowchart helps you decide which single sign-on method is best for your situation: ",
+        "image": "../assets/image/it/security/SSOMethods.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<b>OpenID Connect and OAuth</b><br/>When developing new applications, use modern protocols like OpenID Connect and OAuth to achieve the best single sign-on experience for your app across multiple device platforms. OAuth enables users or admins to grant consent for protected resources like Microsoft Graph. We provide easy to adopt SDKs for your app, and additionally, your app will be ready to use Microsoft Graph.",
+        "image": ""
+      },
+      {
+        "text": "<b>SAML SSO</b><p>With SAML single sign-on, Azure AD authenticates to the application by using the user's Azure AD account. Azure AD communicates the sign-on information to the application through a connection protocol. With SAML-based single sign-on, you can map users to specific application roles based on rules you define in your SAML claims.</p><p>SAML-based single sign-on is supported for applications that use any of these protocols:<ul><li>SAML 2.0</li><li>WS-Federation</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To configure a SaaS application for SAML-based single sign-on, see Configure SAML-based single sign-on. Also, many Software as a Service (SaaS) applications have an application-specific tutorial that step you through the configuration for SAML-based single sign-on.</p><p>To configure an application for WS-Federation, follow the same guidance to configure application for SAML-based single sign-on, see Configure SAML-based single sign-on. In the step to configure the application to use Azure AD, you will need to replace the Azure AD login URL for the WS-Federation end-point https://login.microsoftonline.com/<tenant-ID>/wsfed.</p><p>To configure an on-premises application for SAML-based single sign-on, see SAML single-sign-on for on-premises applications with Application Proxy.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 550,
+    "date": "2020/01/18",
+    "title": "AD FS",
+    "itemList": [
+      {
+        "text": "<p>Active Directory Federation Services provides access control and single sign on across a wide variety of applications including Office 365, cloud based SaaS applications, and applications on the corporate network.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><ul><li>For the IT organization, it enables you to provide sign on and access control to both modern and legacy applications, on premises and in the cloud, based on the same set of credentials and policies.</li><li>For the user, it provides seamless sign on using the same, familiar account credentials.</li><li>For the developer, it provides an easy way to authenticate users whose identities live in the organizational directory so that you can focus your efforts on your application, not authentication or identity.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>The below flowchart helps you decide which single sign-on method is best for your situation: ",
+        "image": "../assets/image/it/security/SSOMethods.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 600,
     "date": "2015/10/31",
     "title": "Json Web Token (JWT)",
     "itemList": [
@@ -123,7 +179,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 700,
     "date": "2015/11/3",
     "title": "OAuth, OpenID and OATH",
     "itemList": [
@@ -136,7 +192,7 @@
         "image": ""
       },
       {
-        "text": "<b>OpenID Connect</b><p>OpenID Connect is a “profile” of OAuth 2.0 specifically designed for attribute release and authentication.</p><p>From a technical perspective, the big difference between OpenID Connect and OAuth 2.0 is the id_token–there is no id_token defined in OAuth 2.0 because it is specific to federated authentication.</p><p>The id_token provides an additional layer of security to user sign in transactions by adding:<ul><li>A nonce, which is sent by the client and enables the integrity of the response to be validated</li><li>A hash of the access token</li><li>A hash of the code (optional)</li></ul></p>",
+        "text": "<b>OpenID Connect</b><p>OpenID Connect is a “profile” of OAuth 2.0 specifically designed for attribute release and authentication. It is a simple identity layer built on top of the OAuth 2.0 protocol. OAuth 2.0 defines mechanisms to obtain and use access tokens to access protected resources, but they do not define standard methods to provide identity information. OpenID Connect implements authentication as an extension to the OAuth 2.0 authorization process. It provides information about the end user in the form of an id_token that verifies the identity of the user and provides basic profile information about the user.</p><p>From a technical perspective, the big difference between OpenID Connect and OAuth 2.0 is the id_token–there is no id_token defined in OAuth 2.0 because it is specific to federated authentication.</p><p>The id_token provides an additional layer of security to user sign in transactions by adding:<ul><li>A nonce, which is sent by the client and enables the integrity of the response to be validated</li><li>A hash of the access token</li><li>A hash of the code (optional)</li></ul></p>",
         "image": ""
       },
       {
@@ -158,7 +214,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 800,
     "date": "2017/10/12",
     "title": "SSL/TLS Algorithms",
     "itemList": [
@@ -177,7 +233,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 900,
     "date": "2019/02/06",
     "title": "Cipher Suite",
     "itemList": [
@@ -192,7 +248,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 1000,
     "date": "2019/02/07",
     "title": "keytool",
     "itemList": [
@@ -207,10 +263,14 @@
     ]
   },
   {
-    "id": 90,
+    "id": 2000,
     "date": "2019/01/29",
     "title": "OWASP Top 10 Application Security Risks",
     "itemList": [
+      {
+        "text": "<p><b>Open Web Application Security Project (OWASP) top 10 security risks:</p>",
+        "image": ""
+      },
       {
         "text": "<b>Injection:</b><p>Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.</p>",
         "image": ""

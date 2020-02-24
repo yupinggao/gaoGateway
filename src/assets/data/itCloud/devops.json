@@ -1,6 +1,6 @@
 [
   {
-    "id": 10,
+    "id": 100,
     "date": "2019/11/29",
     "title": "Branch Strategy",
     "itemList": [
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 200,
     "date": "2019/12/18",
     "title": "Release Strategy",
     "itemList": [
@@ -22,13 +22,36 @@
     ]
   },
   {
-    "id": 60,
+    "id": 300,
+    "date": "2020/01/08",
+    "title": "8 Ways to Keep CI/CD Pipeline Working",
+    "itemList": [
+      {
+        "text": "<p><ol><li>No check-ins when the build is broken</li><li>Run tests and code analysis before check-in</li><li>Refresh the database for data-driven tests</li><li>Automated Acceptance Tests (AATs)</li><li>Delegate enforcement to each team</li><li>Report metrics visibly to all teams and management</li><li>Require pull requests</li><li>Peer code review each story</li></ol></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 400,
     "date": "2019/11/30",
     "title": "Steps to Choose Right Tools",
     "itemList": [
       {
         "text": "<p>If you’re considering DevOps, you have many moving parts to consider. Core to this structure are automated provisioning, automated testing, and automated build and deployment. At the same time, you need to maintain continuous feedback, with information continuously moving back and forth, as well as making sure that you log pretty much everything.<p><ul><li>Understand the collaboration and shared tools strategy for the Dev, QA, and infrastructure automation teams</li><li>Use tools to capture every request</li><li>Use agile Kanban project management for automation and DevOps requests that can be dealt with in the tooling</li><li>Use tools to log metrics on both manual and automated processes</li><li>Implement test automation and test data provisioning tooling</li><li>Perform acceptance tests for each deployment tooling</li><li>Ensure continuous feedback between the teams to spot gaps, issues, and inefficiencies</li></ul></p>",
         "image": ""
+      }
+    ]
+  },
+  {
+    "id": 500,
+    "date": "2019/11/30",
+    "title": "Chef, Puppet, Ansible, and SaltStack",
+    "itemList": [
+      {
+        "text": "<p>Chef, Puppet, Ansible, and SaltStack are industry-wide used DevOps tools, included in DevOps Certification. They are all “configuration management” tools, which means they are designed to deploy, configure and manage servers. The below table depicts the overview of the metrics of these tools:</p>",
+        "image": "../assets/image/itCloud/devops/devOpsTools.png",
+        "imageClass": "mx-auto d-block"
       }
     ]
   }
