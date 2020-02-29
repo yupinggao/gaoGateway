@@ -243,6 +243,14 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl config current-context</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl config use-context <i>context_name</i></code> - to operate in the <i>context_name</i> namespace</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl config view</code></p>",
         "image": ""
       },
@@ -295,11 +303,19 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl get apiservices</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl get ep <i>endpoint_name</i></code></p>",
         "image": ""
       },
       {
         "text": "<p><code>kubectl get events</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get namespaces --show-labels</code></p>",
         "image": ""
       },
       {
@@ -465,6 +481,17 @@
   },
   {
     "id": 1060,
+    "date": "2020/02/27",
+    "title": "kubeadmin",
+    "itemList": [
+      {
+        "text": "<p><b>Notes: </b><ul><li><code>kubeadm upgrade apply v1.11.0 --feature-gates=CoreDNS=true</code> - upgrade an existing cluster with kubeadm.</li><ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1070,
     "date": "2019/12/19",
     "title": "Notes",
     "itemList": [

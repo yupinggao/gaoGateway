@@ -60,6 +60,21 @@
     ]
   },
   {
+    "id": 500,
+    "date": "2020/02/27",
+    "title": "Administer A k8s Cluster",
+    "itemList": [
+      {
+        "text": "<p><code>KUBE_GCE_ZONE=europe-west1-c KUBE_REPLICATE_EXISTING_MASTER=true ./cluster/kube-up.sh</code> - replicates the master on an existing HA-compatible cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>KUBE_DELETE_NODES=false KUBE_GCE_ZONE=europe-west1-c ./cluster/kube-down.sh</code> - removes a master replica from an existing HA cluster.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 1000,
     "date": "2019/12/19",
     "title": "gcloud CLI",

@@ -24,6 +24,7 @@ import { TutorialComponent } from './component/it/tutorial/tutorial.component';
 import { SecurityComponent } from './component/it/security/security.component';
 import { ItCloudComponent } from './component/itCloud/itCloud.component';
 import { AzureComponent } from './component/itCloud/azure/azure.component';
+import { AwsComponent } from './component/itCloud/aws/aws.component';
 import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { DockerComponent } from './component/itCloud/docker/docker.component';
 import { FamilyComponent } from './component/photo/family/family.component';
@@ -52,6 +53,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     ItComponent,
     ItCloudComponent,
     AzureComponent,
+    AwsComponent,
     GcpComponent,
     DockerComponent,
     InterviewComponent,

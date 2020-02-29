@@ -1,0 +1,59 @@
+[
+  {
+    "id": 100,
+    "date": "2020/02/28",
+    "title": "Amazon EKS",
+    "itemList": [
+      {
+        "text": "<p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on AWS without needing to stand up or maintain your own Kubernetes control plane. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Amazon EKS runs Kubernetes control plane instances across multiple Availability Zones to ensure high availability. Amazon EKS automatically detects and replaces unhealthy control plane instances, and it provides automated version upgrades and patching for them.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Amazon EKS is also integrated with many AWS services to provide scalability and security for your applications, including the following:<ul><li>Amazon ECR for container images</li><li>Elastic Load Balancing for load distribution</li><li>IAM for authentication</li><li>Amazon VPC for isolation</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification required.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/02/28",
+    "title": "AWS Lambda",
+    "itemList": [
+      {
+        "text": "<p>AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/02/28",
+    "title": "Amazon S3",
+    "itemList": [
+      {
+        "text": "<p>Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. This means customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases, such as websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics. Amazon S3 provides easy-to-use management features so you can organize your data and configure finely-tuned access controls to meet your specific business, organizational, and compliance requirements. Amazon S3 is designed for 99.999999999% (11 9's) of durability, and stores data for millions of applications for companies all around the world.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Amazon S3 has a simple web services interface that you can use to store and retrieve any amount of data, at any time, from anywhere on the web. It gives any developer access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites. The service aims to maximize benefits of scale and to pass those benefits on to developers.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>S3 has the core concepts of Amazon S3, such as buckets, access points, and objects, and how to work with these resources using the Amazon S3 application programming interface (API).</p>",
+        "image": ""
+      }
+    ]
+  }
+]
