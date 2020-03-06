@@ -273,11 +273,34 @@
         "image": ""
       },      
       {
-        "text": "<p><b>Sequences (List)</b></p><p>- cat<br>- dog</p>",
+        "text": "<p><b>Sequences (List/Array)</b></p><p>names:<br>- cat<br>- dog</p>or names: [cat, dog] ",
         "image": ""
-      },      
+      },  
+      {
+        "text": "<p><b>Dictionary</b></p><p>foo: bar<br>bar: foo</p> or {foo: bar, bar: foo}",
+        "image": ""
+      },             
       {
         "text": "<p><b>Mapping (Key/Value)</b></p><p>animal: pets</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1300,
+    "date": "2020/03/03",
+    "title": "JSON",
+    "itemList": [
+      {
+        "text": "<p>YAML stands for 'YAML Ain't Markup Language'. At its core, a YAML file is used to describe data. One of the benefits of using YAML is that the information in a single YAML file can be easily translated to multiple language types.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>YAML Basic Rules</b></p><p><ul><li>YAML is case sensitive.</li><li>YAML does not allow the use of tabs. Spaces are used instead as tabs are not universally supported.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>YAML Basic Data Types</b></p><p>YAML excels at working with mappings (hashes / dictionaries), sequences (arrays / lists), and scalars (strings / numbers). While it can be used with most programming languages, it works best with languages that are built around these data structure types. This includes: PHP, Python, Perl, JavaScript, and Ruby.</p>",
         "image": ""
       }
     ]

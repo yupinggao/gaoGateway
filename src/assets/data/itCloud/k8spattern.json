@@ -1,0 +1,51 @@
+[
+  {
+    "id": 100,
+    "date": "2020/03/04",
+    "title": "OOP Primitives and Container Primitives",
+    "itemList": [
+      {
+        "text": "<p>In the OOP universe, we have concepts such as class, object, package, inheritance, encapsulation, and polymorphism. In containerlized world, we have similar concept:</p>",
+        "image": "../assets/image/itCloud/k8spattern/oopvscontainer.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/03/04",
+    "title": "Predictable Demands",
+    "itemList": [
+      {
+        "text": "<p>This Predictable Demands pattern is about how you should declare application requirements, whether they are hard runtime dependencies or resource requirements. Declaring your requirements is essential for Kubernetes to find the right place for your application within the cluster.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/03/04",
+    "title": "Declarative Deployment",
+    "itemList": [
+      {
+        "text": "<p>The heart of the Declarative Deployment pattern is Kubernetes’ Deployment resource. This abstraction encapsulates the upgrade and rollback processes of a group of containers and makes its execution a repeatable and automated activity.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 400,
+    "date": "2020/03/05",
+    "title": "Health Probe",
+    "itemList": [
+      {
+        "text": "<p>The Health Probe pattern is about how an application can communicate its health state to Kubernetes. To be fully automatable, a cloud-native application must be highly observable by allowing its state to be inferred so that Kubernetes can detect whether the application is up and whether it is ready to serve requests. These observations influence the lifecycle management of Pods and the way traffic is routed to the application.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Three Types of Health Check</b><ol><li>Process Health Checks</li><li>Liveness Probes</li><li>Readiness Probes</li></ol></p>",
+        "image": ""
+      }
+    ]
+  }
+]

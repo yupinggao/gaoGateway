@@ -18,6 +18,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { CloudComponent } from './component/it/cloud/cloud.component';
 import { KubernetesComponent } from './component/itCloud/kubernetes/kubernetes.component';
 import { K8staskComponent } from './component/itCloud/k8stask/k8stask.component';
+import { K8spatternComponent } from './component/itCloud/k8spattern/k8spattern.component';
 import { TrainingComponent } from './component/itCloud/training/training.component';
 import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { TutorialComponent } from './component/it/tutorial/tutorial.component';
@@ -67,6 +68,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     CloudComponent,
     KubernetesComponent,
     K8staskComponent,
+    K8spatternComponent,
     DevopsComponent,
     TrainingComponent,
     TutorialComponent,

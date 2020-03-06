@@ -229,6 +229,29 @@
     ]
   },
   {
+    "id": 800,
+    "date": "2020/03/03",
+    "title": "Azure Resource Manager",
+    "itemList": [
+      {
+        "text": "<p>Azure Resource Manager is the deployment and management service for Azure. It provides a management layer that enables you to create, update, and delete resources in your Azure subscription. You use management features, like access control, locks, and tags, to secure and organize your resources after deployment.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Consistent management layer</b></p><p>When a user sends a request from any of the Azure tools, APIs, or SDKs, Resource Manager receives the request. It authenticates and authorizes the request. Resource Manager sends the request to the Azure service, which takes the requested action. Because all requests are handled through the same API, you see consistent results and capabilities in all the different tools.</p><p>The following image shows the role Azure Resource Manager plays in handling Azure requests.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then run the following az cli commands in Azure Cloud Shell:</p>",
+        "image": "../assets/image/itCloud/azure/arm.png"
+      },
+      {
+        "text": "<p><b>Features of Resource Manager templates</b><p>To implement infrastructure as code for your Azure solutions, use Azure Resource Manager templates. The template is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project.</p><ul><li>Declarative syntax</li><li>Repeatable results</li><li>Orchestration</li><li>Built-in validation</li><li>Modular files</li><li>Create any Azure resource</li><li>Tracked deployments</li><li>Policy as code</li><li>Deployment Blueprints</li><li>CI/CD integration</li><li>Exportable code</li><li>Authoring tools</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 1000,
     "date": "2019/12/10",
     "title": "Azure CLI",

@@ -11,6 +11,7 @@ import { ArchitectureComponent } from './component/it/architecture/architecture.
 import { CloudComponent } from './component/it/cloud/cloud.component';
 import { KubernetesComponent } from './component/itCloud/kubernetes/kubernetes.component';
 import { K8staskComponent } from './component/itCloud/k8stask/k8stask.component';
+import { K8spatternComponent } from './component/itCloud/k8spattern/k8spattern.component';
 import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { TrainingComponent } from './component/itCloud/training/training.component';
 import { JavacoreComponent } from './component/it/javacore/javacore.component'
@@ -266,6 +267,17 @@ const routes: Routes = [
       },
       {
         path: '', component: K8staskComponent
+      }
+    ]
+  },
+  {
+    path: 'itCloud/k8spattern', component: K8spatternComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: K8spatternComponent
       }
     ]
   },

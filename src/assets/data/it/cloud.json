@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 100,
     "date": "2015/10/31",
     "title": "Cloud",
     "itemList": [
@@ -24,7 +24,22 @@
     ]
   },
   {
-    "id": 10,
+    "id": 200,
+    "date": "2015/10/31",
+    "title": "Cloud-Native",
+    "itemList": [
+      {
+        "text": "<b>10 KEY ATTRIBUTES OF CLOUD-NATIVE APPLICATIONS</b>",
+        "image": ""
+      },
+      {
+        "text": "<ol><li><b>Packaged as lightweight containers: </b>Cloud-native applications are a collection of independent and autonomous services that are packaged as lightweight containers. Unlike virtual machines, containers can scale-out and scale-in rapidly. Since the unit of scaling shifts to containers, infrastructure utilization is optimized.</li><li><b>Developed with best-of-breed languages and frameworks: </b>Each service of a cloud-native application is developed using the language and framework best suited for the functionality. Cloud-native applications are polyglot; services use a variety of languages, runtimes and frameworks. For example, developers may build a real-time streaming service based on WebSockets, developed in Node.js, while choosing Python and Flask for exposing the API. The fine-grained approach to developing microservices lets them choose the best language and framework for a specific job.</li><li><b>Designed as loosely coupled microservices: </b>Services that belong to the same application discover each other through the application runtime. They exist independent of other services. Elastic infrastructure and application architectures, when integrated correctly, can be scaled-out with efficiency and high performance.</li><li><b>Centered around APIs for interaction and collaboration: </b>Cloud-native services use lightweight APIs that are based on protocols such as representational state transfer (REST), Google’s open source remote procedure call (gRPC) or NATS. REST is used as the lowest common denominator to expose APIs over hypertext transfer protocol (HTTP). For performance, gRPC is typically used for internal communication among services. NATS has publish-subscribe features which enable asynchronous communication within the application.</li><li><b>Architected with a clean separation of stateless and stateful services: </b>Services that are persistent and durable follow a different pattern that assures higher availability and resiliency. Stateless services exist independent of stateful services. There is a connection here to how storage plays into container usage. Persistence is a factor that has to be increasingly viewed in context with state, statelessness and — some would argue — micro-storage environments.</li><li><b>Isolated from server and operating system dependencies: </b>Cloud-native applications don’t have an affinity for any particular operating system or individual machine. They operate at a higher abstraction level. The only exception is when a microservice needs certain capabilities, including solid-state drives (SSDs) and graphics processing units (GPUs), that may be exclusively offered by a subset of machines.</li><li><b>Deployed on self-service, elastic, cloud infrastructure: </b>Cloud-native applications are deployed on virtual, shared and elastic infrastructure. They may align with the underlying infrastructure to dynamically grow and shrink — adjusting themselves to the varying load.</li><li><b>Managed through agile DevOps processes: </b>Each service of a cloud-native application goes through an independent life cycle, which is managed through an agile DevOps process. Multiple continuous integration/continuous delivery (CI/CD) pipelines may work in tandem to deploy and manage a cloud-native application.</li><li><b>Automated capabilities: </b>Cloud-native applications can be highly automated. They play well with the concept of infrastructure as code. Indeed, a certain level of automation is required simply to manage these large and complex applications.</li><li><b>Defined, policy-driven resource allocation: </b>Finally, cloud-native applications align with the governance model defined through a set of policies. They adhere to policies such as central processing unit (CPU) and storage quotas, and network policies that allocate resources to services. For example, in an enterprise scenario, central IT can define policies to allocate resources for each department. Developers and DevOps teams in each department have complete access and ownership to their share of resources.</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
     "date": "2018/12/16",
     "title": "Docker",
     "itemList": [
@@ -67,7 +82,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 400,
     "date": "2018/12/26",
     "title": "Docker Compose",
     "itemList": [
@@ -94,7 +109,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 500,
     "date": "2018/12/31",
     "title": "Docker Swarm",
     "itemList": [
@@ -117,7 +132,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 600,
     "date": "2018/12/26",
     "title": "Kubernetes",
     "itemList": [
@@ -172,7 +187,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 700,
     "date": "2015/11/3",
     "title": "Grid Computing",
     "itemList": [
@@ -187,7 +202,7 @@
     ]
   },
   {
-    "id": 35,
+    "id": 800,
     "date": "2015/11/3",
     "title": "Big Data",
     "itemList": [
@@ -202,7 +217,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 900,
     "date": "2015/11/3",
     "title": "NoSQL",
     "itemList": [
@@ -233,7 +248,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 1000,
     "date": "2019/02/16",
     "title": "MuleSoft",
     "itemList": [
@@ -269,7 +284,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": 1100,
     "date": "2019/03/09",
     "title": "Azure Resource Manager",
     "itemList": [
@@ -289,7 +304,7 @@
     ]
   },
   {
-    "id": 130,
+    "id": 1200,
     "date": "2019/03/10",
     "title": "Azure DevOps Pipeline",
     "itemList": [
@@ -308,7 +323,7 @@
     ]
   },
   {
-    "id": 140,
+    "id": 1300,
     "date": "2019/10/20",
     "title": "GCP - Google Cloud Platform",
     "itemList": [
@@ -347,7 +362,7 @@
     ]
   },
   {
-    "id": 150,
+    "id": 1400,
     "date": "2019/11/01",
     "title": "PCF - Pivotal Cloud Foundry",
     "itemList": [
@@ -394,7 +409,7 @@
     ]
   },
   {
-    "id": 160,
+    "id": 1500,
     "date": "2019/12/3",
     "title": "Spring Cloud",
     "itemList": [
@@ -413,7 +428,7 @@
     ]
   },
   {
-    "id": 170,
+    "id": 1600,
     "date": "2019/12/4",
     "title": "Prometheus and Grafana on GCP",
     "itemList": [
@@ -436,7 +451,7 @@
     ]
   },
   {
-    "id": 180,
+    "id": 1700,
     "date": "2019/12/4",
     "title": "Grafana",
     "itemList": [
@@ -451,7 +466,7 @@
     ]
   },
   {
-    "id": 190,
+    "id": 1800,
     "date": "2019/12/4",
     "title": "Elasticsearch",
     "itemList": [
@@ -462,7 +477,7 @@
     ]
   },
   {
-    "id": 200,
+    "id": 1900,
     "date": "2019/12/4",
     "title": "Kibana",
     "itemList": [
@@ -473,7 +488,7 @@
     ]
   },
   {
-    "id": 210,
+    "id": 2000,
     "date": "2019/12/4",
     "title": "Logstash",
     "itemList": [
@@ -484,7 +499,7 @@
     ]
   },
   {
-    "id": 220,
+    "id": 2100,
     "date": "2019/12/7",
     "title": "X-Pack",
     "itemList": [
@@ -495,7 +510,7 @@
     ]
   },
   {
-    "id": 230,
+    "id": 2200,
     "date": "2019/12/8",
     "title": "Application Migration Strategies",
     "itemList": [
