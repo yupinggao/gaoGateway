@@ -47,5 +47,229 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 500,
+    "date": "2020/03/07",
+    "title": "Managed Lifecycle",
+    "itemList": [
+      {
+        "text": "<p>Containerized applications managed by cloud-native platforms have no control over their lifecycle, and to be good cloud-native citizens, they have to listen to the events emitted by the managing platform and adapt their lifecycles accordingly. The Managed Lifecycle pattern describes how applications can and should react to these lifecycle events.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>We saw that checking only the process status is not a good enough indication of the health of an application. That is why there are different APIs for monitoring the health of a container. Similarly, using only the process model to run and stop a process is not good enough. Real-world applications require more fine-grained interactions and lifecycle management capabilities. Some applications need help to warm up, and some applications need a gentle and clean shutdown procedure. For this and other use cases, some events, as shown in Figure 5-1, are emitted by the platform that the container can listen to and react to if desired.</p>",
+        "image": "../assets/image/itCloud/k8spattern/managedLifecycle.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 600,
+    "date": "2020/03/07",
+    "title": "Automated Placement",
+    "itemList": [
+      {
+        "text": "<p>Automated Placement is the core function of the Kubernetes scheduler for assigning new Pods to nodes satisfying container resource requests and honoring scheduling policies. This pattern describes the principles of Kubernetes’ scheduling algorithm and the way to influence the placement decisions from the outside.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Pods get assigned to nodes with certain capacities based on placement policies. For completeness, Figure below visualizes at a high level how these elements get together and the main steps a Pod goes through when being scheduled.</p>",
+        "image": "../assets/image/itCloud/k8spattern/automatedPlacement.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 700,
+    "date": "2020/03/08",
+    "title": "Batch Job",
+    "itemList": [
+      {
+        "text": "<p>There are different ways of creating Pods with varying characteristics: Bare Pod, ReplicaSet, DaemanSet. A common aspect of these Pods is the fact that they represent long-running processes that are not meant to stop after some time. However, in some cases there is a need to perform a predefined finite unit of work reliably and then shut down the container. For this task, Kubernetes provides the Job resource.</p><p>A Kubernetes Job is similar to a ReplicaSet as it creates one or more Pods and ensures they run successfully. However, the difference is that, once the expected number of Pods terminate successfully, the Job is considered complete and no additional Pods are started.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
+    "date": "2020/03/08",
+    "title": "Daemon Service",
+    "itemList": [
+      {
+        "text": "<p>The Daemon Service pattern allows placing and running prioritized, infrastructure-focused Pods on targeted nodes. It is used primarily by administrators to run node-specific Pods to enhance the Kubernetes platform capabilities.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The concept of a daemon in software systems exists at many levels. At an operating system level, a daemon is a long-running, self-recovering computer program that runs as a background process. In Unix, the names of daemons end in “d,” such as httpd, named, and sshd. In other operating systems, alternative terms such as services-started tasks and ghost jobs are used.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Regardless of what they are called, the common characteristics among these programs are that they run as processes and usually do not interact with the monitor, keyboard, and mouse, and are launched at system boot time. A similar concept exists at the application level too. For example, in the JVM daemon threads run in the back ground and provide supporting services to the user threads. These daemon threads have a low priority, run in the background without a say in the life of the application, and perform tasks such as garbage collection or finalization.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Similarly, there is also the concept of a DaemonSet in Kubernetes. Considering that Kubernetes is a distributed platform spread across multiple nodes and with the primary goal of managing application Pods, a DaemonSet is represented by Pods that run on the cluster nodes and provide some background capabilities for the rest of the cluster.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 900,
+    "date": "2020/03/08",
+    "title": "Singleton Service",
+    "itemList": [
+      {
+        "text": "<p>The Singleton Service pattern ensures only one instance of an application is active at a time and yet is highly available. This pattern can be implemented from within the application, or delegated fully to Kubernetes.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Running multiple replicas of the same Pod creates an active-active topology where all instances of a service are active. What we need is an active-passive (or master-slave) topology where only one instance is active, and all the other instances are passive. Fundamentally, this can be achieved at two possible levels: out-of-application and in-application locking.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The way to achieve this in Kubernetes is to start a Pod with one replica. This activity alone does not ensure the singleton Pod is highly available. What we have to do is also back the Pod with a controller such as a ReplicaSet that turns the singleton Pod into a highly available singleton. This topology is not exactly active-passive (there is no passive instance), but it has the same effect, as Kubernetes ensures that one instance of the Pod is running at all times.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Typically, singleton applications running in Pods on Kubernetes open outgoing connections to message brokers, relational databases, file servers, or other systems running on other Pods or external systems. However, occasionally, your singleton Pod may need to accept incoming connections, and the way to enable that on Kubernetes is through the Service resource.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1000,
+    "date": "2020/03/09",
+    "title": "Stateful Service",
+    "itemList": [
+      {
+        "text": "<p>Distributed stateful applications require features such as persistent identity, networking, storage, and ordinality. The Stateful Service pattern describes the StatefulSet primitive that provides these building blocks with strong guarantees ideal for the management of stateful applications.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>While it is a significant boost to have a platform taking care of the placement, resiliency, and scaling of stateless applications, there is still a large part of the workload to consider: stateful applications in which every instance is unique and has long-lived characteristics.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In the real world, behind every highly scalable stateless service is a stateful service typically in the shape of some data store. In the early days of Kubernetes when it lacked support for stateful workloads, the solution was placing stateless applications on Kubernetes to get the benefits of the cloud-native model, and keeping stateful components outside the cluster, either on a public cloud or on-premises hardware, managed with the traditional noncloud-native mechanisms. Considering that every enterprise has a multitude of stateful workloads (legacy and modern), the lack of support for stateful workloads was a significant limitation in Kubernetes, which was known as a universal cloud-native platform.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>But what are the typical requirements of a stateful application? We could deploy a stateful application such as Apache ZooKeeper, MongoDB, Redis, or MySQL by using a Deployment, which could create a ReplicaSet with replicas=1 to make it reliable; use a Service to discover its endpoint; and use PersistentVolumeClaim and Persistent‐Volume as permanent storage for its state.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>While that is mostly true for a single-instance stateful application, it is not entirely true, as a ReplicaSet does not guarantee at-most-once semantics, and the number of replicas can vary temporarily. Such a situation can be disastrous and lead to data loss. Also, the main challenges come up when it is a distributed stateful service that is composed of multiple instances. A stateful application composed of multiple clustered services requires multifaceted guarantees from the underlying infrastructure.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To explain what StatefulSet provides for managing stateful applications, we occasionally compare its behavior to the already familiar ReplicaSet primitive that Kubernetes uses for running stateless workloads. In many ways, StatefulSet is for managing pets, and ReplicaSet is for managing cattle. Pets versus cattle is a famous (but also a controversial) analogy in the DevOps world: identical and replaceable servers are referred to as cattle, and nonfungible unique servers that require individual care are referred to as pets.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In this chapter, we saw some of the standard requirements and challenges in managing distributed stateful applications on a cloud-native platform. We discovered that handling a single-instance stateful application is relatively easy, but handling distributed state is a multidimensional challenge. While we typically associate the notion of “state” with “storage,” here we have seen multiple facets of state and how it requires different guarantees from different stateful applications. In this space, StatefulSets is an excellent primitive for implementing distributed stateful applications generically. It addresses the need for persistent storage, networking (through Services), identity, ordinality, and a few other aspects. It provides a good set of building blocks for managing stateful applications in an automated fashion, making them first-class citizens in the cloud-native world.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1100,
+    "date": "2020/03/09",
+    "title": "Service Discovery",
+    "itemList": [
+      {
+        "text": "<p>The Service Discovery pattern provides a stable endpoint at which clients of a service can access the instances providing the service. For this purpose, Kubernetes provides multiple mechanisms, depending on whether the service consumers and producers are located on or off the cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>At first glance, Service Discovery may seem like a simple pattern. However, multiple mechanisms can be used to implement this pattern, which depends on whether a service consumer is within or outside the cluster, and whether the service provider is within or outside the cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Internal Service Discovery</b></p>",
+        "image": "../assets/image/itCloud/k8spattern/internalService.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Manual Service Discovery</b></p>",
+        "image": "../assets/image/itCloud/k8spattern/manualService.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Node port Service Discovery</b></p>",
+        "image": "../assets/image/itCloud/k8spattern/nodePortService.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Load Balance Service Discovery</b></p>",
+        "image": "../assets/image/itCloud/k8spattern/loadBalanceService.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Application Layer Service Discovery</b></p>",
+        "image": "../assets/image/itCloud/k8spattern/l7LayerService.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Summary of the various ways Service Discovery is implemented in Kubernetes</b></p><p>Discovery of dynamic Pods from within the cluster is always achieved through the Service resource, though different options can lead to different implementations. The Service abstraction is a high-level cloud-native way of configuring low-level details such as virtual IP addresses, iptables, DNS records, or environment variables. Service Discovery from outside the cluster builds on top of the Service abstraction and focuses on exposing the Services to the outside world. While a NodePort provides the basics of exposing Services, a highly available setup requires integration with the platform infrastructure provider.</p>",
+        "image": "../assets/image/itCloud/k8spattern/serviceDiscovery.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 2000,
+    "date": "2020/03/06",
+    "title": "12-Factor Development Practices",
+    "itemList": [
+      {
+        "text": "<p><b>Principle I. Codebase</b></p><p>Principle 1 of a 12 Factor App is “One codebase tracked in revision control, many deploys”.</p><p>For Kubernetes applications, this principle is actually embedded in the nature of container orchestration itself.  Typically, you create your code using a source control repository such as a git repo, then store specific versions of your images in the Docker Hub. When you define the containers to be orchestrated as part of a a Kubernetes Pod, Deployment, DaemonSet, you also specify a particular version of the image. In this way, you might have multiple versions of your application running in different deployments.</p><p>Applications can also behave differently depending on the configuration information with which they run.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle II. Dependencies</b></p><p>Principle 2 of a 12 Factor App is “Explicitly declare and isolate dependencies”.</p><p>Making sure that an application’s dependencies are satisfied is something that is practically assumed. For a 12 factor app, that includes not just making sure that the application-specific libraries are available, but also not counting on, say, shelling out to the operating system and assuming system libraries such as curl will be there.  A 12 factor app must be self-contained.</p><p>That includes making sure that the application is isolated enough that it’s not affected by conflicting libraries that might be installed on the host machine.</p><p>Fortunately, if an application does have any specific or unusual system requirements, both of these requirements are handily satisfied by containers; the container includes all of the dependencies on which the application relies, and also provides a reasonably isolated environment in which the container runs.  (Contrary to popular belief, container environments are not completely isolated, but for most situations, they are Good Enough.)</p><p>For applications that are modularized and depend on other components, such as an HTTP service and a log fetcher, Kubernetes provides a way to combine all of these pieces into a single Pod, for an environment that encapsulates those pieces appropriately.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle III. Config</b></p><p>Principle 3 of a 12 Factor App is “Store config in the environment”.</p><p>The idea behind this principle is that an application should be completely independent from its configuration. In other words, you should be able to move it to another environment without having to touch the source code.</p><p>Some developers achieve this goal by creating configuration files of some sort, specifying details such as directories, hostnames, and database credentials. This is an improvement, but it does carry the risk that someone will check a config file into the source control repository.</p><p>Instead, 12 factor apps store their configurations as environment variables; these are, as the manifesto says, “unlikely to be checked into the repository by accident”, and they’re operating system independent.</p><p>Kubernetes enables you to specify environment variables in manifests via the Downward API, but as these manifests themselves do get checked int source control, that’s not a complete solution.</p><p>Instead, you can specify that environment variables should be populated by the contents of Kubernetes ConfigMaps or Secrets, which can be kept separate from the application.</p><p>As you can see, this Pod receives three environment variables, SECRET_USERNAME, SECRET_PASSWORD, and CONFIG_VERSION, the first two from from referenced Kubernetes Secrets, and the third from a Kubernetes ConfigMap.  This enables you to keep them out of configuration files.</p><p>Of course, there’s still a risk of someone mis-handling the files used to create these objects, but it’s them together and institute secure handling policies than it is to weed out dozens of config files scattered around a deployment.</p><p>What’s more, there are those in the community that point out that even environment variables are not necessarily safe for their own reasons.  For example, if an app crashes, it may save all of the environment variables to a log or even transmit them to another service.  Diogo Mónica points to a tool called Keywhiz you can use with Kubernetes, creating secure secret storage.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle IV. Backing services</b></p><p>Principle 4 of the 12 Factor App is “Treat backing services as attached resources”.</p><p>In a 12 Factor app, any services that are not part of the core application, such as databases, external storage, or message queues, should be accessed as a service — via an HTTP or similar request — and specified in the configuration, so that the source of the service can be changed without affecting the core code of the application.</p><p>For example, if your application uses a message queuing system, you should be able to change from RabbitMQ to ZeroMQ (or ActiveMQ or even something else) without having to change anything but configuration information.</p><p>This requirement has two implications for a Kubernetes-based application.</p><p>First, it means that you must think about how your applications take in (and give out) information. For example, if you have a backing database, you wouldn’t want to have a local Mysql instance, even if you’re replicating it to other instances. Instead, you would want to have a separate container that handles database operations, and make those operations callable via an API. This way, if you needed to change to, say, PostgreSQL or a remotely hosted MySQL server, you could create a new container image, update the Pod definition, and restart the Pod (or more likely the Deployment or StatefulSet managing it).</p><p>Similarly, if you’re storing credentials or address information in environment variables backed by a ConfigMap, you can change that information and replace the Pod.</p><p>Note that both of these examples assume that though you’re not making any changes to the source code (or even the container image for the main application) you will need to replace the Pod; the ability to do this is actually another principle of a 12 Factor App.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle V. Build, release, run</b></p><p>Principle 5 of the 12 Factor App is “Strictly separate build and run stages”.</p><p>These days it’s hard to imagine a situation where this is not true, but a twelve-factor app must have a separate build stage.  In other words, you should be able to build or compile the code, then combine that with specific configuration information to create a specific release, then deliberately run the release.</p><p>Releases should be identifiable.  You should be able to say, ‘This deployment is running Release 1.14 of this application” or something similar, the same way we say we’re running “the OpenStack Ocata release” or “Kubernetes 1.6”.  They should also be immutable; any changes should lead to a new release.  If this sounds daunting, remember that when we say “application” we’re no longer talking about large, monolithic releases.  Instead, we’re talking about very specific microservices, each of which has its own release, and which can bump releases without causing errors in consuming services.</p><p>All of this is so that when the app is running, that “run” process can be completely automated. Twelve factor apps need to be capable of running in an automated fashion because they need to be capable of restarting should there be a problem.</p><p>Translating this to the Kubernetes realm, we’ve already said that the application needs to be stored in source control, then built with all of its dependencies.  That’s your build process.  We talked about separating out the configuration information, so that’s what needs to be combined with the build to make a release. And the ability to automatically run the application — or multiple copies of the application — is precisely what Kubernetes constructs like Deployments, ReplicaSets, and DaemonSets do.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle VI. Processes</b></p><p>Principle 6 of the 12 Factor App is “Execute the app as one or more stateless processes”.</p><p>Stateless processes are a core idea behind cloud native applications. Every twelve-factor application needs to run in individual, share-nothing processes. That means that any time you need to persist information, it needs to be stored in a backing service such as a database.</p><p>If you’re new to cloud application programming, this might be deceptively simple; many developers are used to “sticky” sessions, storing information in the session with the confidence that the next request will come to the same server. In a cloud application, however, you must never make that assumption.</p><p>Instead, if you’re running a Kubernetes-based application that hosts multiple copies of a particular pod, you must assume that subsequent requests can go anywhere.  To solve this problem, you will want to use some sort of backing volume or database for persistence.</p><p>One caveat to this principle is that Kubernetes StatefulSets can enable you to create Pods with stable network identities, so that you can, theoretically, direct requests to a particular pod. Technically speaking, if the process doesn’t actually store state, and the pod can be deleted and recreated and still function properly, it satisfies this requirement — but that’s probably pushing it a bit.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle VII. Port binding</b></p><p>Principle 7 of the 12 Factor App is “Export services via port binding”.</p><p>In an environment where we’re assuming that different functionalities are handled by different processes, it’s easy to make the connection that these functionalities should be available via a protocol such as HTTP, so it’s common for applications to be run behind web servers such as Apache or Tomcat.  Twelve-factor apps, however, should not be depend on an additional application in that way; remember, every function should be in its own process, isolated from everything else. Instead, the 12 Factor App manifesto recommends adding a web server library or something similar to the app itself, so that the app can await requests on a defined port, whether it’s using HTTP or another protocol.</p><p>In a Kubernetes-based application, this is done partly through the architecture of the application itself, and partly by making sure that the application has all of its dependencies as part of the creation of the base containers on which the application is built.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle VIII. Concurrency</b></p><p>Principle 8 of the 12 Factor App is to “Scale out via the process model”.</p><p>When you’re writing a twelve-factor app, make sure that you’re designing it to be scaled out, rather than scaled up. That means that in order to add more capacity, you should be able to add more instances rather than more memory or CPU to the machine on which the app is running. Note that this specifically means being able to start additional processes on additional machines, which is, fortunately, a key capability of Kubernetes.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle IX. Disposability</b></p><p>Principle 9 of the 12 Factor App is to “Maximize robustness with fast startup and graceful shutdown”.</p><p>It seems like this principle was tailor made for containers and Kubernetes-based applications. The idea that processes should be disposable means that at any time, an application can die and the user won’t be affected, either because there are others to take its place, because it’ll start right up again, or both.</p><p>Containers are built on this principle, of course, and Kubernetes structures that manage multiple instances and maintain a certain level of availability even in the face of problems, such as ReplicaSets, complete the picture.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle X. Dev/prod parity</b></p><p>Principle 10 of the 12 Factor App is “Keep development, staging, and production as similar as possible”.</p><p>This is another principle that seems like it should be obvious, but is deeper than most people think. On the surface level, it does mean that you should have identical development, staging, and production environments, inasmuch as that is possible. One way to accomplish this is through the use of Kubernetes namespaces, enabling you to (theoretically) run code on the same actual cluster against the same actual systems while still keeping environments separate. In some situations, you can also use tools such as Minikube or kubeadm-dind-cluster to create near-clones of production systems.</p><p>At a deeper level, though, as the Twelve-Factor App manifesto puts it, it’s about three different types of “gaps”:<ol><li>The time gap: A developer may work on code that takes days, weeks, or even months to go into production.</li><li>The personnel gap: Developers write code, ops engineers deploy it.</li><li>The tools gap: Developers may be using a stack like Nginx, SQLite, and OS X, while the production deploy uses Apache, MySQL, and Linux.</li></ol></p><p>The goal here is to create a Continuous Integration/Continuous Deployment situation in which changes can go into production virtually immediately (after testing, of course!), deployed by the developers who wrote it so they can actually see it in production, using the same tools on which the code was actually written in order to minimize the possibility of compatibility errors between environments.</p><p>Some of these factors are outside of the realm of Kubernetes, of course; the personnel gap is a cultural issue, for example. The time and tools gaps, however, can be helped in two ways.</p><p>For the time gap, Kubernetes-based applications are, of course, based on containers, which themselves are based on images that are stored in version-control systems, so they lend themselves to CI/CD. They can also be updated via rolling updates that can be rolled back in case of problems, so they’re well-suited to this kind of environment.</p><p>As far as the tools gap is concerned, the architecture of Kubernetes-based applications make it easier to manage, both by making local dependencies simple to include in the various images, and by modularizing the application in such a way that external backing services can be standardized.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle XI. Logs</b></p><p>Principle 11 of the 12 Factor App is to “Treat logs as event streams”.</p><p>While most traditional applications store log information in a file, the Twelve-Factor app directs it, instead, to stdout as a stream of events; it’s the execution environment that’s responsible for collecting those events. That might be as simple as redirecting stdout to a file, but in most cases it involves using a log router such as Fluentd and saving the logs to Hadoop or a service such as Splunk.</p><p>In Kubernetes, you have at least two choices for automatic logging capture: Stackdriver Logging if you’re using Google Cloud, and Elasticsearch if you’re not.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Principle XII. Admin processes</b></p><p>Principle 12 of the 12 Factor App is “Run admin/management tasks as one-off processes”.</p><p>This principle involves separating admin tasks such as migrating a database or inspecting records from the rest of the application. Even though they’re separate, however, they must still be run in the same environment and against the same base code and configuration as the application, and their code must be shipped alongside the application to prevent drift.</p><p>You can implement this a number of different ways in Kubernetes-based applications, depending on the size and scale of the application itself. For example, for small tasks, you might use kubectl exec to operate on a specific container, or you can use the Kubernetes Job to run a self-contained application. For more complicated tasks that involve orchestration of changes, however, you can also use Kubernetes Helm charts.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
