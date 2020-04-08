@@ -218,6 +218,26 @@
     ]
   },
   {
+    "id": 1200,
+    "date": "2020/03/14",
+    "title": "Self Awareness",
+    "itemList": [
+      {
+        "text": "<p>The Self Awareness pattern describes the Kubernetes Downward API that provides a simple mechanism for introspection and metadata injection to applications.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The Downward API allows passing metadata about the Pod to the containers and the cluster through environment variables and files. These are the same mechanisms we used for passing application-related data from ConfigMaps and Secrets. But in this case, the data is not created by us. Instead, we specify the keys that interests us, and Kubernetes populates the values dynamically. Figure below gives an overview of how the Downward API injects resource and runtime information into interested Pods.</p>",
+        "image": "../assets/image/itCloud/k8spattern/selfawareness.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>The main point here is that with the Downward API, the metadata is injected into your Pod and made available locally. The application does not need to use a client and interact with the Kubernetes API and can remain Kubernetes-agnostic.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 2000,
     "date": "2020/03/06",
     "title": "12-Factor Development Practices",
@@ -247,7 +267,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>Principle VII. Port binding</b></p><p>Principle 7 of the 12 Factor App is “Export services via port binding”.</p><p>In an environment where we’re assuming that different functionalities are handled by different processes, it’s easy to make the connection that these functionalities should be available via a protocol such as HTTP, so it’s common for applications to be run behind web servers such as Apache or Tomcat.  Twelve-factor apps, however, should not be depend on an additional application in that way; remember, every function should be in its own process, isolated from everything else. Instead, the 12 Factor App manifesto recommends adding a web server library or something similar to the app itself, so that the app can await requests on a defined port, whether it’s using HTTP or another protocol.</p><p>In a Kubernetes-based application, this is done partly through the architecture of the application itself, and partly by making sure that the application has all of its dependencies as part of the creation of the base containers on which the application is built.</p>",
+        "text": "<p><b>Principle VII. Port binding or Data isolation</b></p><p>Principle 7 of the 12 Factor App is “Export services via port binding”.</p><p>In an environment where we’re assuming that different functionalities are handled by different processes, it’s easy to make the connection that these functionalities should be available via a protocol such as HTTP, so it’s common for applications to be run behind web servers such as Apache or Tomcat.  Twelve-factor apps, however, should not be depend on an additional application in that way; remember, every function should be in its own process, isolated from everything else. Instead, the 12 Factor App manifesto recommends adding a web server library or something similar to the app itself, so that the app can await requests on a defined port, whether it’s using HTTP or another protocol.</p><p>In a Kubernetes-based application, this is done partly through the architecture of the application itself, and partly by making sure that the application has all of its dependencies as part of the creation of the base containers on which the application is built.</p><p>As a modification to make the Port binding factor more useful for microservices, we recommend that you allow access to thepersistent data owned by a service only via the service’s API. This prevents implicit service contracts between microservices and ensures that microservices can’t become tightly coupled. Data isolation also allows the developer to choose, for each service, the type of data store that best suits its needs.</p>",
         "image": ""
       },
       {

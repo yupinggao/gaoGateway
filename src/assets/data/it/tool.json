@@ -120,11 +120,11 @@
         "image": ""
       },
       {
-        "text": "<p><b>Commands: </b><br><b>A - N</b></p><ul><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>$ grep -r '192.168.1.5' /etc/: </b>search recursively i.e. read all files under each directory for a string '192.168.1.5'</li><li><b>nslookup <i>dns server name or ip</i>: </b>look for DNS server information</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li></ul>",
+        "text": "<p><b>Commands: </b><br><b>A - N</b></p><ul><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>$ grep -r '192.168.1.5' /etc/: </b>search recursively i.e. read all files under each directory for a string '192.168.1.5'</li><li><b>nslookup <i>dns server name or ip</i>: </b>look for DNS server information</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li><li><b>NUMA: </b>Non-uniform memory access.</li></ul>",
         "image": ""
       },
       {
-        "text": "<p><b>O - Z</b></p><ul><li><b>passwd: </b>change password</li><li><b>ps: </b>Report process status</li><li><b>ps -ef | grep {userName}: </b>display user ID associated with a process</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>pwd: </b>tells you where you currently are</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>whoami: </b>returns your username</li><li><b>sysctl -a: </b>to get a list of all kernel parameters at runtime.</li></ul>",
+        "text": "<p><b>O - Z</b></p><ul><li><b>passwd: </b>change password</li><li><b>printenv: </b>print environment variables</li><li><b>ps: </b>Report process status</li><li><b>ps auxw | grep kube-proxy: </b>check if kube-proxy is running on your Nodes</li><li><b>ps -ef | grep {userName}: </b>display user ID associated with a process</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>pwd: </b>tells you where you currently are</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>whoami: </b>returns your username</li><li><b>sysctl -a: </b>to get a list of all kernel parameters at runtime.</li></ul>",
         "image": ""
       },
       {
@@ -228,6 +228,26 @@
     ]
   },
   {
+    "id": 1200,
+    "date": "2020/03/10",
+    "title": "Autosys",
+    "itemList": [
+      {
+        "text": "<p>Autosys is used to start Java process, takes backup of log files, stop Java process, cleaning and purging database and will all sort of housekeeping jobs in Linux environment. Autosys system is made of Autosys server and Autosys clients, each server or box, which has services scheduled by autosys, requires autosys client to be install on that. One of the key advantages of Autosys is that one job can depend upon another job, and can execute, depending upon, success and failure of parent job. Though Java developers are not asked a lot of interview questions, you might expect few of them during your interview with Wall Street banks, Brokers or Financial Institution, which uses autosys.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Autosys Job Status</b></p><p><ul><li>STARTING</li><li>RUNNING</li><li>INACTIVE</li><li>ACTIVATED</li><li>SUCCESS</li><li>FAILURE</li><li>TERMINATED</li><li>RESTART</li><li>QUE_WAIT</li><li>ON HOLD</li><li>ON ICE</li></ul></p>",
+        "image": "../assets/image/it/tool/onHoldvsOnIce.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Commands</b></p><p><ul><li><code>sendevent -E STARTJOB -J <i>job_name</i></code></li></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 2000,
     "date": "2019/10/29",
     "title": "Acronyms",
@@ -237,7 +257,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>H - N</b></p><p><ol><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>IDC</b> - International Data Corporation.</li><li><b>IPVS</b> - IP Virtual Server</li><li><b>IWA</b> - Integrated Windows Authentication</li><li><b>JOSE</b> - JSON Object Signing and Encription</li><li><b>KCD</b> - Kerberos Constrained Delegation.</li><li><b>KMS</b> - Key Management Service.</li><li><b>LAMP</b> - Linux, Apache, MySQL, and PHP/Python/Perl</li><li><b>LRP</b> - Long-Running Process</li><li><b>MDM</b> - Mobile Device Management</li><li><b>MEAN</b> - MongoDB, ExpressJS, AngularJS and Node.js</li><li><b>MQTT</b> - Message Queuing Telemetry Transport</li><li><b>MSAL</b> - Microsoft Authentication Library</li><li><b>NTP</b> - Network Time Protocol</li><li><b>NUMA</b> - Non-uniform memory access</li></ol></p>",
+        "text": "<p><b>H - N</b></p><p><ol><li><b>HATEOAS</b> - Hypermedia as the Engine of Application State</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>IDC</b> - International Data Corporation.</li><li><b>IPVS</b> - IP Virtual Server</li><li><b>IWA</b> - Integrated Windows Authentication</li><li><b>JOSE</b> - JSON Object Signing and Encription</li><li><b>KCD</b> - Kerberos Constrained Delegation.</li><li><b>KMS</b> - Key Management Service.</li><li><b>LAMP</b> - Linux, Apache, MySQL, and PHP/Python/Perl</li><li><b>LRP</b> - Long-Running Process</li><li><b>MDM</b> - Mobile Device Management</li><li><b>MEAN</b> - MongoDB, ExpressJS, AngularJS and Node.js</li><li><b>MQTT</b> - Message Queuing Telemetry Transport</li><li><b>MSAL</b> - Microsoft Authentication Library</li><li><b>NTP</b> - Network Time Protocol</li><li><b>NUMA</b> - Non-uniform memory access</li></ol></p>",
         "image": ""
       },
       {

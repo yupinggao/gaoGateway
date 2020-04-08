@@ -88,6 +88,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>gcloud compute firewall-rules create my-rule --allow=tcp:<port></code> - to add a firewall with the gcloud command line tool. When using a Service with spec.type: LoadBalancer, the firewall will be opened automatically.</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>gcloud compute instances reset the-first-vm</code> - to restart VM named 'the-first-vm'</p>",
         "image": ""
       },

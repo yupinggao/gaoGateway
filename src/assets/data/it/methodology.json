@@ -1,6 +1,6 @@
 [
   {
-    "id": 10,
+    "id": 100,
     "date": "2019/01/22",
     "title": "Agile",
     "itemList": [
@@ -23,6 +23,30 @@
       {
         "text": "<p><b>Agile Tools</b><ul><li>Jenkins</li><li>Jira</li><li>Confluence</li><li>Trello</li></ol>",
         "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/0/22",
+    "title": "TOGAF",
+    "itemList": [
+      {
+        "text": "<p>The Open Group Architecture Framework (TOGAF) is a framework for enterprise architecture that provides an approach for designing, planning, implementing, and governing an enterprise information technology architecture. TOGAF is a high-level approach to design. It is typically modeled at four levels: Business, Application, Data, and Technology. It relies heavily on modularization, standardization, and already existing, proven technologies and products.</p>",
+        "image": "../assets/image/it/methodology/togaf.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/0/22",
+    "title": "ZACHMAN",
+    "itemList": [
+      {
+        "text": "<p>Zachman Framework is a two dimensional classification scheme for descriptive representations of an Enterprise that is structured as a matrix containing 36 cells, each of them focusing on one dimension or perspective of the enterprise. Rows are often presented as different viewpoints involved in the systems development process, while columns represent different perspectives of the stakeholders involved in the organization.</p>",
+        "image": "../assets/image/it/methodology/zachman.png",
+        "imageClass": "mx-auto d-block"
       }
     ]
   }

@@ -76,6 +76,14 @@
       {
         "text": "<p><b>Declarative object configuration</b><ul><li><code>kubectl diff -f configs/</code><br><code>kubectl apply -f configs/</code> - process all object configuration files in the configs directory, and create or patch the live objects. You can first diff to see what changes are going to be made, and then apply</li><li><code>kubectl diff -R -f configs/</code><br><code>kubectl apply -R -f configs/</code> - recursively process directorie</li></ul></p>",
         "image": ""
+      },
+      {
+        "text": "<p><b>Migrating from imperative command management to declarative object configuration</b><ol><li>Export the live object to a local configuration file:<br><code>kubectl get <i>kind</i>/<i>name</i> -o yaml > <i>kind_name</i>.yaml</code></li><li>Manually remove the status field from the configuration file.</li><li>Set the kubectl.kubernetes.io/last-applied-configuration annotation on the object:<br><code>kubectl replace --save-config -f <i>kind_name</i>.yaml</code></li><li>Change processes to use kubectl apply for managing the object exclusively.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Migrating from imperative object configuration to declarative object configuration</b><ol><li>Set the kubectl.kubernetes.io/last-applied-configuration annotation on the object:<br><code>kubectl replace --save-config -f <i>kind_name</i>.yaml</code></li><li>Change processes to use kubectl apply for managing the object exclusively.</li></ol></p>",
+        "image": ""
       }
     ]
   },
@@ -239,6 +247,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl attach POD -c CONTAINER</code> - attach to a process that is already running inside an existing container</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80</code></p>",
         "image": ""
       },
@@ -291,6 +303,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl diff -f <file name></code> - print the object that will be created</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl drain <i>NODENAME</i></code> - to gracefully terminate all pods on the node while marking the node as unschedulable/p>",
         "image": ""
       },
@@ -324,6 +340,18 @@
       },
       {
         "text": "<p><code>kubectl get nodes</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --all-namespaces -o go-template --template='{{range .items}}{{range .spec.containers}}{{.image}} {{end}}{{end}}'</code> - to use go-templates for formatting the output.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --all-namespaces -o jsonpath='{..image}' | tr -s '[[:space:]]' '\n' | sort | uniq -c</code> - to list all Container images in all namespaces. Use tr to replace spaces with newlines. Use uniq to aggregate image counts.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --all-namespaces -o jsonpath='{.items[*].spec.containers[*].image}'</code> - to use the absolute path to the image field within the Pod.</p>",
         "image": ""
       },
       {
@@ -441,6 +469,17 @@
     ]
   },
   {
+    "id": 1030,
+    "date": "2020/04/04",
+    "title": "kubernetes CLI",
+    "itemList": [
+      {
+        "text": "<p><code>for p in $(kubectl get pods --namespace=kube-system -l k8s-app=kube-dns -o name); do kubectl logs --namespace=kube-system $p; done</code> - check for Errors in the DNS pod</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 1040,
     "date": "2019/12/18",
     "title": "Minikube",
@@ -484,7 +523,7 @@
     ]
   },
   {
-    "id": 1060,
+    "id": 2100,
     "date": "2020/02/27",
     "title": "kubeadmin",
     "itemList": [
@@ -495,7 +534,26 @@
     ]
   },
   {
-    "id": 1070,
+    "id": 2200,
+    "date": "2020/03/14",
+    "title": "Headless Services",
+    "itemList": [
+      {
+        "text": "<p>Sometimes you don’t need load-balancing and a single Service IP. In this case, you can create what are termed “headless” Services, by explicitly specifying 'None' for the cluster IP (.spec.clusterIP).</p><p>You can use a headless Service to interface with other service discovery mechanisms, without being tied to Kubernetes’ implementation.</p><p>For headless Services, a cluster IP is not allocated, kube-proxy does not handle these Services, and there is no load balancing or proxying done by the platform for them. How DNS is automatically configured depends on whether the Service has selectors defined.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>With selectors</b></p><p>For headless Services that define selectors, the endpoints controller creates Endpoints records in the API, and modifies the DNS configuration to return records (addresses) that point directly to the Pods backing the Service.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Without selectors</b></p><p>For headless Services that do not define selectors, the endpoints controller does not create Endpoints records. However, the DNS system looks for and configures either:<ul><li>CNAME records for ExternalName-type Services.</li><li>A records for any Endpoints that share a name with the Service, for all other types.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2300,
     "date": "2019/12/19",
     "title": "Notes",
     "itemList": [
@@ -516,12 +574,44 @@
     ]
   },
   {
-    "id": 1080,
+    "id": 2400,
+    "date": "2020/04/06",
+    "title": "Master Node",
+    "itemList": [
+      {
+        "text": "<p><b>Scaling up etcd clusters: </b></p><p>Scaling up etcd clusters increases availability by trading off performance. Scaling does not increase cluster performance nor capability. A general rule is not to scale up or down etcd clusters. Do not configure any auto scaling groups for etcd clusters. It is highly recommended to always run a static five-member etcd cluster for production Kubernetes clusters at any officially supported scale.</p><p>A reasonable scaling is to upgrade a three-member cluster to a five-member one, when more reliability is desired. See etcd Reconfiguration Documentation for information on how to add members into an existing cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Sets up a HA-compatible cluster in the GCE zone europe-west1-b: </b></p><p>MULTIZONE=true KUBE_GCE_ZONE=europe-west1-b  ENABLE_ETCD_QUORUM_READS=true ./cluster/kube-up.sh</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Replicates the master on an existing HA-compatible cluster: </b></p><p>KUBE_GCE_ZONE=europe-west1-c KUBE_REPLICATE_EXISTING_MASTER=true ./cluster/kube-up.sh</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Removes a master replica from an existing HA cluster: </b></p><p>KUBE_DELETE_NODES=false KUBE_GCE_ZONE=europe-west1-c ./cluster/kube-down.sh</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Remove the broken replica: </b></p><p>KUBE_DELETE_NODES=false KUBE_GCE_ZONE=replica_zone KUBE_REPLICA_NAME=replica_name ./cluster/kube-down.sh</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Best practices for replicating masters for HA clusters</b><p><p><ul><li>Try to place master replicas in different zones. During a zone failure, all masters placed inside the zone will fail. To survive zone failure, also place nodes in multiple zones (see multiple-zones for details).</li><li>Do not use a cluster with two master replicas. Consensus on a two-replica cluster requires both replicas running when changing persistent state. As a result, both replicas are needed and a failure of any replica turns cluster into majority failure state. A two-replica cluster is thus inferior, in terms of HA, to a single replica cluster.</li><li>When you add a master replica, cluster state (etcd) is copied to a new instance. If the cluster is large, it may take a long time to duplicate its state. This operation may be sped up by migrating etcd data directory, as described here (we are considering adding support for etcd data dir migration in future).</li></ul></p>",
+        "image": "../assets/image/itCloud/kubernetes/masterCluster.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 3000,
     "date": "2020/01/31",
     "title": "Interview",
     "itemList": [
       {
-        "text": "<ol><li><b>What are Authentication modules for accessing Kubernetes API?</b><p>Authentication modules include Client Certificates, Password, and Plain Tokens, Bootstrap Tokens, and JWT Tokens (used for service accounts). Multiple authentication modules can be specified, in which case each one is tried in sequence, until one of them succeeds.</li><li><b>Kubernetes Principles: </b><ul><li>Declarative over Imperative</li><li>No hidden internal APIs</li><li><b>Meet the user where they are</b>: Meaning Kubernetes should not require an application to be re-rewritten to run on Kubernetes. Many applications, for example, accept secrets and config info as files or environment variables. Therefore, Kubernetes supports injecting secrets and config maps into pods as files or environment variables.</li><li>Workload portability</li></ul></li><li><b>Readiness probe vs Liveness probe?</b><p>Kubernetes uses liveness probes to know when to restart a container. Kubernetes uses readiness probes to decide when the container is available for accepting traffic. While process health checks and liveness checks are intended to recover from the failure by restarting the container, the readiness check buys time for your application and expects it to recover by itself by removing the old one and create a new one.</p><p>In many cases, you have liveness and readiness probes performing the same checks. However, the presence of a readiness probe gives your container time to start up. Only by passing the readiness check is a Deployment considered to be successful, so that, for example, Pods with an older version can be terminated as part of a rolling update.</p><p>The liveness and readiness probes are fundamental building blocks in the automation of cloud-native applications. Application frameworks such as Spring actuator, Wild‐Fly Swarm health check, Karaf health checks, or the MicroProfile spec for Java provide implementations for offering Health Probes.</p></li><li><b>Deployments vs StatefulSets vs DaemonSets</b><p>Deployment is the easiest and most used resource for deploying your application. It is a Kubernetes controller that matches the current state of your cluster to the desired state mentioned in the Deployment manifest. e.g. If you create a deployment with 1 replica, it will check that the desired state of ReplicaSet is 1 and current state is 0, so it will create a ReplicaSet, which will further create the pod. If you create a deployment with name counter, it will create a ReplicaSet with name counter-<replica-set-id>, which will further create a Pod with name counter-<replica-set->-<pod-id>.</p><p>Deployments are usually used for stateless applications. However, you can save the state of deployment by attaching a Persistent Volume to it and make it stateful, but all the pods of a deployment will be sharing the same Volume and data across all of them will be same.</p><p>StatefulSet(stable-GA in k8s v1.9) is a Kubernetes resource used to manage stateful applications. It manages the deployment and scaling of a set of Pods, and provides guarantee about the ordering and uniqueness of these Pods.</p><p>StatefulSet is also a Controller but unlike Deployments, it doesn’t create ReplicaSet rather itself creates the Pod with a unique naming convention. e.g. If you create a StatefulSet with name counter, it will create a pod with name counter-0, and for multiple replicas of a statefulset, their names will increment like counter-0, counter-1, counter-2, etc</p><p>A DaemonSet is a controller that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod.</p><p>However, Daemonset automatically doesn’t run on nodes which have a taint e.g. Master. You will have to specify the tolerations for it on the pod.</p></li></ol>",
+        "text": "<ol><li><b>What are Authentication modules for accessing Kubernetes API?</b><p>Authentication modules include Client Certificates, Password, and Plain Tokens, Bootstrap Tokens, and JWT Tokens (used for service accounts). Multiple authentication modules can be specified, in which case each one is tried in sequence, until one of them succeeds.</li><li><b>Kubernetes Principles: </b><ul><li>Declarative over Imperative</li><li>No hidden internal APIs</li><li><b>Meet the user where they are</b>: Meaning Kubernetes should not require an application to be re-rewritten to run on Kubernetes. Many applications, for example, accept secrets and config info as files or environment variables. Therefore, Kubernetes supports injecting secrets and config maps into pods as files or environment variables.</li><li>Workload portability</li></ul></li><li><b>Readiness probe vs Liveness probe?</b><p>Kubernetes uses liveness probes to know when to restart a container. Kubernetes uses readiness probes to decide when the container is available for accepting traffic. While process health checks and liveness checks are intended to recover from the failure by restarting the container, the readiness check buys time for your application and expects it to recover by itself by removing the old one and create a new one.</p><p>In many cases, you have liveness and readiness probes performing the same checks. However, the presence of a readiness probe gives your container time to start up. Only by passing the readiness check is a Deployment considered to be successful, so that, for example, Pods with an older version can be terminated as part of a rolling update.</p><p>The liveness and readiness probes are fundamental building blocks in the automation of cloud-native applications. Application frameworks such as Spring actuator, Wild‐Fly Swarm health check, Karaf health checks, or the MicroProfile spec for Java provide implementations for offering Health Probes.</p></li><li><b>Deployments vs StatefulSets vs DaemonSets</b><p>Deployment is the easiest and most used resource for deploying your application. It is a Kubernetes controller that matches the current state of your cluster to the desired state mentioned in the Deployment manifest. e.g. If you create a deployment with 1 replica, it will check that the desired state of ReplicaSet is 1 and current state is 0, so it will create a ReplicaSet, which will further create the pod. If you create a deployment with name counter, it will create a ReplicaSet with name counter-<replica-set-id>, which will further create a Pod with name counter-<replica-set->-<pod-id>.</p><p>Deployments are usually used for stateless applications. However, you can save the state of deployment by attaching a Persistent Volume to it and make it stateful, but all the pods of a deployment will be sharing the same Volume and data across all of them will be same.</p><p>StatefulSet(stable-GA in k8s v1.9) is a Kubernetes resource used to manage stateful applications. It manages the deployment and scaling of a set of Pods, and provides guarantee about the ordering and uniqueness of these Pods.</p><p>StatefulSet is also a Controller but unlike Deployments, it doesn’t create ReplicaSet rather itself creates the Pod with a unique naming convention. e.g. If you create a StatefulSet with name counter, it will create a pod with name counter-0, and for multiple replicas of a statefulset, their names will increment like counter-0, counter-1, counter-2, etc</p><p>A DaemonSet is a controller that ensures that the pod runs on all the nodes of the cluster. If a node is added/removed from a cluster, DaemonSet automatically adds/deletes the pod.</p><p>However, Daemonset automatically doesn’t run on nodes which have a taint e.g. Master. You will have to specify the tolerations for it on the pod.</p></li><li><b>Quality of Services Classes</b><p>When Kubernetes creates a Pod it assigns one of these QoS classes to the Pod:<ul><li>Guaranteed</li><li>Burstable</li><li>BestEffort</li></ul></p></li><li><b>What is Downward API?</b><p>It is sometimes useful for a Container to have information about itself, without being overly coupled to Kubernetes. The Downward API allows containers to consume information about themselves or the cluster without using the Kubernetes client or API server.</p><p>An example is an existing application that assumes a particular well-known environment variable holds a unique identifier. One possibility is to wrap the application, but that is tedious and error prone, and it violates the goal of low coupling. A better option would be to use the Pod’s name as an identifier, and inject the Pod’s name into the well-known environment variable.</p></ol>",
         "image": ""
       }
     ]

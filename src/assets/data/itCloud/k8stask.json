@@ -33,5 +33,28 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 200,
+    "date": "2020/04/05",
+    "title": "Encrypting Secret Data at Rest",
+    "itemList": [
+      {
+        "text": "<p>Generate a 32 byte random key and base64 encode it. If you’re on Linux or macOS, run the following command:<br><code>head -c 32 /dev/urandom | base64</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Place that value in the secret field.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Set the --encryption-provider-config flag on the kube-apiserver to point to the location of the config file.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Restart your API server.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
