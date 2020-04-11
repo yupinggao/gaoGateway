@@ -235,6 +235,14 @@
         "image": ""
       },      
       {
+        "text": "<p><code>kubectl api-resources --namespaced=true</code> - see which Kubernetes resources are in a namespace</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl api-resources -o wide</code> - get API resources supported by your Kubernetes cluster</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl apply -f captureorder-deployment.yaml</code> - apply the instructions in the file</p>",
         "image": ""
       },
@@ -384,6 +392,10 @@
       },
       {
         "text": "<p><code>kubectl get secrets --all-namespaces -o json</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get secrets --all-namespaces -o json | kubectl replace -f -</code> - to force all secrets to be decrypted</p>",
         "image": ""
       },
       {

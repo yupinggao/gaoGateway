@@ -261,7 +261,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li><li><b>TTL</b> - Time To Live</li></ol></p>",
+        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PLEG</b> - Pod Lifecycle Event Generator</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li><li><b>TTL</b> - Time To Live</li></ol></p>",
         "image": ""
       },
       {
