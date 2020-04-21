@@ -443,10 +443,6 @@
         "image": ""
       },
       {
-        "text": "<p><code>kubectl rollout status deployment.apps/nginx-deployment</code> - view the rollout status for deployment.apps/nginx-deployment</p>",
-        "image": ""
-      },
-      {
         "text": "<p><code>kubectl rollout history deployment.v1.apps/nginx-deployment</code></p>",
         "image": ""
       },
@@ -463,6 +459,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl rollout status deployment.apps/nginx-deployment</code> - view the rollout status for deployment.apps/nginx-deployment</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl rollout undo deployment.v1.apps/nginx-deployment</code></p>",
         "image": ""
       },
@@ -472,6 +472,10 @@
       },
       {
         "text": "<p><code>kubectl scale deployment hello-web --replicas=3</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record</code> - update the nginx Pods to use the nginx:1.16.1</p>",
         "image": ""
       },
       {
