@@ -1,6 +1,59 @@
 [
   {
     "id": 100,
+    "date": "2020/04/24",
+    "title": "Azure infrastructure security",
+    "itemList": [
+      {
+        "text": "<p>Microsoft Azure runs in datacenters managed and operated by Microsoft. These geographically dispersed datacenters comply with key industry standards, such as ISO/IEC 27001:2013 and NIST SP 800-53, for security and reliability. The datacenters are managed, monitored, and administered by Microsoft operations staff. The operations staff has years of experience in delivering the world’s largest online services with 24 x 7 continuity.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Securing the Azure infrastructure</b></p>",
+        "image": "../assets/image/itCloud/azure/azureInfraSec.PNG"
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/04/24",
+    "title": "Azure Applications/Services Security",
+    "itemList": [
+      {
+        "text": "<p>Microsoft Azure runs in datacenters managed and operated by Microsoft. These geographically dispersed datacenters comply with key industry standards, such as ISO/IEC 27001:2013 and NIST SP 800-53, for security and reliability. The datacenters are managed, monitored, and administered by Microsoft operations staff. The operations staff has years of experience in delivering the world’s largest online services with 24 x 7 continuity.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Securing the Azure infrastructure</b></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/04/24",
+    "title": "Isolation in the Azure",
+    "itemList": [
+      {
+        "text": "<p>Azure allows you to run applications and virtual machines (VMs) on shared physical infrastructure. One of the prime economic motivations to running applications in a cloud environment is the ability to distribute the cost of shared resources among multiple customers. This practice of multi-tenancy improves efficiency by multiplexing resources among disparate customers at low costs. Unfortunately, it also introduces the risk of sharing physical servers and other infrastructure resources to run your sensitive applications and VMs that may belong to an arbitrary and potentially malicious user.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Tenant Level Isolation</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>One of the primary benefits of cloud computing is concept of a shared, common infrastructure across numerous customers simultaneously, leading to economies of scale. This concept is called multi-tenancy. Microsoft works continuously to ensure that the multi-tenant architecture of Microsoft Cloud Azure supports security, confidentiality, privacy, integrity, and availability standards.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In the cloud-enabled workplace, a tenant can be defined as a client or organization that owns and manages a specific instance of that cloud service. With the identity platform provided by Microsoft Azure, a tenant is simply a dedicated instance of Azure Active Directory (Azure AD) that your organization receives and owns when it signs up for a Microsoft cloud service.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 400,
     "date": "2019/12/12",
     "title": "Create a Custom VM Image",
     "itemList": [
@@ -39,7 +92,7 @@
     ]
   },
   {
-    "id": 200,
+    "id": 500,
     "date": "2019/12/12",
     "title": "Install the Elastic Stack on an Azure VM",
     "itemList": [
@@ -110,7 +163,7 @@
     ]
   },
   {
-    "id": 300,
+    "id": 600,
     "date": "2019/12/14",
     "title": "Secure Nginx on a Linux VM in Azure with SSL cert",
     "itemList": [
@@ -157,7 +210,7 @@
     ]
   },
   {
-    "id": 400,
+    "id": 700,
     "date": "2019/12/15",
     "title": "Find and delete unattached NICs",
     "itemList": [
@@ -176,7 +229,7 @@
     ]
   },
   {
-    "id": 500,
+    "id": 800,
     "date": "2020/01/18",
     "title": "Azure AD vs. On-Premises AD",
     "itemList": [
@@ -203,7 +256,7 @@
     ]
   },
   {
-    "id": 600,
+    "id": 900,
     "date": "2020/01/20",
     "title": "Microsoft ID platform Endpoints",
     "itemList": [
@@ -218,7 +271,7 @@
     ]
   },
   {
-    "id": 700,
+    "id": 1000,
     "date": "2020/01/30",
     "title": "Best Practices for network security",
     "itemList": [
@@ -229,7 +282,7 @@
     ]
   },
   {
-    "id": 800,
+    "id": 1100,
     "date": "2020/03/03",
     "title": "Azure Resource Manager",
     "itemList": [
@@ -252,7 +305,7 @@
     ]
   },
   {
-    "id": 1000,
+    "id": 2000,
     "date": "2019/12/10",
     "title": "Azure CLI",
     "itemList": [
