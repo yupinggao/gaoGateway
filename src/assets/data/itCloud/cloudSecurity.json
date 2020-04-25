@@ -1,0 +1,17 @@
+[
+  {
+    "id": 100,
+    "date": "2020/04/24",
+    "title": "Cloud Native Security",
+    "itemList": [
+      {
+        "text": "<p>Kubernetes Security (and security in general) is an immense topic that has many highly interrelated parts. In today’s era where open source software is integrated into many of the systems that help web applications run, there are some overarching concepts that can help guide your intuition about how you can think about security holistically. This guide will define a mental model for some general concepts surrounding Cloud Native Security. The mental model is completely arbitrary and you should only use it if it helps you think about where to secure your software stack.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>The 4C’s of Cloud Native Security</b></p>",
+        "image": "../assets/image/itCloud/cloudSecurity/4c.PNG"
+      }
+    ]
+  }
+]

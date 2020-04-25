@@ -4,6 +4,7 @@ import { WelcomeComponent } from './welcome/welcome.component'
 import { ItComponent } from './component/it/it.component'
 import { ItCloudComponent } from './component/itCloud/itCloud.component'
 import { AzureComponent } from './component/itCloud/azure/azure.component';
+import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
 import { AwsComponent } from './component/itCloud/aws/aws.component';
 import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { DockerComponent } from './component/itCloud/docker/docker.component';
@@ -223,6 +224,17 @@ const routes: Routes = [
       },
       {
         path: '', component: AzureComponent
+      }
+    ]
+  },
+  {
+    path: 'itCloud/cloudSecurity', component: CloudSecurityComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: CloudSecurityComponent
       }
     ]
   },
