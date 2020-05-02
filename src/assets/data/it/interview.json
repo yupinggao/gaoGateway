@@ -216,6 +216,10 @@
         "image": ""
       },
       {
+        "text": "<ul><li><b>Fail-fast and Fail-safe</b><p>Using iterations we can traverse over the collections objects. The iterators can be either fail-safe or fail-fast.</p><p>Fail-safe iterators means they will not throw any exception even if the collection is modified while iterating over it.</p><p>Whereas Fail-fast iterators throw an exception(ConcurrentModificationException) if the collection is modified while iterating over it.</p></li></ul>",
+        "image": ""
+      },
+      {
         "text": "<ul><li><b>ArrayList VS LinkedList? </b><p>ArrayList and LinkedList both implements List interface and maintains insertion order. Both are non synchronized classes.</p><p>However, there are many differences between ArrayList and LinkedList classes that are given below:</p></li></ul>",
         "image": "../assets/image/it/interview/arraylist-linked-list.png"
       }

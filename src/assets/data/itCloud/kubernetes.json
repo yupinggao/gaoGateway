@@ -574,7 +574,7 @@
     "title": "Notes",
     "itemList": [
       {
-        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><ul></p>",
+        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><ul></p>",
         "image": ""
       },
       {
