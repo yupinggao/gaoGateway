@@ -331,6 +331,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl get componentstatuses</code></p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl get endpoints <i>service-name</i></code></p>",
         "image": ""
       },
@@ -539,10 +543,45 @@
     ]
   },
   {
+    "id": 2050,
+    "date": "2020/05/05",
+    "title": "Logs",
+    "itemList": [
+      {
+        "text": "<p><b>System component logs</b><p>There are two types of system components: those that run in a container and those that do not run in a container. For example:<ul><li>The Kubernetes scheduler and kube-proxy run in a container.</li><li>The kubelet and container runtime, for example Docker, do not run in containers.</li></ul></p><p>On machines with systemd, the kubelet and container runtime write to journald. If systemd is not present, they write to .log files in the /var/log directory. System components inside containers always write to the /var/log directory, bypassing the default logging mechanism. They use the klog logging library. You can find the conventions for logging severity for those components in the development docs on logging.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Cluster-level logging architectures</b><p>While Kubernetes does not provide a native solution for cluster-level logging, there are several common approaches you can consider. Here are some options:</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use a node-level logging agent that runs on every node</p>",
+        "image": "../assets/image/itCloud/kubernetes/clusterLog1.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>Include a dedicated sidecar container for logging in an application pod</p>",
+        "image": "../assets/image/itCloud/kubernetes/clusterLog2.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>Push logs directly to a backend from within an application</p>",
+        "image": "../assets/image/itCloud/kubernetes/clusterLog3.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
     "id": 2100,
     "date": "2020/02/27",
     "title": "kubeadmin",
     "itemList": [
+      {
+        "text": "<p>kubeadm is a popular option for creating kubernetes clusters. kubeadm has configuration options to specify configuration information for cloud providers. For example a typical in-tree cloud provider can be configured using kubeadm as shown below:</p>",
+        "image": "../assets/image/itCloud/kubernetes/kubeadmin.PNG",
+        "imageClass": "mx-auto d-block"
+      },
       {
         "text": "<p><b>Notes: </b><ul><li><code>kubeadm upgrade apply v1.11.0 --feature-gates=CoreDNS=true</code> - upgrade an existing cluster with kubeadm.</li><ul></p>",
         "image": ""
@@ -574,7 +613,7 @@
     "title": "Notes",
     "itemList": [
       {
-        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><ul></p>",
+        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><ul></p>",
         "image": ""
       },
       {
