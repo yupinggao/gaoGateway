@@ -205,6 +205,203 @@
   },
   {
     "id": 500,
+    "date": "2020/05/09",
+    "title": "Redis using a ConfigMap",
+    "itemList": [
+      {
+        "text": "<p><code>gcloud container clusters create temp-c --num-nodes=1 --zone us-central1-a</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl -OL https://k8s.io/examples/pods/config/redis-config</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/1.PNG"
+      },
+      {
+        "text": "<p><code>curl -OL https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/pods/config/redis-pod.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/2.PNG"
+      },
+      {
+        "text": "<p><code>kubectl apply -k .</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get -k .</code> - examine the created objects</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>In the example, the config volume is mounted at /redis-master. It uses path to add the redis-config key to a file named redis.conf. The file path for the redis config, therefore, is /redis-master/redis.conf. This is where the image will look for the config file for the redis master.</code></p><p>Use kubectl exec to enter the pod and run the redis-cli tool to verify that the configuration was correctly applied:</p>",
+        "image": "../assets/image/itCloud/k8sTask/3.PNG"
+      },
+      {
+        "text": "<p><code>kubectl exec -it redis bash</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>cd /redis-master</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>cat redis.conf</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete pod redis</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>gcloud container clusters delete temp-c --zone us-central1-a</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 600,
+    "date": "2020/05/09",
+    "title": "Exposing an External IP",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl apply -f load-balancer-example.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/4.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get deployments hello-world</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe deployments hello-world</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get replicasets</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe replicasets</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl expose deployment hello-world --type=LoadBalancer --name=my-service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get services my-service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe services my-service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods --output=wide</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>http://external-ip:port. e.g. http://35.226.116.169:8080</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete services my-service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete deployment hello-world</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 700,
+    "date": "2020/05/09",
+    "title": "Application with Redis",
+    "itemList": [
+      {
+        "text": "<p><code>gcloud container clusters resize temp-c --zone us-central1-a --num-nodes 2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/guestbook/redis-master-deployment.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/5.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl logs -f redis-master-596696dd4-bhxcq</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/guestbook/redis-master-service.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/6.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get service</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/guestbook/redis-slave-deployment.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/7.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/guestbook/redis-slave-service.yaml</p>",
+        "image": "../assets/image/itCloud/k8sTask/8.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get services</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/guestbook/frontend-deployment.yaml</p>",
+        "image": "../assets/image/itCloud/k8sTask/9.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get pods -l app=guestbook -l tier=frontend</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f frontend-service-lb.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/10.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get service frontend-lb</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>http://external-ip:port. e.g. http://35.188.81.39:80</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl scale deployment frontend --replicas=2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete deployment -l app=redis</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete service -l app=redis</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete deployment -l app=guestbook</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete service -l app=guestbook</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2000,
     "date": "2020/01/14",
     "title": "Create Secrets",
     "itemList": [
@@ -239,7 +436,7 @@
     ]
   },
   {
-    "id": 600,
+    "id": 3000,
     "date": "2020/04/05",
     "title": "Encrypting Secret Data at Rest",
     "itemList": [
