@@ -661,7 +661,42 @@
     ]
   },
   {
-    "id": 3000,
+    "id": 2500,
+    "date": "2020/05/07",
+    "title": "K8s Extensions",
+    "itemList": [
+      {
+        "text": "<p><b>Service Catalog</b></p><p>Service Catalog is an extension API that enables applications running in Kubernetes clusters to easily use external managed software offerings, such as a datastore service offered by a cloud provider. The following diagram depicts the architecture of the Service Catalog:</p>",
+        "image": "../assets/image/itCloud/kubernetes/serviceCatalog.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>If you are familiar with Helm Charts, install Service Catalog using Helm into your Kubernetes cluster. Alternatively, you can install Service Catalog using the SC tool.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2600,
+    "date": "2020/05/07",
+    "title": "Large Clusters and Performance",
+    "itemList": [
+      {
+        "text": "<p>At v1.18, Kubernetes supports clusters with up to 5000 nodes. More specifically, we support configurations that meet all of the following criteria:</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><ul><li>No more than 5000 nodes</li><li>No more than 150000 total pods</li><li>No more than 300000 total containers</li><li>No more than 100 pods per node</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>When setting up a large Kubernetes cluster, the following issues must be considered.<ul><li>Quota Issues</li><li>Etcd storage</li><li>Size of master and master components</li><li>Addon Resources Limits</li><li>Allowing minor node failure at startup</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 4000,
     "date": "2020/01/31",
     "title": "Interview",
     "itemList": [

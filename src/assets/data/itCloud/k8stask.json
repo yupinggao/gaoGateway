@@ -1,6 +1,210 @@
 [
   {
     "id": 100,
+    "date": "2020/05/08",
+    "title": "Exploring App",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl proxy</code> - note: in a new terminal</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{'\\n'}}{{end}}') echo Name of the Pod: $POD_NAME</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME/proxy/</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl logs $POD_NAME</code> - view container log</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl exec $POD_NAME envs</code> - list the environment variables</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl exec -ti $POD_NAME bash</code> - start a bash session in the Pod’s container</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>cat server.js</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl localhost:8080</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>exit</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/05/08",
+    "title": "Exposing App",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl expose deployment/kubernetes-bootcamp --type='NodePort' --port 8080</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe services/kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}') echo NODE_PORT=$NODE_PORT</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl $(minikube ip):$NODE_PORT</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods -l run=kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get services -l run=kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{'\\n'}}{{end}}') echo Name of the Pod: $POD_NAME</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl label pod $POD_NAME app=v1</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete service -l run=kubernetes-bootcamp</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/05/08",
+    "title": "Scale App",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl get deployments</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get rs</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl scale deployments/kubernetes-bootcamp --replicas=4</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get deployments</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods -o wide</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe deployments/kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe services/kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}') echo NODE_PORT=$NODE_PORT</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl $(minikube ip):$NODE_PORT</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 400,
+    "date": "2020/05/08",
+    "title": "Rolling Update",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl get deployments</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe services/kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>export NODE_PORT=$(kubectl get services/kubernetes-bootcamp -o go-template='{{(index .spec.ports 0).nodePort}}') echo NODE_PORT=$NODE_PORT</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl $(minikube ip):$NODE_PORT</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout status deployments/kubernetes-bootcamp</code> - see the Deployment rollout status</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=gcr.io/google-samples/kubernetes-bootcamp:v10</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get deployments</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout undo deployments/kubernetes-bootcamp</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe pods</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 500,
     "date": "2020/01/14",
     "title": "Create Secrets",
     "itemList": [
@@ -35,7 +239,7 @@
     ]
   },
   {
-    "id": 200,
+    "id": 600,
     "date": "2020/04/05",
     "title": "Encrypting Secret Data at Rest",
     "itemList": [
