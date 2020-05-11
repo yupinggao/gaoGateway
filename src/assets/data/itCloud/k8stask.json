@@ -401,6 +401,105 @@
     ]
   },
   {
+    "id": 800,
+    "date": "2020/05/10",
+    "title": "Logging and Metrics",
+    "itemList": [
+      {
+        "text": "<p>This example consists of the following components:<ol><li>A running instance of the PHP Guestbook with Redis tutorial - see the last Task</li><li>Elasticsearch and Kibana</li><li>Filebeat</li><li>Metricbeat</li><li>Packetbeat</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Create a cluster level role binding so that you can deploy kube-state-metrics and the Beats at the cluster level (in kube-system)<br><code>kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=yangxigao99@gmail.com</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Check if kube-state-metrics is running:<br><code>kubectl get pods --namespace=kube-system | grep kube-state</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Install it if not:<br><code>git clone https://github.com/kubernetes/kube-state-metrics.git kube-state-metric</code><br><code>kubectl apply -f kube-state-metric/examples/standard</code><br><code>kubectl get pods --namespace=kube-system | grep kube-state</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Verify that kube-state-metrics is running and ready:<br><code>kubectl get pods -n kube-system -l app.kubernetes.io/name=kube-state-metrics</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Clone the Elastic examples GitHub repo:<br><code>git clone https://github.com/elastic/examples.git</code><br><code>cd examples/beats-k8s-send-anywhere</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>nano ELASTIC_CLOUD_ID</code> - elastic cloud service ID</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>nano ELASTIC_CLOUD_AUTH</code> - elastic userName:Password</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Create the secret:<br><code>kubectl create secret generic dynamic-logging --from-file=./ELASTIC_CLOUD_ID --from-file=./ELASTIC_CLOUD_AUTH --namespace=kube-system</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Deploy the beats:<br><code>kubectl create -f filebeat-kubernetes.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/11.PNG"
+      },
+      {
+        "text": "Verify:<br><p><code>kubectl get pods -n kube-system -l k8s-app=filebeat-dynamic</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Deploy Metricbeat:<br><code>kubectl create -f metricbeat-kubernetes.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/12.PNG"
+      },
+      {
+        "text": "Verify: <br><p><code>kubectl get pods -n kube-system -l k8s-app=metricbeat</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Deploy Packetbeat:<br><code>kubectl create -f packetbeat-kubernetes.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/13.PNG"
+      },
+      {
+        "text": "<p>Verify:<br><code>kubectl get pods -n kube-system -l k8s-app=packetbeat-dynamic</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete deployment -l app=redis</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete service -l app=redis<code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete deployment -l app=guestbook</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete service -l app=guestbook</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete -f filebeat-kubernetes.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete -f metricbeat-kubernetes.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete -f packetbeat-kubernetes.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete secret dynamic-logging -n kube-system</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 2000,
     "date": "2020/01/14",
     "title": "Create Secrets",
