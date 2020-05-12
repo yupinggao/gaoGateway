@@ -500,6 +500,233 @@
     ]
   },
   {
+    "id": 900,
+    "date": "2020/05/11",
+    "title": "StatefulSet",
+    "itemList": [
+      {
+        "text": "<p><br><code>kubectl apply -f web.yaml</code></p>",
+        "image": "../assets/image/itCloud/k8sTask/14.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get service nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get statefulset web</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Each Pod has a stable hostname based on its ordinal index. Use kubectl exec to execute the hostname command in each Pod:<br><code>for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>nslookup web-0.nginx</code> - using nslookup on the Pods’ hostnames, you can examine their in-cluster DNS addresses</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>nslookup web-1.nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In one terminal, watch the StatefulSet’s Pods:<br><code>kubectl get pod -w -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In a second terminal, use kubectl delete to delete all the Pods in the StatefulSet:<br><code>kubectl delete pod -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "Wait for the StatefulSet to restart them, and for both Pods to transition to Running and Ready:<br><p><code>kubectl get pod -w -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>for i in 0 1; do kubectl exec web-$i -- sh -c 'hostname'; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<br><p><code>kubectl run -i --tty --image busybox:1.28 dns-test --restart=Never --rm /bin/sh</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>nslookup web-0.nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>nslookup web-1.nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The Pods’ ordinals, hostnames, SRV records, and A record names have not changed, but the IP addresses associated with the Pods may have changed. In the cluster used for this tutorial, they have. This is why it is important not to configure other applications to connect to Pods in a StatefulSet by IP address.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pvc -l app=nginx</code> - The StatefulSet controller created two PersistentVolumeClaims that are bound to two PersistentVolumes. As the cluster used in this tutorial is configured to dynamically provision PersistentVolumes, the PersistentVolumes were created and bound automatically.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Write the Pods’ hostnames to their index.html files and verify that the NGINX webservers serve the hostnames:<br><code>for i in 0 1; do kubectl exec web-$i -- sh -c 'echo $(hostname) > /usr/share/nginx/html/index.html'; done<code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>for i in 0 1; do kubectl exec -it web-$i -- curl localhost; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>If you instead see 403 Forbidden responses for the above curl command, you will need to fix the permissions of the directory mounted by the volumeMounts (due to a bug when using hostPath volumes) with:<br><code>for i in 0 1; do kubectl exec web-$i -- chmod 755 /usr/share/nginx/html; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In one terminal, watch the StatefulSet’s Pods:<br><code>kubectl get pod -w -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In a second terminal, delete all of the StatefulSet’s Pods:<br><code>kubectl delete pod -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pod -w -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Verify the web servers continue to serve their hostnames:<br><code>for i in 0 1; do kubectl exec -it web-$i -- curl localhost; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Even though web-0 and web-1 were rescheduled, they continue to serve their hostnames because the PersistentVolumes associated with their PersistentVolumeClaims are remounted to their volumeMounts. No matter what node web-0and web-1 are scheduled on, their PersistentVolumes will be mounted to the appropriate mount points.</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>scale the number of replicas to 5:<br><code>kubectl scale sts web --replicas=5</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In another terminal, use kubectl patch to scale the StatefulSet back down to three replicas:<br><code>kubectl patch sts web -p '{'spec':{'replicas':3}}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the StatefulSet’s PersistentVolumeClaims:<br><code>kubectl get pvc -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>There are still five PersistentVolumeClaims and five PersistentVolumes. When exploring a Pod’s stable storage, we saw that the PersistentVolumes mounted to the Pods of a StatefulSet are not deleted when the StatefulSet’s Pods are deleted. This is still true when Pod deletion is caused by scaling the StatefulSet down.</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Patch the web StatefulSet to apply the RollingUpdate update strategy:<br><code>kubectl patch statefulset web -p '{'spec':{'updateStrategy':{'type':'RollingUpdate'}}}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>patch the web StatefulSet to change the container image again:<br><code>kubectl patch statefulset web --type='json' -p='[{'op': 'replace', 'path': '/spec/template/spec/containers/0/image', 'value':'gcr.io/google_containers/nginx-slim:0.8'}]'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the Pods to view their container images:<br><code>for p in 0 1 2; do kubectl get po web-$p --template '{{range $i, $c := .spec.containers}}{{$c.image}}{{end}}'; echo; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Patch the web StatefulSet to add a partition to the updateStrategy field:<br><code>kubectl patch statefulset web -p '{'spec':{'updateStrategy':{'type':'RollingUpdate','rollingUpdate':{'partition':3}}}}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Patch the StatefulSet again to change the container’s image:<br><code>kubectl patch statefulset web --type='json' -p='[{'op': 'replace', 'path': '/spec/template/spec/containers/0/image', 'value':'k8s.gcr.io/nginx-slim:0.7'}]'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Delete a Pod in the StatefulSet:<br><code>kubectl delete po web-2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get po -l app=nginx -w</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the Pods to view their container images:<br><code>kubectl get po web-2 --template '{{range $i, $c := .spec.containers}}{{$c.image}}{{end}}'</code> - notice that, even though the update strategy is RollingUpdate the StatefulSet controller restored the Pod with its original container. This is because the ordinal of the Pod is less than the partition specified by the updateStrategy.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Rolling Out a Canary</b><br>Patch the StatefulSet to decrement the partition:<br><code>kubectl patch statefulset web -p '{'spec':{'updateStrategy':{'type':'RollingUpdate','rollingUpdate':{'partition':2}}}}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the Pod’s container:<br><code>kubectl get po web-2 --template '{{range $i, $c := .spec.containers}}{{$c.image}}{{end}}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Delete the web-1 Pod:<br><code>kubectl delete po web-1</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the web-1 Pods container:<br><code>kubectl get po web-1 --template '{{range $i, $c := .spec.containers}}{{$c.image}}{{end}}'</code> - web-1 was restored to its original configuration because the Pod’s ordinal was less than the partition. When a partition is specified, all Pods with an ordinal that is greater than or equal to the partition will be updated when the StatefulSet’s .spec.template is updated. If a Pod that has an ordinal less than the partition is deleted or otherwise terminated, it will be restored to its original configuration.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Phased Roll Outs</b><br>You can perform a phased roll out (e.g. a linear, geometric, or exponential roll out) using a partitioned rolling update in a similar manner to how you rolled out a canary. To perform a phased roll out, set the partition to the ordinal at which you want the controller to pause the update.<br>Set the partition to 0:<br><code>kubectl patch statefulset web -p '{'spec':{'updateStrategy':{'type':'RollingUpdate','rollingUpdate':{'partition':0}}}}'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the Pod’s container:<br><code>for p in 0 1 2; do kubectl get po web-$p --template '{{range $i, $c := .spec.containers}}{{$c.image}}{{end}}'; echo; done</code> - By moving the partition to 0, you allowed the StatefulSet controller to continue the update process.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>On Delete</b><br>The OnDelete update strategy implements the legacy (1.6 and prior) behavior, When you select this update strategy, the StatefulSet controller will not automatically update Pods when a modification is made to the StatefulSet’s .spec.template field. This strategy can be selected by setting the .spec.template.updateStrategy.type to OnDelete.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Deleting StatefulSets</b><br>StatefulSet supports both Non-Cascading and Cascading deletion. In a Non-Cascading Delete, the StatefulSet’s Pods are not deleted when the StatefulSet is deleted. In a Cascading Delete, both the StatefulSet and its Pods are deleted.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Non-Cascading Delete</b><br>In one terminal window, watch the Pods in the StatefulSet<br>:<code>kubectl get pods -w -l app=nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods -l app=nginx</code> - Even though web has been deleted, all of the Pods are still Running and Ready.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete pod web-0</code> - As the web StatefulSet has been deleted, web-0 has not been relaunched.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Let’s take another look at the contents of the index.html file served by the Pods’ webservers:<br><code>for i in 0 1; do kubectl exec -it web-$i -- curl localhost; done</code> - Even though you deleted both the StatefulSet and the web-0 Pod, it still serves the hostname originally entered into its index.html file. This is because the StatefulSet never deletes the PersistentVolumes associated with a Pod. When you recreated the StatefulSet and it relaunched web-0, its original PersistentVolume was remounted.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Delete the StatefulSet again. This time, omit the --cascade=false parameter:<br><code>kubectl delete statefulset web</code> - As you saw in the Scaling Down section, the Pods are terminated one at a time, with respect to the reverse order of their ordinal indices. Before terminating a Pod, the StatefulSet controller waits for the Pod’s successor to be completely terminated.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Note that, while a cascading delete will delete the StatefulSet and its Pods, it will not delete the Headless Service associated with the StatefulSet. You must delete the nginx Service manually:<br><code>kubectl delete service nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Recreate the StatefulSet and Headless Service one more time:<br><code>kubectl apply -f web.yaml</code> - As the web StatefulSet has been deleted, web-0 has not been relaunched.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>When all of the StatefulSet’s Pods transition to Running and Ready, retrieve the contents of their index.html files:<br><code>for i in 0 1; do kubectl exec -it web-$i -- curl localhost; done</code> - Even though you completely deleted the StatefulSet, and all of its Pods, the Pods are recreated with their PersistentVolumes mounted, and web-0 and web-1 will still serve their hostnames.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete service nginx</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete statefulset web</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>OrderedReady Pod Management and Parallel Pod Management</b></p><p>OrderedReady pod management is the default for StatefulSets. It tells the StatefulSet controller to respect the ordering guarantees demonstrated above.</p><p>Parallel pod management tells the StatefulSet controller to launch or terminate all Pods in parallel, and not to wait for Pods to become Running and Ready or completely terminated prior to launching or terminating another Pod.</p><p>To use Parallel Pod Management: <code>.spec.podManagementPolicy of the web StatefulSet is set to Parallel</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 2000,
     "date": "2020/01/14",
     "title": "Create Secrets",
