@@ -727,6 +727,255 @@
     ]
   },
   {
+    "id": 1000,
+    "date": "2020/05/12",
+    "title": "WordPress and MySQL",
+    "itemList": [
+      {
+        "text": "<p>Add a Secret generator in kustomization.yaml:</p>",
+        "image": "../assets/image/itCloud/k8sTask/15.PNG"
+      },
+      {
+        "text": "<p><code>curl -LO https://k8s.io/examples/application/wordpress/mysql-deployment.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl -LO https://k8s.io/examples/application/wordpress/wordpress-deployment.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Add them to kustomization.yaml file:</p>",
+        "image": "../assets/image/itCloud/k8sTask/16.PNG"
+      },
+      {
+        "text": "<p><code>kubectl apply -k ./</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get secrets</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pvc</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get pods</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get services wordpress</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>http://35.239.147.208:80/</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl delete -k ./</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1100,
+    "date": "2020/05/12",
+    "title": "Deploying Cassandra",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/cassandra/cassandra-service.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/cassandra/cassandra-statefulset.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Run the Cassandra nodetool inside the first Pod, to display the status of the ring:<br><code>kubectl exec -it cassandra-0 -- nodetool status</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Run the following commands (chained together into a single command) to delete everything in the Cassandra StatefulSet:</p>",
+        "image": "../assets/image/itCloud/k8sTask/17.PNG"
+      },
+      {
+        "text": "<p><code>kubectl delete service -l app=cassandra</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1200,
+    "date": "2020/05/12",
+    "title": "Running ZooKeeper",
+    "itemList": [
+      {
+        "text": "<p><code>gcloud container clusters create hello-cluster --enable-autoscaling --max-nodes=6 --min-nodes=1 --zone us-central1-a</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl apply -f https://k8s.io/examples/application/zookeeper/zookeeper.yaml</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use kubectl exec to get the hostnames of the Pods in the zk StatefulSet:<br><code>for i in 0 1 2; do kubectl exec zk-$i -- hostname; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The servers in a ZooKeeper ensemble use natural numbers as unique identifiers, and store each server’s identifier in a file called myid in the server’s data directory. To examine the contents of the myid file for each server use the following command:<br><code></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To get the Fully Qualified Domain Name (FQDN) of each Pod in the zk StatefulSet use the following command:<br><code>for i in 0 1 2; do kubectl exec zk-$i -- hostname -f; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>ZooKeeper stores its application configuration in a file named zoo.cfg. Use kubectl exec to view the contents of the zoo.cfg file in the zk-0 Pod:<br><code>kubectl exec zk-0 -- cat /opt/zookeeper/conf/zoo.cfg</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Sanity Testing the Ensemble</b><br>The most basic sanity test is to write data to one ZooKeeper server and to read the data from another.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The command below executes the zkCli.sh script to write world to the path /hello on the zk-0 Pod in the ensemble:<br><code>kubectl exec zk-0 zkCli.sh create /hello world</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To get the data from the zk-1 Pod use the following command:<br><code>kubectl exec zk-1 zkCli.sh get /hello</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the kubectl delete command to delete the zk StatefulSet:<br><code>kubectl delete statefulset zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Watch the termination of the Pods in the StatefulSet:<br><code>kubectl get pods -w -l app=zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Reapply the manifest in zookeeper.yaml:<br><code>kubectl apply -f https://k8s.io/examples/application/zookeeper/zookeeper.yaml</code> - This creates the zk StatefulSet object, but the other API objects in the manifest are not modified because they already exist.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Watch the StatefulSet controller recreate the StatefulSet’s Pods:<br><code>kubectl get pods -w -l app=zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the command below to get the value you entered during the sanity test, from the zk-2 Pod:<br><code>kubectl exec zk-2 zkCli.sh get /hello</code> - Even though you terminated and recreated all of the Pods in the zk StatefulSet, the ensemble still serves the original value</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the following command to get the StatefulSet's PersistentVolumeClaims:<br><code>kubectl get pvc -l app=zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Configuring Logging</b><br>One of the files generated by the zkGenConfig.sh script controls ZooKeeper’s logging. ZooKeeper uses Log4j, and, by default, it uses a time and size based rolling file appender for its logging configuration.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the command below to get the logging configuration from one of Pods in the zk StatefulSet:<br><code>kubectl exec zk-0 cat /usr/etc/zookeeper/log4j.properties</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl logs zk-0 --tail 20</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Get the ZooKeeper process information from the zk-0 Pod:<br><code>kubectl exec zk-0 -- ps -elf</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the command below to get the file permissions of the ZooKeeper data directory on the zk-0 Pod:<br><code>kubectl exec -ti zk-0 -- ls -ld /var/lib/zookeeper/data</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Update the number of cpus allocated to the servers:<br><code>kubectl patch sts zk --type='json' -p='[{'op': 'replace', 'path': '/spec/template/spec/containers/0/resources/requests/cpu', 'value':'0.3'}]'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl rollout history sts/zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the kubectl rollout undo command to roll back the modification:<br><code>kubectl rollout undo sts/zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the following command to examine the process tree for the ZooKeeper server running in the zk-0 Pod:<br><code>kubectl exec zk-0 -- ps -ef</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In another terminal watch the Pods in the zk StatefulSet with the following command:<br><code>kubectl get pod -w -l app=zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In another terminal, terminate the ZooKeeper process in Pod zk-0 with the following command:<br><code>kubectl exec zk-0 -- pkill java</code> - If your application uses a script (such as zkServer.sh) to launch the process that implements the application’s business logic, the script must terminate with the child process. This ensures that Kubernetes will restart the application’s container when the process implementing the application’s business logic fails.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Testing for Liveness</b><br>Configuring your application to restart failed processes is not enough to keep a distributed system healthy. There are scenarios where a system’s processes can be both alive and unresponsive, or otherwise unhealthy. You should use liveness probes to notify Kubernetes that your application’s processes are unhealthy and it should restart them.<br>The Pod template for the zk StatefulSet specifies a liveness probe.</p>",
+        "image": "../assets/image/itCloud/k8sTask/18.PNG"
+      },
+      {
+        "text": "<p>The probe calls a bash script that uses the ZooKeeper ruok four letter word to test the server’s health.</p>",
+        "image": "../assets/image/itCloud/k8sTask/19.PNG"
+      },
+      {
+        "text": "<p><code>kubectl get pod -w -l app=zk</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In another window, using the following command to delete the zkOk.sh script from the file system of Pod zk-0:<br><code>kubectl exec zk-0 -- rm /usr/bin/zookeeper-ready</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Tolerating Node Failure</b><br>You should always provision additional capacity to allow the processes of critical systems to be rescheduled in the event of node failures. If you do so, then the outage will only last until the Kubernetes scheduler reschedules one of the ZooKeeper servers. However, if you want your service to tolerate node failures with no downtime, you should set podAntiAffinity.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use the command below to get the nodes for Pods in the zk StatefulSet:<br><code>for i in 0 1 2; do kubectl get pod zk-$i --template {{.spec.nodeName}}; echo ''; done</code> - All of the Pods in the zk StatefulSet are deployed on different nodes. This is because the Pods in the zk StatefulSet have a PodAntiAffinity specified (the topologyKey kubernetes.io/hostname indicates that the domain is an individual node):</p>",
+        "image": "../assets/image/itCloud/k8sTask/20.PNG"
+      },
+      {
+        "text": "<p><b>Cordon and Drain Nodes</b><br>You should always provision additional capacity to allow the processes of critical systems to be rescheduled in the event of node failures. If you do so, then the outage will only last until the Kubernetes scheduler reschedules one of the ZooKeeper servers. However, if you want your service to tolerate node failures with no downtime, you should set podAntiAffinity.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use this command to get the nodes in your cluster:<br><code>kubectl get nodes</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use kubectl cordon to cordon all but four of the nodes in your cluster:<br><code>kubectl cordon <i>node-name</i></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use this command to get the zk-pdb PodDisruptionBudget:<br><code>kubectl get pdb zk-pdb</code> - The max-unavailable field indicates to Kubernetes that at most one Pod from zk StatefulSet can be unavailable at any time.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>for i in 0 1 2; do kubectl get pod zk-$i --template {{.spec.nodeName}}; echo ''; done</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use kubectl drain to cordon and drain the node on which the zk-0 Pod is scheduled:<br><code>kubectl drain $(kubectl get pod zk-0 --template {{.spec.nodeName}}) --ignore-daemonsets --force --delete-local-data</code> - As there are four nodes in your cluster, kubectl drain, succeeds and the zk-0 is rescheduled to another node.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Keep watching the StatefulSet's Pods in the first terminal and drain the node on which zk-1 is scheduled:<br><code>kubectl drain $(kubectl get pod zk-1 --template {{.spec.nodeName}}) --ignore-daemonsets --force --delete-local-data</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl exec zk-0 zkCli.sh get /hello</code> - the service is still available because its PodDisruptionBudget is respected.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use kubectl uncordon to uncordon the first node:<br><code>kubectl uncordon gke-hello-cluster-default-pool-41ad3d55-0cms</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 2000,
     "date": "2020/01/14",
     "title": "Create Secrets",
