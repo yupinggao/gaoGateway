@@ -38,6 +38,10 @@
       {
         "text": "<b>Microservices Design Patterns</b>",
         "image": "../assets/image/it/trend/microservicePatterns.png"
+      },
+      {
+        "text": "<b>K8s Design Patterns</b>",
+        "image": "../assets/image/it/trend/k8sPatterns.PNG"
       }
     ]
   },
