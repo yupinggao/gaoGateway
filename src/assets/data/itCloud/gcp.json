@@ -128,7 +128,7 @@
         "image": ""
       },
       {
-        "text": "<p><code>gcloud container clusters get-credentials hello-cluster</code> - If you are using an existing Google Kubernetes Engine cluster or if you have created a cluster through Google Cloud Console, you need to run this command to retrieve cluster credentials and configure kubectl command-line tool with them</p>",
+        "text": "<p><code>gcloud container clusters get-credentials hello-cluster --zone <i>zone-name</i></code> - If you are using an existing Google Kubernetes Engine cluster or if you have created a cluster through Google Cloud Console, you need to run this command to retrieve cluster credentials and configure kubectl command-line tool with them</p>",
         "image": ""
       },
       {

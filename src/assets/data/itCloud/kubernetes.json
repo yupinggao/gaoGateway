@@ -475,6 +475,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl run busybox --rm -ti --image=busybox -- /bin/sh</code> - run a job</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl scale deployment hello-web --replicas=3</code></p>",
         "image": ""
       },
@@ -608,27 +612,6 @@
     ]
   },
   {
-    "id": 2300,
-    "date": "2019/12/19",
-    "title": "Notes",
-    "itemList": [
-      {
-        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><ul></p>",
-        "image": ""
-      },
-      {
-        "text": "<p><b>Kubernetes Architecture Diagram</b></p>",
-        "image": "../assets/image/itCloud/kubernetes/k8sDiagram.png",
-        "imageClass": "mx-auto d-block"
-      },
-      {
-        "text": "<p><b>Kubernetes Concept Diagram</b></p>",
-        "image": "../assets/image/itCloud/kubernetes/k8sConcept.png",
-        "imageClass": "mx-auto d-block"
-      }
-    ]
-  },
-  {
     "id": 2400,
     "date": "2020/04/06",
     "title": "Master Node",
@@ -696,7 +679,28 @@
     ]
   },
   {
-    "id": 4000,
+    "id": 9000,
+    "date": "2019/12/19",
+    "title": "Notes",
+    "itemList": [
+      {
+        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><li>You can use Kubernetes to run a mixture of Linux and Windows nodes, so you can mix Pods that run on Linux on with Pods that run on Windows. This page shows how to register Windows nodes to your cluster.</li><ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Kubernetes Architecture Diagram</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/k8sDiagram.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Kubernetes Concept Diagram</b></p>",
+        "image": "../assets/image/itCloud/kubernetes/k8sConcept.png",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 10000,
     "date": "2020/01/31",
     "title": "Interview",
     "itemList": [

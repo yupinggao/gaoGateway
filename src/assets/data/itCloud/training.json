@@ -1,6 +1,6 @@
 [
   {
-    "id": 20,
+    "id": 100,
     "date": "2019/12/22",
     "title": "CKAD",
     "itemList": [
@@ -9,7 +9,103 @@
         "image": "../assets/image/itCloud/training/ckad.png",
         "imageClass": "mx-auto d-block"
       }
-
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/05/14",
+    "title": "Core Concepts",
+    "itemList": [
+      {
+        "text": "<p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/05/14",
+    "title": "Multi-Container Pods",
+    "itemList": [
+      {
+        "text": "<p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 400,
+    "date": "2020/05/14",
+    "title": "Pod Design",
+    "itemList": [
+      {
+        "text": "<p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 500,
+    "date": "2020/05/14",
+    "title": "State Persistence",
+    "itemList": [
+      {
+        "text": "<p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 600,
+    "date": "2020/05/14",
+    "title": "Configuration",
+    "itemList": [
+      {
+        "text": "<p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 700,
+    "date": "2020/05/14",
+    "title": "Observability",
+    "itemList": [
+      {
+        "text": "<p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
+    "date": "2020/05/14",
+    "title": "Services & Networking",
+    "itemList": [
+      {
+        "text": "<p><b>CNI</b></p><p>The CNI plugin is selected by passing Kubelet the --network-plugin=cni command-line option. Kubelet reads a file from --cni-conf-dir (default /etc/cni/net.d) and uses the CNI configuration from that file to set up each pod’s network. The CNI configuration file must match the CNI specification, and any required CNI plugins referenced by the configuration must be present in --cni-bin-dir (default /opt/cni/bin). If there are multiple CNI configuration files in the directory, the kubelet uses the configuration file that comes first by name in lexicographic order.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Calico</b>Launch a GKE cluster with Calico:<br><code>gcloud container clusters create my-cluster --enable-network-policy --zone us-central1-a</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Cilium</b></p><p>Start minikube with Cilium:<br><code>minikube start --network-plugin=cni --memory=4096</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Kube-router</b></p><p>The Kube-router Addon comes with a Network Policy Controller that watches Kubernetes API server for any NetworkPolicy and pods updated and configures iptables rules and ipsets to allow or block traffic as directed by the policies.</p><p>Depending on what functionality of kube-router you want to use, multiple deployment options are possible. You can use the flags --run-firewall, --run-router, --run-service-proxy to selectively enable only required functionality of kube-router.</p><p>Also you can choose to run kube-router as agent running on each cluster node. Alternativley you can run kube-router as pod on each node through daemonset.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Romana </b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Weave Net</b></p><p>The Weave Net addon for Kubernetes comes with a Network Policy Controller that automatically monitors Kubernetes for any NetworkPolicy annotations on all namespaces and configures iptables rules to allow or block traffic as directed by the policies.</p>",
+        "image": ""
+      }  
     ]
   }
 ]
