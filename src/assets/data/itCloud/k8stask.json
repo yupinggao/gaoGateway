@@ -1,5 +1,56 @@
 [
   {
+    "id": 50,
+    "date": "2020/05/16",
+    "title": "Access Clusters Using the K8s API",
+    "itemList": [
+      {
+        "text": "<p><b>Using kubectl proxy</b><br><code>kubectl proxy --port=8080 &</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl http://localhost:8080/api/</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Without kubectl proxy</b><br><code>kubectl config view -o jsonpath='{'Cluster name\tServer\\n'}{range .clusters[*]}{.name}{'\\t'}{.cluster.server}{'\\n'}{end}'</code> - Check all possible clusters, as your .KUBECONFIG may have multiple contexts</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>export CLUSTER_NAME='gke_myk8sproject-263317_us-central1-a_temp-c'</code> - view container log</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>APISERVER=$(kubectl config view -o jsonpath='{.clusters[?(@.name==\\'$CLUSTER_NAME\\')].cluster.server}')</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>TOKEN=$(kubectl get secrets -o jsonpath=\\{.items[?(@.metadata.annotations['kubernetes\\.io/service-account\\.name']=='default')].data.token}'|base64 --decode)</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl -X GET $APISERVER/api --header 'Authorization: Bearer $TOKEN' --insecure</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Programmatic access to the API</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Kubernetes officially supports client libraries for Go, Python, Java, dotnet, Javascript, and Haskell. There are other client libraries that are provided and maintained by their authors, not the Kubernetes team. See client libraries for accessing the API from other languages and how they authenticate.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Accessing the API from within a Pod</b></p><p>The easiest way to use the Kubernetes API from a Pod is to use one of the official client libraries. These libraries can automatically discover the API server and authenticate.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><ul><li>Using Official Client Libraries</li><li>Directly accessing the REST API</li><li>Using kubectl proxy</li><li>Without using a proxy<p><code></code><br><code>APISERVER=https://kubernetes.default.svc</code><br><code>SERVICEACCOUNT=/var/run/secrets/kubernetes.io/serviceaccount</code><br><code>NAMESPACE=$(cat ${SERVICEACCOUNT}/namespace)</code><br><code>TOKEN=$(cat ${SERVICEACCOUNT}/token)</code><br><code>CACERT=${SERVICEACCOUNT}/ca.crt</code><br><code>curl --cacert ${CACERT} --header 'Authorization: Bearer ${TOKEN}' -X GET ${APISERVER}/api</code></p></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 100,
     "date": "2020/05/08",
     "title": "Exploring App",
@@ -1114,6 +1165,33 @@
       },
       {
         "text": "<p><code>kubectl delete deployment source-ip-app</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1400,
+    "date": "2020/05/18",
+    "title": "Extend Resources for a Node",
+    "itemList": [
+      {
+        "text": "<p><code>kubectl get nodes</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl proxy</code> in another terminal</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>curl --header 'Content-Type: application/json-patch+json' --request PATCH --data '[{'op': 'add', 'path': '/status/capacity/example.com~1dongle', 'value': '4'}]' http://localhost:8001/api/v1/nodes/gke-temp-c-default-pool-64035362-5089/status</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl describe node <your-node-name></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Remove the resouce<code>curl --header 'Content-Type: application/json-patch+json' --request PATCH --data '[{'op': 'remove', 'path': '/status/capacity/example.com~1dongle'}]' http://localhost:8001/api/v1/nodes/gke-temp-c-default-pool-64035362-5089/status</code></p>",
         "image": ""
       }
     ]

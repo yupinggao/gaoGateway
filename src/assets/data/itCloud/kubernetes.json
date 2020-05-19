@@ -267,11 +267,23 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl config set-context --current --namespace=<i>namespace-name</i></code> - permanently save the namespace for all subsequent kubectl commands in that context</p>",
+        "image": ""
+      },      
+      {
+        "text": "<p><code>kubectl config unset users.foo</code> - delete user foo</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl config use-context <i>context_name</i></code> - to operate in the <i>context_name</i> namespace</p>",
         "image": ""
       },
       {
         "text": "<p><code>kubectl config view</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Mark a Node unschedulable - <code>kubectl cordon $NODENAME</code></p>",
         "image": ""
       },
       {
@@ -436,6 +448,10 @@
       },
       {
         "text": "<p><code>kubectl patch deployment.v1.apps/nginx-deployment -p '{'spec':{'progressDeadlineSeconds':600}}'</code> - set the spec with progressDeadlineSeconds to make the controller report lack of progress for a Deployment after 10 minutes</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl patch pv <your-pv-name> -p '{'spec':{'persistentVolumeReclaimPolicy':'Retain'}}'</code></p>",
         "image": ""
       },
       {
@@ -684,7 +700,7 @@
     "title": "Notes",
     "itemList": [
       {
-        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><li>You can use Kubernetes to run a mixture of Linux and Windows nodes, so you can mix Pods that run on Linux on with Pods that run on Windows. This page shows how to register Windows nodes to your cluster.</li><ul></p>",
+        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><li>You can use Kubernetes to run a mixture of Linux and Windows nodes, so you can mix Pods that run on Linux on with Pods that run on Windows. This page shows how to register Windows nodes to your cluster.</li><li>You use the <code>kubectl cluster-info</code> command to retrieve the service’s proxy URL. To create proxy URLs that include service endpoints, suffixes, and parameters, you simply append to the service’s proxy URL: http://kubernetes_master_address/api/v1/namespaces/namespace_name/services/[https:]service_name[:port_name]/proxy</li><ul></p>",
         "image": ""
       },
       {
