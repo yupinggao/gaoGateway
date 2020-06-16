@@ -231,6 +231,10 @@
     "title": "kubectl",
     "itemList": [
       {
+        "text": "<p><code>kubectl -n kube-system logs -l=component=kube-apiserver</code> - to view the system log</p>",
+        "image": ""
+      },    
+      {
         "text": "<p><code>kubectl annotate pods my-nginx-v4-9gw19 description='my frontend running nginx'</code></p>",
         "image": ""
       },      
@@ -283,7 +287,11 @@
         "image": ""
       },
       {
-        "text": "<p>Mark a Node unschedulable - <code>kubectl cordon $NODENAME</code></p>",
+        "text": "<p><code>kubectl convert -f pod.yaml --output-version v1</code> - use kubectl convert command to convert config files between different API versions</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl cordon $NODENAME</code> - mark a Node unschedulable</p>",
         "image": ""
       },
       {
@@ -300,6 +308,10 @@
       },
       {
         "text": "<p><code>kubectl create secret generic mongodb --from-literal=mongoHost='orders-mongo-mongodb.default.svc.cluster.local' --from-literal=mongoUser='orders-user' --from-literal=mongoPassword='orders-password'</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl create secret docker-registry myregistrykey --docker-server=DUMMY_SERVER --docker-username=DUMMY_USERNAME --docker-password=DUMMY_DOCKER_PASSWORD --docker-email=DUMMY_DOCKER_EMAIL</code></p>",
         "image": ""
       },
       {
@@ -488,6 +500,10 @@
       },
       {
         "text": "<p><code>kubectl rollout undo deployment.v1.apps/nginx-deployment --to-revision=2</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -ppassword</code> - creates a new Pod in the cluster running a MySQL client and connects it to the server through the Service. If it connects, you know your stateful MySQL database is up and running</p>",
         "image": ""
       },
       {
@@ -700,7 +716,11 @@
     "title": "Notes",
     "itemList": [
       {
-        "text": "<p><b>Notes: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><li>You can use Kubernetes to run a mixture of Linux and Windows nodes, so you can mix Pods that run on Linux on with Pods that run on Windows. This page shows how to register Windows nodes to your cluster.</li><li>You use the <code>kubectl cluster-info</code> command to retrieve the service’s proxy URL. To create proxy URLs that include service endpoints, suffixes, and parameters, you simply append to the service’s proxy URL: http://kubernetes_master_address/api/v1/namespaces/namespace_name/services/[https:]service_name[:port_name]/proxy</li><ul></p>",
+        "text": "<p><b>Notes 1: </b><ul><li>As of Kubernetes v1.12, CoreDNS is the recommended DNS Server, replacing kube-dns.</li><li>Note that resource quota divides up aggregate cluster resources, but it creates no restrictions around nodes: pods from several namespaces may run on the same node.</li><li>Kubernetes does not directly support hybrid clusters.</li><li>You can use Kubernetes to run a mixture of Linux and Windows nodes, so you can mix Pods that run on Linux on with Pods that run on Windows. This page shows how to register Windows nodes to your cluster.</li><li>You use the <code>kubectl cluster-info</code> command to retrieve the service’s proxy URL. To create proxy URLs that include service endpoints, suffixes, and parameters, you simply append to the service’s proxy URL: http://kubernetes_master_address/api/v1/namespaces/namespace_name/services/[https:]service_name[:port_name]/proxy</li><ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Notes 2: </b><ul><li>Use a projected Volume to mount several existing volume sources into the same directory. Currently, secret, configMap, downwardAPI, and serviceAccountToken volumes can be projected.</li><ul></p>",
         "image": ""
       },
       {
