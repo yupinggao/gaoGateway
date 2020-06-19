@@ -287,6 +287,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl config view --minify</code> - to see only the configuration information associated with the current context</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl convert -f pod.yaml --output-version v1</code> - use kubectl convert command to convert config files between different API versions</p>",
         "image": ""
       },
@@ -304,6 +308,10 @@
       },
       {
         "text": "<p><code>kubectl expose deployment hello-node --type=LoadBalancer --port=8080</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl expose rc example --port=8765 --target-port=9376 --name=example-service --type=LoadBalancer</code> -  creates a new service using the same selectors as the referenced resource (in the case of the example above, a replication controller named example)</p>",
         "image": ""
       },
       {
@@ -368,6 +376,10 @@
       },
       {
         "text": "<p><code>kubectl get events</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get events --all-namespaces</code> - to see events from all namespaces</p>",
         "image": ""
       },
       {
@@ -460,6 +472,10 @@
       },
       {
         "text": "<p><code>kubectl patch deployment.v1.apps/nginx-deployment -p '{'spec':{'progressDeadlineSeconds':600}}'</code> - set the spec with progressDeadlineSeconds to make the controller report lack of progress for a Deployment after 10 minutes</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl patch pod <pod> -p '{'metadata':{'finalizers':null}}'</code> - remove the pod from the cluster if other delete operation has failed</p>",
         "image": ""
       },
       {
