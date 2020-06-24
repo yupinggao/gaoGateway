@@ -80,6 +80,14 @@
     "title": "gcloud CLI",
     "itemList": [
       {
+        "text": "<p><code>curl -sS https://get.k8s.io | MULTIZONE=true KUBERNETES_PROVIDER=gce KUBE_GCE_ZONE=us-central1-a NUM_NODES=3 bash</code> - create the cluster as normal, but pass MULTIZONE to tell the cluster to manage multiple zones</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>KUBERNETES_PROVIDER=gce KUBE_GCE_ZONE=us-central1-a kubernetes/cluster/kube-down.sh</code> - clean up the above Cluster</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>gcloud builds submit --config cloudbuild.yaml .</code> - use a build config file to build the same Docker image as below.</p>",
         "image": ""
       },

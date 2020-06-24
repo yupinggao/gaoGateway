@@ -255,6 +255,10 @@
         "image": ""
       },
       {
+        "text": "<p><code>kubectl apply --validate -f mypod.yaml</code> - create the pod and validate the manifest file</p>",
+        "image": ""
+      },
+      {
         "text": "<p><code>kubectl apply --validate=false -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.11/deploy/manifests/00-crds.yaml</code> - apply the instructions in the file</p>",
         "image": ""
       },
@@ -264,6 +268,10 @@
       },
       {
         "text": "<p><code>kubectl autoscale deployment.v1.apps/nginx-deployment --min=10 --max=15 --cpu-percent=80</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl cluster-info dump</code> - get detailed information about the overall health of your cluster</p>",
         "image": ""
       },
       {
@@ -364,6 +372,10 @@
       },
       {
         "text": "<p><code>kubectl get componentstatuses</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>kubectl get csr</code> - view the status of certificate signing requests</p>",
         "image": ""
       },
       {
@@ -736,7 +748,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>Notes 2: </b><ul><li>Use a projected Volume to mount several existing volume sources into the same directory. Currently, secret, configMap, downwardAPI, and serviceAccountToken volumes can be projected.</li><ul></p>",
+        "text": "<p><b>Notes 2: </b><ul><li><code>sudo docker run -it --rm --privileged --net=host -v /:/rootfs -v $CONFIG_DIR:$CONFIG_DIR -v $LOG_DIR:/var/result k8s.gcr.io/node-test:0.2</code> - run the node conformance test. $CONFIG_DIR is the pod manifest path of your Kubelet. $LOG_DIR is the test output path.</li><li>Use a projected Volume to mount several existing volume sources into the same directory. Currently, secret, configMap, downwardAPI, and serviceAccountToken volumes can be projected.</li><li>Log paths in Master:<ul><li>/var/log/kube-apiserver.log - API Server, responsible for serving the API</li><li>/var/log/kube-scheduler.log - Scheduler, responsible for making scheduling decisions</li><li>/var/log/kube-controller-manager.log - Controller that manages replication controllers</li></ul></li><li>Log paths in worker nodes:<ul><li>/var/log/kube-proxy.log - Kube Proxy, responsible for service load balancing</li><li>/var/log/kubelet.log - Kubelet, responsible for running containers on the node</li></ul></li><ul></p>",
         "image": ""
       },
       {
