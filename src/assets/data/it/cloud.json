@@ -452,6 +452,17 @@
   },
   {
     "id": 1700,
+    "date": "2020/07/05",
+    "title": "Prometheus and Grafana on Azure",
+    "itemList": [
+      {
+        "text": "<p>Azure Monitor for containers provides a seamless onboarding experience to collect Prometheus metrics. Typically, to use Prometheus, you need to set up and manage a Prometheus server with a store. By integrating with Azure Monitor, a Prometheus server is not required. You just need to expose the Prometheus metrics endpoint through your exporters or pods (application), and the containerized agent for Azure Monitor for containers can scrape the metrics for you.</p>",
+        "image": "../assets/image/it/cloud/prometheusGrafanaOnAzure.png"
+      }
+    ]
+  },
+  {
+    "id": 1750,
     "date": "2019/12/4",
     "title": "Grafana",
     "itemList": [
