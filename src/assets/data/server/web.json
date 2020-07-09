@@ -1,0 +1,60 @@
+[
+  {
+    "id": 100,
+    "date": "2020/07/08",
+    "title": "Nginx",
+    "itemList": [
+      {
+        "text": "<p>Nginx is a web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. The software was created by Igor Sysoev and first publicly released in 2004. A company of the same name was founded in 2011 to provide support and Nginx Plus paid software.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>A basic web server setup:</p>",
+        "image": "../assets/image/server/web/basicSetup.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>No matter which web server you’re using, adding NGINX in front of it as a reverse proxy can improve its performance and scale. NGINX uses a very efficient method to handle incoming requests, meaning that it can handle very large traffic volumes without getting overloaded, and pass requests on to the web server in a way it can handle. This in turn prevents the web server from getting overloaded and slowing down, or even failing. By adding NGINX you’re dividing the labor: NGINX handles incoming requests, while the web server accesses and serves web pages. NGINX can further reduce the load on the web server by storing common responses (also known as caching) so that the web server doesn’t need to handle them fresh every time.</p>",
+        "image": "../assets/image/server/web/nginxAsReverseProxy.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "The Domain Name System (DNS) is how web clients and servers translate a URL into an IP address and vice versa. For example, imagine your users want to connect to www.healthcaregroup.org. The user enters the URL for the Healthcare Group, and contacts a DNS server to get the actual IP address. DNS is basically a way to look up a web server address, just like we used to use the Yellow Pages to look up an organization’s physical address. Load balancers (and web servers) use a DNS server to help their clients connect to them. The DNS server specifies the address of each part of the website. A DNS server can get overloaded if there are a lot of requests for the addresses it maintains. You can add DNS Cloud Service as a secondary DNS so that client requests still get directed to the correct address when your DNS server is under load  – or even if it goes down.",
+        "image": "../assets/image/server/web/nginxWithDNS.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+
+  {
+    "id": 800,
+    "date": "2019/01/26",
+    "title": "Webseal",
+    "itemList": [
+      {
+        "text": "<p>WebSEAL is a high performance, multi-threaded Web server that applies fine-grained security policy to resources in the Security Access Manager protected Web object space. WebSEAL can provide single signon solutions and incorporate back-end Web application server resources into its security policy.</p><p>WebSEAL normally acts as a reverse Web proxy by receiving HTTP/HTTPS requests from a Web browser and delivering content from its own Web server or from junctioned back-end Web application servers. Requests passing through WebSEAL are evaluated by the Security Access Manager authorization service to determine whether the user is authorized to access the requested resource.</p>",
+        "image": ""
+      },
+      {
+        "text": "",
+        "image": ""
+      }
+    ]
+  },
+
+  {
+    "id": 1000,
+    "date": "2019/03/23",
+    "title": "Tomcat",
+    "itemList": [
+      {
+        "text": "<p><b>Configure DataSource in JNDI context</b><br/>Apache Tomcat provide three ways to configure DataSource in JNDI context.<ol><li><b>Application context.xml</b> – This is the easiest way to configure DataSource, all we need is a context.xml file in META-INF directory. We have to define Resource element in the context file and container will take care of loading and configuring it. The approach is simple but it has some drawbacks.<ul><li>Since the context file is bundled with the WAR file, we need to build and deploy new WAR for every small configuration change. Same issue comes if your application works in distributed environment or your application needs to be deployed in different testing environments such as QA, IT, PROD etc.</li><li>The datasource is created by container for the application usage only, so it can’t be used globally. We can’t share the datasource across multiple applications.</li><li>If there is a global datasource (server.xml) defined with same name, the application datasource is ignored.</li></ul></li><li><b>Server context.xml</b> – If there are multiple applications in the server and you want to share DataSource across them, we can define that in the server context.xml file. This file is located in apache-tomcat/conf directory. The scope of server context.xml file is application, so if you define a DataSource connection pool of 100 connections and there are 20 applications then the datasource will be created for each of the application. This will result in 2000 connections that will obviously consume all the database server resources and hurt application performance.</li><li><b>server.xml and context.xml</b> – We can define DataSource at global level by defining them in the server.xml GlobalNamingResources element. If we use this approach, then we need to define a ResourceLink from context.xml file of server or application specific. This is the preferred way when you are looking to share a common resource pool across multiple applications running on the server. Regarding resource link, whether to define it at server level context xml file or application level depends on your requirement.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "",
+        "image": ""
+      }
+    ]
+  }
+]

@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WelcomeComponent } from './welcome/welcome.component'
-import { ItComponent } from './component/it/it.component'
-import { ItCloudComponent } from './component/itCloud/itCloud.component'
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ItComponent } from './component/it/it.component';
+import { ItCloudComponent } from './component/itCloud/itCloud.component';
+import { ServerComponent } from './component/server/server.component';
+import { WebComponent } from './component/server/web/web.component';
+import { ApplicationComponent } from './component/server/application/application.component';
+import { OtherProductComponent } from './component/server/otherProduct/otherProduct.component';
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
 import { AwsComponent } from './component/itCloud/aws/aws.component';
@@ -312,6 +316,42 @@ const routes: Routes = [
       },
       {
         path: '', component: TrainingComponent
+      }
+    ]
+  },
+  {
+    path: 'server', component: ServerComponent,
+  },
+  {
+    path: 'server/web', component: WebComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: WebComponent
+      }
+    ]
+  },
+  {
+    path: 'server/application', component: ApplicationComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: ApplicationComponent
+      }
+    ]
+  },
+  {
+    path: 'server/otherProduct', component: OtherProductComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: OtherProductComponent
       }
     ]
   },

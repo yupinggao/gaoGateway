@@ -24,6 +24,10 @@ import { DevopsComponent } from './component/itCloud/devops/devops.component';
 import { TutorialComponent } from './component/it/tutorial/tutorial.component';
 import { SecurityComponent } from './component/it/security/security.component';
 import { ItCloudComponent } from './component/itCloud/itCloud.component';
+import { ServerComponent } from './component/server/server.component';
+import { WebComponent } from './component/server/web/web.component';
+import { ApplicationComponent } from './component/server/application/application.component';
+import { OtherProductComponent } from './component/server/otherProduct/otherProduct.component';
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
 import { AwsComponent } from './component/itCloud/aws/aws.component';
@@ -67,6 +71,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     PhotoComponent,
     WelcomeComponent,
     CloudComponent,
+    ServerComponent,
     KubernetesComponent,
     K8staskComponent,
     K8spatternComponent,
@@ -91,6 +96,9 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     EnglishComponent,
     LinkComponent,
     ToolComponent,
+    WebComponent,
+    ApplicationComponent,
+    OtherProductComponent,
     DesignComponent,
     OtherComponent,
     MethodologyComponent

@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1100,
+    "date": "2019/10/29",
+    "title": "JBoss AS/WildFly/JBossEAP",
+    "itemList": [
+      {
+        "text": "<p><b>WildFly</b><br/>WildFly, formerly known as JBoss AS, or simply JBoss, is a free and open-source application server authored by JBoss, now developed by Red Hat. WildFly is written in Java and implements the Java Platform, Enterprise Edition (Java EE) specification. It runs on multiple platforms.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>JBoss EAP</b><br/>JBoss Enterprise Application platform is a subscription based, Red Hat's supported application server. JBoss EAP is still an opensource project but if you want to use JBoss EAP in production with Red Hat's support, then you need to activate a subscription.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>In general terms, the following tables summarizes the version of WildFly used as baseline for a JBoss EAP version:</p>",
+        "image": "../assets/image/it/tool/jboss.png"
+      }
+    ]
+  }
+]

@@ -231,27 +231,6 @@
     ]
   },
   {
-    "id": 1100,
-    "date": "2019/11/30",
-    "title": "Api Gateway",
-    "itemList": [
-      {
-        "text": "<p>An API Gateway is a server that is the single entry point into the system. It is similar to the Facade pattern from object-oriented design. The API Gateway encapsulates the internal system architecture and provides an API that is tailored to each client. It might have other responsibilities such as authentication, monitoring, load balancing, caching, request shaping and management, and static response handling.</p><p>The following diagram shows how an API Gateway typically fits into the architecture:</p>",
-        "image": "../assets/image/it/other/gateway.png",
-        "imageHeight": "450",
-        "imageWidth": "800"
-      },
-      {
-        "text": "<p>A gateway helps to address these issues by decoupling clients from services. Gateways can perform a number of different functions, and you may not need all of them. The functions can be grouped into the following design patterns:</p><p>Gateway Routing. Use the gateway as a reverse proxy to route requests to one or more backend services, using layer 7 routing. The gateway provides a single endpoint for clients, and helps to decouple clients from services.</p><p>Gateway Aggregation. Use the gateway to aggregate multiple individual requests into a single request. This pattern applies when a single operation requires calls to multiple backend services. The client sends one request to the gateway. The gateway dispatches requests to the various backend services, and then aggregates the results and sends them back to the client. This helps to reduce chattiness between the client and the backend.</p><p>Gateway Offloading. Use the gateway to offload functionality from individual services to the gateway, particularly cross-cutting concerns. It can be useful to consolidate these functions into one place, rather than making every service responsible for implementing them. This is particularly true for features that requires specialized skills to implement correctly, such as authentication and authorization.</p><p>Here are some examples of functionality that could be offloaded to a gateway:<ul><li>SSL termination</li><li>Authentication</li><li>IP whitelisting</li><li>Client rate limiting (throttling)</li><li>Logging and monitoring</li><li>Response caching</li><li>Web application firewall</li><li>GZIP compression</li><li>Servicing static content</li></ul></p>",
-        "image": ""
-      },
-      {
-        "text": "<b>Choosing a gateway technology</b><p>Here are some options for implementing an API gateway in your application.<ul><li><b>Reverse proxy server</b>. Nginx and HAProxy are popular reverse proxy servers that support features such as load balancing, SSL, and layer 7 routing. They are both free, open-source products, with paid editions that provide additional features and support options. Nginx and HAProxy are both mature products with rich feature sets and high performance. You can extend them with third-party modules or by writing custom scripts in Lua. Nginx also supports a JavaScript-based scripting module called NginScript.</li><li><b>Service mesh ingress controller</b>. If you are using a service mesh such as linkerd or Istio, consider the features that are provided by the ingress controller for that service mesh. For example, the Istio ingress controller supports layer 7 routing, HTTP redirects, retries, and other features.</li><li><b>Azure Application Gateway</b>. Application Gateway is a managed load balancing service that can perform layer-7 routing and SSL termination. It also provides a web application firewall (WAF). Application Gateway and Web Application Firewall (WAF) are also available under a Standard_v2 and WAF_v2 SKU. The v2 SKU offers performance enhancements and adds support for critical new features like autoscaling, zone redundancy, and support for static VIPs. Existing features under the Standard and WAF SKU continue to be supported in the new v2 SKU. The new v2 SKU includes the following enhancements:<ul><li>Autoscaling</li><li>Zone redundancy</li><li>Static VIP</li><li>Header Rewrite</li><li>Key Vault Integration</li><li>Azure Kubernetes Service Ingress Controller</li><li>Performance enhancements</li><li>Faster deployment and update time</li></ul></li><li><b>Azure API Management</b>. API Management is a turnkey solution for publishing APIs to external and internal customers. It provides features that are useful for managing a public-facing API, including rate limiting, IP white listing, and authentication using Azure Active Directory or other identity providers. API Management doesn't perform any load balancing, so it should be used in conjunction with a load balancer such as Application Gateway or a reverse proxy. For information about using API Management with Application Gateway, see Integrate API Management in an internal VNet with Application Gateway.</li></ul></p>",
-        "image": ""
-      }
-    ]
-  },
-  {
     "id": 1200,
     "date": "2020/01/02",
     "title": "YAML",
@@ -301,6 +280,29 @@
       },
       {
         "text": "<p><b>YAML Basic Data Types</b></p><p>YAML excels at working with mappings (hashes / dictionaries), sequences (arrays / lists), and scalars (strings / numbers). While it can be used with most programming languages, it works best with languages that are built around these data structure types. This includes: PHP, Python, Perl, JavaScript, and Ruby.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2000,
+    "date": "2019/10/29",
+    "title": "Acronyms",
+    "itemList": [
+      {
+        "text": "<p><b>A - G</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ADAL</b> -  Active Directory Authentication Library</li><li><b>ACR</b> - Azure Container Registry</li><li><b>ACS</b> - Access Control Server</li><li><b>ADAL</b> - Active Directory Authentication Library</li><li><b>APF</b> - API Priority and Fairness feature</li><li><b>AMQP</b> - Advanced Message Queuing Protocol</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>BDD</b> - Behavior Driven Development</li><li><b>CCM</b> – cloud controller manager</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CFS</b> – Completely Fair Scheduler - is a process scheduler which was merged into the 2.6.23 (October 2007) release of the Linux kernel and is the default scheduler</li><li><b>CGROUP</b> – Control Group</li><li><b>CIDR</b> – Classless inter-domain routing</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CNM</b> – Container Network Model</li><li><b>CQRS</b> – Command Query Responsibility Segregation</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CRI</b> – Container Runtime Interface</li><li><b>CSI</b> – Container Storage Interface</li><li><b>cURL</b> - Client URL Request Library</li><li><b>GIL</b> - Global Interpreter Lock</li><li><b>GMSA</b> - Group Managed Service Accounts</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>H - N</b></p><p><ol><li><b>HATEOAS</b> - Hypermedia as the Engine of Application State</li><li><b>HPA</b> - Horizontal Pod Autoscaler</li><li><b>IDC</b> - International Data Corporation.</li><li><b>IPVS</b> - IP Virtual Server</li><li><b>IPC</b> - Inter Process Communication</li><li><b>IWA</b> - Integrated Windows Authentication</li><li><b>JOSE</b> - JSON Object Signing and Encription</li><li><b>JWKS</b> - JSON Web Key Set</li><li><b>KCD</b> - Kerberos Constrained Delegation.</li><li><b>KMS</b> - Key Management Service.</li><li><b>LAMP</b> - Linux, Apache, MySQL, and PHP/Python/Perl</li><li><b>LRP</b> - Long-Running Process</li><li><b>MDM</b> - Mobile Device Management</li><li><b>MEAN</b> - MongoDB, ExpressJS, AngularJS and Node.js</li><li><b>MQTT</b> - Message Queuing Telemetry Transport</li><li><b>MSAL</b> - Microsoft Authentication Library</li><li><b>MTU</b> - Maximum Transmission Unit</li><li><b>NTP</b> - Network Time Protocol</li><li><b>NUMA</b> - Non-uniform memory access</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PLEG</b> - Pod Lifecycle Event Generator</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li><li><b>TTL</b> - Time To Live</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>U - Z</b></p><p><ol><li><b>UAA</b> - User Account and Authentication</li><li><b>UPN</b> - User Principal Name</li><li><b>WAF</b> - Web Application Firewall</li><li><b>WAP</b> - Web Application Proxy</li><li><b>WID</b> - Windows Internal Database</li></ol></p>",
         "image": ""
       }
     ]
