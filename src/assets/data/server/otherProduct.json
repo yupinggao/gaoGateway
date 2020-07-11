@@ -43,7 +43,7 @@
     ]
   },
   {
-    "id": 900,
+    "id": 400,
     "date": "2019/03/17",
     "title": "Dataweave",
     "itemList": [
@@ -58,7 +58,7 @@
     ]
   },
   {
-    "id": 1200,
+    "id": 500,
     "date": "2020/03/10",
     "title": "Autosys",
     "itemList": [
@@ -78,7 +78,7 @@
     ]
   },
   {
-    "id": 1300,
+    "id": 600,
     "date": "2019/11/30",
     "title": "Api Gateway",
     "itemList": [
@@ -94,6 +94,49 @@
       },
       {
         "text": "<b>Choosing a gateway technology</b><p>Here are some options for implementing an API gateway in your application.<ul><li><b>Reverse proxy server</b>. Nginx and HAProxy are popular reverse proxy servers that support features such as load balancing, SSL, and layer 7 routing. They are both free, open-source products, with paid editions that provide additional features and support options. Nginx and HAProxy are both mature products with rich feature sets and high performance. You can extend them with third-party modules or by writing custom scripts in Lua. Nginx also supports a JavaScript-based scripting module called NginScript.</li><li><b>Service mesh ingress controller</b>. If you are using a service mesh such as linkerd or Istio, consider the features that are provided by the ingress controller for that service mesh. For example, the Istio ingress controller supports layer 7 routing, HTTP redirects, retries, and other features.</li><li><b>Azure Application Gateway</b>. Application Gateway is a managed load balancing service that can perform layer-7 routing and SSL termination. It also provides a web application firewall (WAF). Application Gateway and Web Application Firewall (WAF) are also available under a Standard_v2 and WAF_v2 SKU. The v2 SKU offers performance enhancements and adds support for critical new features like autoscaling, zone redundancy, and support for static VIPs. Existing features under the Standard and WAF SKU continue to be supported in the new v2 SKU. The new v2 SKU includes the following enhancements:<ul><li>Autoscaling</li><li>Zone redundancy</li><li>Static VIP</li><li>Header Rewrite</li><li>Key Vault Integration</li><li>Azure Kubernetes Service Ingress Controller</li><li>Performance enhancements</li><li>Faster deployment and update time</li></ul></li><li><b>Azure API Management</b>. API Management is a turnkey solution for publishing APIs to external and internal customers. It provides features that are useful for managing a public-facing API, including rate limiting, IP white listing, and authentication using Azure Active Directory or other identity providers. API Management doesn't perform any load balancing, so it should be used in conjunction with a load balancer such as Application Gateway or a reverse proxy. For information about using API Management with Application Gateway, see Integrate API Management in an internal VNet with Application Gateway.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 700,
+    "date": "2020/07/09",
+    "title": "RabbitMQ",
+    "itemList": [
+      {
+        "text": "<p>With tens of thousands of users, RabbitMQ is one of the most popular open source message brokers. RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols. RabbitMQ can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>use <code>rabbitmq-plugins enable rabbitmq_management</code> to enable UI</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>use <code>rabbitmqctl status</code> to get status</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>connect to RabbitMQ UI using http://localhost:15672/ (default user/password: guest/guest)</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
+    "date": "2020/07/10",
+    "title": "Kafka",
+    "itemList": [
+      {
+        "text": "<p>Apache Kafka® is a distributed streaming platform. It has three key capabilities:<ul><li>Publish and subscribe to streams of records, similar to a message queue or enterprise messaging system.</li><li>Store streams of records in a fault-tolerant durable way.</li><li>Process streams of records as they occur.</li></ul></p>",
+        "image": "../assets/image/server/otherProduct/kafka.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>Change to kafka base directory, and use <code>.\\bin\\windows\\zookeeper-server-start.bat .\\config\\zookeeper.properties</code> to start the zookeeper</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Change to kafka base directory, and use <code>.\\bin\\windows\\kafka-server-start.bat .\\config\\server.properties</code> to start the kafka server</p>",
         "image": ""
       }
     ]
