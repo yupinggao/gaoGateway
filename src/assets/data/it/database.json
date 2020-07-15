@@ -1,6 +1,6 @@
 [
   {
-    "id": 5,
+    "id": 100,
     "date": "2015/11/3",
     "title": "DB Normalization",
     "itemList": [
@@ -19,7 +19,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 200,
     "date": "2015/11/2",
     "title": "DB performance",
     "itemList": [
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 300,
     "date": "2016/7/6",
     "title": "Transaction Isolation",
     "itemList": [
@@ -57,7 +57,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 400,
     "date": "2016/10/31",
     "title": "DB vs Warehouse",
     "itemList": [
@@ -76,7 +76,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 500,
     "date": "2015/11/3",
     "title": "DB Warehouse",
     "itemList": [
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 600,
     "date": "2019/01/16",
     "title": "Mongo DB",
     "itemList": [
@@ -137,6 +137,29 @@
       },
       {
         "text": "<b>Somethings to remember:</b><br/><p><ul><li>mongodb uses $lookup to left outer join colections</li><li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 700,
+    "date": "2020/07/11",
+    "title": "Postgres",
+    "itemList": [
+      {
+        "text": "<p>PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Data Types</b><br/><p><ul><li>Primitives: Integer, Numeric, String, Boolean</li><li>Structured: Date/Time, Array, Range, UUID</li><li>Document: JSON/JSONB, XML, Key-value (Hstore)</li><li>Geometry: Point, Line, Circle, Polygon</li><li>Customizations: Composite, Custom Types</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Use pgAdmin as the client tool</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Query the postgres version: <code>SELECT version();</code></p>",
         "image": ""
       }
     ]

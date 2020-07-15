@@ -1,0 +1,68 @@
+[
+  {
+    "id": 100,
+    "date": "2020/07/11",
+    "title": "Cloud Foundry",
+    "itemList": [
+      {
+        "text": "<p>Cloudfoundry open source software is the community maintained , community supported software and tools required to run cloudfoundry on your own infrastructure. It is a multi-cloud application platform as a service (PaaS) for the deployment, management, and continuous delivery of applications, containers, and functions. </p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Two platforms that comprise Cloud Foundry</b><br><ol><li>Application Runtime - Cloud Foundry Application Runtime (CFAR) is a code-centric platform that simplifies the lives of developers. It takes your code, written in any language or framework, and runs it on any cloud. This flexibility extends to services as well, thanks to the Open Service Broker API, which makes it easy to integrate the services your apps need to run.</li><li>BOSH - an open source tool chain for release engineering, deployment and lifecycle management of large scale distributed services. It’s the default deployment and management platform for Cloud Foundry operators.</li></ol></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2019/11/01",
+    "title": "PCF - Pivotal Cloud Foundry",
+    "itemList": [
+      {
+        "text": "<p>Pivotal CF is a Pivotal branded installation of cloudfoundry on your own infrastructure (AWS, VMware, OpenStack, Azure, etc) which has enterprise grade support. It also offers an array of services like MySQL, Redis, ELK, RabbitMQ, etc. that can leverage their cloudfoundry installation and have applications that use these services.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>PCF is a distribution of the open source Cloud Foundry developed and maintained by Pivotal Software, Inc. PCF is aimed at enterprise users and offers additional features and services—from Pivotal and from other third parties—for installing and operating Cloud Foundry as well as to expand its capabilities and make it easier to use. Major cloud platforms such as Amazon Web Services and Google Cloud also provide templates and quickstarts that automate large portions of the PCF deployment process.</p><p>Pivotal Cloud Foundry abstracts away the process of setting up and managing an application runtime environment so that developers can focus solely on their applications and associated data. Running a single command—cf push—will create a scalable environment for your application in seconds, which might otherwise take hours to spin up manually. PCF allows developers to deploy and deliver software quickly, without needing to manage the underlying infrastructure.</p><p></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Getting abstract</b><br><p>Pivotal Cloud Foundry creates two kinds of virtual machines that handle different aspects of an elastic runtime environment:<ul><li>component VMs create the underlying infrastructure for a deployment</li><li>host VMs provide a generic runtime environment for applications</li></ul></p><p>Component VMs allow PCF to be cloud-agnostic by providing a standardized infrastructure environment for staging and running applications on any supported cloud hosting service—including AWS, Google, Azure, OpenStack, and vSphere. The generic runtime provided by host VMs enables a single PCF deployment to host multiple applications regardless of language or dependencies. Once an application is pushed via <code>cf push</code>, PCF stages and packages it into a binary droplet that can be distributed and executed on a host VM.</p><p>In addition to abstraction, PCF provides significant scaling capabilities. Global-scale companies like Boeing, Wells Fargo, and Citi have adopted and used PCF to migrate and build applications in an elastic, cloud-based environment. A deployment can run any number of applications as long as there are sufficient underlying infrastructure resources. Hundreds of thousands of application instances can be spread across over a thousand host VMs. To increase availability and redundancy, PCF provides a single command to scale up the number of application instances and, if your environment is deployed across multiple availability zones, PCF will automatically spread instances across zones. Component VMs can likewise be scaled up and assigned to multiple zones to ensure high availability.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Key Services of Pivotal Cloud Foundry</b><br><p><ul><li>Pivotal Application Services - PAS</li><li>Pivotal Container Services - PKS</li><li>Pivotal Function Services - PFS</li><li>Pivotal Web Services - PWS, A Pivotal's hosted Cloudfoundry for people and companies who want to develop cloudfoundry applications but don't want to operate and manage their own infrastructure and cloudfoundry installation.</li><li>Pivotal Platform Services - PPS</li></li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Key components of Pivotal Cloud Foundry architecture</b><br><p>PCF is a distributed system comprising many components that run, manage, and monitor the health of the deployment and its application runtime environment, which might be hosting dozens or hundreds of applications. The primary components we will cover in this guide, along with their subsystems, are:<ul><li>BOSH/the Ops Manager (deployment automation)</li><li>The User Account and Authentication server (identity management)</li><li>The Gorouter (application and system routing)</li><li>The Cloud Controller (application staging and running)</li><li>Diego (application execution and runtime)</li><li>Loggregator (logs and metric aggregation)</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>BOSH and the Ops Manager</b><br><p>BOSH is a deployment manager that can automatically provision and deploy widely distributed, cloud-based software. Originally developed specifically for Cloud Foundry, BOSH can also be used outside of Cloud Foundry environments, for example to deploy a ZooKeeper or Kubernetes cluster. Essentially, BOSH is what allows PCF to be deployed in any cloud by providing an interface to build required infrastructure components on top of a given IaaS platform. BOSH handles the deployment of the underlying PCF infrastructure by launching and managing all required component VMs via the BOSH Director.</p><p>Through common plugins such as the Health Monitor, BOSH can track the health of its VMs and also self-heal if it detects that a VM has crashed or has otherwise become inaccessible. It will attempt to recreate the faulty VM automatically to avoid downtime.</p><p>The BOSH Director reads YAML deployment manifests to determine what VMs, persistent disks, and other resources are required, as well as how many availability zones to use. For a given cloud provider, the BOSH Director relies on an IaaS-specific manifest, or cloud config, that is applied on top of a baseline deployment config manifest for PCF. The cloud config maps PCF resources to specific resources for a given cloud provider, for instance mapping PCF availability zone z1 to AWS availability zone us-east-1a or Google Cloud zone us-central1-f.</p><p>The Director launches VMs built on stemcells, which include a base operating system, a BOSH agent for monitoring, and any required utilities and configuration files. Releases, which are layered on top of the stemcell, contain a versioned set of configurations, source code, binaries, scripts, and anything else that might be needed to run a specific software package on the VM.</p><p><b>Ops Manager</b><br>PCF wraps the BOSH API with the Ops Manager, which provides a web-based GUI to automate tasks and help administer the deployment. The Ops Manager generates manifest files from the options an operator has selected and sends them to the BOSH Director. The Ops Manager also provides various extensions and services for PCF that are packaged as tiles, which an operator imports and configures before deploying to the cluster. These services include monitoring solutions, several of which we will discuss in detail in part three of this series.</p><p>Within a PCF deployment, operators can also use the Ops Manager to install their desired application runtime environments (Linux or Windows) on host VMs. BOSH releases are available as buildpacks, which can be installed to provide runtime support for applications and services.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Cloud Controller</b><br><p>Pivotal Cloud Foundry’s Cloud Controller (CC) provides API endpoints for operators and developers to interact with PCF and the applications running on a specific domain. Commands include staging applications, starting or stopping applications, collecting health information, and querying that all desired applications are running. The CC is also responsible for communicating with the User Account and Authentication server to authenticate the user and ensure that they have the proper permissions to perform the requested task.</p><p>Developers can stage applications that are buildpack based or that are Docker images. Buildpack-based applications require one or more buildpacks to provide dependencies. For example, the Python buildpack is needed to stage a Django application. Docker images don’t require buildpacks because the image contains everything required to run the application. The staging process differs somewhat between these two types of applications. We will cover both options below.</p><p>When a developer pushes an application for staging, the CC sends needed files and instructions to PCF’s container orchestration and management component, called Diego. For staging and running applications, the CC requires a MySQL database and a blobstore.</p><p>The CC creates a record and stores application metadata in the database including the application name; applicable orgs, spaces, services, and user roles; the number of instances to spin up; memory and disk quotas; etc. It also will create and bind a route to the new application.</p><p>The CC sends instructions to Diego to distribute and execute the staging tasks, which take everything the application needs and package it into a droplet that can be run on a Cloud Foundry container. When complete, Diego sends the staged application droplet for storage in the CC’s blobstore and notifies the CC that the application is ready. Finally, after staging, the Cloud Controller signals Diego to start the application and continues to communicate with Diego for updates on the application’s status.</p><p>Once an application is running, the CC makes it possible to bind services to the application. Services provision reserved resources for an application on demand. They can provide a wide range of types of resources. A few examples might be a web application account, a set of environment variables, or a dedicated Redis cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Docker image applications</b><br><p>The main difference with how the CC stages Docker image–based applications is that buildpacks are not applied because the image itself provides the dependences. The CC sends the image to Diego for staging, receives and stores required metadata about the image from Diego, and then instructs Diego to schedule processes to run the application.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Diego</b><br><p>Diego is the container orchestration system for Cloud Foundry deployments, having replaced the previous DEA (Droplet Execution Agent). Diego handles the creation and management of the containers that stage and run applications. PCF operators can use the Ops Manager to choose which runtime backend they want to use—the Guardian backend for Linux or Garden Windows for Windows (or both).</p><p>An application’s lifecycle, described above, on Diego is largely the same in either case. These backends are managed through the Garden API. When a developer deploys their application with cf push, Diego uses Garden to create a generic, abstracted, containerized environment for any kind of instance, whether it be a buildpack-based droplet, a Docker image, or a Windows Server container.</p><p>Diego includes a health monitor and is self-healing: it will attempt to restart instances that have crashed in order to ensure that the number of running instances matches what the deployment configuration requires.</p><p>To accomplish its orchestration tasks, Diego relies on three main components:<ul><li>the Diego Brain</li><li>the database VM</li><li>one or more Diego cells</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Cloud Foundry includes the following with your app’s source code: <ul><li><b>Stack:</b> the operating system the app runs on.</li><li><b>Buildpack:</b> contains all languages, libraries, and services that the app uses.</li></ul></p><p>Before sending an app to a VM, the Cloud Controller stages it for delivery by combining the stack, buildpack, and source code into a droplet that the VM can unpack, compile, and run. For simple, standalone apps with no dynamic pointers, the droplet can contain a pre-compiled executable instead of source code, language, and libraries.</p><p>A droplet is a runnable artifact, which includes app files and runtime dependencies.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>PCF CLI</b><br><p><ul><li>cf apps</li><li>cf help</li><li>cf login</li><li>cf logs/li><li>cf push</li><li>cf ssh</li><li>cf stacks</li></ul></p>",
+        "image": ""
+      }
+    ]
+  }
+]

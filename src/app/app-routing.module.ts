@@ -10,6 +10,7 @@ import { OtherProductComponent } from './component/server/otherProduct/otherProd
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
 import { AwsComponent } from './component/itCloud/aws/aws.component';
+import { PcfComponent } from './component/itCloud/pcf/pcf.component';
 import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { DockerComponent } from './component/itCloud/docker/docker.component';
 import { ArchitectureComponent } from './component/it/architecture/architecture.component';
@@ -228,6 +229,17 @@ const routes: Routes = [
       },
       {
         path: '', component: AzureComponent
+      }
+    ]
+  },
+  {
+    path: 'itCloud/pcf', component: PcfComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: PcfComponent
       }
     ]
   },
