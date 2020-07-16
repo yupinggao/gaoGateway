@@ -437,6 +437,14 @@
       {
         "text": "<p>Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java. Following an open-core business model, parts of the software are licensed under various open-source licenses (mostly the Apache License), while other parts fall under the proprietary (source-available) Elastic License. Official clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine followed by Apache Solr, also based on Lucene.</p>",
         "image": ""
+      },
+      {
+        "text": "<p><b>Filebeat</b><br>It helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Metricbeat</b><br>Collect metrics from your systems and services. From CPU to memory, Redis to NGINX, and much more, It is a lightweight way to send system and service statistics.</p>",
+        "image": ""
       }
     ]
   },

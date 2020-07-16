@@ -140,5 +140,27 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 900,
+    "date": "2020/07/15",
+    "title": "Informatica",
+    "itemList": [
+      {
+        "text": "<p>INFORMATICA is a Software development company, which offers data integration products. It offers products for ETL, data masking, data Quality, data replica, data virtualization, master data management, etc. Informatica Powercenter ETL/Data Integration tool is the most widely used tool and in the common term when we say Informatica, it refers to the Informatica PowerCenter tool for ETL.</p>",
+        "image": "../assets/image/server/otherProduct/informaticaBI.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>Informatica Powercenter is used for Data integration. It offers the capability to connect & fetch data from different heterogeneous source and processing of data. For example, you can connect to an SQL Server Database and Oracle Database both and can integrate the data into a third system.</p>",
+        "image": "../assets/image/server/otherProduct/informaticaPowerCenter.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>INFORMATICA Powercenter has four components: Repository Manager, DEsigner, Workflow Manager, Workflow Monitor.</p>",
+        "image": "../assets/image/server/otherProduct/informatica.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
   }
 ]

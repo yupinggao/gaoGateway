@@ -294,7 +294,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>Acronyms</b></p><p><ol><li><b>C-CDA</b> – Consolidated Clinical Document Architecture</li><li><b>DSTU2</b> - Draft Standard for Trial Use</li><li><b>RDF</b> - Resource Description Framework</li></ol></p>",
+        "text": "<p><b>Acronyms</b></p><p><ol><li><b>C-CDA</b> – Consolidated Clinical Document Architecture</li><li><b>DSTU2</b> - Draft Standard for Trial Use</li><li><b>PHI</b> - Protected Health Information</li><li><b>RDF</b> - Resource Description Framework</li></ol></p>",
         "image": ""
       }
     ]
