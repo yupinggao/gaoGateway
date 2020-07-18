@@ -253,12 +253,13 @@
     "title": "Build a Node Rest API",
     "itemList": [
       {
-        "text": "<p>Prerequisites: <ul><li>You have installed MongoDB in your local. To verify the mongoDB version, go to the bin folder of your local installation folder, and type <mark>mongo --version</mark></p>",
+        "text": "<p>Run <code>npm -v</code> to make sure the node is installed</p>",
         "image": ""
       },
       {
-        "text": "<ol><li>Create a folder, e.g. nodeRestApi</li><li>run <mark>npm init</mark> to create the package.json</li><li>run <mark>npm install</mark> to install/setup dependencies.</li></ol>",
-        "image": ""
+        "text": "<ol><li>Create a folder, e.g. nodeRestApi</li><li>Navigate to the root of your newly created folder - <code>cd nodeRestApi</code></li><li>run <mark>npm init</mark> to create the package.json</li><li>Create a file called server.js - <code>touch server.js</code> to create our server</li><li>Create a folder called api - <code>mkdir api</code></li><li>Inside this folder called api, create three separate folders called models, routes, and controllers</li><li>Create todoListController.js in the api/controller folder, todoListRoutes.js in the routes folder, and todoListModel in the model folder</li><li>Let's install nodemon, which will help us to keep track of changes to our application by watching changed files and automatically restart the server <code>npm install --save-dev nodemon</code></li><li>Let's install express, which will be used to create the server <code>npm install express --save</code></li></ol>",
+        "image": "../assets/image/it/tutorial/nodeApi.PNG",
+        "imageClass": "mx-auto d-block"
       }
     ]
   },
