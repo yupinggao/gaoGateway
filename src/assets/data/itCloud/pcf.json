@@ -9,7 +9,11 @@
         "image": ""
       },
       {
-        "text": "<p><b>Two platforms that comprise Cloud Foundry</b><br><ol><li>Application Runtime - Cloud Foundry Application Runtime (CFAR) is a code-centric platform that simplifies the lives of developers. It takes your code, written in any language or framework, and runs it on any cloud. This flexibility extends to services as well, thanks to the Open Service Broker API, which makes it easy to integrate the services your apps need to run.</li><li>BOSH - an open source tool chain for release engineering, deployment and lifecycle management of large scale distributed services. It’s the default deployment and management platform for Cloud Foundry operators.</li></ol></p>",
+        "text": "<p><b>Two platforms that comprise Cloud Foundry</b><br><ol><li>Application Runtime - Cloud Foundry Application Runtime (CFAR) is a code-centric platform that simplifies the lives of developers. It takes your code, written in any language or framework, and runs it on any cloud. This flexibility extends to services as well, thanks to the Open Service Broker API, which makes it easy to integrate the services your apps need to run.</li><li>BOSH - An open source tool chain for release engineering, deployment and lifecycle management of large scale distributed services. It’s the default deployment and management platform for Cloud Foundry operators.</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Three Characristics of Cloud Foundry</b><br><ol><li>Open</li><li>Polyglot (Node, React etc)</li><li>Interoperable (CFAR, K8S etc)</li></ol></p>",
         "image": ""
       }
     ]

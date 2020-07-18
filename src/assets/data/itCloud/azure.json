@@ -489,5 +489,40 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 2200,
+    "date": "2020/07/16",
+    "title": "Azure API for FHIR",
+    "itemList": [
+      {
+        "text": "<p>Azure API for FHIR enables rapid exchange of data through Fast Healthcare Interoperability Resources (FHIR®) APIs, backed by a managed Platform-as-a Service (PaaS) offering in the cloud. It makes it easier for anyone working with health data to ingest, manage, and persist Protected Health Information PHI in the cloud:<ul><li>Managed FHIR service, provisioned in the cloud in minutes</li><li>Enterprise-grade, FHIR®-based endpoint in Azure for data access, and storage in FHIR® format</li><li>High performance, low latency</li><li>Secure management of Protected Health Data (PHI) in a compliant cloud environment</li><li>SMART on FHIR for mobile and web implementations</li><li>Control your own data at scale with Role-Based Access Control (RBAC)</li><li>Audit log tracking for access, creation, modification, and reads within each data store</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>FHIR capabilities from Microsoft are available in two configurations: <ul><li>Azure API for FHIR – A PaaS offering in Azure, easily provisioned in the Azure portal and managed by Microsoft</li><li>FHIR Server for Azure – an open-source project that can be deployed into your Azure subscription, available on GitHub at https://github.com/Microsoft/fhir-server.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>For use cases that requires extending or customizing the FHIR server or require access the underlying services—such as the database—without going through the FHIR APIs, developers should choose the open-source FHIR Server for Azure. For implementation of a turn-key, production-ready FHIR API and backend service where persisted data should only be accessed through the FHIR API, developers should choose the Azure API for FHIR.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To validate that the new FHIR API account is provisioned, fetch a capability statement by pointing a browser to https://ACCOUNT-NAME.azurehealthcareapis.com/metadata</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>https://FHIR ACCOUNT NAME.azurehealthcareapis.com</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>https://FHIR ACCOUNT NAME.azurehealthcareapis.com/Patient</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>IoT Connector (preview)</b><br><p>IoT Connector is an optional feature of Azure API for FHIR that provides the capability to ingest data from Internet of Medical Things (IoMT) devices. Internet of Medical Things is a category of IoT devices that capture and exchange health & wellness data with other healthcare IT systems over network. Some examples of IoMT devices include fitness and clinical wearables, monitoring sensors, activity trackers, point of care kiosks, or even a smart pill. The IoT Connector feature enables you to quickly set up a service to ingest IoMT data into Azure API for FHIR in a scalable, secure, and compliant manner.</p><p>IoT Connector can accept any JSON-based messages sent out by an IoMT device. This data is first transformed into appropriate FHIR-based Observation resources and then persisted into Azure API for FHIR. The data transformation logic is defined through a pair of mapping templates that you configure based on your message schema and FHIR requirements. Device data can be pushed directly to IoT Connector or seamlessly used in concert with other Azure IoT solutions (Azure IoT Hub and Azure IoT Central). IoT Connector provides a secure data pipeline while allowing the Azure IoT solutions manage provisioning and maintenance of the physical devices.</p></p>",
+        "image": ""
+      }
+    ]
   }
 ]
