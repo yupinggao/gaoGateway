@@ -439,6 +439,14 @@
         "image": ""
       },
       {
+        "text": "<p>To start Elasticsearch <code>.\\bin\\elasticsearch.bat</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Verify Elasticsearch: localhost:9200</p>",
+        "image": ""
+      },
+      {
         "text": "<p><b>Filebeat</b><br>It helps you keep the simple things simple by offering a lightweight way to forward and centralize logs and files.</p>",
         "image": ""
       },
@@ -456,6 +464,14 @@
       {
         "text": "<p>Kibana lets you visualize your Elasticsearch data and navigate the Elastic Stack so you can do anything from tracking query load to understanding the way requests flow through your apps.</p>",
         "image": ""
+      },
+      {
+        "text": "<p>To start Elasticsearch <code>.\\bin\\kibana.bat</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Verify Elasticsearch: localhost:5601</p>",
+        "image": ""
       }
     ]
   },
@@ -465,7 +481,7 @@
     "title": "Logstash",
     "itemList": [
       {
-        "text": "<p>Logstash is an open source, server-side data processing pipeline that ingests data from a multitude of sources simultaneously, transforms it, and then sends it to your favorite 'stash'.</p>",
+        "text": "<p>Logstash is a light-weight, open-source, server-side data processing pipeline that allows you to collect data from a variety of sources, transform it on the fly, and send it to your desired destination. It is most often used as a data pipeline for Elasticsearch, an open-source analytics and search engine.</p>",
         "image": ""
       }
     ]
@@ -477,6 +493,10 @@
     "itemList": [
       {
         "text": "<p>X-Pack is an Elastic Stack extension that provides security, alerting, monitoring, reporting, machine learning, and many other capabilities. By default, when you install Elasticsearch, X-Pack is installed.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To enable X-Pack, add <code>xpack.security.enabled: true</code> in elasticsearch.yml</p>",
         "image": ""
       }
     ]
