@@ -1,0 +1,32 @@
+[
+  {
+    "id": 100,
+    "date": "2020/07/24",
+    "title": "Three Deployment Options",
+    "itemList": [
+      {
+        "text": "<p><b>Cloud Foundry Public</b><br>Run your cloud-native app using Cloud Foundry for simple stand-up and powerful scaling and traffic management. Consumption is by hour and changes dynamically based on usage.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Cloud Foundry Enterprise Environment</b><br>A self-service, on-demand provisioned single-tenant PaaS environment, providing elastic consumption and complete access to administrative capabilities.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Cloud Foundry Private</b><br>A Cloud Foundry platform that runs in your data center on your infrastructure.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 200,
+    "date": "2020/07/25",
+    "title": "ibmcloud CLI",
+    "itemList": [
+      {
+        "text": "<p><code>ibmcloud plugin install container-registry -r 'IBM Cloud'</code> - install cr plugin</p>",
+        "image": ""
+      }
+    ]
+  }
+]

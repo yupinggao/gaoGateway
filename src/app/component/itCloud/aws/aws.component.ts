@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContentService } from '../../../services/it/content.service';
 
 @Component({
-  selector: 'app-azure',
+  selector: 'app-aws',
   templateUrl: './aws.component.html',
   styleUrls: ['./aws.component.scss']
 })

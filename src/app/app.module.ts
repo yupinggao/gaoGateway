@@ -31,6 +31,7 @@ import { OtherProductComponent } from './component/server/otherProduct/otherProd
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
 import { AwsComponent } from './component/itCloud/aws/aws.component';
+import { IbmCloudComponent } from './component/itCloud/ibmCloud/ibmCloud.component';
 import { PcfComponent } from './component/itCloud/pcf/pcf.component';
 import { GcpComponent } from './component/itCloud/gcp/gcp.component';
 import { DockerComponent } from './component/itCloud/docker/docker.component';
@@ -61,6 +62,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     ItCloudComponent,
     AzureComponent,
     AwsComponent,
+    IbmCloudComponent,
     PcfComponent,
     GcpComponent,
     DockerComponent,

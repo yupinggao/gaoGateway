@@ -24,7 +24,7 @@
     "title": "GITLab",
     "itemList": [
       {
-        "text": "GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration/continuous deployment pipeline features, using an open-source license, developed by GitLab Inc.",
+        "text": "GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration/continuous deployment pipeline features, using an open-source license, developed by GitLab Inc. Gitlab cannot be installed directly on Windows.",
         "image": ""
       },
       {
@@ -34,7 +34,7 @@
     ]
   },
   {
-    "id": 400,
+    "id": 300,
     "date": "2020/01/05",
     "title": "Maven",
     "itemList": [
@@ -45,7 +45,7 @@
     ]
   },
   {
-    "id": 500,
+    "id": 400,
     "date": "2019/03/02",
     "title": "Gradle",
     "itemList": [
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id": 600,
+    "id": 500,
     "date": "2019/03/03",
     "title": "Gretty",
     "itemList": [
@@ -79,9 +79,9 @@
     ]
   },
   {
-    "id": 700,
+    "id": 600,
     "date": "2019/01/10",
-    "title": "Unix/Linux and Commands",
+    "title": "Unix/Linux",
     "itemList": [
       {
         "text": "<p>An OS is made of many components, but its two prime components are</p><ul><li>Kernel</li><li>shell</li></ul>",
@@ -89,14 +89,6 @@
       },
       {
         "text": "<p>Two main shells in Linux</p><ul><li>Bourne Shell<ul><li>POSIX shell also is known as sh</li><li>Korn Shell also knew as ksh</li><li>Bourne Again SHell also knew as bash (most popular)</li></ul></li><li>C Shell<ul><li>C shell also is known as csh</li><li>Tops C shell also is known as tcsh</li></ul></li></ul>",
-        "image": ""
-      },
-      {
-        "text": "<p><b>Commands: </b><br><b>A - N</b></p><ul><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>grep -r '192.168.1.5' /etc/: </b>search recursively i.e. read all files under each directory for a string '192.168.1.5'</li><li><code>lsof -i :30400</code> - check if there’s any process currently using this port</li><li><b>nslookup <i>dns server name or ip</i>: </b>look for DNS server information</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li><li><b>Nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.</li><li><b>NUMA: </b>Non-uniform memory access.</li></ul>",
-        "image": ""
-      },
-      {
-        "text": "<p><b>O - Z</b></p><ul><li><b>passwd: </b>change password</li><li><b>printenv: </b>print environment variables</li><li><b>ps: </b>Report process status</li><li><b>ps auxw | grep kube-proxy: </b>check if kube-proxy is running on your Nodes</li><li><b>ps -ef | grep {userName}: </b>display user ID associated with a process</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>pwd: </b>tells you where you currently are</li><li><b>sh -c 'echo This is a test string': </b>the -c argument tells the shell to read commands from the command_string operand instead of from the standard input</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>whoami: </b>returns your username</li><li><b>sysctl -a: </b>to get a list of all kernel parameters at runtime.</li></ul>",
         "image": ""
       },
       {
@@ -110,7 +102,7 @@
     ]
   },
   {
-    "id": 720,
+    "id": 700,
     "date": "2020/01/06",
     "title": "Bourne Again Shell - bash",
     "itemList": [
@@ -125,7 +117,22 @@
     ]
   },
   {
-    "id": 740,
+    "id": 800,
+    "date": "2019/01/10",
+    "title": "Unix/Linux Commands",
+    "itemList": [
+      {
+        "text": "<p><b>Commands: </b><br><b>A - N</b></p><ul><li><b>chmod: </b>lets you change the read, write, and execute permissions on your files</li><li><b>find: </b>Find files</li><li><b>grep: </b>Search text for a pattern</li><li><b>grep -r '192.168.1.5' /etc/: </b>search recursively i.e. read all files under each directory for a string '192.168.1.5'</li><li><b>lsof -i :30400</b> - check if there’s any process currently using this port</li><li><b>nslookup <i>dns server name or ip</i>: </b>look for DNS server information</li><li><b>netstat --listen or netstat -l: </b>to find open ports</li><li><b>nohup: </b>stands for no hang up. Nohup is very helpful when you have to execute a shell-script or command that take a long time to finish. In that case, you don't want to be connected to the shell and waiting for the command to complete.<br><code>nohup abcd &</code> - start the program abcd in the background in such a way that the subsequent logout does not stop it<br><code>nohup nice abcd &</code> - run processes on a lower priority</li></ul>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>O - Z</b></p><ul><li><b>passwd: </b>change password</li><li><b>printenv: </b>print environment variables</li><li><b>ps: </b>Report process status</li><li><b>ps auxw | grep kube-proxy: </b>check if kube-proxy is running on your Nodes</li><li><b>ps -ef | grep {userName}: </b>display user ID associated with a process</li><li><b>ps -u yourusername: </b>lists the user's processes</li><li><b>pwd: </b>tells you where you currently are</li><li><b>sh -c 'echo This is a test string': </b>the -c argument tells the shell to read commands from the command_string operand instead of from the standard input</li><li><b>who: </b>tells you who's logged on, and where they're coming from</li><li><b>whoami: </b>returns your username</li><li><b>sysctl -a: </b>to get a list of all kernel parameters at runtime.</li></ul>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 900,
     "date": "2020/01/21",
     "title": "Powershell",
     "itemList": [

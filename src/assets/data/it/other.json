@@ -19,6 +19,14 @@
       {
         "text": "<b>Somethings to remember:</b><br/><p><ul><li>node.js uses unlink to delete a file <code>fs.unlink(filename, function (err) {... ...})</code></li><li>node.js uses formidable mudule for uploading files: <code>var formidable = require('formidable');</code></li><li>node.js uses nodemailer to handle emails: <code>var nodemailer = require('nodemailer');</code></li></ul></p>",
         "image": ""
+      },
+      {
+        "text": "<p>There is <b>kafka-node</b> package for kafka in Node. To install it: <code>npm install kafka-node --save</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>There is <b>node-postgres</b> package for postgres in Node. To install it: <code>npm install pg</code>. It has support for callbacks, promises, async/await, connection pooling, prepared statements, cursors, streaming results, C/C++ bindings, rich type parsing, and more! Just like PostgreSQL itself there are a lot of features: this documentation aims to get you up and running quickly and in the right direction. It also tries to provide guides for more advanced & edge-case topics allowing you to tap into the full power of PostgreSQL from node.js.</p>",
+        "image": ""
       }
     ]
   },
@@ -279,7 +287,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>YAML Basic Data Types</b></p><p>YAML excels at working with mappings (hashes / dictionaries), sequences (arrays / lists), and scalars (strings / numbers). While it can be used with most programming languages, it works best with languages that are built around these data structure types. This includes: PHP, Python, Perl, JavaScript, and Ruby.</p>",
+        "text": "<p><b>YAML Basic Data Types</b></p><p>YAML excels at working with mappings (hashes / dictionaries), sequences (arrays / lists), and scalars (strings / numbers). While it can be used with most programming languages, it works best with languages that are built around these data structure types. This includes: PHP, Python, Perl, JavaScript, and Ruby.<br><ul><li>String - written in double quotes</li><li>Number - integer or a floating point</li><li>Json object - 'employee':{ 'name':'John', 'age':30, 'city':'New York' }</li><li>Array - 'employees':[ 'John', 'Anna', 'Peter' ]</li><li>Boolean</li><li>null</li></ul></p>",
         "image": ""
       }
     ]
@@ -290,7 +298,7 @@
     "title": "Joi",
     "itemList": [
       {
-        "text": "<p>Joi is the most widely adopted package for object schema descriptions and validation. Joi allows us to create blueprints of Javascript objects that ensure that we process and ultimately accept accurate data.</p>",
+        "text": "<p>Joi is the most widely adopted package for object schema descriptions and validation in Node. Joi allows us to create blueprints of Javascript objects that ensure that we process and ultimately accept accurate data.</p>",
         "image": ""
       }
     ]
@@ -316,7 +324,20 @@
         "image": ""
       },
       {
-        "text": "<p><b>Acronyms</b></p><p><ol><li><b>C-CDA</b> – Consolidated Clinical Document Architecture</li><li><b>DSTU2</b> - Draft Standard for Trial Use</li><li><b>PHI</b> - Protected Health Information</li><li><b>RDF</b> - Resource Description Framework</li><li><b>SMART</b> - Substitutable Medical Applications, Reusable Technologies</li></ol></p>",
+        "text": "<p><b>Four Components:<br></b><ol><li>Infomation Model - data content and format: JSON, XML, Turtle RDF</li><li>Usage - mechanisms for data exchange</li><li>Conformance - constrains and validaty</li><li>Terminology - clinical termininologies and ontology</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Data Types</b></p>",
+        "image": "../assets/image/it/other/hl7_data_types.png",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Notes:<br></b><ul><li>FHIR data structure is defined by specification, and cannot be changed by users.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Acronyms</b></p><p><ol><li><b>C-CDA</b> – Consolidated Clinical Document Architecture</li><li><b>DSTU2</b> - Draft Standard for Trial Use</li><li><b>EHR</b> - Electronic Health Records. Electronic health records are digital versions of a patient chart, but it is a more detailed record of a patient’s medical history.</li><li><b>EMR</b> - Electronic Medical Records. Electronic medical records are digital versions of paper charts that clinicians and healthcare workers use at the office. An EMR usually contains a patient’s medical and treatment history in one area of healthcare practice.</li><li><b>HIPAA</b> - Health Insurance Portability and Accountability Act</li><li><b>PHI</b> - Protected Health Information</li><li><b>RDF</b> - Resource Description Framework</li><li><b>SMART</b> - Substitutable Medical Applications, Reusable Technologies</li><li><b>TTL</b> - Time To Live</li><li><b>Turtle</b> - Terse RDF Triple Language</li></ol></p>",
         "image": ""
       }
     ]
@@ -327,7 +348,7 @@
     "title": "Acronyms",
     "itemList": [
       {
-        "text": "<p><b>A - G</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ADAL</b> -  Active Directory Authentication Library</li><li><b>ACR</b> - Azure Container Registry</li><li><b>ACS</b> - Access Control Server</li><li><b>ADAL</b> - Active Directory Authentication Library</li><li><b>APF</b> - API Priority and Fairness feature</li><li><b>AMQP</b> - Advanced Message Queuing Protocol</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>BDD</b> - Behavior Driven Development</li><li><b>CCM</b> – cloud controller manager</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CFAR</b> –  Cloud Foundry Application Runtime</li><li><b>CFS</b> – Completely Fair Scheduler - is a process scheduler which was merged into the 2.6.23 (October 2007) release of the Linux kernel and is the default scheduler</li><li><b>CGROUP</b> – Control Group</li><li><b>CIDR</b> – Classless inter-domain routing</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CNM</b> – Container Network Model</li><li><b>CQRS</b> – Command Query Responsibility Segregation</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CRI</b> – Container Runtime Interface</li><li><b>CSI</b> – Container Storage Interface</li><li><b>cURL</b> - Client URL Request Library</li><li><b>FHIR</b> - Fast Healthcare Interoperability Resource</li><li><b>GIL</b> - Global Interpreter Lock</li><li><b>GMSA</b> - Group Managed Service Accounts</li></ol></p>",
+        "text": "<p><b>A - G</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ADAL</b> -  Active Directory Authentication Library</li><li><b>ACR</b> - Azure Container Registry</li><li><b>ACS</b> - Access Control Server</li><li><b>ADAL</b> - Active Directory Authentication Library</li><li><b>APF</b> - API Priority and Fairness feature</li><li><b>AMQP</b> - Advanced Message Queuing Protocol</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>BDD</b> - Behavior Driven Development</li><li><b>CCM</b> – cloud controller manager</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CFAR</b> –  Cloud Foundry Application Runtime</li><li><b>CFEE</b> –  Cloud Foundry Enterprise Environment</li><li><b>CFS</b> – Completely Fair Scheduler - is a process scheduler which was merged into the 2.6.23 (October 2007) release of the Linux kernel and is the default scheduler</li><li><b>CGROUP</b> – Control Group</li><li><b>CIDR</b> – Classless inter-domain routing</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CNM</b> – Container Network Model</li><li><b>CORS</b> – Cross-Origin Resource Sharing</li><li><b>CQRS</b> – Command Query Responsibility Segregation</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CRI</b> – Container Runtime Interface</li><li><b>CSI</b> – Container Storage Interface</li><li><b>cURL</b> - Client URL Request Library</li><li><b>FHIR</b> - Fast Healthcare Interoperability Resource</li><li><b>GIL</b> - Global Interpreter Lock</li><li><b>GMSA</b> - Group Managed Service Accounts</li></ol></p>",
         "image": ""
       },
       {
@@ -335,11 +356,11 @@
         "image": ""
       },
       {
-        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PLEG</b> - Pod Lifecycle Event Generator</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li><li><b>TTL</b> - Time To Live</li></ol></p>",
+        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PLEG</b> - Pod Lifecycle Event Generator</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li></ol></p>",
         "image": ""
       },
       {
-        "text": "<p><b>U - Z</b></p><p><ol><li><b>UAA</b> - User Account and Authentication</li><li><b>UPN</b> - User Principal Name</li><li><b>WAF</b> - Web Application Firewall</li><li><b>WAP</b> - Web Application Proxy</li><li><b>WID</b> - Windows Internal Database</li></ol></p>",
+        "text": "<p><b>U - Z</b></p><p><ol><li><b>UAA</b> - User Account and Authentication</li><li><b>UPN</b> - User Principal Name</li><li><b>VPC</b> - Virtual Private Cloud. A virtual private cloud is an on-demand configurable pool of shared computing resources allocated within a public cloud environment, providing a certain level of isolation between the different organizations using the resources.</li><li><b>WAF</b> - Web Application Firewall</li><li><b>WAP</b> - Web Application Proxy</li><li><b>WID</b> - Windows Internal Database</li></ol></p>",
         "image": ""
       }
     ]
