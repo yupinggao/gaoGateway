@@ -333,7 +333,7 @@
         "imageClass": "mx-auto d-block"
       },
       {
-        "text": "<p><b>Notes:<br></b><ul><li>FHIR data structure is defined by specification, and cannot be changed by users.</li></ul></p>",
+        "text": "<p><b>Notes:<br></b><ul><li>FHIR data structure is defined by specification, and cannot be changed by users.</li><li>The formal MIME-type for FHIR resources is <b>application/fhir+xml</b> or <b>application/fhir+json</b>.</li></ul></p>",
         "image": ""
       },
       {

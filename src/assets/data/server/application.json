@@ -1,6 +1,6 @@
 [
   {
-    "id": 1100,
+    "id": 100,
     "date": "2019/10/29",
     "title": "JBoss AS/WildFly/JBossEAP",
     "itemList": [
@@ -15,6 +15,45 @@
       {
         "text": "<p>In general terms, the following tables summarizes the version of WildFly used as baseline for a JBoss EAP version:</p>",
         "image": "../assets/image/it/tool/jboss.png"
+      }
+    ]
+  },
+  {
+    "id": 300,
+    "date": "2020/08/01",
+    "title": "IBM Websphere Liberty",
+    "itemList": [
+      {
+        "text": "<p>Liberty is a highly composable, fast to start, dynamic application server runtime environment. Because Liberty does not include a Java™ runtime environment (JRE), you must install a compliant Java implementation (JRE or SDK) beforehand.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>This server supports two models of application deployment:<ul><li>Deploy an application by dropping it into the dropins directory.</li><li>Deploy an application by adding it to the server configuration file.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To install the admin feature from the command line, type: <code>bin/installUtility install adminCenter-1.0</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To use the feature at runtime add the following to your server.xml file: <code><feature>adminCenter-1.0</feature></code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Then add the admin user to the administrator-role:<br><code>&lt;administrator-role&gt;</code><br><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;user>admin&lt;/user&gt;</code><br><code>&lt;/administrator-role&gt;</code><br></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To list the feature supported: <code>bin/productInfo featureInfo</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To see the version: <code>bin/productInfo version</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Environment Variables</b><ul><li>Specify environment variables by using server.env files.</li><li>The server management script searches for server.env files in two locations: ${wlp.install.dir}/etc/server.env and ${server.config.dir}/server.env. If both files are present, the contents of the two files are merged; values in the server-level file take precedence over values in the runtime-level file.</li><li>You can also specify these environment variables in the shell environment, but the server.env files take precedence over those variables.</li></ul></p>",
+        "image": ""
       }
     ]
   }
