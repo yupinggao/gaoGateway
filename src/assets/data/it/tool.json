@@ -13,6 +13,10 @@
         "image": ""
       },
       {
+        "text": "Once github or gitLab password has been changed, windows users need to change git password in <b>Credential Manager</b>.",
+        "image": ""
+      },
+      {
         "text": "<b>Some GIT Commands</b> <p><mark>git config --global user.email 'email@example.com': </mark>Set the email address in GIT</p><p><mark>git config --list: </mark>show the global config in GIT</p><p><mark>git add: </mark>Add one or more files to staging (index).<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add one file: git add <i>filename</i><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage all changes: git add -A<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To stage modifications and deletions, without new files: git add -u<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To add all new and modified files (without deletion, not including files/folders listed in .gitignore): git add .</p> <p><mark>git commit: </mark>Commit changes.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit changes to head (but not yet to the remote repository): git commit -m 'Commit message'<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Commit any files you've added with git add, and also commit any files you've changed since then: git commit -a</p> <p><mark>git config: </mark>Configure the author name and email address to be used with your commits. Note that Git strips some characters (for example trailing periods) from user.name.</p> <p><mark>git clone: </mark>Check out a repository.<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To ceate a working copy of a local repository: git clone /path/to/repository<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For a remote server, use: git clone username@host:/path/to/repository</p> <p><mark>git init: </mark>Create a new local repository.</p> <p><mark>git push origin master: </mark>Send changes to the master branch of your remote repository.</p> <p><mark>git status: </mark>List the files you've changed and those you still need to add or commit.</p> <p><mark>git remote add origin <server>: </mark>If you haven't connected your local repository to a remote server, add the server to be able to push to it.<p> <p>For more GIT commands, please visit the following link: <a href='https://git-scm.com/docs' target='_blank'>List Of GIT Commands</a></p>",
         "image": ""
       }
@@ -30,6 +34,11 @@
       {
         "text": "<p><b>GitLab Runner</b><br><br>GitLab Runner is the open source project that is used to run your jobs and send the results back to GitLab. It is used in conjunction with GitLab CI/CD, the open-source continuous integration service included with GitLab that coordinates the jobs.</p>",
         "image": ""
+      },
+      {
+        "text": "<p><b>Git Commands</b></p>",
+        "image": "../assets/image/it/tool/gitCommand.png",
+        "imageClass": "mx-auto d-block"
       }
     ]
   },
@@ -39,7 +48,7 @@
     "title": "Maven",
     "itemList": [
       {
-        "text": "<b>Maven Build Lifecycle</b> <p><ul><li>Validate</li><li>Compile</li><li>Test</li><li>Package</li><li>Verify</li><li>Install</li><li>Deploy</li></ul></p>",
+        "text": "<b>Maven Build Lifecycle</b> <p><ul><li><b>Validate:</b> validate the project is correct and all necessary information is available</li><li><b>Compile:</b> compile the source code of the project</li><li><b>Test:</b> test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed</li><li><b>Package:</b> take the compiled code and package it in its distributable format, such as a JAR</li><li><b>Verify:</b> run any checks on results of integration tests to ensure quality criteria are met</li><li><b>Install:</b> install the package into the local repository, for use as a dependency in other projects locally</li><li><b>Deploy:</b> done in the build environment, copies the final package to the remote repository for sharing with other developers and projects</li></ul></p>",
         "image": ""
       }
     ]
