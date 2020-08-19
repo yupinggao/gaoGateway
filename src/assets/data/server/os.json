@@ -1,0 +1,17 @@
+[
+  {
+    "id": 100,
+    "date": "2020/08/18",
+    "title": "RHEL",
+    "itemList": [
+      {
+        "text": "<p><b>Microdnf</b></p><p>Microdnf handles all of the common operations needed in a container like install, update, remove, etc., plus it’s written in C and allows us to be incredibly efficient moving forward. It’s also based on the underlying technology that our next version of YUM will leverage.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Remember, Microdnf is not a full yum replacement, but it’s perfectly suited for the container use case. On “pet” systems where you want a fully interactive package manager, yum is what you need. When you’re building a container, though, you really only need to handle a few package operations to create and deploy a container.</p>",
+        "image": ""
+      }
+    ]
+  }
+]

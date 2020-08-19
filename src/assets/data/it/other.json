@@ -343,12 +343,53 @@
     ]
   },
   {
+    "id": 1700,
+    "date": "2020/08/13",
+    "title": "HTTP Status Codes for DHIR PHIX FHIR API in MOH",
+    "itemList": [
+      {
+        "text": "<p><b>2xx:<br></b><ul><li>4204 - No Content with no response payload</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>4xx:<br></b><ul><li>401 - Not Authorized</li><li>405 - Method Not Allowed</li><li>409/412 - Version Conflict Management</li><li>422 - Unprocessable Entity. Violation of business rules</li><li>409/412 - Version Conflict Management</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>5xx:</b></p><p><ul><li></li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1780,
+    "date": "2020/08/14",
+    "title": "Regular Expression (regex) in Java",
+    "itemList": [
+      {
+        "text": "<p>Brackets are used to find a range of characters:</p>",
+        "image": "../assets/image/it/other/regex1.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>Metacharacters are characters with a special meaning:</p>",
+        "image": "../assets/image/it/other/regex2.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>Quantifiers define quantities:</p>",
+        "image": "../assets/image/it/other/regex3.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
     "id": 2000,
     "date": "2019/10/29",
     "title": "Acronyms",
     "itemList": [
       {
-        "text": "<p><b>A - G</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ADAL</b> -  Active Directory Authentication Library</li><li><b>ACR</b> - Azure Container Registry</li><li><b>ACS</b> - Access Control Server</li><li><b>ADAL</b> - Active Directory Authentication Library</li><li><b>APF</b> - API Priority and Fairness feature</li><li><b>AMQP</b> - Advanced Message Queuing Protocol</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>BDD</b> - Behavior Driven Development</li><li><b>CCM</b> – cloud controller manager</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CFAR</b> –  Cloud Foundry Application Runtime</li><li><b>CFEE</b> –  Cloud Foundry Enterprise Environment</li><li><b>CFS</b> – Completely Fair Scheduler - is a process scheduler which was merged into the 2.6.23 (October 2007) release of the Linux kernel and is the default scheduler</li><li><b>CGROUP</b> – Control Group</li><li><b>CIDR</b> – Classless inter-domain routing</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CNM</b> – Container Network Model</li><li><b>CORS</b> – Cross-Origin Resource Sharing</li><li><b>CQRS</b> – Command Query Responsibility Segregation</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CRI</b> – Container Runtime Interface</li><li><b>CSI</b> – Container Storage Interface</li><li><b>cURL</b> - Client URL Request Library</li><li><b>FHIR</b> - Fast Healthcare Interoperability Resource</li><li><b>GIL</b> - Global Interpreter Lock</li><li><b>GMSA</b> - Group Managed Service Accounts</li></ol></p>",
+        "text": "<p><b>A - G</b></p><p><ol><li><b>ACI</b> - Azure Container Instances</li><li><b>ADAL</b> -  Active Directory Authentication Library</li><li><b>ACR</b> - Azure Container Registry</li><li><b>ACS</b> - Access Control Server</li><li><b>ADAL</b> - Active Directory Authentication Library</li><li><b>APF</b> - API Priority and Fairness feature</li><li><b>AMQP</b> - Advanced Message Queuing Protocol</li><li><b>APM</b> - Application performance monitoring</li><li><b>BBS</b> - Bulletin Board System</li><li><b>BDD</b> - Behavior Driven Development</li><li><b>CCM</b> – cloud controller manager</li><li><b>CDI</b> – Context and Dependency Injection</li><li><b>CDN</b> – Content Delivery Network</li><li><b>CFAR</b> –  Cloud Foundry Application Runtime</li><li><b>CFEE</b> –  Cloud Foundry Enterprise Environment</li><li><b>CFS</b> – Completely Fair Scheduler - is a process scheduler which was merged into the 2.6.23 (October 2007) release of the Linux kernel and is the default scheduler</li><li><b>CGROUP</b> – Control Group</li><li><b>CIDR</b> – Classless inter-domain routing</li><li><b>CNAME</b> – Canonical Name</li><li><b>CNI</b> – Container Network Interface</li><li><b>CNM</b> – Container Network Model</li><li><b>CORS</b> – Cross-Origin Resource Sharing</li><li><b>CQRS</b> – Command Query Responsibility Segregation</li><li><b>CRD</b> – Custom Resource Definition</li><li><b>CRI</b> – Container Runtime Interface</li><li><b>CSI</b> – Container Storage Interface</li><li><b>cURL</b> - Client URL Request Library</li><li><b>ETag</b> - Entity tag. A part of HTTP. An ETag is an opaque identifier assigned by a Web server to a specific version of a resource found at a URL. If the resource representation at that URL ever changes, a new and different ETag is assigned. Used in this manner, ETags are similar to fingerprints and can quickly be compared to determine whether two representations of a resource are the same.</li><li><b>FHIR</b> - Fast Healthcare Interoperability Resource</li><li><b>GIL</b> - Global Interpreter Lock</li><li><b>GMSA</b> - Group Managed Service Accounts</li></ol></p>",
         "image": ""
       },
       {
@@ -356,7 +397,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PLEG</b> - Pod Lifecycle Event Generator</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li></ol></p>",
+        "text": "<p><b>O - T</b></p><p><ol><li><b>OCI</b> - Open Container Initiative</li><li><b>OWASP</b> - Open Web Application Security Project</li><li><b>PDB</b> - PodDisruptionBudget object. A PDB limits the number of pods of a replicated application that are down simultaneously from voluntary disruptions.</li><li><b>PLEG</b> - Pod Lifecycle Event Generator</li><li><b>PVC</b> - Persistent Volume Claim</li><li><b>QPS</b> - Queries per second</li><li><b>RHEL</b> - Red Hat Enterprise Linux</li><li><b>RMS</b> - Rights Management Services</li><li><b>S2S</b> - Site to Site</li><li><b>SCC</b> - Security Command Center</li><li><b>SCIM</b> - System for Cross-Domain Identity Management</li><li><b>SCTP</b> - Stream Control Transmission Protocol</li><li><b>SNI</b> - Server Name Indication</li><li><b>SPN</b> - Service Principal Name</li></ol></p>",
         "image": ""
       },
       {

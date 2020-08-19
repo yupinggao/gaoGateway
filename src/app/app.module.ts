@@ -26,6 +26,7 @@ import { SecurityComponent } from './component/it/security/security.component';
 import { ItCloudComponent } from './component/itCloud/itCloud.component';
 import { ServerComponent } from './component/server/server.component';
 import { WebComponent } from './component/server/web/web.component';
+import { OSComponent } from './component/server/os/os.component';
 import { ApplicationComponent } from './component/server/application/application.component';
 import { OtherProductComponent } from './component/server/otherProduct/otherProduct.component';
 import { AzureComponent } from './component/itCloud/azure/azure.component';
@@ -101,6 +102,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     LinkComponent,
     ToolComponent,
     WebComponent,
+    OSComponent,
     ApplicationComponent,
     OtherProductComponent,
     DesignComponent,
