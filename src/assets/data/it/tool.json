@@ -150,5 +150,31 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 1000,
+    "date": "2020/08/29",
+    "title": "vi",
+    "itemList": [
+      {
+        "text": "<p>vi is one of the most commonly used editor program and included by default with every UNIX and linux system. vi basically operates in 3 modes, namely:<ol><li><b>vi mode</b> – the mode vi starts in</li><li><b>command mode</b> – you can be in command mode from the vi mode by pressing the key colon (':')</li><li><b>input mode</b> – in this mode user starts the actual editing of the text</li></ol></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Below are some of the most commonly used vi commands in all 3 modes of operation.</p><p><b>vi mode commands</b></p>",
+        "image": "../assets/image/it/tool/vi1.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Command mode commands</b></p>",
+        "image": "../assets/image/it/tool/vi2.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Input mode commands</b></p>",
+        "image": "../assets/image/it/tool/vi3.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
   }
 ]
