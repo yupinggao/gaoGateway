@@ -29,6 +29,7 @@ import { WebComponent } from './component/server/web/web.component';
 import { OSComponent } from './component/server/os/os.component';
 import { ApplicationComponent } from './component/server/application/application.component';
 import { OtherProductComponent } from './component/server/otherProduct/otherProduct.component';
+import { BigDataComponent } from './component/server/bigData/bigData.component';
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
 import { AwsComponent } from './component/itCloud/aws/aws.component';
@@ -105,6 +106,7 @@ import { MethodologyComponent } from './component/it/methodology/methodology.com
     OSComponent,
     ApplicationComponent,
     OtherProductComponent,
+    BigDataComponent,
     DesignComponent,
     OtherComponent,
     MethodologyComponent

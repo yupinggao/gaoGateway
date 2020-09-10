@@ -13,5 +13,16 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 500,
+    "date": "2020/09/08",
+    "title": "Ubuntu",
+    "itemList": [
+      {
+        "text": "<p><b>Commonds</b></p><p><ul><li><code>sudo ufw enable</code> - enable firewall</li><li><code>sudo ufw allow 22/tcp</code> - open port 22</li><li><code>sudo ufw status verbose</code> - verify</li><li></li></ul></p>",
+        "image": ""
+      }
+    ]
   }
 ]

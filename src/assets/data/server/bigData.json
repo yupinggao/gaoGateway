@@ -1,0 +1,29 @@
+[
+  {
+    "id": 200,
+    "date": "2020/09/08",
+    "title": "Redis",
+    "itemList": [
+      {
+        "text": "<p>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Often Redis it is called a data structure server because it has outer key-value shell, but each value can contain a complex data structure, such as a string, a list, a hashes, or ordered data structures called sorted sets as well as probabilistic data structures like hyperloglog.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Install Redis on Ubunt</b></p><ol><li>sudo apt-get update</li><li>sudo apt-get upgrade</li><li>sudo apt-get install redis-server</li><li>sudo systemctl enable redis-server.service</li></ol>",
+        "image": ""
+      },
+      {
+        "text": "<p>Configuration file is: /etc/redis/redis.conf</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Redis-cli</b></p><ol><li>redis-cli</li><li>redis-cli info</li><li>redis-cli info stats</li><li>redis-cli info server</li></ol>",
+        "image": ""
+      }
+    ]
+  }
+]

@@ -176,5 +176,17 @@
         "imageClass": "mx-auto d-block"
       }
     ]
+  },
+  {
+    "id": 1100,
+    "date": "2020/08/29",
+    "title": "cronjob",
+    "itemList": [
+      {
+        "text": "<p>The software utility cron also known as cron job is a time-based job scheduler in Unix-like computer operating systems. Users that set up and maintain software environments use cron to schedule jobs (commands or shell scripts) to run periodically at fixed times, dates, or intervals.</p>",
+        "image": "../assets/image/it/tool/cronjob.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
   }
 ]

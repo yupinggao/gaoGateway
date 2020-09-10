@@ -187,6 +187,64 @@
     ]
   },
   {
+    "id": 650,
+    "date": "2020/09/10",
+    "title": "OpenShift",
+    "itemList": [
+      {
+        "text": "<p>OpenShift is a family of containerization software offerings created by open-source software provider Red Hat. According to the company, Kubernetes is the kernel of distributed systems, while OpenShift is the distribution. At its core, OpenShift is a cloud-based Kubernetes container platform that's considered both containerization software and a platform-as-a-service (PaaS). It’s also partly built on Docker, another popular containerization platform. OpenShift offers consistent security, built-in monitoring, centralized policy management, and compatibility with Kubernetes container workloads. It’s fast, enables self-service provisioning, and integrates with a variety of tools. In other words, there’s no vendor lock-in. Previously known as Origin, the open-source platform, OpenShift OKD lets developers create, test, and deploy applications on the cloud. It also supports several programming languages, including Go, Node.js, Ruby, Python, PHP, Perl, and Java.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 670,
+    "date": "2020/09/10",
+    "title": "Kubernetes Vs. OpenShift",
+    "itemList": [
+      {
+        "text": "<p><b>Kubernetes Vs. OpenShift</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Both Kubernetes and OpenShift feature robust and scalable architecture that enables rapid and large-scale application development, deployment, and management. They both run on the Apache License 2.0. But that’s just about where the similarities end. Here are just a few of the many ways OpenShift and Kubernetes differ.",
+        "image": ""
+      },
+      {
+        "text": "<b>Deployment</b><p>Kubernetes offers more flexibility as an open-source framework and can be installed on almost any platform — like Microsoft Azure and AWS —  as well as any Linux distribution, including Ubuntu and Debian. OpenShift, on the other hand, requires Red Hat’s proprietary Red Hat Enterprise Linux Atomic Host (RHELAH), Fedora, or CentOS. This narrows options for many businesses, especially if they're not already using these platforms.",
+        "image": ""
+      },
+      {
+        "text": "<b>Security</b><p>OpenShift has stricter security policies. For instance, it is forbidden to run a container as root. It also offers a secure-by-default option to enhance security. Kubernetes doesn’t come with built-in authentication or authorization capabilities, so developers must create bearer tokens and other authentication procedures manually.",
+        "image": ""
+      },
+      {
+        "text": "<b>Support</b><p>Kubernetes has a large active community of developers who continuously collaborate on refining the platform. It also offers support for multiple frameworks and languages. OpenShift has a much smaller support community that is limited primarily to Red Hat developers.",
+        "image": ""
+      },
+      {
+        "text": "<b>Releases and Updates</b><p>Kubernetes has an average of four releases each year, while OpenShift trails with around three. Similarly, Kubernetes supports several concurrent and simultaneous updates, while OpenShift DeploymentConfig does not.",
+        "image": ""
+      },
+      {
+        "text": "<b>Networking</b><p>Kubernetes lacks a networking solution but lets users employ third-party network plug-ins. OpenShift, on the other hand, has its out-of-the-box networking solution called Open vSwitch, which comes with three native plug-ins.",
+        "image": ""
+      },
+      {
+        "text": "<b>Templates</b><p>Kubernetes offers Helm templates that are easy to use and provide a generous amount of flexibility. OpenShift templates are nowhere near as flexible or user-friendly.",
+        "image": ""
+      },
+      {
+        "text": "<b>Container Image Management</b><p>OpenShift lets developers use Image Streams to manage container images, while Kubernetes doesn’t offer container image management features.",
+        "image": ""
+      },
+      {
+        "text": "<b>Kubernetes Vs. OpenShift: The Verdict</b><p>Both Kubernetes and OpenShift are popular container management systems, and each has its unique features and benefits. While Kubernetes helps automate application deployment, scaling, and operations, OpenShift is the container platform that works with Kubernetes to help applications run more efficiently. Check out this article for more insight into more of today’s popular DevOps tools and how each is used.",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 700,
     "date": "2015/11/3",
     "title": "Grid Computing",

@@ -28,5 +28,82 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 500,
+    "date": "2020/09/05",
+    "title": "IBM Cloud dedicated",
+    "itemList": [
+      {
+        "text": "<p>IBM Cloud dedicated servers offer maximum performance and secure single tenancy. No hypervisor means direct root access to all server resources to power apps. Completely customize your fully dedicated server with thousands of combinations to tailor the device for your specific workload requirements.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 800,
+    "date": "2020/09/05",
+    "title": "IBM Compose Enterprise",
+    "itemList": [
+      {
+        "text": "<p>IBM Compose Enterprise for IBM Cloud™ pairs the needs of enterprises with the agility of a cloud database service, offering database-as-a-service on dedicated physical machines.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Compose Enterprise provides the security and isolation that is required by enterprise-level applications, and allows you to deploy into almost any IBM Cloud Data Center.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Compose Enterprise creates a single-tenant cluster with encryption at rest. It offers you dedicated networking and performance for your database deployments, and geographic data center flexibility. After the cluster is created, any database that is created through one of the other Compose database services that are offered by IBM Cloud can be provisioned into it.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1000,
+    "date": "2020/09/07",
+    "title": "IBM Cloud CLI",
+    "itemList": [
+      {
+        "text": "<p><code>ibmcloud login</code></p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud target --cf</code> - to access Cloud Foundry services, you can run the command to interactively identify the org and space</p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud target -o <value> -s <value></code> - to access Cloud Foundry services, specify a Cloud Foundry org and space</p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud dev create</code> - to creating an app from a starter kit</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><code>ibmcloud dev enable</code> - to enable an existing app in the current directory</p>",
+        "image": ""
+      },      
+      {
+        "text": "<p><code>ibmcloud dev build</code> - to build your app</p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud dev run</code> - to start the app in the foreground</p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud dev edit</code> - to add a service and modify the code</p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud dev deploy</code> - to deploy into Cloud Foundry</p>",
+        "image": ""
+      },    
+      {
+        "text": "<p><code>ibmcloud dev deploy -t container</code> - to deploy into K8s</p>",
+        "image": ""
+      }            
+    ]
   }
 ]

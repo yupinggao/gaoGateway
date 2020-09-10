@@ -34,6 +34,17 @@
     ]
   },
   {
+    "id": 50,
+    "date": "2020/08/29",
+    "title": "Install Docker on Redhat 7",
+    "itemList": [
+      {
+        "text": "<b>Steps</b><ol><li>Start a terminal</li><li>sudo yum install docker</li><li>sudo service docker start</li></ol>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 60,
     "date": "2018/12/17",
     "title": "Install Docker CLI on Windows",
