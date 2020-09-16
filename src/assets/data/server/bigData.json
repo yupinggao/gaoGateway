@@ -21,6 +21,10 @@
         "image": ""
       },
       {
+        "text": "<p>To enable the connections from other computers, please do the following: <ul><li>Comment out the following line in the configuration file<br>bind 127.0.0.1 ::1</li><li>change protected-mode to no<br>protected-mode no</li></ul></p>",
+        "image": ""
+      },
+      {
         "text": "<p><b>Redis-cli</b></p><ol><li>redis-cli</li><li>redis-cli info</li><li>redis-cli info stats</li><li>redis-cli info server</li></ol>",
         "image": ""
       }
