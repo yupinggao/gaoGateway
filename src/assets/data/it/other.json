@@ -170,6 +170,52 @@
     ]
   },
   {
+    "id": 750,
+    "date": "2020/09/20",
+    "title": "Jython",
+    "itemList": [
+      {
+        "text": "<p>Jython is the JVM implementation of the Python programming language. It is designed to run on the Java platform. A Jython program can import and use any Java class. Just as Java, Jython program compiles to bytecode. One of the main advantages is that a user interface designed in Python can use GUI elements of AWT, Swing or SWT Package.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Jython, which started as JPython and was later renamed, follows closely the standard Python implementation called CPython</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Difference between Python and Jython</b><p><ul><li>Reference implementation of Python, called CPython, is written in C language. Jython on the other hand is completely written in Java and is a JVM implementation</li><li>Standard Python is available on multiple platforms. Jython is available for any platform with a JVM installed on it</li><li>Standard Python code compiles to a .pyc file, while Jython program compiles to a .class file</li><li>Python extensions can be written in C language. Extensions for Jython are written in Java</li><li>Jython is truly multi-threaded in nature. Python however uses the Global Interpreter Lock (GIL) mechanism for the purpose</li><li>Both implementations have different garbage collection mechanisms</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 780,
+    "date": "2020/09/20",
+    "title": "Use wsadmin",
+    "itemList": [
+      {
+        "text": "<p>The wsadmin tool provides the ability to automate configuration tasks for your environment by running scripts. The wsadmin tool utilizes a set of management objects which allow you to run commands and command parameters to configure your environment. Use the AdminConfig, AdminControl, AdminApp, AdminTask, and Help objects to perform administrative tasks. However, there are some limitations for using the wsadmin tool, including:<ul><li>The wsadmin tool only supports the Jython and Jacl scripting languages</li><li>It is not available in WAS Liberty</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Procedure</b><br><p><ul><li>Use the AdminConfig object, the AdminTask object, and the AdminApp object to handle configuration functionality. The AdminConfig object, the AdminTask object, and the AdminApp object are used when you are managing the configuration of the server that resides persistently in a repository on permanent storage. Use these objects to create, query, change, or remove this configuration without starting an application server process. To use the AdminTask object, you must be connected to a running server.</li><li>Use the AdminControl object to manage running objects on application server installations. The AdminControl object is used when managing the running instance of an application server by a Java™ Management Extensions (JMX) MBean. This instance can have attributes that you can interrogate and change, and operations that you can invoke. These operational actions that are taken against a running application server do not have an effect on the persistent configuration of the server. The attributes that support manipulation from an MBean differ from the attributes that the corresponding configuration supports. The configuration can include many attributes that you cannot query or set from the running object. The application server scripting support provides functions to locate configuration objects and running objects. The objects in the configuration do not always represent objects that are currently running. The AdminControl object manages running objects.</li><li>Use the Help object to obtain information about the AdminConfig, AdminApp, AdminControl, and AdminTask objects, to obtain interface information about running MBeans, and to obtain help for warnings and error messages.</li><ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Launch the wsadmin tool using Jython: <code>wsadmin.sh -lang jython</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Launch the wsadmin tool using Jython when security is enabled: <code>wsadmin.sh -lang jython -user user_name -password password</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Run the wsadmin tool with the -f option, and place the commands that you want to run into the file: <code>wsadmin.sh -lang jython -f  test.py</code> - where the test.py is a file which contains the some commands, such as:<code><br>apps = AdminApp.list()<br>print apps</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 800,
     "date": "2019/10/28",
     "title": "Groovy",
