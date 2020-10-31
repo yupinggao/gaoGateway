@@ -28,7 +28,7 @@
         "image": ""
       },
       {
-        "text": "<p>This server supports two models of application deployment:<ul><li>Deploy an application by dropping it into the dropins directory.</li><li>Deploy an application by adding it to the server configuration file.</li></ul></p>",
+        "text": "<p>This server supports two models of application deployment:<ul><li>Deploy an application by dropping it into the dropins or apps directory.</li><li>Deploy an application by adding it to the server configuration file.</li></ul></p>",
         "image": ""
       },
       {
