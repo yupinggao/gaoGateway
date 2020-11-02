@@ -45,6 +45,17 @@
   },
   {
     "id": 500,
+    "date": "2020/10/30",
+    "title": "Copado",
+    "itemList": [
+      {
+        "text": "<p>Copado is a complete end to end DevOps Solution.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 600,
     "date": "2019/11/30",
     "title": "Chef, Puppet, Ansible, and SaltStack",
     "itemList": [

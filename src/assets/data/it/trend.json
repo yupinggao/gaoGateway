@@ -9,7 +9,7 @@
         "image": ""
       },
       {
-        "text": "<p><b>DevOps Tools</b><p><ul><li><a href='it/tool/10'>Jenkins</a></li><li><a href='/it/cloud/10'>Docker</a></li><li><a href='it/tool/5'>Git (GitHub)</a></li><li>Chef</li><li>Puppet</li><li>Ansible</li><li>SaltStack</li></ul></p>",
+        "text": "<p><b>DevOps Tools</b><p><ul><li><a href='it/tool/10'>Jenkins</a></li><li><a href='/it/cloud/10'>Docker</a></li><li><a href='it/tool/5'>Git (GitHub)</a></li><li>Copado</li><li>Chef</li><li>Puppet</li><li>Ansible</li><li>SaltStack</li></ul></p>",
         "image": ""
       }
     ]
