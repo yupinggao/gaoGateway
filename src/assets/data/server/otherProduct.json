@@ -219,6 +219,35 @@
       {
         "text": "<p><b>Database in Context of Salesforce</b><br>When we talk about the database, think of a giant spreadsheet. When you put information into Salesforce, it gets stored in the database so you can access it again later. It’s stored in a very specific way so you’re always accessing the information you need.</p>",
         "image": ""
+      },
+      {
+        "text": "<p><b>Metadata</b><br>When you look at data in Salesforce, you might think that you're looking at a user interface sitting on top of a run-of-the-mill relational database. But what you’re actually looking at is an abstraction of the database that’s driven by the platform’s metadata-aware architecture.</p><p>In this abstraction, objects are our database tables. The fields on those objects are columns, and records are rows in the database. This analogy is true both for standard objects that come with Salesforce by default and custom objects that you build yourself.</p><p>In short, metadata forms the structure of your org. Whether you’re defining fields, business processes, or something more complex, metadata holds your configuration. The platform then renders your app’s metadata in the user interface along with its associated data.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>No-Code and Low-Code Development</b><br>It can be surprising to hear, but the Salesforce platform encourages you to minimize code. And it’s not because we don’t love code. It’s because the platform’s metadata-driven architecture lets you complete most basic development tasks without ever writing a line.</p><p>Salesforce offers a host of tools for point-and-click—or declarative—development. Most of these tools require little to no understanding of development principles: no code.</p><p>Some development tasks, like writing validation rules or hooking up components with UI elements, are considered low code. That means they require some basic programmatic knowledge to complete, but aren’t so rigorous that they’re considered programmatic. For example, if you know something about logic, conditions, and CRUD operations, you can do more with Process Builder.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Salesforce Security</b><br>The platform makes it easy to specify which users can view, create, edit, or delete any record or field in the app. You can control access to your whole org, a specific object, a specific field, or even an individual record. By combining security controls at different levels, you can provide just the right level of data access to thousands of users without having to specify permissions for each user individually.</p>",
+        "image": "../assets/image/server/otherProduct/salesforceSecurity.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 1400,
+    "date": "2020/11/22",
+    "title": "Salesforce Tools",
+    "itemList": [
+      {
+        "text": "<p><b>Automation Tools</b><p>One of the hardest things for an admin or a developer to figure out is when to use what tool for the job at hand. In general, it’s best to start with declarative, no-code tools and work your way up to code solutions.</p><ul><li><b>Process Builder:</b> Use Process Builder when you need to start a behind-the-scenes business process automatically. Processes can start when:<br><ul><li>A record is created</li><li>A record is updated</li><li>A platform event occurs</li></ul></li><li><b>Flow Builder:</b> Use Flow Builder to:<ul><li>Automate a guided visual experience</li><li>Add more functionality for a behind-the-scenes process than is available in Process Builder. Use Flow Builder to build the more complex functionality. Then call the resulting flow from the process</li><li>Start a behind-the-scenes business process:<ul><li>When a user clicks something, like a button</li><li>When a record is created</li><li>When a record is updated</li><li>When a platform event occurs</li><li>At a specified time and frequency</li></ul></li></ul></li><li><b>Approvals:</b> Approvals isn’t included in Lightning Flow, but it offers a declarative way to automate something that Lightning Flow doesn’t cover. That said, Lightning Flow does support automating how a record gets submitted for approval.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Which Automation Tool Is Right for My Use Case?</b><br>When it’s all said and done, a process-driven experience isn’t backed by only one process. It’s a combination of all the business processes in your org that can impact your customer. Each business process typically falls into one of these camps.</p>",
+        "image": "../assets/image/server/otherProduct/tools.PNG",
+        "imageClass": "mx-auto d-block"
       }
     ]
   }
