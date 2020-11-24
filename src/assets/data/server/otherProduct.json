@@ -250,5 +250,44 @@
         "imageClass": "mx-auto d-block"
       }
     ]
+  },
+  {
+    "id": 1500,
+    "date": "2020/11/24",
+    "title": "Salesforce Data Security",
+    "itemList": [
+      {
+        "text": "<p><b>Levels of Data Access</b><p>You can control which users have access to which data in your whole org, a specific object, a specific field, or an individual record.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Organization</b><p>For your whole org, you can maintain a list of authorized users, set password policies, and limit logins to certain hours and locations.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Objects</b><p>Access to object-level data is the simplest thing to control. By setting permissions on a particular type of object, you can prevent a group of users from creating, viewing, editing, or deleting any records of that object. For example, you can use object permissions to ensure that interviewers can view positions and job applications but not edit or delete them.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Fields</b><p>You can restrict access to certain fields, even if a user has access to the object. For example, you can make the salary field in a position object invisible to interviewers but visible to hiring managers and recruiters.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Records</b><p>You can allow particular users to view an object, but then restrict the individual object records they're allowed to see. For example, an interviewer can see and edit her own reviews, but not the reviews of other interviewers. You can manage record-level access in these four ways.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><ul><li><b>Organization-wide defaults</b> specify the default level of access users have to each others’ records. You use org-wide sharing settings to lock down your data to the most restrictive level, and then use the other record-level security and sharing tools to selectively give access to other users.</li><li><b>Role hierarchies</b> give access for users higher in the hierarchy to all records owned by users below them in the hierarchy. Role hierarchies don’t have to match your organization chart exactly. Instead, each role in the hierarchy should represent a level of data access that a user or group of users needs.</li><li><b>Sharing rules</b> are automatic exceptions to organization-wide defaults for particular groups of users, so they can get to records they don’t own or can’t normally see. Sharing rules, like role hierarchies, are only used to give additional users access to records. They can’t be stricter than your organization-wide default settings.</li><li><b>Manual sharing</b> allows owners of particular records to share them with other users. Although manual sharing isn’t automated like org-wide sharing settings, role hierarchies, or sharing rules, it can be useful in some situations, such as when a recruiter going on vacation needs to temporarily assign ownership of a job application to someone else.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Manage Object Permissions</b><p>The simplest way to control data access is to set permissions on a particular type of object. (An object is a collection of records, like leads or contacts.) You can control whether a group of users can create, view, edit, or delete any records of that object.</p><p>You can set object permissions with profiles or permission sets. A user can have one profile and many permission sets.<ul><li>A user’s profile determines the objects they can access and the things they can do with any object record (such as create, read, edit, or delete).</li><li>Permission sets grant additional permissions and access settings to a user.</li></ul></p><p>Use profiles to grant the minimum permissions and settings that all users of a particular type need. Then use permission sets to grant more permissions as needed. The combination of profiles and permission sets gives you a great deal of flexibility in specifying object-level access.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Use Profiles to Restrict Access</b><p>Each user has a single profile that controls which data and features that user has access to. A profile is a collection of settings and permissions. Profile settings determine which data the user can see, and permissions determine what the user can do with that data.<ul><li>The settings in a user’s profile determine whether the user can see a particular app, tab, field, or record type.</li><li>The permissions in a user’s profile determine whether the user can create or edit records of a given type, run reports, and customize the app.</li></ul></p><p>Profiles usually match up with a user's job function (for example, system administrator, recruiter, or hiring manager), but you can have profiles for anything that makes sense for your Salesforce org. A profile can be assigned to many users, but a user can have only one profile at a time.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
