@@ -289,5 +289,39 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 1600,
+    "date": "2020/11/26",
+    "title": "Salesforce Dashboard",
+    "itemList": [
+      {
+        "text": "<p>A dashboard is a visual display of key metrics and trends for records in your org. The relationship between a dashboard component and report is 1:1; for each dashboard component, there is a single source report. However, you can use the same report in multiple dashboard components on a single dashboard (for example, use the same report in both a bar chart and pie chart). You can display multiple dashboard components on a single dashboard page, creating a powerful visual display and a way to consume multiple reports that often have a common theme, like sales performance or customer support.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Like reports, dashboards are stored in folders, which control who has access. If you have access to a folder, you can view its dashboards. However, to view the dashboard components, you need access to the underlying reports as well.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Each dashboard has a running user, whose security settings determine which data to display in a dashboard. If the running user is a specific user, all dashboard viewers see data based on the security settings of that user—regardless of their own personal security settings. For this reason, you’ll want to choose the running user wisely, so as not to open up too much visibility. For example, set the sales manager as the running user for a leaderboard for her team. This allows her team members to view the leaderboard for their individual team, but not other teams.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Dynamic dashboards are dashboards for which the running user is always the logged-in user. This way, each user sees the dashboard according to his or her own access level. If you’re concerned about too much access, dynamic dashboards might be the way to go.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1700,
+    "date": "2020/11/27",
+    "title": "Apex",
+    "itemList": [
+      {
+        "text": "<p>Apex is a case-insensitive language.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
