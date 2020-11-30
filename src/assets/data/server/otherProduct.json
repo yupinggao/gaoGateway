@@ -315,11 +315,44 @@
   },
   {
     "id": 1700,
+    "date": "2020/11/28",
+    "title": "Salesforce Object",
+    "itemList": [
+      {
+        "text": "<b>Relationships Among Objects</b><p><ul><li>Master-Detail (1:n) — A parent-child relationship in which the master object controls certain behaviors of the detail object.</li><li>Many-to-many — You can use master-detail relationships to model many-to-many relationships between any two objects</li><li>Lookup (1:n) — This type of relationship links two objects together, but has no effect on deletion or security. Unlike master-detail fields, lookup fields are not automatically required. When you define a lookup relationship, data from one object can appear as a custom related list on page layouts for the other object.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1800,
+    "date": "2020/11/28",
+    "title": "Salesforce DML",
+    "itemList": [
+      {
+        "text": "<b>Should You Use DML Statements or Database Methods?</b><p><ul><li>Use DML statements if you want any error that occurs during bulk DML processing to be thrown as an Apex exception that immediately interrupts control flow (by using try. . .catch blocks). This behavior is similar to the way exceptions are handled in most database procedural languages.</li><li>Use Database class methods if you want to allow partial success of a bulk DML operation—if a record fails, the remainder of the DML operation can still succeed. Your application can then inspect the rejected records and possibly retry the operation. When using this form, you can write code that never throws DML exception errors. Instead, your code can use the appropriate results array to judge success or failure. Note that Database methods also include a syntax that supports thrown exceptions, similar to DML statements.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1900,
     "date": "2020/11/27",
     "title": "Apex",
     "itemList": [
       {
-        "text": "<p>Apex is a case-insensitive language.</p>",
+        "text": "<p>Apex is a case-insensitive language.</p><p>Apex is tightly integrated with the database, you can access Salesforce records and their fields directly from Apex. Every record in Salesforce is natively represented as an sObject in Apex.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2000,
+    "date": "2020/11/29",
+    "title": "Apex Test",
+    "itemList": [
+      {
+        "text": "<p>Whenever you modify your Apex code, rerun your tests to refresh code coverage results.</p><p>A known issue with the Developer Console prevents it from updating code coverage correctly when running a subset of tests. To update your code coverage results, use Test | Run All rather than Test | New Run.</p><p>By default, Apex tests don’t have access to pre-existing data in the org, except for access to setup and metadata objects, such as the User or Profile objects. Set up test data for your tests. Creating test data makes your tests more robust and prevents failures that are caused by missing or changed data in the org. You can create test data directly in your test method, or by using a utility test class as you’ll find out later.</p><p>Even though it is not a best practice to do so, there are times when a test method needs access to pre-existing data. To access org data, annotate the test method with @isTest(SeeAllData=true). The test method examples in this unit don’t access org data and therefore don’t use the SeeAllData parameter.</p>",
         "image": ""
       }
     ]
