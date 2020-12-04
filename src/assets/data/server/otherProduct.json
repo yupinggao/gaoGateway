@@ -356,5 +356,35 @@
         "image": ""
       }
     ]
+  },
+  {
+    "id": 2100,
+    "date": "2020/12/01",
+    "title": "Salesforce Page Layout",
+    "itemList": [
+      {
+        "text": "<p>There are two ways to customize a page in Lightning Experience. You can customize a page’s layout, or customize its contents. These are done with separate tools.</p><p>Lightning pages are a collection of Lightning components arranged in regions on the page. You can customize the structure of the page and the position of its components with the Lightning App Builder (learn more in the Lightning App Builder module right here on Trailhead).</p><p>You can customize a page’s contents, such as the fields and buttons that appear on the page, by using a different tool called the <b>page layout editor</b>. The page layout editor, also known as page layouts, helps you manage the content of pages in both our Classic UI and in Lightning Experience. The page layout editor is what we’ll be working with in this unit.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2200,
+    "date": "2020/12/03",
+    "title": "Copado Branch Management",
+    "itemList": [
+      {
+        "text": "<p>If there is no track of metadata changes in the different sandboxes, leverage Copado's Org Differences and Snapshot Differences features to compare the metadata differences between the production org and UAT/int/dev sandboxes.</p><p>Alternatively, the Git Snapshot feature lets you commit the metadata to all your environments to different branches of a Git repository. Once all the metadata in the different environments is committed to the branches, create pull requests between the branches to compare the differences.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Promotions</b><p>When the user story is promoted, Copado creates a promotion branch out of the destination branch. Then the feature branch(es) of the promoted user story(ies) get merged into the promotion branch, with the version of the files as in the feature branch(es), not the source org branch.</p><p>If you are promoting multiple user stories, feature branches get merged in ascending order based on the user story number. If there are overlapped metadata (e.g. 2 or more user stories contain the same Apex Class). Copado will try first a Git merge, but if there is a Git conflict, the feature branch version of the file will win over the promotion branch. This could lead to the last user story overwriting other user stories in the same promotion. This situation can be detected in advance with the overlap awareness feature. If Copado auto-resolves conflicts, you will receive an email with the file name(s) where the conflicts were auto-resolved. You can also review the merge in the promotion branch in the Git repository. You then need to sync the feature branches so that they have the same version of the overlapped file.</p><p>Exclude user stories created in UAT and integration from CBM, to avoid back porting them to the dev sandboxes. You can exclude them by checking the Exclude from CBM checkbox in the user story layout.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Destructive Changes</b><p>Destructive Changes is a Git operation that can be executed from the Git Snapshot and the User Story Commit pages and allows you to remove components both in Git and in your sandboxes. If you want to delete a component in Git and also in the destination sandboxes, you should use this functionality in a user story. If you just want to delete the component in Git,  you can use it in a Git snapshot.</p><p>When you select this operation, you can see the org credential and the metadata grid with the metadata components of the environment related to the org credential selected. If the component does not appear in the grid because it has already been deleted in the source org, then select a different org credential in the lookup field which corresponds to an org that still has the item to be deleted.</p>",
+        "image": ""
+      }
+    ]
   }
 ]
