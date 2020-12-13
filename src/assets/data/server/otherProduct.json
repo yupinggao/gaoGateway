@@ -330,7 +330,22 @@
     "title": "Salesforce DML",
     "itemList": [
       {
+        "text": "<p>Apex contains the built-in Database class, which provides methods that perform DML operations and mirror the DML statement counterparts.</p><p>Unlike DML statements, Database methods have an optional allOrNone parameter that allows you to specify whether the operation should partially succeed. When this parameter is set to false, if errors occur on a partial set of records, the successful records will be committed and errors will be returned for the failed records. Also, no exceptions are thrown with the partial success option.</p>",
+        "image": ""
+      },
+      {
         "text": "<b>Should You Use DML Statements or Database Methods?</b><p><ul><li>Use DML statements if you want any error that occurs during bulk DML processing to be thrown as an Apex exception that immediately interrupts control flow (by using try. . .catch blocks). This behavior is similar to the way exceptions are handled in most database procedural languages.</li><li>Use Database class methods if you want to allow partial success of a bulk DML operation—if a record fails, the remainder of the DML operation can still succeed. Your application can then inspect the rejected records and possibly retry the operation. When using this form, you can write code that never throws DML exception errors. Instead, your code can use the appropriate results array to judge success or failure. Note that Database methods also include a syntax that supports thrown exceptions, similar to DML statements.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1850,
+    "date": "2020/12/11",
+    "title": "SOQL",
+    "itemList": [
+      {
+        "text": "<p>Instead of using the equal operator (=) for comparison, you can perform fuzzy matches by using the LIKE operator. For example, you can retrieve all accounts whose names start with SFDC by using this condition: WHERE Name LIKE 'SFDC%'. The % wildcard character matches any or no character. The _ character in contrast can be used to match just one character.</p>",
         "image": ""
       }
     ]
@@ -343,6 +358,34 @@
       {
         "text": "<p>Apex is a case-insensitive language.</p><p>Apex is tightly integrated with the database, you can access Salesforce records and their fields directly from Apex. Every record in Salesforce is natively represented as an sObject in Apex.</p>",
         "image": ""
+      },
+      {
+        "text": "<p>Unlike specific sObjects types, generic sObjects can be created only through the newSObject() method. Also, the fields of a generic sObject can be accessed only through the put() and get() methods.</p><p>You can delete persisted records using the delete statement. Deleted records aren’t deleted permanently from Lightning Platform, but they’re placed in the Recycle Bin for 15 days from where they can be restored.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 1950,
+    "date": "2020/12/12",
+    "title": "Apex Triggers",
+    "itemList": [
+      {
+        "text": "<p>To access the records that caused the trigger to fire, use context variables. For example, Trigger.New contains all the records that were inserted in insert or update triggers. Trigger.Old provides the old version of sObjects before they were updated in update triggers, or a list of deleted sObjects in delete triggers. Triggers can fire when one record is inserted, or when many records are inserted in bulk via the API or Apex. Therefore, context variables, such as Trigger.New, can contain only one record or multiple records. You can iterate over Trigger.New to get each individual sObject.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The system saves the records that fired the before trigger after the trigger finishes execution. You can modify the records in the trigger without explicitly calling a DML insert or update operation. If you perform DML statements on those records, you get an error.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Trigger Context Variables</b></p>",
+        "image": "../assets/image/server/otherProduct/triggerContextVariabe.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Triggers and Callouts</b><br>Apex allows you to make calls to and integrate your Apex code with external Web services. Apex calls to external Web services are referred to as callouts. For example, you can make a callout to a stock quote service to get the latest quotes. When making a callout from a trigger, the callout must be done asynchronously so that the trigger process doesn’t block you from working while waiting for the external service's response.The asynchronous callout is made in a background process, and the response is received when the external service returns it.</p><p>To make a callout from a trigger, call a class method that executes asynchronously. Such a method is called a future method and is annotated with @future(callout=true). This example class contains the future method that makes the callout.</p>",
+        "image": ""
       }
     ]
   },
@@ -352,7 +395,11 @@
     "title": "Apex Test",
     "itemList": [
       {
-        "text": "<p>Whenever you modify your Apex code, rerun your tests to refresh code coverage results.</p><p>A known issue with the Developer Console prevents it from updating code coverage correctly when running a subset of tests. To update your code coverage results, use Test | Run All rather than Test | New Run.</p><p>By default, Apex tests don’t have access to pre-existing data in the org, except for access to setup and metadata objects, such as the User or Profile objects. Set up test data for your tests. Creating test data makes your tests more robust and prevents failures that are caused by missing or changed data in the org. You can create test data directly in your test method, or by using a utility test class as you’ll find out later.</p><p>Even though it is not a best practice to do so, there are times when a test method needs access to pre-existing data. To access org data, annotate the test method with @isTest(SeeAllData=true). The test method examples in this unit don’t access org data and therefore don’t use the SeeAllData parameter.</p>",
+        "text": "<p>Salesforce records that are created in test methods aren’t committed to the database. They’re rolled back when the test finishes execution. This rollback behavior is handy for testing because you don’t have to clean up your test data after the test executes.</p><p>Whenever you modify your Apex code, rerun your tests to refresh code coverage results.</p><p>A known issue with the Developer Console prevents it from updating code coverage correctly when running a subset of tests. To update your code coverage results, use Test | Run All rather than Test | New Run.</p><p>By default, Apex tests don’t have access to pre-existing data in the org, except for access to setup and metadata objects, such as the User or Profile objects. Set up test data for your tests. Creating test data makes your tests more robust and prevents failures that are caused by missing or changed data in the org. You can create test data directly in your test method, or by using a utility test class as you’ll find out later.</p><p>Even though it is not a best practice to do so, there are times when a test method needs access to pre-existing data. To access org data, annotate the test method with @isTest(SeeAllData=true). The test method examples in this unit don’t access org data and therefore don’t use the SeeAllData parameter.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>The test method contains the Test.startTest() and Test.stopTest() method pair, which delimits a block of code that gets a fresh set of governor limits. In this test, test-data setup uses two DML statements before the test is performed. To test that Apex code runs within governor limits, isolate data setup’s limit usage from your test’s. To isolate the data setup process’s limit usage, enclose the test call within the Test.startTest() and Test.stopTest() block. Also use this test block when testing asynchronous Apex. For more information, see Using Limits, startTest, and stopTest.</p>",
         "image": ""
       }
     ]
@@ -534,6 +581,29 @@
     "itemList": [
       {
         "text": "<p>To create a Manual Task deployment, follow these steps:</p><p><ul><li>Navigate to the Deployments tab to create a new Advanced (multi-step) deployment.</li><li>Give your deployment a name and select a source and a destination organization.</li><li>Add a new step and select Manual Task as step type.</li><li>Optionally, add a task owner and select how you want this user to be notified, via chatter, via email or both.</li><li>When Copado reaches a Manual Task deployment step, the deployment process is stopped until the manual task is completed. The task owner will receive a notification for the task to be executed. Once the task is set to Complete, the deployment process will automatically resume</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2900,
+    "date": "2020/12/07",
+    "title": "Copado Dynamic Variables",
+    "itemList": [
+      {
+        "text": "<p>A variable is a container that stores a piece of data. Variables can be used in a variety of cases, for instance, if you are deploying users to different environments and you want to make sure the email address is the correct one in each environment, or if you are working with Salesforce Flow deployment steps.</p><p>When working with a Salesforce Flow deployment step, Copado provides the following predefined dynamic variables:</p>",
+        "image": "../assets/image/server/otherProduct/dynamicVariables.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 3000,
+    "date": "2020/12/07",
+    "title": "Copado Features vs. Epics",
+    "itemList": [
+      {
+        "text": "<p>Epics typically define the details of an MVP (Minimum Viable Product) and have a limited scope which could span across multiple sprints but are confined to a single release. Epics have no defined start or end date but do have defined scope. Epics can be written as larger user stories and should include the Who, What , and Why. Features are much smaller than epics and can live forever as features may evolve with the product’s lifecycle. Features capture the business value and impact. Features should be developed within a single release, but can live beyond releases and sprints.</p>",
         "image": ""
       }
     ]
