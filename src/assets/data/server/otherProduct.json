@@ -340,7 +340,7 @@
     ]
   },
   {
-    "id": 1850,
+    "id": 1900,
     "date": "2020/12/11",
     "title": "SOQL",
     "itemList": [
@@ -351,7 +351,7 @@
     ]
   },
   {
-    "id": 1900,
+    "id": 2000,
     "date": "2020/11/27",
     "title": "Apex",
     "itemList": [
@@ -366,7 +366,7 @@
     ]
   },
   {
-    "id": 1950,
+    "id": 2100,
     "date": "2020/12/12",
     "title": "Apex Triggers",
     "itemList": [
@@ -390,7 +390,7 @@
     ]
   },
   {
-    "id": 2000,
+    "id": 2200,
     "date": "2020/11/29",
     "title": "Apex Test",
     "itemList": [
@@ -405,7 +405,106 @@
     ]
   },
   {
-    "id": 2100,
+    "id": 2300,
+    "date": "2020/12/13",
+    "title": "Visualforce",
+    "itemList": [
+      {
+        "text": "<p>Visualforce is a web development framework that enables developers to build sophisticated, custom user interfaces for mobile and desktop apps that can be hosted on the Lightning Platform. You can use Visualforce to build apps that align with the styling of Lightning Experience, as well as your own completely custom interface. Visualforce enables developers to extend Salesforce’s built-in features, replace them with new functionality, and build completely new apps. Use powerful built-in standard controller features, or write your own custom business logic in Apex. You can build functionality for your own organization, or create apps for sale in the AppExchange.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Visualforce app development is familiar to anyone who has built web apps. Developers create Visualforce pages by composing components, HTML, and optional styling elements. Visualforce can integrate with any standard web technology or JavaScript framework to allow for a more animated and rich user interface. Each page is accessible by a unique URL. When someone accesses a page the server performs any data processing required by the page, renders the page into HTML, and returns the results to the browser for display. Visualforce request processing overview.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>To see your page in the context of Lightning Experience, return to your main Lightning Experience browser window. Open your browser’s JavaScript console and enter the following code. Don’t forget to replace pageName with your page’s name:<br><code>$A.get('e.force:navigateToURL').setParams({'url':'/apex/HelloWorld'}).fire();</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Static Resources</b><br>Static resources allow you to upload content that you can reference in a Visualforce page. Resources can be archives (such as .zip and .jar files), images, stylesheets, JavaScript, and other files.Static resources are managed and distributed by Lightning Platform, which acts as a content distribution network (CDN) for the files. Caching and distribution are handled automatically.</p><p>Static resources are referenced using the $Resource global variable, which can be used directly by Visualforce, or used as a parameter to functions such as URLFOR().</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2400,
+    "date": "2020/12/15",
+    "title": "Field History Tracking",
+    "itemList": [
+      {
+        "text": "<p>You can select certain fields to track and display the field history in the History related list of an object. Field history data is retained for up to 18 months through your org, and up to 24 months via the API. Field history tracking data doesn’t count against your Salesforce org’s data storage limits.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Modifying any of these fields adds an entry to the History related list. All entries include the date, time, nature of the change, and who made the change. Not all field types are available for historical trend reporting. Certain changes, such as case escalations, are always tracked.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Modifying any of these fields adds an entry to the History related list. All entries include the date, time, nature of the change, and who made the change. Not all field types are available for historical trend reporting. Certain changes, such as case escalations, are always tracked.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2500,
+    "date": "2020/12/13",
+    "title": "Lightning Components",
+    "itemList": [
+      {
+        "text": "<p>You can use the Developer Console to create Aura components. Using the Developer Console, you can create a component bundle. A component bundle acts like a folder in that it contains components and all other related resources, such as style sheets, controllers, and design.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Visualforce app development is familiar to anyone who has built web apps. Developers create Visualforce pages by composing components, HTML, and optional styling elements. Visualforce can integrate with any standard web technology or JavaScript framework to allow for a more animated and rich user interface. Each page is accessible by a unique URL. When someone accesses a page the server performs any data processing required by the page, renders the page into HTML, and returns the results to the browser for display. Visualforce request processing overview.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2600,
+    "date": "2020/12/16",
+    "title": "Lightning Platform APIs",
+    "itemList": [
+      {
+        "text": "<p>In the sea of Salesforce APIs, there’s a key archipelago of commonly used APIs that we focus on in this module. They are REST API, SOAP API, Bulk API, and Streaming API. Together they make up the Salesforce data APIs. Their purpose is to let you manipulate your Salesforce data, whereas other APIs let you do things like customize page layouts or build custom development tools. You can use other Salesforce APIs to manipulate subsets of your Salesforce data, too. For example, Analytics REST API focuses on Analytics. But these four APIs apply broadly across the spectrum of core Salesforce data.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Rest API</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>SOAP API</b></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Bulk API</b><br>Bulk API is a specialized RESTful API for loading and querying lots of data at once. By lots, we mean 50,000 records or more. Bulk API is asynchronous, meaning that you can submit a request and come back later for the results. This approach is the preferred one when dealing with large amounts of data. There are two versions of Bulk API (1.0 and 2.0). Both versions handle large amounts of data, but we use Bulk API 2.0 in this module because it’s a bit easier to use.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Streaming API</b><br>Streaming API is a specialized API for setting up notifications that trigger when changes are made to your data. It uses a publish-subscribe, or pub/sub, model in which users can subscribe to channels that broadcast certain types of data changes.</p><p>The pub/sub model reduces the number of API requests by eliminating the need for polling. Streaming API is great for writing apps that would otherwise need to frequently poll for changes.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2700,
+    "date": "2020/12/17",
+    "title": "Salesforce Tips",
+    "itemList": [
+      {
+        "text": "<p>Salesforce’s Winter ’19 release introduced the amazing <b>‘Where is this used?’ feature</b>. This feature makes it possible for administrators to access Metadata without enabling access to Data. Users can now easily create, edit, and delete Metadata without touching the Data. Users can check references to a custom field, such as Layout or Apex Trigger, by clicking on the ‘Where is this used?’ button.</p>",
+        "image": ""
+      },
+      {
+        "text": "------<p>To get all tracked fields on Account you can use:</p><p><code>SELECT QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = 'Account' AND IsFieldHistoryTracked = true</code></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3000,
     "date": "2020/12/01",
     "title": "Salesforce Page Layout",
     "itemList": [
@@ -416,7 +515,7 @@
     ]
   },
   {
-    "id": 2200,
+    "id": 3100,
     "date": "2020/12/03",
     "title": "Copado Branch Management",
     "itemList": [
@@ -435,7 +534,7 @@
     ]
   },
   {
-    "id": 2300,
+    "id": 3200,
     "date": "2020/12/04",
     "title": "Copado Org Differences",
     "itemList": [
@@ -454,7 +553,7 @@
     ]
   },
   {
-    "id": 2400,
+    "id": 3300,
     "date": "2020/12/04",
     "title": "Copado Continuous Delivery",
     "itemList": [
@@ -481,7 +580,7 @@
     ]
   },
   {
-    "id": 2500,
+    "id": 3400,
     "date": "2020/12/05",
     "title": "Copado Git Operations",
     "itemList": [
@@ -508,7 +607,7 @@
     ]
   },
   {
-    "id": 2600,
+    "id": 3500,
     "date": "2020/12/05",
     "title": "Simple and Parent Metadata Types",
     "itemList": [
@@ -552,7 +651,7 @@
     ]
   },
   {
-    "id": 2700,
+    "id": 3600,
     "date": "2020/12/05",
     "title": "Copado Validating Commits",
     "itemList": [
@@ -575,7 +674,7 @@
     ]
   },
   {
-    "id": 2800,
+    "id": 3700,
     "date": "2020/12/06",
     "title": "Manual Task deployment",
     "itemList": [
@@ -586,7 +685,7 @@
     ]
   },
   {
-    "id": 2900,
+    "id": 3800,
     "date": "2020/12/07",
     "title": "Copado Dynamic Variables",
     "itemList": [
@@ -598,7 +697,7 @@
     ]
   },
   {
-    "id": 3000,
+    "id": 5000,
     "date": "2020/12/07",
     "title": "Copado Features vs. Epics",
     "itemList": [
