@@ -485,11 +485,57 @@
       {
         "text": "<p><b>Streaming API</b><br>Streaming API is a specialized API for setting up notifications that trigger when changes are made to your data. It uses a publish-subscribe, or pub/sub, model in which users can subscribe to channels that broadcast certain types of data changes.</p><p>The pub/sub model reduces the number of API requests by eliminating the need for polling. Streaming API is great for writing apps that would otherwise need to frequently poll for changes.</p>",
         "image": ""
+      },
+      {
+        "text": "<p>Streaming API is your radar. It lets you define events and push notifications to your client app when the events occur. You don’t have to keep an active lookout for data changes—you don’t have to constantly poll Salesforce and make unnecessary API requests.</p><p>Tracking data changes in Salesforce is especially useful when you have business data stored in a system external to Salesforce. You can use Streaming API to keep your external source in sync with your Salesforce data with PushTopic events and Change Data Capture events. Also, Streaming API lets you process business logic in an external system in response to data changes in Salesforce. For example, you can use Streaming API to notify a fulfillment center whenever an opportunity is updated.</p><p>In addition to data changes, you can use Streaming API to broadcast custom notifications with platform events and generic streaming. For example, an app can generate platform event notifications for orders that an order fulfillment service processes. Or an app can listen to generic events and display a message whenever a system maintenance window is about to start or when a new offer is available to your users.</p>",
+        "image": ""
       }
     ]
   },
   {
     "id": 2700,
+    "date": "2020/12/19",
+    "title": "User Interface API",
+    "itemList": [
+      {
+        "text": "<p>The foundation of the Lightning stack is User Interface API, which gives you payloads of Salesforce data and metadata that are structured for building UI. Use your favorite web framework or language to build any custom web or native mobile app that you can imagine. React, Vue, Angular, iOS, Android...if you can make an HTTP request, you can use User Interface API.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Salesforce has many APIs and it can be difficult to know which is the best tool for the job. If you’re building a custom web or mobile app and need a user interface that lets users view, create, edit, and delete Salesforce records—a user interface that looks and behaves like Salesforce—UI API is the way to go.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>If you’re building a user interface to let users edit dependent picklists and lookups, User Interface API is definitely the way to go. User Interface API has a resource that makes it a whole lot easier.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Don’t use User Interface API for system integration. Or to create an automated integration for uploading or extracting data. Or to upload or extract data in bulk. Use the Enterprise API or the Bulk API for those tasks.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>If you’re building Lightning components, don’t use UI API directly, use Lightning Data Service (LDS).</p><p>LDS is built on User Interface API, but it also caches responses and updates all records that are affected by the data changes. When you’re working with LDS, you don’t have to worry about making REST calls and caching results, because LDS does it for you. And when data changes, LDS updates all the relevant components. Not only does LDS eliminate inconsistent data between components, it also lets users work offline and syncs the data when they go back online. LDS is cool.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2800,
+    "date": "2020/12/19",
+    "title": "Apex Web Services",
+    "itemList": [
+      {
+        "text": "<b>Expose a Class as a REST Service</b><p>Making your Apex class available as a REST web service is straightforward. Define your class as global, and define methods as global static. Add annotations to the class and methods. For example, this sample Apex REST class uses one method. The getRecord method is a custom REST API call. It’s annotated with @HttpGet and is invoked for a GET request.</p>",
+        "image": ""
+      },
+      {
+        "text": "<b>Expose a Class as a SOAP Service</b><p>Making your Apex class available as a SOAP web service is as easy as with REST. Define your class as global. Add the webservice keyword and the static definition modifier to each method you want to expose. The webservice keyword provides global access to the method it is added to.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 2900,
     "date": "2020/12/17",
     "title": "Salesforce Tips",
     "itemList": [
@@ -499,6 +545,14 @@
       },
       {
         "text": "------<p>To get all tracked fields on Account you can use:</p><p><code>SELECT QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = 'Account' AND IsFieldHistoryTracked = true</code></p>",
+        "image": ""
+      },
+      {
+        "text": "------<p>Use Workbench to Call User Interface API:</p><p><code>/services/data/v48.0/ui-api/object-info</code></p>",
+        "image": ""
+      },
+      {
+        "text": "------<p>Use Workbench to fetch a Record:</p><p><code>/services/data/v48.0/ui-api/record-ui/{recordIds}</code></p>",
         "image": ""
       }
     ]
