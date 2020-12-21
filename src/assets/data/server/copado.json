@@ -1,0 +1,195 @@
+[
+  {
+    "id": 3100,
+    "date": "2020/12/03",
+    "title": "Copado Branch Management",
+    "itemList": [
+      {
+        "text": "<p>If there is no track of metadata changes in the different sandboxes, leverage Copado's Org Differences and Snapshot Differences features to compare the metadata differences between the production org and UAT/int/dev sandboxes.</p><p>Alternatively, the Git Snapshot feature lets you commit the metadata to all your environments to different branches of a Git repository. Once all the metadata in the different environments is committed to the branches, create pull requests between the branches to compare the differences.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Promotions</b><p>When the user story is promoted, Copado creates a promotion branch out of the destination branch. Then the feature branch(es) of the promoted user story(ies) get merged into the promotion branch, with the version of the files as in the feature branch(es), not the source org branch.</p><p>If you are promoting multiple user stories, feature branches get merged in ascending order based on the user story number. If there are overlapped metadata (e.g. 2 or more user stories contain the same Apex Class). Copado will try first a Git merge, but if there is a Git conflict, the feature branch version of the file will win over the promotion branch. This could lead to the last user story overwriting other user stories in the same promotion. This situation can be detected in advance with the overlap awareness feature. If Copado auto-resolves conflicts, you will receive an email with the file name(s) where the conflicts were auto-resolved. You can also review the merge in the promotion branch in the Git repository. You then need to sync the feature branches so that they have the same version of the overlapped file.</p><p>Exclude user stories created in UAT and integration from CBM, to avoid back porting them to the dev sandboxes. You can exclude them by checking the Exclude from CBM checkbox in the user story layout.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Destructive Changes</b><p>Destructive Changes is a Git operation that can be executed from the Git Snapshot and the User Story Commit pages and allows you to remove components both in Git and in your sandboxes. If you want to delete a component in Git and also in the destination sandboxes, you should use this functionality in a user story. If you just want to delete the component in Git,  you can use it in a Git snapshot.</p><p>When you select this operation, you can see the org credential and the metadata grid with the metadata components of the environment related to the org credential selected. If the component does not appear in the grid because it has already been deleted in the source org, then select a different org credential in the lookup field which corresponds to an org that still has the item to be deleted.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3200,
+    "date": "2020/12/04",
+    "title": "Copado Org Differences",
+    "itemList": [
+      {
+        "text": "<p>Org differences are calculated based on the last modified dates of the components in the source and destination orgs. To find metadata differences in content, use the Snapshot differences feature instead.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>When calculating org differences, a list of metadata is retrieved for the two orgs, and if the last modified date of a component is greater in the source environment, the component will be flagged as an update. If the last modified date is greater in the destination environment, no 'updated' flag will be shown.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>If a component experienced changes, but these were reverted, this component will appear as an update difference even if the content of the component is the same in both orgs. The last modified date can also be different if the component was deployed to the source org without any content/configuration changes.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3300,
+    "date": "2020/12/04",
+    "title": "Copado Continuous Delivery",
+    "itemList": [
+      {
+        "text": "<p>Copado Continuous Delivery makes use of Salesforce’s Change Data Capture (CDC) capability to enable automated and scheduled deployments. If you specify a scheduled or automated deployment behavior, please make sure you have enabled Change Data Capture in the Setup UI for two particular Copado objects: User Story and Promotion.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>It is possible to use Continuous Delivery to allow developers to deploy their work to different environments, even if they don’t have their own org credentials for that particular environment. To do this, simply set a default org credential for these environments. The default org credential will enable Continuous Delivery to deploy user stories to that environment, even if the developer doesn’t have their own access.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Only someone with the Copado Admin license can deploy to production orgs. If you want to enable Continuous Delivery to automatically deploy certain kinds of user stories to production orgs, someone with a Copado Admin license will need to assign a default org credential to the production org.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Pipeline Page</b><br><ul><li>If the deployment has been successful, you will see a green check.</li><li>If the deployment has failed, a red cross will be displayed.</li><li>If the deployment is still in progress, you will see an in-progress icon.</li><li>If the deployment is waiting for a manual action to be completed, you will see a pause icon.</li><li>If there is a merge conflict you will see a yellow warning icon.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>When using the promotion process, Copado combines the metadata (typically configuration) and Git metadata (typically code) to produce one single deployment record which will contain multiple steps.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3400,
+    "date": "2020/12/05",
+    "title": "Copado Git Operations",
+    "itemList": [
+      {
+        "text": "<p><b>Commit Files:</b> The Commit Files operation is available in the Git Snapshot and the User Story Commit pages. This operation allows you to commit specific metadata components of an org into a Git branch. You can use it to select new components that have not yet been committed in a user story or to commit an update in components that have been previously committed.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Recommit Files:</b> The Recommit Files operation is available in the User Story Commit page. This operation allows you to commit previously committed changes. When this operation is selected, all the components that have been previously selected and committed in the user story (User Story Selections) are automatically selected in the metadata grid, allowing you to speed up the process of updating your feature branch with the newest content in your org.</p><p>Additionally, if you have committed something wrong and want to get rid of the selection, this operation allows you to recreate the feature branch by checking the Re-create Feature Branch checkbox.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Destructive Changes:</b> The Destructive Changes operation is available in the Git Snapshot and the User Story Commit pages. This operation allows you to remove components both in Git and in your sandboxes.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Full Profiles & Permission Sets:</b> The Full Profiles & Permission Sets operation is available in the User Story Commit page. This operation allows you to commit full profiles and permission sets from one source org into Git. You should only use this operation for profiles and permission sets that are new and don't exist in the repository as the file will be overriding any other changes if a conflict is found.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Retrieve Only</b><br>With the Retrieve Only checkbox you will be able to pull OLS/FLS for profiles and permission sets, without having to commit/deploy the original fields or objects.<p>This feature gives you a more granular control over profiles and permission sets in regard to objects and fields permissions.</p></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3500,
+    "date": "2020/12/05",
+    "title": "Simple and Parent Metadata Types",
+    "itemList": [
+      {
+        "text": "<p>A simple metadata type is a metadata component that represents one file in Git (1:1), such as an ApexClass, an ApexTrigger, an ApexPage or an ApexComponent, for instance. The majority of metadata types fall within this category, so there is no need to list them all. If a metadata type is not included in the parent list or Special Cases section below, it is a simple metadata type.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>A parent metadata type is that where a metadata component represents one file in Git (1:1), but that component contains other nested components. Find below a table with all the parent metadata types and their corresponding nested components:</p>",
+        "image": "../assets/image/server/otherProduct/parentMetadataType.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Profile</b><br><ul><li>When you commit a profile, only user permissions are included in the profile unless you select other components as well. To deploy the Field Level Security of a field, for example, you have to select the profile together with the field in the same selection, the same commit. The same applies to tab visibility, where you have to include the CustomTab to get the visibility of that tab.</li><li>The most typical metadata component updates in a profile are CustomObject, CustomField, CustomTab, Layout, RecordType, ApexClass, ApexPage, CustomApplication, CustomPermission, and HomePageLayout.</li><li>Copado will merge the retrieved permissions into the profile in Git, unless you commit a full profile, in which case the file in the feature branch will overwrite the file in the promotion branch.</li><li>When committing files, if you select the Retrieve Only checkbox for custom objects, custom fields and page layouts, you will be able to pull OLS/FLS/Layout Assignment without having to commit/deploy the original field/object/layout files. Check out the article User Stories - Git Metadata to get more information.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Permission Set</b><br><ul><li>Permission sets behave in the same way as profiles, only permissions for other selected metadata components will be included.</li><li>Copado will merge the retrieved permissions into the permission set in Git, unless you commit a full permission set, in which case the permission set file in the feature branch will overwrite the file in the promotion branch.</li><li>You can select the Retrieve Only checkbox for custom objects and custom fields to pull OLS/FLS without having to commit/deploy the original field/object files. Check out the article User Stories - Git Metadata to get more information.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Custom Object</b><br>In contrast to the standard behavior of the metadata API, when you commit a custom object only the attributes are committed, unless you select other components as well. This applies to new and existing custom objects.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Custom Object Translation</b><br>Custom object translations are handled as nested components. Let’s say you want to commit the custom object translation of a field and you just commit that field together with the translation. By doing this, Copado will only update the translation of that field in the destination, and no other field translations will be committed or merged.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Flow</b><br>Deploying a Process Builder Flow in Copado is a seamless process.You can deploy a flow that is active in the source org, and the flow will be activated automatically in the destination org. You can commit an active flow to your repository and deploy from the commit. Check out the article Process Builder Flows to get more information.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Flow Definition</b><br>A FlowDefinition can only be deployed if the flow already exists in the destination. In order to make a deployment not repeatable, the recommendation is not to include this in the source control system (Git) by adding it to your .gitignore file.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Important Considerations</b><br><ul><li>A feature branch will only be created if the metadata retrieved is different from the repository version.</li><li>If a feature branch already exists, and the metadata retrieved is different, the new version will be added to the feature branch. If there are no changes, Git does not produce a commit ID and Copado will show the status No changes.</li><li>If the feature branch does not exist and the metadata selected to be committed has no changes, the feature branch will not be pushed to your repository, and as a consequence, the branch will not exist in your repository.</li><li>As part of the Update User Story selections action, Copado upserts some other auxiliary records and fields such as Git commits and metadata types in selections.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3600,
+    "date": "2020/12/05",
+    "title": "Copado Validating Commits",
+    "itemList": [
+      {
+        "text": "<p>From the Commit Changes page, Copado allows you to perform a validation deployment before actually committing the changes into Git.</p><p>The process in order to have this functionality working:</p><p><ul><li>Include in the commit message the following pattern: @validatecommit.</li><li>This command will create the validation deployment without committing any changes into the repository.</li><li>If the deployment is successful, the commit will be executed.</li><li>The validation of a commit relays on a validation deployment in the destination org with the selected metadata components selected in the commit changes action.</li></ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Recommit Files: The Recommit Files operation is available in the User Story Commit page. This operation allows you to commit previously committed changes. When this operation is selected, all the components that have been previously selected and committed in the user story (User Story Selections) are automatically selected in the metadata grid, allowing you to speed up the process of updating your feature branch with the newest content in your org.</p><p>Additionally, if you have committed something wrong and want to get rid of the selection, this operation allows you to recreate the feature branch by checking the Re-create Feature Branch checkbox.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Destructive Changes: The Destructive Changes operation is available in the Git Snapshot and the User Story Commit pages. This operation allows you to remove components both in Git and in your sandboxes.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Full Profiles & Permission Sets: The Full Profiles & Permission Sets operation is available in the User Story Commit page. This operation allows you to commit full profiles and permission sets from one source org into Git. You should only use this operation for profiles and permission sets that are new and don't exist in the repository as the file will be overriding any other changes if a conflict is found.</p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3700,
+    "date": "2020/12/06",
+    "title": "Manual Task deployment",
+    "itemList": [
+      {
+        "text": "<p>To create a Manual Task deployment, follow these steps:</p><p><ul><li>Navigate to the Deployments tab to create a new Advanced (multi-step) deployment.</li><li>Give your deployment a name and select a source and a destination organization.</li><li>Add a new step and select Manual Task as step type.</li><li>Optionally, add a task owner and select how you want this user to be notified, via chatter, via email or both.</li><li>When Copado reaches a Manual Task deployment step, the deployment process is stopped until the manual task is completed. The task owner will receive a notification for the task to be executed. Once the task is set to Complete, the deployment process will automatically resume</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": 3800,
+    "date": "2020/12/07",
+    "title": "Copado Dynamic Variables",
+    "itemList": [
+      {
+        "text": "<p>A variable is a container that stores a piece of data. Variables can be used in a variety of cases, for instance, if you are deploying users to different environments and you want to make sure the email address is the correct one in each environment, or if you are working with Salesforce Flow deployment steps.</p><p>When working with a Salesforce Flow deployment step, Copado provides the following predefined dynamic variables:</p>",
+        "image": "../assets/image/server/otherProduct/dynamicVariables.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 5000,
+    "date": "2020/12/07",
+    "title": "Copado Features vs. Epics",
+    "itemList": [
+      {
+        "text": "<p>Epics typically define the details of an MVP (Minimum Viable Product) and have a limited scope which could span across multiple sprints but are confined to a single release. Epics have no defined start or end date but do have defined scope. Epics can be written as larger user stories and should include the Who, What , and Why. Features are much smaller than epics and can live forever as features may evolve with the product’s lifecycle. Features capture the business value and impact. Features should be developed within a single release, but can live beyond releases and sprints.</p>",
+        "image": ""
+      }
+    ]
+  }
+]

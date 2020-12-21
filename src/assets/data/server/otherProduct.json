@@ -162,5 +162,36 @@
         "imageClass": "mx-auto d-block"
       }
     ]
+  },
+  {
+    "id": 1000,
+    "date": "2020/10/20",
+    "title": "Mulesoft",
+    "itemList": [
+      {
+        "text": "<p>A Mule event contains the core information processed by the runtime. It travels through components inside your Mule app following the configured application logic.</p><p>Note that the Mule event is immutable, so every change to an instance of a Mule event results in the creation of a new instance.</p><p>A Mule event is generated when a trigger (such as an HTTP request or a change to a database or file) reaches the Event source of a flow. This trigger could be an external event triggered by a resource that might be external to the Mule app.</p>",
+        "image": "../assets/image/server/otherProduct/mulesoftEvent.PNG",
+        "imageClass": "mx-auto d-block"
+      }
+    ]
+  },
+  {
+    "id": 1200,
+    "date": "2020/10/20",
+    "title": "Anypoint Platform CLI",
+    "itemList": [
+      {
+        "text": "<p>Prerequisites:<ul><li>NodeJS and npm</li><li>Git</li><ul></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Installation: <code>npm install -g anypoint-cli@latest</code></p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Usage: <code>anypoint-cli --username yupinggaogmail</code></p>",
+        "image": ""
+      }
+    ]
   }
 ]

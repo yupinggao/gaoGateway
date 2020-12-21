@@ -9,6 +9,7 @@ import { OSComponent } from './component/server/os/os.component';
 import { ApplicationComponent } from './component/server/application/application.component';
 import { OtherProductComponent } from './component/server/otherProduct/otherProduct.component';
 import { SalesforceComponent } from './component/server/salesforce/salesforce.component';
+import { CopadoComponent } from './component/server/copado/copado.component';
 import { BigDataComponent } from './component/server/bigData/bigData.component';
 import { AzureComponent } from './component/itCloud/azure/azure.component';
 import { CloudSecurityComponent } from './component/itCloud/cloudSecurity/cloudSecurity.component';
@@ -401,6 +402,17 @@ const routes: Routes = [
       },
       {
         path: '', component: SalesforceComponent
+      }
+    ]
+  },
+  {
+    path: 'server/copado', component: CopadoComponent,
+    children: [
+      {
+        path: ':id', component: ContentComponent       
+      },
+      {
+        path: '', component: CopadoComponent
       }
     ]
   },
