@@ -46,13 +46,17 @@
     "title": "Salesforce Tools",
     "itemList": [
       {
-        "text": "<p><b>Automation Tools</b><p>One of the hardest things for an admin or a developer to figure out is when to use what tool for the job at hand. In general, it’s best to start with declarative, no-code tools and work your way up to code solutions.</p><ul><li><b>Process Builder:</b> Use Process Builder when you need to start a behind-the-scenes business process automatically. Processes can start when:<br><ul><li>A record is created</li><li>A record is updated</li><li>A platform event occurs</li></ul></li><li><b>Flow Builder:</b> Use Flow Builder to:<ul><li>Automate a guided visual experience</li><li>Add more functionality for a behind-the-scenes process than is available in Process Builder. Use Flow Builder to build the more complex functionality. Then call the resulting flow from the process</li><li>Start a behind-the-scenes business process:<ul><li>When a user clicks something, like a button</li><li>When a record is created</li><li>When a record is updated</li><li>When a platform event occurs</li><li>At a specified time and frequency</li></ul></li></ul></li><li><b>Approvals:</b> Approvals isn’t included in Lightning Flow, but it offers a declarative way to automate something that Lightning Flow doesn’t cover. That said, Lightning Flow does support automating how a record gets submitted for approval.</li></ul></p>",
+        "text": "<p>Lightning Flow provides declarative process automation for every Salesforce app, experience, and portal.<ul><li>Lightning Flow is the name of the product.</li><li>Process Builder and Flow Builder are the names of the tools.</li><li>Use Process Builder to make processes; use Flow Builder to make flows.</li></ul></p>",
         "image": ""
       },
       {
         "text": "<p><b>Which Automation Tool Is Right for My Use Case?</b><br>When it’s all said and done, a process-driven experience isn’t backed by only one process. It’s a combination of all the business processes in your org that can impact your customer. Each business process typically falls into one of these camps.</p>",
         "image": "../assets/image/server/otherProduct/tools.PNG",
         "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p><b>Automation Tools</b><p>One of the hardest things for an admin or a developer to figure out is when to use what tool for the job at hand. In general, it’s best to start with declarative, no-code tools and work your way up to code solutions.</p><ul><li><b>Process Builder:</b> Use Process Builder when you need to start a behind-the-scenes business process automatically. Processes can start when:<br><ul><li>A record is created</li><li>A record is updated</li><li>A platform event occurs</li></ul></li><li><b>Flow Builder:</b> Use Flow Builder to:<ul><li>Automate a guided visual experience</li><li>Add more functionality for a behind-the-scenes process than is available in Process Builder. Use Flow Builder to build the more complex functionality. Then call the resulting flow from the process</li><li>Start a behind-the-scenes business process:<ul><li>When a user clicks something, like a button</li><li>When a record is created</li><li>When a record is updated</li><li>When a platform event occurs</li><li>At a specified time and frequency</li></ul></li></ul></li><li><b>Approvals:</b> Approvals isn’t included in Lightning Flow, but it offers a declarative way to automate something that Lightning Flow doesn’t cover. That said, Lightning Flow does support automating how a record gets submitted for approval.</li></ul></p>",
+        "image": ""
       }
     ]
   },
@@ -91,6 +95,10 @@
       },
       {
         "text": "<p><b>Use Profiles to Restrict Access</b><p>Each user has a single profile that controls which data and features that user has access to. A profile is a collection of settings and permissions. Profile settings determine which data the user can see, and permissions determine what the user can do with that data.<ul><li>The settings in a user’s profile determine whether the user can see a particular app, tab, field, or record type.</li><li>The permissions in a user’s profile determine whether the user can create or edit records of a given type, run reports, and customize the app.</li></ul></p><p>Profiles usually match up with a user's job function (for example, system administrator, recruiter, or hiring manager), but you can have profiles for anything that makes sense for your Salesforce org. A profile can be assigned to many users, but a user can have only one profile at a time.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Users can have only one profile, but they can have multiple permission sets.</p>",
         "image": ""
       }
     ]
@@ -254,14 +262,23 @@
   {
     "id": 1300,
     "date": "2020/12/13",
-    "title": "Lightning Components",
+    "title": "Lightning Component Framework",
     "itemList": [
       {
-        "text": "<p>You can use the Developer Console to create Aura components. Using the Developer Console, you can create a component bundle. A component bundle acts like a folder in that it contains components and all other related resources, such as style sheets, controllers, and design.</p>",
+        "text": "<p>The Lightning Component framework is a UI framework for developing web apps for mobile and desktop devices. It’s a modern framework for building single-page applications with dynamic, responsive user interfaces for Lightning Platform apps. It uses JavaScript on the client side and Apex on the server side.</p><p>You can use the Developer Console to create Aura components. Using the Developer Console, you can create a component bundle. A component bundle acts like a folder in that it contains components and all other related resources, such as style sheets, controllers, and design.</p>",
+        "image": "../assets/image/server/salesforce/lightningPlatform.PNG",
+        "imageClass": "mx-auto d-block"
+      },
+      {
+        "text": "<p>“How does the Lightning Component framework compare to MyFavoriteFramework?” where that favorite framework is another modern JavaScript web app framework such as AngularJS, React, or Ember. These frameworks are a great way to build Lightning Platform apps!</p><p>We recommend using them with Visualforce, using what we call a container page, and packaging your chosen framework and app code into static resources. Using an empty container page has Visualforce get out of your way, and lets you use the full capabilities of your chosen framework.</p>",
         "image": ""
       },
       {
         "text": "<p>Visualforce app development is familiar to anyone who has built web apps. Developers create Visualforce pages by composing components, HTML, and optional styling elements. Visualforce can integrate with any standard web technology or JavaScript framework to allow for a more animated and rich user interface. Each page is accessible by a unique URL. When someone accesses a page the server performs any data processing required by the page, renders the page into HTML, and returns the results to the browser for display. Visualforce request processing overview.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p>Lightning components are supposed to be self-contained. They are stand-alone elements that encapsulate all of their essential functionality. A component is not allowed to reach into another component, even a child component, and alter its internals.</p><p>There are two principal ways to interact with or affect another component. The first way is one we’ve seen and done quite a bit of already: setting attributes on the component’s tag. A component’s public attributes constitute one part of its API.</p><p>The second way to interact with a component is through events. Like attributes, components declare the events they send out, and the events they can handle. Like attributes, these public events constitute a part of the component’s public API. We’ve actually used and handled events already, but the events have been hiding behind some convenience features. In this unit, we’ll drag events out into the light, and create a few of our own.</p>",
         "image": ""
       }
     ]
@@ -325,6 +342,21 @@
     ]
   },
   {
+    "id": 1550,
+    "date": "2020/12/31",
+    "title": "Understanding Metadata API",
+    "itemList": [
+      {
+        "text": "<p>Metadata API contains a set of objects that manage setup and customization information (metadata) for your organizations, and the SOAP calls that manipulate those objects. With Metadata API you can:<ul><li>Work with setup configuration as XML metadata files</li><li>Migrate configuration changes between organizations</li><li>Create your own tools for managing organization and application metadata</li></ul></p><p>Although you can write your own client applications for using Metadata API SOAP calls, Salesforce provides the Ant Migration Tool to retrieve and deploy Apex and metadata.</p>",
+        "image": ""
+      },
+      {
+        "text": "<p><b>Understanding Package and Directory Structure</b></p><p>Metadata API functions in a package-centric manner. Components can be in one or more packages, or in no package. Packages can be local (created in your Salesforce org) or installed from Salesforce AppExchange. Whenever the Ant Migration Tool retrieves a set of components, that set is limited to what’s in a single package or what’s in no package at all. There are three kinds of packages.<ul><li>Unpackaged—Components that live natively in your organization, such as standard objects, go in the unpackaged package.</li><li>Unmanaged package—Unmanaged packages are typically used to distribute open-source projects or application templates to provide developers with the basic building blocks for an application. Once the components are installed from an unmanaged package, the components can be edited in the organization they are installed in. The developer who created and uploaded the unmanaged package has no control over the installed components, and can't change or upgrade them. Unmanaged packages should not be used to migrate components from a sandbox to production organization. Instead, use Change Sets.</li><li>Managed package—A collection of application components that is posted as a unit on the AppExchange and associated with a namespace and possibly a License Management Organization. To support upgrades, a package must be managed. An organization can create a single managed package that can be downloaded and installed by many different organizations. Managed packages differ from unmanaged packages by having some locked components, allowing the managed package to be upgraded later. Unmanaged packages do not include locked components and cannot be upgraded. In addition, managed packages obfuscate certain components (like Apex) on subscribing organizations to protect the intellectual property of the developer.</li></ul></p>",
+        "image": ""
+      }
+    ]
+  },
+  {
     "id": 1600,
     "date": "2020/12/19",
     "title": "Apex Web Services",
@@ -349,7 +381,7 @@
         "image": ""
       },
       {
-        "text": "------<p>To get all tracked fields on Account you can use:</p><p><code>SELECT QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = 'Account' AND IsFieldHistoryTracked = true</code></p>",
+        "text": "------<p>To get all tracked fields on Account you can use:</p><p><code>SELECT Label, QualifiedApiName FROM FieldDefinition WHERE EntityDefinition.QualifiedApiName = 'Account' AND IsFieldHistoryTracked = true</code></p>",
         "image": ""
       },
       {
@@ -366,6 +398,10 @@
       },
       {
         "text": "------<p>Each batch Apex invocation creates an AsyncApexJob record so that you can track the job’s progress. You can view the progress via SOQL or manage your job in the Apex Job Queue:</p><p><code>AsyncApexJob job = [SELECT Id, Status, JobItemsProcessed, TotalJobItems, NumberOfErrors FROM AsyncApexJob WHERE ID = :batchId ]</code></p>",
+        "image": ""
+      },
+      {
+        "text": "------<p>$A is a framework global variable that provides a number of important functions and services. $A.enqueueAction(action) adds the server call to the Aura component framework request queue.</p>",
         "image": ""
       }
     ]
